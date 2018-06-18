@@ -1,0 +1,23 @@
+' Gambas class file
+
+Public Sub Form_Open()
+  
+  ' Print MyDesktop.dname
+  M_Core.FillList_All_Test
+  
+End
+
+Public Sub ScrollApps_MouseDown()
+  
+End
+
+Public Sub IconView_MouseMove()
+  
+  If Not IconView.FindAt(Mouse.x, Mouse.y) Then
+    IconView.Mouse = Mouse.Pointing
+    
+    'Last.Item.h = Last.Item.H + 12
+    'Last.Item.w = Last.Item.w + 12
+  Endif
+  
+End

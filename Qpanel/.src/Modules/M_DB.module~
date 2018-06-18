@@ -1,0 +1,33 @@
+' Gambas module file
+
+Private $Con As New Connection 
+
+Public Procedure Connect() As Connection
+  
+  $Con = New Connection
+  $Con.Type = "sqlite3"
+  ' conector.Host = (Application.Path &/ "DB/")
+  $Con.Host = (Desktop.ConfigDir &/ "Innova/")
+  $Con.Name = "DBInnova.dat"
+  Try $Con.Open()
+  Return $Con
+  
+  If Error Then
+    Message.Error(LC_MESSAGES.MSG_ERR_DB)
+    $Con = Null
+    Return True 
+  End If
+  
+  Return False 
+  
+Catch
+  Debug "ERROR [ " & DConv(Error.Text) & " ]" 
+  
+End
+
+Public Sub Close($Con As Connection)
+  
+  $Con.Close
+  $Con = Null
+  
+End

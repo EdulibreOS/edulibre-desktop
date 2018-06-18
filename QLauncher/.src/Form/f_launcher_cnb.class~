@@ -1,0 +1,38 @@
+' Gambas class file
+
+Public Settings_Core_Innova As New Settings(Desktop.ConfigDir &/ "Innova/Innova_Config.conf")
+Private DesktopEntry As DesktopFile
+Private sDir_AppsFav As String 
+Private sFile_AppsFav As String
+Public sLang As String = ((Left(System.Language, 2)))
+Private sDel As String
+
+Public Sub Form_Open()
+  
+  M_Core.FillList_Cat_CNB
+  IconViewCat.Background = Color.Transparent  
+
+End
+
+Public Sub PanelLauncher_Draw()
+  
+End
+
+Public Sub IconViewCat_MouseMove()
+  
+End
+
+Public Sub IconViewCat_Select()
+  
+  Dim iResult As Integer 
+  
+  '  Try iResult = Settings_Core_Innova["Launcher/Cat_MouseMove"]
+  
+  ' If iResult = 0 Then
+  'M_Core.sCurCat = DesktopAppsCat[Last.Item.key].Name
+  M_Core.sCurCat = IconViewCat.Item.key 'DesktopAppsCat[Last.Item.key].Name
+  Print IconViewCat.Item.key 
+  M_Core.FillList_Apps_MiniCNB
+  ' Endif
+  
+End
