@@ -35,8 +35,8 @@ Property Shortcut As String
 Property Text As String
 Property Font As Font
 
-Public Const MIN_OPACITY As Float = 0.5
-Public Const MAX_OPACITY As Float = 1
+Public Const MIN_OPACITY As Float = 0.6
+Public Const MAX_OPACITY As Float = 0.9
 
 Private $hObs As Observer
 Private $hImage As Image
@@ -159,6 +159,7 @@ Private Sub SetOpacity()
   
   $hDraw.Opacity($fOpacity)
   Me.Refresh
+Catch
   
 End
 

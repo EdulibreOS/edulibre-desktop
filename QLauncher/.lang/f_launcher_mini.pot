@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-06-15 17:44 UTC\n"
+"POT-Creation-Date: 2018-06-07 17:50 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -50,31 +50,31 @@ msgstr ""
 msgid "usuario"
 msgstr ""
 
-#: f_launcher_mini.class:97
+#: f_launcher_mini.class:99
 msgid "Image Archive"
 msgstr ""
 
-#: f_launcher_mini.class:98
+#: f_launcher_mini.class:100
 msgid "Image PNG"
 msgstr ""
 
-#: f_launcher_mini.class:98
+#: f_launcher_mini.class:100
 msgid "Image JPG"
 msgstr ""
 
-#: f_launcher_mini.class:98
+#: f_launcher_mini.class:100
 msgid "Image JPEG"
 msgstr ""
 
-#: f_launcher_mini.class:98
+#: f_launcher_mini.class:100
 msgid "Image SVG"
 msgstr ""
 
-#: f_launcher_mini.class:98
+#: f_launcher_mini.class:100
 msgid "Image BMP of Windows"
 msgstr ""
 
-#: f_launcher_mini.class:223
+#: f_launcher_mini.class:227
 msgid "Category: "
 msgstr ""
 

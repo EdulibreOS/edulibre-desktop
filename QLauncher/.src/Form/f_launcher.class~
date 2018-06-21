@@ -145,7 +145,7 @@ Public Sub mnuSend_Click()
   Dim sCopy As String
   
   M_Core.SendPanel
-  ''f_panel.App_Bookmarks
+  f_panel.App_Bookmarks
   
 End
 

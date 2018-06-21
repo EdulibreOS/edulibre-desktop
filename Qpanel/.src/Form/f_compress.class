@@ -1,0 +1,124 @@
+' Gambas class file
+
+' Innova Project 
+' Copyright (C) Herberth Guzmán
+' herberthguzman@gmail.com
+'
+' This program is free software; you can redistribute it and/or modify
+' it under the terms of the GNU General Public License as published by
+' the Free Software Foundation; either version 2 of the License, or
+' (at your option) any later version.
+'
+' This program is distributed in the hope that it will be useful,
+' but WITHOUT ANY WARRANTY; without even the implied warranty of
+' MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+' GNU General Public License for more details.
+'
+' You should have received a copy of the GNU General Public License
+' along with this program; if not, write to the Free Software
+' Foundation, Inc., 51 Franklin St, Fifth Floor,
+' Boston, MA  02110-1301  USA
+
+' Homepage: http://http://sourceforge.net/projects/innovadesktop
+
+Private $aDataDir As String[]
+
+Public Sub GetDataDir()
+  
+  Dim sDir As String
+  Dim i As Integer
+  
+  For Each sDir In Dir(User.Home, "*", gb.Directory)
+    If Not (InStr(sDir, ".")) Then
+      Inc i
+      cmbpathselect.Add(sDir)
+    Endif
+    
+  Next
+  
+End
+
+Public Sub Form_Open()
+  
+  GetDataDir
+  list_compress
+  cmbpathselect.Index = 2
+  
+End
+
+Public Sub list_compress()
+  
+  With cmbextcompress
+    '.Add(".tar")
+    .Add(".tar.gz", gb.String)
+    '.Add(".gz", gb.String)
+    '.Add(".bz2", gb.String)
+    .Add(".tar.bz2", gb.String)
+    '.Add(".zip", gb.String)
+    '.Add(".lha", gb.String)
+    '.Add(".rar", gb.String)
+  End With
+  
+End
+
+Public Sub btnCreate_Click()
+  
+  Dim sName As String
+  
+  If Not IsNull(cmbextcompress.Current.Text) Then
+    Select Case cmbextcompress.Index
+      Case 0
+        sName = File.BaseName(txtfilename.Text)
+        Tar(Null, User.Home &/ cmbpathselect.Text &/ sName)
+        Wait
+        f_wallpaper.mnuRefresh_Click
+        Me.Close
+        'Tar("textcomp", txtfilename.Text & File.BaseName(cmbextcompress.Text))
+        'Shell "tar -czvf " & txtnamefile.Text & cmbextcompress.Text & " " & User.Home '&/ cmbpathselect.Text
+        'Shell "tar -czv " & txtfilename.text & "tar" & " " & txtfilepath.Text
+        ''bueno Shell "tar -cvf archivo.tar " & "textcomp"
+        'Shell "cd " & User.Home &/ carpetaor & "&& tar czf carpetas.tar.gz * && cp carpetas.tar.gz " & User.Home &/ carpetades & "&& rm -f carpetas.tar.gz" Wait
+        ''Shell "cd " & User.Home &/ carpetades & "&& tar xzf carpetas.tar.gz && rm -f carpetas.tar.gz"
+        
+    End Select
+  Endif 
+  
+  'Print cmbextcompress.Current.Text
+  
+End
+
+Private Function Tar(Path As String, Dest As String) As Boolean
+  
+  Dim sPath_Desktop As String = Desktop.GetDirectory("DESKTOP") 
+  Dim s As String
+  
+  If Dest Not Ends ".tar.gz" Then Dest &= ".tar.gz"
+  If Exist(Dest) Then Return False
+  
+  Debug (Subst("Compressing &1 at &2", Path, Dest))
+  
+  'Shell Subst("tar cz -C &3 -f &1 &2", Shell(Dest), Shell(Path), User.Home) Wait
+  '' "cd " & User.Home &/ sPath_Desktop
+  
+  ''Shell "cd " & User.Home &/ "Escritorio" & "&& tar czf carpetas.tar.gz * && cp carpetas.tar.gz " & User.Home & "&& rm -f carpetas.tar.gz" Wait
+  
+  Shell "cd " & sPath_Desktop '& User.Home &/ "Escritorio" To s
+  
+  Shell Subst("tar cz -C &3 -f &1 &2", Shell(Dest), Shell(s &/ txtfilename.Text), sPath_Desktop) Wait
+  'Shell Subst("tar cz -C &3 -f &1 &2", Shell(Dest), Shell(s &/ txtfilename.Text), sPath_Desktop) Wait
+  'Shell Subst("tar cz -C &3 -f &1 &2", Shell("cd " & Dest), Shell(sPath_Desktop), sPath_Desktop) Wait
+  
+  'Shell Subst("tar cz -C &3 -f &1 &2", Shell(Dest), Shell(sPath_Desktop &/ "Audacity.pdf"), sPath_Desktop) Wait
+  
+  'Shell Subst("tar cz -C &3 -f &1 &2", Shell(Dest), Shell(Path), sPath_Desktop &/ "textcomp") Wait
+  
+  Return (Process.LastValue = 0)
+  
+End
+
+Public Sub btnClose_Click()
+  
+  'Dim sPath_Desktop As String = Desktop.GetDirectory("DESKTOP") 
+  Me.Close
+  
+End

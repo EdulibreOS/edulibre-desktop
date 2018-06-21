@@ -94,6 +94,7 @@ Private Sub GetAuthor()
       If Not sLig Then Continue
       If Left(sLig) = "-" Then Break
       
+      '   sLig = RemoveLink(sLig)
       If Right(sLig) <> "." Then sLig &= "."
       sText &= sLig & "<br>"
       
@@ -135,7 +136,9 @@ Private Sub GetAuthor()
     sText &= "</blockquote><br>\n"
     
   Next
-
+  
+  'txtAuthor.X = Desktop.Scale
+  'txtAuthor.W = txtAuthor.Parent.W - Desktop.Scale * 2
   txtAuthor.Text = sText
   txtAuthor.Adjust
   
@@ -155,8 +158,7 @@ End
 Public Sub _new()
   
   Dim sText As String
-  Dim aText As String[] = []
-  Dim I As Integer
+  Dim aText As String[] = [] Dim I As Integer
   Dim aLine As String[]
   
   aText.Add("[Innova Desktop]")
