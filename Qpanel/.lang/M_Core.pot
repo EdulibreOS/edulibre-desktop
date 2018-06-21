@@ -5,12 +5,76 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-06-15 17:01 UTC\n"
+"POT-Creation-Date: 2018-06-04 18:53 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: M_Core.module:187
+#: M_Core.module:61
+msgid "Development"
+msgstr ""
+
+#: M_Core.module:61
+msgid "Other"
+msgstr ""
+
+#: M_Core.module:61
+msgid "Office"
+msgstr ""
+
+#: M_Core.module:61
+msgid "Network"
+msgstr ""
+
+#: M_Core.module:61
+msgid "Game"
+msgstr ""
+
+#: M_Core.module:61
+msgid "AudioVideo"
+msgstr ""
+
+#: M_Core.module:61
+msgid "System"
+msgstr ""
+
+#: M_Core.module:61
+msgid "Settings"
+msgstr ""
+
+#: M_Core.module:61
+msgid "Utility"
+msgstr ""
+
+#: M_Core.module:61
+msgid "Graphics"
+msgstr ""
+
+#: M_Core.module:61
+msgid "Education"
+msgstr ""
+
+#: M_Core.module:64
+msgid "Preescolar"
+msgstr ""
+
+#: M_Core.module:64
+msgid "Primaria Básica"
+msgstr ""
+
+#: M_Core.module:64
+msgid "Primaria Avanzada"
+msgstr ""
+
+#: M_Core.module:64
+msgid "Básico"
+msgstr ""
+
+#: M_Core.module:64
+msgid "Diversificado"
+msgstr ""
+
+#: M_Core.module:199
 msgid "Mode random background screen, <br> you can not select new background..."
 msgstr ""
 

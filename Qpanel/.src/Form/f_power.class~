@@ -25,7 +25,7 @@
 
 Public Sub Form_Open()
   
-  M_Theme.Show_Theme
+  M_Theme_Launcher.Show_Theme
   Me.Center
   
   btn1.Picture = Image.Load("img/shutdown/shutdown.png").Picture

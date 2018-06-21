@@ -40,13 +40,13 @@ Public Sub copia_dir(path_origen As String, path_destino As String, Optional tip
   If Not Exist(path_destino) Then
     Mkdir path_destino
   Endif
-  arfile = Dir(path_origen, tipo, gb.file)  
-  For Each nombrefile In arfile  
+  arfile = Dir(path_origen, tipo, gb.file)  'extraemos los ficheros
+  For Each nombrefile In arfile  'los copiamos
     Copy path_origen &/ nombrefile To path_destino &/ nombrefile
   Next
   ardir = Dir(path_origen, "*", gb.Directory)
-  For Each nombredir In arDir 
-    copia_dir(path_origen &/ nombredir, path_destino &/ nombredir)
+  For Each nombredir In arDir 'extraemos los subdirectorios
+    copia_dir(path_origen &/ nombredir, path_destino &/ nombredir) 'usamos la recursividad
   Next
   
 End
@@ -60,15 +60,34 @@ Public Sub Copy_Progress()
   aarchivos.Clear
   ProgressBar1.Value = 0
   
+  'If lbDirOrig.Text And lbDirDest.Text Then
+  'If FileViewDesktop1.Current Then
   aarchivos = Dir(directoriorigen, "*", gb.File)
   incrementos = 1 / aarchivos.Count
   For Each unarchivo In aarchivos
     ProgressBar1.Value += incrementos
     lblStatus.Text = "Copiando " & unarchivo
     Wait 0.01     
-    
+    ' Para copiar, descomentar
+    'Copy directoriorigen &/ unarchivo To directoriodestino &/ unarchivo
     Copy directoriorigen To directoriodestino 
     
   Next
+  ' Message.Info("Copia completada")
+  ' Else
+  '   Message.Info("Faltan los directorios")
+  ' Endif  
+  
+End
+
+Public Sub btnCopiar_Click()
+  
+  'copia_dir("/home/herberth/tesdek/", "/home/edulibreos/Escritorio")
+  
+  'Copy_Progress
+  
+End
+
+Public Sub lblStatus_MouseDown()
   
 End

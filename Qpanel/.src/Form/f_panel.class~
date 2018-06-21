@@ -20,7 +20,6 @@
 ' Boston, MA  02110-1301  USA
 
 ' Homepage: http://http://sourceforge.net/projects/innovadesktop
-' This code belongs to Gambas, Fabien Bodard and was adapted for Innova Project
 
 Public cx As Connection
 Public rs As Result
@@ -61,6 +60,7 @@ Private DesktopEntry2 As DesktopFile
 Static Private $aDataDir As String[]
 Public Settings_Core_Innova As New Settings(Desktop.ConfigDir &/ "Innova/Innova_Config.conf")
 Public sList As New Settings(Desktop.ConfigDir &/ "Innova/List.conf")
+'Public sPath_Config As String = Desktop.ConfigDir &/ "Innova/List.conf"
 Private Const Margin As Integer = 5
 Private $hImage As Image
 Public _$IconName As String
@@ -80,15 +80,33 @@ Public Sub Init_Panel()
   Try sResult_Pos = Settings_Core_Innova["Panel/Panel_Position"]
   Try sResult_Background = Settings_Core_Innova["Panel/Background_Image"]
   
- 
+  ' f_panel.H = iResult
   
   Me.H = iSizePanel
-  Me.w = Screen.w  
-  Me.Top = (Screen.x - Me.x)
   
-  X11.SetWindowProperty(f_panel.Id, Atom["_NET_WM_STRUT"], Atom["CARDINAL"], [0, 0, iSizePanel, 0]) 
-  X11.SetWindowProperty(f_panel.Id, Atom["_NET_WM_STRUT_PARTIAL"], Atom["CARDINAL"], [0, 0, iSizePanel, 0, 0, 0, 0, 0, 0, 0, 0, desk_w])
-
+  ' Me.Top = (Screen.Height - Me.Height)
+  
+  ''ARRIBA
+  ' If (sResult_Pos = "Top") Then
+  '   Me.w = Screen.w  
+  '   Me.Top = (Screen.x - Me.x)
+  
+  '   X11.SetWindowProperty(f_panel.Id, Atom["_NET_WM_STRUT"], Atom["CARDINAL"], [0, 0, iSizePanel, 0]) 
+  '   X11.SetWindowProperty(f_panel.Id, Atom["_NET_WM_STRUT_PARTIAL"], Atom["CARDINAL"], [0, 0, iSizePanel, 0, 0, 0, 0, 0, 0, 0, 0, desk_w])
+  ' X11.SetWindowProperty(f_panel.Id, Atom("_NET_WM_WINDOW_TYPE"), Atom("ATOM"), Atom("_NET_WM_WINDOW_TYPE_DOCK"))
+  ' Endif
+  
+  ''ABAJO
+  'If (sResult_Pos = "Bottom") Then
+  Me.w = Screen.w  
+  Me.Top = (Screen.Height - Me.Height)
+  
+  X11.SetWindowProperty(f_panel.Id, Atom["_NET_WM_STRUT"], Atom["CARDINAL"], [0, 0, 0, iSizePanel])
+  X11.SetWindowProperty(f_panel.Id, Atom["_NET_WM_STRUT_PARTIAL"], Atom["CARDINAL"], [0, 0, 0, iSizePanel, 0, 0, 0, 0, 0, 0, 0, iSizePanel, desk_w])
+  
+  'X11.SetWindowProperty(f_panel.Id, Atom["_NET_WM_WINDOW_TYPE"], Atom["ATOM"], Atom["_NET_WM_WINDOW_TYPE_DOCK"])
+  'X11.SetWindowProperty(f_panel.Id, Atom["_NET_WM_WINDOW_TYPE"], Atom["ATOM"], Atom["_NET_WM_WINDOW_TYPE_DESKTOP"])
+  ''Show_No_Desktop
   
 End
 
@@ -98,6 +116,7 @@ Public Sub _new()
   Me.TopOnly = True
   $hWatcher = New DesktopWatcher(True) As "MyDTWatcher"
   
+  'desktop.Count = 3
   
 End
 
@@ -107,7 +126,8 @@ Public Sub iDesktop()
   Dim a As Integer
   Dim il As Short
   
- 
+  'Try iSize = Settings_Core_Innova["Panel/Size"]
+  '' M_Core.Show_No_Desktop
   
   For Each hCButton_App_Desktop In NoDesktop.Children
     hCButton_App_Desktop.Delete
@@ -117,7 +137,8 @@ Public Sub iDesktop()
     Inc il 
     hCButton_App_Desktop = New ToolButton(NoDesktop) As "TBDesktop"
     
-  
+    ' Print a
+    'hToggleDesktop.Picture = Picture["icon:/medium/desktop"].Image.Stretch(iSize, iSize).Picture
     hCButton_App_Desktop.h = iSize '- 2
     hCButton_App_Desktop.w = iSize '- 22
     hCButton_App_Desktop.Border = True
@@ -125,10 +146,14 @@ Public Sub iDesktop()
     hCButton_App_Desktop.Tag = il
     hCButton_App_Desktop.Text = il
     hCButton_App_Desktop.Tooltip = il
-        hCButton_App_Desktop.Mouse = 13
-
+    
+    hCButton_App_Desktop.Mouse = 13
+    'hCButton_App_Default.Image = pIcon.Image
+    
+    'hToggle_AppS.Image = pIcon.Image
   Next
-
+  'hToggleDesktop.AutoResize = True
+  'desktop.Count = 3
   
 End
 
@@ -149,10 +174,21 @@ Public Sub TimerPanel_Timer()
   
 End
 
+Public Sub Form_Leave()
+  
+  ' Init_Panel
+  
+End
 
+Public Sub Form_Move()
+  
+  'Init_Panel
+  
+End
 
 Public Sub Size_Control()
-
+  
+  ' AppsDefault.H = iSize
   CButtonStart.W = iSize
   CButtonStart.h = iSize
   CButtonDesktop.W = iSize
@@ -167,7 +203,8 @@ Public Sub Form_Open()
   hWindWatch = New DesktopWatcher As "WindWatch" 
   lsbWindRefresh()
   
-   
+  ''X11Systray.Show(SystrayDrawingArea.Id)
+  
   Try iSize = Settings_Core_Innova["Panel/Size"]
   
   X11Systray.Show(SystrayDrawingArea.Handle)
@@ -190,10 +227,13 @@ Public Sub Form_Open()
   
   Desktop_Windows_Select
   
+  ''X11.SetWindowProperty(f_panel.Id, Atom["_NET_WM_WINDOW_TYPE"], Atom["ATOM"], Atom["_NET_WM_WINDOW_TYPE_DOCK"])
+  
   X11.SetWindowProperty(Me.Id, Atom["_NET_WM_WINDOW_TYPE"], Atom["ATOM"], Atom["_NET_WM_WINDOW_TYPE_DOCK"])
   Init_Applets
   Show_Widget_All_Exec
-
+  
+  'M_Theme.Show_Theme
   
 End
 
@@ -201,7 +241,8 @@ Public Sub App_Default(Optional sFilter As String)
   
   Dim DesktopEntry As DesktopFile
   
- 
+  ' Try iSize = Settings_Core_Innova["Panel/Size"]
+  'sDir_Apps = Application.Path &/ "AppsDefault"
   AppsDefault.Children.Clear
   sDir_Apps = Desktop.ConfigDir &/ "Innova/Panel/AppsDefault"
   
@@ -223,7 +264,9 @@ Public Sub App_Default(Optional sFilter As String)
     hCButton_App_Default.Tag = DesktopEntry.Path
   Next
   
-
+  'hCButton_Home.Tooltip = DesktopEntry.Name
+  'hCButton_Home.Tag = DesktopEntry.Path
+  'btnHome.Image = Picture["icon:/48/home"].Image
 Catch
   
 End
@@ -233,7 +276,8 @@ Public Sub App_Bookmarks(Optional sFilter As String)
   Dim DesktopEntry As DesktopFile
   Dim pIcon As Picture
   
-
+  ' Try iSize = Settings_Core_Innova["Panel/Size"]
+  'sDir_Apps = Application.Path &/ "AppsDefault"
   AppBookmarks.Children.Clear
   sDir_Apps = Desktop.ConfigDir &/ "Innova/Panel/Apps"
   
@@ -264,10 +308,14 @@ End
 Public Sub CButtonAppBookmarks_Click()
   
   Dim sExec As String = Last.tag
-
+  'Dim sExec As String = Last.Item.key
   
   sExec = File.BaseName(sExec)
   Try DesktopApps[sExec].Exec()
+  
+  'runDesktopFile(sExec)
+  
+  '  CAnimation.Start(Last, "Opacity", 1, 1)
   CAnimation.Start(Last, "Opacity", 70, 250)
   
 End
@@ -275,35 +323,35 @@ End
 Public Sub CButtonAppBookmarks_MouseDown()
   
   CAnimation.Start(Last, "Opacity", 0.2, 1)
- 
+  'CAnimation.Start(Last, "Opacity", 70, 250)
   
 End
 
 Public Sub CButtonAppDefault_Enter()
   
   Last.Background = BACKGROUND_COLOR
- 
+  ' Last.Foreground = TEXT_COLOR
   
 End
 
 Public Sub CButtonAppDefault_Leave()
   
   Last.Background = Color.Transparent
- 
+  '  Last.Foreground = Color.White
   
 End
 
 Public Sub btnHome_Enter()
   
   Last.Background = BACKGROUND_COLOR
-  
+  '  Last.Foreground = TEXT_COLOR
   
 End
 
 Public Sub btnHome_Leave()
   
   Last.Background = Color.Transparent
- 
+  ' Last.Foreground = Color.White
   
 End
 
@@ -315,11 +363,18 @@ Public Sub CButtonAppDefault_Click()
   
 End
 
-
+Public Sub CButtonStart_Click001()
+  
+  'Shell User.Home &/ "QLauncher.gambas"
+  
+End
 
 Public Sub CButtonStart_Click()
   
-   
+  'Shell User.Home &/ "QLauncher.gambas"
+  
+  'f_launcher.Visible = If(f_launcher.Visible = 0, 1, 0)  
+  
   Dim sResult As String 
   
   Settings_Core_Innova.Reload()
@@ -329,18 +384,21 @@ Public Sub CButtonStart_Click()
   If (sResult = "Mini") Then
     M_Core.iShow = False
     Shell User.Home &/ "Launcher_Mini.gambas"
+    '   f_launcher_mini.Visible = If(f_launcher_mini.Visible = 0, 1, 0)  
     
   Endif
   
   If (sResult = "Tablet") Then
     M_Core.iShow = False
     Shell User.Home &/ "Launcher_Tablet.gambas"
-     
+    'f_launcher.Visible = If(f_launcher.Visible = 0, 1, 0)
+    
   Endif
   If (sResult = "CNB") Then
     M_Core.iShow = False
     Shell User.Home &/ "Launcher_CNB.gambas"
-     Endif
+    '  f_launcher_cnb_mini.Visible = If(f_launcher_cnb_mini.Visible = 0, 1, 0)  
+  Endif
   
   'Catch
   '  Debug "ERROR [ " & DConv(Error.Text) & " ]"
@@ -377,7 +435,7 @@ End
 
 Public Sub ResultIconWindows()
   
-
+  'iResult = Me.Width / 1.7
   iResult = Me.Width / 8
   iResult = iResult / hToggleTaskW 
   
@@ -674,7 +732,7 @@ Public Sub PictureBox1_MouseDown()
     
     For Each sSize In [CStr(Size), "256", "16", "22", "24", "32", "48", "64", "128", "scalable"]
       
-     
+      'Print (sDir &/ "icons" &/ sResult &/ sSize &/ "apps/" &/ File.BaseName(Last.tag))  
     Next
     
   Next
@@ -822,22 +880,22 @@ End
 
 Public Sub CButtonAppBookmarks_Enter()
   
-  sExec_Delete = Last.tag 
+  sExec_Delete = Last.tag 'User.Home &/ ".config/Innova/Panel/Apps/" & sExec
   Last.Background = BACKGROUND_COLOR
-  
+  ' Last.Foreground = TEXT_COLOR
   
 End
 
 Public Sub CButtonAppBookmarks_Leave()
   
   Last.Background = Color.Transparent
- 
+  ' Last.Foreground = Color.White
   
 End
 
 Public Sub mnuDelApp_Click()
   
-  Dim sApp_Del As String = sExec_Delete 
+  Dim sApp_Del As String = sExec_Delete 'User.Home &/ ".config/Innova/Panel/Apps/" & sExec
   
   Shell "rm -r " &/ sApp_Del
   Wait 0.1
@@ -914,13 +972,13 @@ End
 Public Sub CButtonDesktop_Enter()
   
   Last.Background = BACKGROUND_COLOR
-
+  ' Last.Foreground = TEXT_COLOR
   
 End
 
 Public Sub CButtonDesktop_Leave()
   
   Last.Background = Color.Transparent
-
+  'Last.Foreground = Color.White
   
 End

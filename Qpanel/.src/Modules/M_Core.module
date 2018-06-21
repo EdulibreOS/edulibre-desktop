@@ -1,0 +1,777 @@
+' Gambas module file
+
+' ' Gambas class file
+
+' Innova Project 
+' Copyright (C) Herberth Guzmán
+' herberthguzman@gmail.com
+'
+' This program is free software; you can redistribute it and/or modify
+' it under the terms of the GNU General Public License as published by
+' the Free Software Foundation; either version 2 of the License, or
+' (at your option) any later version.
+'
+' This program is distributed in the hope that it will be useful,
+' but WITHOUT ANY WARRANTY; without even the implied warranty of
+' MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+' GNU General Public License for more details.
+'
+' You should have received a copy of the GNU General Public License
+' along with this program; if not, write to the Free Software
+' Foundation, Inc., 51 Franklin St, Fifth Floor,
+' Boston, MA  02110-1301  USA
+
+' Homepage: http://http://sourceforge.net/projects/innovadesktop
+
+Public Settings_Core_Innova As New Settings(Desktop.ConfigDir &/ "Innova/Innova_Config.conf")
+Private iResult As Integer
+
+'''LAUNCHER
+
+Public sLang As String = ((Left(System.Language, 2)))
+Public sGroup_Cat As String = M_Var_Global.sGroup_Cat
+Private iSizeApps As Integer
+Private iSizeCat As Integer 
+Private sCat As String
+Public sCurCat As String
+Public sAppsExec As String
+Private ImgButtonApps As PushButton
+Private ImgBtnAppsCNB As PushButton
+Private ImgBtnCatCNB As PushButton
+Private ImgButtonCat As PushButton
+Private ImgButtonCatAll As PushButton
+Public sText As String
+Public sSendApps As String
+Public sSendApps1 As String
+
+Public sFontColor As String
+Public sFontName As String
+Public iFontSize As Integer
+
+Private $hIconView As ListView
+Public cx As Connection
+Public rs As Result
+'Public Settings_Core_Innova As New Settings(Desktop.ConfigDir &/ "Innova/Innova_Config.conf")
+Private sDirSend As String
+Public iShow As Boolean
+
+Private iResult_Text As Integer 
+Private iResult_Size As Integer 
+
+Private AllCat As String[] = [("Development"), ("Other"), ("Office"), ("Network"), ("Game"), ("AudioVideo"), ("System"), ("Settings"), ("Utility"), ("Graphics"), ("Education")]
+
+'Private AllCatCNB As String[] = [("Primero"), ("Segundo"), ("Tercero"), ("Cuarto"), ("Quinto"), ("Sexto")]
+Private AllCatCNB As String[] = [("Preescolar"), ("Primaria Básica"), ("Primaria Avanzada"), ("Básico"), ("Diversificado")]
+
+'Private cImgCatCNB As Collection = ["Primero": "primero", "Segundo": "segundo", "Tercero": "tercero", "Cuarto": "cuarto", "Quinto": "quinto", "Sexto": "sexto"]
+Private cImgCatCNB As Collection = ["Preescolar": "primero", "Primaria Básica": "segundo", "Primaria Avanzada": "tercero", "Básico": "cuarto", "Diversificado": "quinto"]
+
+Private cImgCat As Collection = ["Development": "development", "Other": "other", "Office": "office", "Network": "internet", "Game": "games", "AudioVideo": "multimedia", "System": "system", "Settings": "accessories", "Utility": "utilities", "Graphics": "graphics"]
+
+Private aCurCatApps As New String[]
+Public sDir As String
+Public sPath_Wall_Rnd As String
+Public sPath_Img_Rnd As String
+
+Public Function object_lock(o As Object)
+  
+  While Not (Object.IsLocked(o))
+    Object.Lock(o)
+  Wend
+  
+End
+
+Public Function object_unlock(o As Object)
+  
+  While Object.IsLocked(o)
+    Object.Unlock(o)
+  Wend
+  
+End
+
+Public Function image_from_svg(svg_file As String, rSize As String) As Image
+  
+  Dim hSvg As SvgImage
+  Dim hImage As Image
+  
+  If Not Exist(svg_file, True) Then Return Null
+  hSvg = SvgImage.Load(svg_file)
+  hImage = New Image(rSize, rSize, Color.Transparent)
+  Paint.Begin(hImage)
+  hSvg.Resize(rSize, rSize)
+  hSvg.Paint
+  Paint.End
+  Return hImage
+  
+End
+
+Public Function Load_image(img_file As String, Optional rSize As Integer = -1) As Image
+  
+  Dim i As New Image
+  
+  If Not Exist(img_file, True) Then Return Null
+  
+  If Lower(img_file) Ends ".svg" Then Return image_from_svg(img_file, rSize)
+  
+  If rSize <> -1 Then 
+    i = Image.Load(img_file)
+    If i.w <> rSize Then i = i.Stretch(rSize, rSize)
+    Return i
+  Endif  
+  
+  Return Image.Load(img_file)
+  
+End
+
+Public Sub Show_Windows_Manager()
+  
+  Dim O_Window As String
+  Dim sResult_WM As String 
+  
+  sResult_WM = Settings_Core_Innova["Session_Windows_Manager/Windows_Manager", f_panel]
+  
+  O_Window = sResult_WM
+  
+  Shell (O_Window & " --replace")
+  
+Catch
+  Debug "ERROR [ " & DConv(Error.Text) & " ]"  
+  
+End
+
+Public Sub Show_No_Desktop()
+  
+  Dim iDesktop As Integer
+  
+  iDesktop = Desktop.Count
+  
+  Try iResult = Settings_Core_Innova["Innova/No_Desktop"]
+  
+  If IsNull(iResult) Then
+    desktop.Count = iDesktop
+  Else
+    desktop.Count = iResult
+  Endif
+  
+End
+
+Public Sub Show_Active_Time_Wallpaper_Rnd()
+  
+  Dim sActive_Time_Rnd As String 
+  Dim sTime As Integer
+  
+  Try sActive_Time_Rnd = Settings_Core_Innova["Desktop/Time_Random"]
+  sTime = Val(sActive_Time_Rnd) 
+  f_wallpaper.TimerWallRand.Delay = Int(sTime)
+  
+Catch
+  '  Debug "ERROR [ " & DConv(Error.Text) & " ]"
+  
+End
+
+Public Sub Change_Wallpaper_Conf_Wallpaper()
+  
+  Settings_Core_Innova.Write(f_conf_wallpaper)
+  Settings_Core_Innova["Desktop/Wallpaper_Desktop"] = f_conf_wallpaper.txtselectfondo.Text
+  Settings_Core_Innova.Save
+  
+Catch
+  Debug "ERROR [ " & DConv(Error.Text) & " ]"
+  
+End
+
+Public Sub Show_Preview_Wallpaper()
+  
+  Dim sResult_Desktop As String 
+  Dim sResult_Desktop_Rand As String 
+  Dim sResult_Dir_Wallpaper_Desktop_Random As String
+  Dim sResult_Rnd_True As Integer
+  
+  Try sResult_Desktop = Settings_Core_Innova["Desktop/Wallpaper_Desktop"]
+  Try sResult_Desktop_Rand = Settings_Core_Innova["Desktop/Image_Wallpaper_Desktop_Random"]
+  Try sResult_Dir_Wallpaper_Desktop_Random = Settings_Core_Innova["Desktop/Dir_Wallpaper_Desktop_Random"]
+  Try sResult_Rnd_True = Settings_Core_Innova["Desktop/Wallpaper_Desktop_Random"]
+  
+  If (sResult_Rnd_True = "1") Then
+    
+    f_conf_wallpaper.txtselectfondo.Text = sResult_Dir_Wallpaper_Desktop_Random &/ sResult_Desktop_Rand
+    f_conf_wallpaper.img_Fondo.Picture = Picture[sResult_Dir_Wallpaper_Desktop_Random &/ sResult_Desktop_Rand] 'Picture[sResult_Desktop_Rand]
+    f_conf_wallpaper.msgInfo.Open(("Mode random background screen, <br> you can not select new background..."), Picture["icon:/32/info"])
+    f_conf_wallpaper.txtselectfondo.Enabled = False
+    f_conf_wallpaper.BtnOk.Enabled = False
+    
+  Else
+    f_conf_wallpaper.msgInfo.Visible = False
+    f_conf_wallpaper.img_Fondo.Picture = Picture[sResult_Desktop]
+    f_conf_wallpaper.txtselectfondo.Text = sResult_Desktop
+    f_conf_wallpaper.BtnOk.Enabled = True
+  Endif
+  
+  'endif
+Catch
+  '  Debug "ERROR [ " & DConv(Error.Text) & " ]"
+  
+End
+
+Public Sub Show_Wallpaper()
+  
+  Dim Settings_Config_Theme As Settings
+  Dim sResult_Inn_WallpaperImg As String
+  Dim sPath_Theme As String
+  
+  Dim sResult_Desktop_MyInn As String 
+  Dim sResult_Desktop_Rand_MyInn As String 
+  Dim sResult_Desktop_Wall As String 
+  Dim sResult_Desktop_Wall_Rand As String 
+  Dim sResult_Rnd_True As Integer 
+  Dim sResult_Dir_Wallpaper_Desktop_Random As String
+  Dim sDir As String
+  Dim sResultTheme As String
+  Dim sPath As String
+  
+  Try sResult_Desktop_MyInn = Settings_Core_Innova["Desktop/Wallpaper_Desktop"]
+  Try sResult_Desktop_Rand_MyInn = Settings_Core_Innova["Desktop/Image_Wallpaper_Desktop_Random"]
+  Try sResult_Desktop_Wall = Settings_Core_Innova["Desktop/Wallpaper_Desktop", f_wallpaper]
+  Try sResult_Desktop_Wall_Rand = Settings_Core_Innova["Desktop/Image_Wallpaper_Desktop_Random"]
+  Try sResult_Dir_Wallpaper_Desktop_Random = Settings_Core_Innova["Desktop/Dir_Wallpaper_Desktop_Random"]
+  Try sResult_Rnd_True = Settings_Core_Innova["Desktop/Wallpaper_Desktop_Random"]
+  
+  Settings_Core_Innova.Reload()
+  For Each sDir In ["/usr/share/Innova/Theme/", Desktop.ConfigDir &/ "Innova/Theme/"]
+    Try sResultTheme = Settings_Core_Innova["Style_Desktop/Theme_Name_Innova"]
+  Next
+  
+  sPath = sDir & sResultTheme &/ sResultTheme & ".Inn"
+  Settings_Config_Theme = New Settings(sPath)
+  sPath_Theme = File.Dir(sPath) 
+  
+  sResult_Inn_WallpaperImg = Settings_Config_Theme["Meta_Theme/Inn_Wallpaper_Img"]
+  
+  If sResultTheme Then 
+    
+    If (sResult_Rnd_True = "1") Then
+      
+      f_wallpaper.img_Fondo.Picture = Picture[sResult_Dir_Wallpaper_Desktop_Random &/ sResult_Desktop_Wall_Rand]
+      f_wallpaper.img_Fondo.Refresh
+      Wait 0.5
+    Endif
+    
+    If IsNull(sResult_Desktop_MyInn) Then
+      
+      f_wallpaper.img_Fondo.Picture = Picture[sPath_Theme &/ sResult_Inn_WallpaperImg]
+    Else
+      
+      f_wallpaper.img_Fondo.Picture = Picture[sResult_Desktop_Wall]
+      
+    Endif
+    
+  Endif
+  
+  f_wallpaper.Refresh
+  f_wallpaper.img_Fondo.Refresh
+  '  Wait 0.5
+  'Catch
+  ' Debug "ERROR [ " & DConv(Error.Text) & " ]"
+  
+End
+
+Public Sub Show_Home()
+  
+  Dim sResult_File_Manager As String 
+  
+  sResult_File_Manager = Settings_Core_Innova["Panel_Command/File_Manager", f_panel]
+  Exec [(sResult_File_Manager)]
+  
+Catch
+  Debug "ERROR [ " & DConv(Error.Text) & " ]"
+  
+End
+
+''''LAUNCHER
+
+Public Sub FillList_Cat(Optional sFilter As String)
+  
+End
+
+Public Sub GetCat(sApp As String, Language As String) As String
+  
+  Dim hApp As DesktopAppsCat = DesktopAppsCat[sApp]
+  
+  If hApp.GetGenericName(Language) Then 
+    Return hApp.GetGenericName(Language)
+  Else
+    If hApp.GetName(Language) Then
+      Return hApp.GetName(Language)
+    Else
+      If hApp.GenericName Then 
+        Return hApp.GenericName
+      Endif
+    Endif
+  Endif
+  
+  Return hApp.Name
+Catch
+  
+End
+
+Public Sub FillList_Cat_Mini_Allcat(Optional sFilter As String)
+  
+  Dim hImage As Image
+  Dim s As String
+  Dim i As Integer
+  
+  If AllCat = Null Then Return
+  f_launcher_mini.IconViewCat.Clear
+  ' f_launcher_mini.IconViewCatAll.Clear
+  
+  ' f_launcher_mini.IconViewCatAll.Add(0, "All Apps", Picture["icon:/32/select-all"])
+  ' f_launcher_mini.IconViewCatAll.Background = Color.Transparent
+  
+  For Each s In AllCat.Sort(gb.Natural) 
+    'AllCat.Sort(gb.Ascent)
+    Inc i
+    
+    Try f_launcher_mini.IconViewCat.Add(AllCat[i], GetCat(AllCat[i], sLang), Stock["32/categories/applications-" & LCase(cImgCat[s])].Image.Picture)
+    f_launcher_mini.IconViewCat.Background = Color.Transparent
+    
+  Next
+  
+End
+
+Public Sub FillList_Cat_CNB_Mini(Optional sFilter As String)
+  
+  Dim hImage As Image
+  Dim s As String
+  Dim i As Integer = -1
+  
+  iSizeCat = Settings_Core_Innova["Launcher/Icon_Size"]
+  f_launcher_cnb_mini.PanelCat.w = iSizeCat
+  
+  If AllCatCNB = Null Then Return
+  
+  'f_launcher_cnb_mini.IconViewCat.Clear
+  f_launcher_cnb_mini.ScrollCat.Children.Clear
+  f_launcher_cnb_mini.ScrollCat.Background = Color.Transparent
+  f_launcher_cnb_mini.PanelCat.Background = Color.Transparent
+  
+  For Each s In AllCatCNB
+    'AllCatCNB.Sort(gb.Ascent)
+    Inc i
+    
+    ImgBtnCatCNB = New PushButton(f_launcher_cnb_mini.ScrollCat) As "IButtonCatCNB"
+    ImgBtnCatCNB.w = iSizeCat 
+    ImgBtnCatCNB.h = iSizeCat - 10
+    
+    '  If iResult_Text = 1 Then
+    ImgBtnCatCNB.Text = AllCatCNB[i]
+    ' Endif
+    
+    ImgBtnCatCNB.Mouse = 13
+    
+    ImgBtnCatCNB.Picture = Picture["img/cnb/" & LCase(cImgCatCNB[s] & ".png")].Image.Stretch(48, 48).Picture
+    
+    ' ImgBtnCatCNB.Foreground = (sFontColor)
+    ImgBtnCatCNB.Background = Color.Transparent
+    'Try ImgBtnCatCNB.Font.Size = (iFontSize)
+    'ImgBtnCatCNB.Font.Name = (sFontName)
+    ImgBtnCatCNB.Tag = s
+    
+    'f_launcher_cnb.IconViewCat.Add(AllCat[i], GetCat(AllCat[i], sLang), Stock["32/categories/applications-" & LCase(cImgCat[s])].Image.Picture)
+    'f_launcher_cnb.IconViewCat.Add(i, AllCatCNB[i], Picture["img/cnb/Primero.png"].Image.Stretch(32, 32).Picture)
+    
+    'Try f_launcher_cnb_mini.IconViewCat.Add(AllCatCNB[i], AllCatCNB[i], Picture["img/cnb/" & LCase(cImgCatCNB[s] & ".png")].Image.Stretch(48, 48).Picture)
+    'Try f_launcher_cnb_mini.IconViewCat.Add(AllCatCNB[i], AllCatCNB[i])
+    'f_launcher_cnb_mini.IconViewCat.Background = Color.Transparent
+    'Try f_launcher_cnb_mini.IconViewCat.Font.Size = (iFontSize + 2)
+    ' Try f_launcher_cnb_mini.IconViewCat.Font.Bold = True
+    'f_launcher_cnb_mini.IconViewCat.Font.Name = (sFontName)
+    
+  Next
+  
+End
+
+Public Sub IButtonCatCNB_Click()
+  
+  Dim iResult As Integer 
+  
+  Settings_Core_Innova.Reload()
+  Try iResult = Settings_Core_Innova["Launcher/Cat_MouseMove"]
+  
+  If iResult = 0 Then
+    M_Core.sCurCat = Last.tag 'DesktopAppsCat[Last.Item.key].Name
+    M_Core.FillList_Apps_CNB_Mini
+    f_launcher_cnb_mini.txtSearchApps.Clear
+    
+  Endif
+  
+End
+
+Public Sub IButtonCatCNB_Enter()
+  
+  Dim iResult As Integer 
+  
+  Settings_Core_Innova.Reload()
+  Try iResult = Settings_Core_Innova["Launcher/Cat_MouseMove"]
+  
+  If iResult = 1 Then
+    
+    M_Core.sCurCat = Last.tag 'DesktopAppsCat[Last.Item.key].Name
+    M_Core.FillList_Apps_CNB_Mini
+    
+  Endif
+  
+End
+
+Public Sub IButtonCatCNB_Leavel()
+  
+  ' f_launcher_cnb_mini.txtlabelcat.Visible = False
+  
+End
+
+Public Sub FillList_Cat_Mini(Optional sFilter As String)
+  
+  Dim s As String
+  
+  Settings_Core_Innova.Reload()
+  iResult_Text = Settings_Core_Innova["Launcher/Show_Text"]
+  
+  iSizeCat = f_launcher_mini.H / 16
+  
+  f_launcher_mini.IconViewCat.Clear
+  'f_launcher_mini.IconViewCatAll.Clear
+  
+  'f_launcher_mini.IconViewCatAll.Add(0, "All Apps", Picture["icon:/32/select-all"].Image.Stretch(iSizeCat, iSizeCat).Picture)
+  'f_launcher_mini.IconViewCatAll.Background = Color.Transparent
+  
+  For Each s In DesktopAppsCat 
+    If DesktopAppsCat[s].Group.Find("Innova") > - 1 Then
+      
+      If DesktopAppsCat[s].NoDisplay Then Continue
+      If sFilter And If Not InStr(DesktopAppsCat[s].Group, sFilter, 0, gb.IgnoreCase) Then Continue
+      If DesktopAppsCat[s].Category.Count > 0 Then
+        sCat = DesktopAppsCat[s].Category[0] 
+      Endif
+      
+      f_launcher_mini.IconViewCat.Add(s, GetAppNameCat(s, sLang), DesktopAppsCat[s].GetIcon(iSizeCat).Stretch(iSizeCat, iSizeCat).Picture)
+      f_launcher_mini.IconViewCat.Sorted = True
+      f_launcher_mini.IconViewCat.Background = Color.Transparent
+      f_launcher_mini.IconViewCat.Foreground = (sFontColor)
+      Try f_launcher_mini.IconViewCat.Font.Size = (iFontSize) 
+      f_launcher_mini.IconViewCat.Font.Name = (sFontName)
+      
+    Endif
+    
+    DesktopAppsCat[s].Reset
+    
+  Next
+  
+Catch
+  '  Debug "ERROR [ " & DConv(Error.Text) & " ]"
+  
+End
+
+Public Sub IButtonAppsTest_Enter()
+  
+  Dim iSize As Integer = 96
+  
+  Last.h = Last.H + 12
+  Last.w = Last.w + 12
+  'Last.Image = Last.Image.Stretch(iSize, iSize)
+  Last.Picture = Last.Picture.Image.Stretch(iSize, iSize).Picture
+  
+End
+
+Public Sub IButtonAppsTest_Leave()
+  
+  Dim iSize As Integer = 96
+  
+  Last.H = Last.H - 12
+  Last.w = Last.w - 12
+  'Last.Image = Last.Image.Stretch(iSize, iSize)
+  Last.Picture = Last.Picture.Image.Stretch(iSize, iSize).Picture
+  
+End
+
+Public Sub FillList_All_CNB_Mini(Optional sFilter As String)
+  
+  Dim s As String
+  Dim i As Integer
+  
+  Settings_Core_Innova.Reload()
+  iResult_Text = Settings_Core_Innova["Launcher/Show_Text"]
+  iSizeApps = Settings_Core_Innova["Launcher/Icon_Size"]
+  
+  f_launcher_cnb_mini.ScrollApps.Children.Clear
+  
+  For Each s In DesktopApps
+    
+    If DesktopApps[s].NoDisplay Then Continue
+    If sFilter And If Not InStr(DesktopApps[s].Name, sFilter, 0, gb.IgnoreCase) Then Continue
+    
+    ImgBtnAppsCNB = New PushButton(f_launcher_cnb_mini.ScrollApps) As "IButtonApps"
+    ImgBtnAppsCNB.w = iSizeApps - 5
+    ImgBtnAppsCNB.h = iSizeApps - 5
+    
+    If iResult_Text = 1 Then
+      ImgBtnAppsCNB.Text = DesktopApps[s].Name
+    Endif
+    
+    ImgBtnAppsCNB.Mouse = 13
+    ImgBtnAppsCNB.Picture = DesktopApps[s].GetIcon(iSizeApps).Stretch(iSizeApps, iSizeApps).Picture
+    
+    'ImgBtnAppsCNB.Foreground = (sFontColor)
+    ImgBtnAppsCNB.Background = Color.Transparent
+    Try ImgBtnAppsCNB.Font.Size = (iFontSize)
+    ImgBtnAppsCNB.Font.Name = (sFontName)
+    ImgBtnAppsCNB.Tag = s
+    ' DesktopApps[s].Reset
+  Next
+  
+End
+
+Public Sub FillList_Apps_Reset(Optional sFilter As String)
+  
+  Dim s As String
+  
+  If Not sCat Then
+    
+    For Each s In DesktopApps
+      
+      If DesktopApps[s].Category.Find(sCurCat) > -1 Then
+        DesktopApps[s].Reset
+      Endif
+    Next
+    
+  Endif
+  'Catch
+  '  Debug "ERROR [ " & DConv(Error.Text) & " ]"
+  
+End
+
+Public Sub GetAppNameCat(sApp As String, Language As String) As String
+  
+  Dim hAppCat As DesktopAppsCat = DesktopAppsCat[sApp]
+  
+  If hAppCat.GetName(Language) Then 
+    Return hAppCat.GetName(Language)
+  Else
+    If hAppCat.GetGenericName(Language) Then
+      Return hAppCat.GetGenericName(Language)
+    Else
+      If hAppCat.Name Then 
+        Return hAppCat.Name
+      Endif
+    Endif
+  Endif
+  
+  Return hAppCat.Name
+Catch
+  '  Debug "ERROR [ " & DConv(Error.Text) & " ]"
+  
+End
+
+Public Function GetAppName(sApp As String, Language As String) As String
+  
+  Dim hApp As DesktopApps = DesktopApps[sApp]
+  
+  If hApp.GetName(Language) Then 
+    Return hApp.GetName(Language)
+  Else
+    If hApp.GetGenericName(Language) Then
+      Return hApp.GetGenericName(Language)
+    Else
+      If hApp.Name Then 
+        Return hApp.Name
+      Endif
+    Endif
+  Endif
+  
+  Return hApp.Name
+  'Catch
+  '  Debug "ERROR [ " & DConv(Error.Text) & " ]"
+  
+End
+
+Public Function GetAppComent(sApp As String, Language As String) As String
+  
+  Dim hApps As DesktopApps = DesktopApps[sApp]
+  
+  If hApps.GetComment(Language) Then 
+    Return hApps.GetComment(Language)
+  Else
+    If hApps.GetGenericName(Language) Then
+      Return hApps.GetGenericName(Language)
+    Else
+      If hApps.Comment Then 
+        Return hApps.Comment
+      Endif
+    Endif
+  Endif
+  Return hApps.Comment
+  
+Catch
+  ' Debug "ERROR [ " & DConv(Error.Text) & " ]"
+  
+End
+
+Public Sub SendDesk()
+  
+  Dim sCopy As String
+  Dim sDest As String 
+  Dim sFile As String 
+  Dim sDataDir As String
+  
+  sDest = Desktop.GetDirectory("DESKTOP")
+  'For Each sDataDir In [Desktop.DataDir &/ "applications/", "/usr/share/applications/"]
+  For Each sDataDir In ["/usr/share/applications/", "/usr/share/applications/kde4/", Desktop.DataDir &/ "applications/"]
+    
+    sFile = sDataDir & sSendApps & ".desktop"
+    sCopy = "cp -r " & sFile & " " & sDest 
+    Shell sCopy Wait
+    
+  Next
+  
+End
+
+Public Sub SendPanel()
+  
+  Dim sSend As String = Desktop.ConfigDir &/ "Innova/Panel/Apps"
+  Dim sFile As String = sSendApps & ".desktop"
+  Dim sDir As String
+  Dim sCopy As String
+  
+  For Each sDir In ["/usr/share/applications/", "/usr/share/applications/kde4/", Desktop.DataDir &/ "applications/"]
+    sCopy = "cp -r " & sDir & sFile & " " & sSend 
+    Inc Application.Busy
+    Shell sCopy Wait
+    Dec Application.Busy
+  Next
+  
+End
+
+Public Sub SendBook()
+  
+  Dim sSend As String = Desktop.ConfigDir &/ "Innova/App_Bookmark"
+  Dim sFile As String = sSendApps & ".desktop"
+  Dim sDir As String
+  Dim sCopy As String
+  
+  For Each sDir In ["/usr/share/applications/", "/usr/share/applications/kde4/", Desktop.DataDir &/ "applications/"]
+    sCopy = "cp -r " & sDir & sFile & " " & sSend 
+    Inc Application.Busy
+    Shell sCopy Wait
+    Dec Application.Busy
+  Next
+  
+End
+
+' Debug "ERROR [ " & DConv(Error.Text) & " ]" 
+
+'''SHOW USER
+Public Sub User_System()
+  
+  Dim User_Sys As String
+  
+  Shell "whoami" To User_Sys
+  f_launcher_mini.lblusuario.Text = User_Sys
+  f_launcher_cnb_mini.lblusuario.Text = User_Sys
+  ' f_settings.lblusuario.Text = User_Sys
+Catch
+  Debug "ERROR [ " & DConv(Error.Text) & " ]"
+  
+End
+
+Public Sub Update_Img_User_Launcher()
+  
+  Settings_Core_Innova.Write(f_launcher_mini)
+  Settings_Core_Innova["Launcher/Image_User"] = M_Var_Global.sPicUser
+  Settings_Core_Innova.Save
+Catch
+  Debug "ERROR [ " & DConv(Error.Text) & " ]"
+  
+End
+
+Public Sub Show_Img_User_Launcher()
+  
+  Dim sResult As String 
+  
+  sResult = Settings_Core_Innova["Launcher/Image_User"]
+  f_launcher_mini.PicUsuario.Picture = Picture[sResult].Image.Stretch(32, 32).Picture 
+  'f_settings.PicUsuario.Picture = Picture[sResult].Image.Stretch(128, 128).Picture 
+  'Catch
+  '  Debug "ERROR [ " & DConv(Error.Text) & " ]" 
+  
+End
+
+Public Sub Randomize_Wallpaper()
+  
+  Dim $Files As String[]
+  Dim i As Integer
+  
+  Dim sResult_Dir_Rnd_Wall As String 
+  Dim sResult_Rnd_True As String 
+  
+  Try sResult_Dir_Rnd_Wall = Settings_Core_Innova["Desktop/Dir_Wallpaper_Desktop_Random", f_wallpaper]
+  sResult_Rnd_True = Settings_Core_Innova["Desktop/Wallpaper_Desktop_Random", f_wallpaper]
+  
+  sDir = sResult_Dir_Rnd_Wall
+  $Files = Dir(sDir, "*.bmp")
+  $Files.Insert(Dir(sDir, "*.jpg"))
+  $Files.Insert(Dir(sDir, "*.jpeg"))
+  $Files.Insert(Dir(sDir, "*.png"))
+  
+  i = Int(Rnd(0, $Files.Max))
+  
+  If sResult_Rnd_True = 1 Then 
+    Settings_Core_Innova.Write(f_wallpaper)
+    Settings_Core_Innova["Desktop/Image_Wallpaper_Desktop_Random"] = $Files[i] 
+    Settings_Core_Innova.Save
+  Else
+    Settings_Core_Innova.Write(f_wallpaper)
+    Settings_Core_Innova["Desktop/Image_Wallpaper_Desktop_Random"] = ""
+    Settings_Core_Innova.Save
+  Endif
+  
+  f_wallpaper.img_Fondo.Picture = Picture[sdir &/ $Files[i]]
+  sPath_Img_Rnd = sdir &/ $Files[i]
+  Print sPath_Img_Rnd
+  'Catch
+  '  Debug "ERROR [ " & DConv(Error.Text) & " ]"
+  
+End
+
+Public Sub Show_Time_Wallpaper_Rnd()
+  
+  Dim sResult_Desk_Time_Rnd As Integer 
+  Dim sTime As Integer
+  
+  Try sResult_Desk_Time_Rnd = Settings_Core_Innova["Desktop/Time_Random", f_wallpaper]
+  
+  sTime = (sResult_Desk_Time_Rnd) / 3600000
+  f_wallpaper.TimerWallRand.Delay = (sTime)
+  
+  'Catch
+  '  Debug "ERROR [ " & DConv(Error.Text) & " ]"
+  
+End
+
+Public Sub Show_Preview_Wallpaper_RND()
+  
+  Dim sResult_Desktop As String 
+  Dim sResult_Desktop_Rand As String 
+  Dim sResult_Dir_Wallpaper_Desktop_Random As String
+  Dim iResult_Rnd_True As Integer
+  
+  Try sResult_Desktop = Settings_Core_Innova["Desktop/Wallpaper_Desktop"]
+  Try sResult_Desktop_Rand = Settings_Core_Innova["Desktop/Image_Wallpaper_Desktop_Random"]
+  Try sResult_Dir_Wallpaper_Desktop_Random = Settings_Core_Innova["Desktop/Dir_Wallpaper_Desktop_Random"]
+  Try iResult = Settings_Core_Innova["Desktop/Wallpaper_Desktop_Random"]
+  
+  If (iResult = 1) Then
+    f_wallpaper.img_Fondo.Picture = Picture[sResult_Dir_Wallpaper_Desktop_Random &/ sResult_Desktop_Rand]
+    f_wallpaper.img_Fondo.Refresh
+    
+    Print iResult   
+  Endif
+  
+End

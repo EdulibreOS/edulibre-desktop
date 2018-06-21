@@ -3,193 +3,217 @@ msgid ""
 msgstr ""
 "#-#-#-#-#  #project.pot (Qpanel 3.11.2)  #-#-#-#-#\n"
 "Project-Id-Version: Qpanel 3.11.2\n"
-"POT-Creation-Date: 2018-06-15 17:01 UTC\n"
+"POT-Creation-Date: 2018-06-09 02:20 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  Atom.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-06-15 17:01 UTC\n"
+"POT-Creation-Date: 2018-06-04 18:53 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  CAbout.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-06-15 17:01 UTC\n"
+"POT-Creation-Date: 2018-06-04 18:53 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  CAnimation.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-06-15 17:01 UTC\n"
+"POT-Creation-Date: 2018-06-04 18:53 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  CButton.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-06-15 17:01 UTC\n"
+"POT-Creation-Date: 2018-06-04 18:53 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  CCat.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-06-15 17:01 UTC\n"
+"POT-Creation-Date: 2018-06-04 18:53 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  CWelcome.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-06-15 17:01 UTC\n"
+"POT-Creation-Date: 2018-06-04 18:53 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  Cls_Start.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-06-15 17:01 UTC\n"
+"POT-Creation-Date: 2018-06-04 18:53 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  DesktopApps.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-06-15 17:01 UTC\n"
+"POT-Creation-Date: 2018-06-04 18:53 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  DesktopAppsCat.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-06-15 17:01 UTC\n"
+"POT-Creation-Date: 2018-06-04 18:53 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  DesktopApps_Desk.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-06-15 17:01 UTC\n"
+"POT-Creation-Date: 2018-06-04 18:53 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  LC_MESSAGES.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-06-15 17:01 UTC\n"
+"POT-Creation-Date: 2018-06-04 18:53 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  M_Core.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-06-15 17:01 UTC\n"
+"POT-Creation-Date: 2018-06-04 18:53 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  M_DB.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-06-15 17:01 UTC\n"
+"POT-Creation-Date: 2018-06-04 18:53 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  M_DesktopEntry.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-06-15 17:01 UTC\n"
+"POT-Creation-Date: 2018-06-04 18:53 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  M_Init.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-06-15 17:01 UTC\n"
+"POT-Creation-Date: 2018-06-04 18:53 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  M_OBS_Global.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-06-15 17:01 UTC\n"
+"POT-Creation-Date: 2018-06-04 18:53 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  M_Theme.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-06-15 17:01 UTC\n"
+"POT-Creation-Date: 2018-06-04 18:53 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  M_Var_Global.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-06-15 17:01 UTC\n"
+"POT-Creation-Date: 2018-06-04 18:53 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  PushButton.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-06-15 17:01 UTC\n"
+"POT-Creation-Date: 2018-06-04 18:53 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  f_about.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-06-15 17:01 UTC\n"
+"POT-Creation-Date: 2018-06-04 18:53 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  f_about_dist.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-06-15 17:01 UTC\n"
+"POT-Creation-Date: 2018-06-04 18:53 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  f_compress.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-06-15 17:01 UTC\n"
+"POT-Creation-Date: 2018-06-04 18:53 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  f_conf_wallpaper.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-06-15 17:01 UTC\n"
+"POT-Creation-Date: 2018-06-04 18:53 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  f_date.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-06-15 17:01 UTC\n"
+"POT-Creation-Date: 2018-06-04 18:53 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  f_gallery_wallpaper.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-06-15 17:01 UTC\n"
+"POT-Creation-Date: 2018-06-04 18:53 UTC\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"#-#-#-#-#  f_launcher_cnb_mini.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
+"Project-Id-Version: $(PACKAGE) $(VERSION)\n"
+"POT-Creation-Date: 2018-06-04 18:53 UTC\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"#-#-#-#-#  f_launcher_mini.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
+"Project-Id-Version: $(PACKAGE) $(VERSION)\n"
+"POT-Creation-Date: 2018-06-04 18:53 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  f_panel.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-06-15 17:01 UTC\n"
+"POT-Creation-Date: 2018-06-09 02:20 UTC\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"#-#-#-#-#  f_power.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
+"Project-Id-Version: $(PACKAGE) $(VERSION)\n"
+"POT-Creation-Date: 2018-06-04 18:53 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  f_progressbar.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-06-15 17:01 UTC\n"
+"POT-Creation-Date: 2018-06-04 18:53 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  f_properties.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-06-15 17:01 UTC\n"
+"POT-Creation-Date: 2018-06-04 18:53 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  f_properties_mixed.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-06-15 17:01 UTC\n"
+"POT-Creation-Date: 2018-06-04 18:53 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  f_splash.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-06-15 17:01 UTC\n"
+"POT-Creation-Date: 2018-06-04 18:53 UTC\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"#-#-#-#-#  f_style_launcher.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
+"Project-Id-Version: $(PACKAGE) $(VERSION)\n"
+"POT-Creation-Date: 2018-06-04 18:53 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  f_wallpaper.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-06-15 17:01 UTC\n"
+"POT-Creation-Date: 2018-06-04 18:53 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -198,19 +222,19 @@ msgstr ""
 msgid "Qpanel"
 msgstr ""
 
-#: CAbout.class:107
+#: CAbout.class:108
 msgid "This program is published under the GNU General Public License."
 msgstr ""
 
-#: CAbout.class:107
+#: CAbout.class:108
 msgid "The Gambas font is published under the SIL Open Font License."
 msgstr ""
 
-#: CWelcome.class:108
+#: CWelcome.class:109
 msgid "This operating system EdulibreOS "
 msgstr ""
 
-#: CWelcome.class:108
+#: CWelcome.class:109
 msgid "Is published under the GNU General Public License."
 msgstr ""
 
@@ -284,7 +308,7 @@ msgstr ""
 msgid "¿Want to delete the select splash?"
 msgstr ""
 
-#: LC_MESSAGES.module:47 f_wallpaper.class:288
+#: LC_MESSAGES.module:47 f_wallpaper.class:291
 msgid "Enter a Name..."
 msgstr ""
 
@@ -310,7 +334,71 @@ msgstr ""
 msgid "Destination file exists. OverWrite"
 msgstr ""
 
-#: M_Core.module:187
+#: M_Core.module:61
+msgid "Development"
+msgstr ""
+
+#: M_Core.module:61
+msgid "Other"
+msgstr ""
+
+#: M_Core.module:61
+msgid "Office"
+msgstr ""
+
+#: M_Core.module:61
+msgid "Network"
+msgstr ""
+
+#: M_Core.module:61
+msgid "Game"
+msgstr ""
+
+#: M_Core.module:61
+msgid "AudioVideo"
+msgstr ""
+
+#: M_Core.module:61 f_about.form:208 f_wallpaper.class:103
+msgid "System"
+msgstr ""
+
+#: M_Core.module:61
+msgid "Settings"
+msgstr ""
+
+#: M_Core.module:61
+msgid "Utility"
+msgstr ""
+
+#: M_Core.module:61
+msgid "Graphics"
+msgstr ""
+
+#: M_Core.module:61
+msgid "Education"
+msgstr ""
+
+#: M_Core.module:64
+msgid "Preescolar"
+msgstr ""
+
+#: M_Core.module:64
+msgid "Primaria Básica"
+msgstr ""
+
+#: M_Core.module:64
+msgid "Primaria Avanzada"
+msgstr ""
+
+#: M_Core.module:64
+msgid "Básico"
+msgstr ""
+
+#: M_Core.module:64
+msgid "Diversificado"
+msgstr ""
+
+#: M_Core.module:199
 msgid ""
 "Mode random background screen, <br> you can not select new background..."
 msgstr ""
@@ -333,7 +421,8 @@ msgstr ""
 
 #: f_about.form:84 f_about_dist.form:83 f_compress.form:66
 #: f_conf_wallpaper.form:77 f_gallery_wallpaper.form:55 f_panel.form:57
-#: f_properties.form:27 f_properties_mixed.form:129 f_wallpaper.form:175
+#: f_power.form:60 f_properties.form:27 f_properties_mixed.form:129
+#: f_style_launcher.form:57 f_wallpaper.form:175
 msgid "Close"
 msgstr ""
 
@@ -412,10 +501,6 @@ msgstr ""
 msgid "Thanks"
 msgstr ""
 
-#: f_about.form:208 f_wallpaper.class:103
-msgid "System"
-msgstr ""
-
 #: f_about.class:30
 msgid "Version "
 msgstr ""
@@ -459,11 +544,11 @@ msgstr ""
 msgid "Donations"
 msgstr ""
 
-#: f_about_dist.class:77
+#: f_about_dist.class:81
 msgid "Name"
 msgstr ""
 
-#: f_about_dist.class:79
+#: f_about_dist.class:83
 msgid "Country"
 msgstr ""
 
@@ -487,39 +572,39 @@ msgstr ""
 msgid "Change wallpaper"
 msgstr ""
 
-#: f_conf_wallpaper.form:71 f_gallery_wallpaper.form:48 f_wallpaper.class:288
+#: f_conf_wallpaper.form:71 f_gallery_wallpaper.form:48 f_wallpaper.class:291
 msgid "Ok"
 msgstr ""
 
-#: f_conf_wallpaper.class:47
+#: f_conf_wallpaper.class:49
 msgid "The theme has been changed successfully."
 msgstr ""
 
-#: f_conf_wallpaper.class:56
+#: f_conf_wallpaper.class:58 f_launcher_mini.class:81
 msgid "Image Archive"
 msgstr ""
 
-#: f_conf_wallpaper.class:57
+#: f_conf_wallpaper.class:59 f_launcher_mini.class:82
 msgid "Image PNG"
 msgstr ""
 
-#: f_conf_wallpaper.class:57
+#: f_conf_wallpaper.class:59 f_launcher_mini.class:82
 msgid "Image JPG"
 msgstr ""
 
-#: f_conf_wallpaper.class:57
+#: f_conf_wallpaper.class:59 f_launcher_mini.class:82
 msgid "Image JPEG"
 msgstr ""
 
-#: f_conf_wallpaper.class:57
+#: f_conf_wallpaper.class:59 f_launcher_mini.class:82
 msgid "Image SVG"
 msgstr ""
 
-#: f_conf_wallpaper.class:57
+#: f_conf_wallpaper.class:59 f_launcher_mini.class:82
 msgid "Image BMP of Windows"
 msgstr ""
 
-#: f_date.class:51
+#: f_date.class:52
 msgid "Week "
 msgstr ""
 
@@ -541,6 +626,54 @@ msgstr ""
 
 #: f_gallery_wallpaper.form:117
 msgid "Get New Wallpaper"
+msgstr ""
+
+#: f_launcher_cnb_mini.form:41 f_launcher_mini.form:52
+msgid "mnuBookmark"
+msgstr ""
+
+#: f_launcher_cnb_mini.form:45 f_launcher_mini.form:56
+msgid "Delete Bookmark"
+msgstr ""
+
+#: f_launcher_cnb_mini.form:62 f_launcher_mini.form:101
+msgid "Show Categories"
+msgstr ""
+
+#: f_launcher_cnb_mini.form:170
+msgid "User"
+msgstr ""
+
+#: f_launcher_mini.form:62
+msgid "mnuLauncher"
+msgstr ""
+
+#: f_launcher_mini.form:66 f_wallpaper.form:80
+msgid "Open"
+msgstr ""
+
+#: f_launcher_mini.form:74
+msgid "Add to Desktop"
+msgstr ""
+
+#: f_launcher_mini.form:79
+msgid "Add to Panel"
+msgstr ""
+
+#: f_launcher_mini.form:84
+msgid "Add to Bookmark"
+msgstr ""
+
+#: f_launcher_mini.form:210
+msgid "Change Image"
+msgstr ""
+
+#: f_launcher_mini.form:219
+msgid "usuario"
+msgstr ""
+
+#: f_launcher_mini.class:209
+msgid "Category: "
 msgstr ""
 
 #: f_panel.form:45
@@ -569,6 +702,18 @@ msgstr ""
 
 #: f_panel.form:191
 msgid "Show Desktop"
+msgstr ""
+
+#: f_power.form:29
+msgid "Power Off"
+msgstr ""
+
+#: f_power.form:35
+msgid "Reboot"
+msgstr ""
+
+#: f_power.form:41
+msgid "Close Session"
 msgstr ""
 
 #: f_progressbar.form:14
@@ -603,12 +748,16 @@ msgstr ""
 msgid "Size:"
 msgstr ""
 
-#: f_wallpaper.form:76
-msgid "mnuPopup"
+#: f_style_launcher.form:14
+msgid "Select Style Launcher - Innova"
 msgstr ""
 
-#: f_wallpaper.form:80
-msgid "Open"
+#: f_style_launcher.form:34
+msgid "Style Launcher"
+msgstr ""
+
+#: f_wallpaper.form:76
+msgid "mnuPopup"
 msgstr ""
 
 #: f_wallpaper.form:85
@@ -731,70 +880,70 @@ msgstr ""
 msgid "Trash"
 msgstr ""
 
-#: f_wallpaper.class:288
+#: f_wallpaper.class:291
 msgid "Cancelar"
 msgstr ""
 
-#: f_wallpaper.class:301
+#: f_wallpaper.class:304
 msgid "Cannot create directory."
 msgstr ""
 
-#: f_wallpaper.class:563
+#: f_wallpaper.class:566
 msgid "trash:/"
 msgstr ""
 
-#: f_wallpaper.class:566
+#: f_wallpaper.class:569
 msgid "trash:///"
 msgstr ""
 
-#: f_wallpaper.class:606
+#: f_wallpaper.class:609
 msgid "Multiple Files"
 msgstr ""
 
-#: f_wallpaper.class:607
+#: f_wallpaper.class:610
 msgid "Files of different types"
 msgstr ""
 
-#: f_wallpaper.class:772
+#: f_wallpaper.class:775
 msgid "&Yes"
 msgstr ""
 
-#: f_wallpaper.class:772
+#: f_wallpaper.class:775
 msgid "&No"
 msgstr ""
 
-#: f_wallpaper.class:1093
+#: f_wallpaper.class:1144
 msgid "Innova Desktop - Copy File"
 msgstr ""
 
-#: f_wallpaper.class:1094
+#: f_wallpaper.class:1145
 msgid "There is already a file with the same name in this location.  "
 msgstr ""
 
-#: f_wallpaper.class:1094
+#: f_wallpaper.class:1145
 msgid " Overwrite it with the new file?"
 msgstr ""
 
-#: f_wallpaper.class:1094
+#: f_wallpaper.class:1145
 msgid "Copy and Replace"
 msgstr ""
 
-#: f_wallpaper.class:1094
+#: f_wallpaper.class:1145
 msgid "Don't Copy"
 msgstr ""
 
-#: f_wallpaper.class:1103
+#: f_wallpaper.class:1154
 msgid "Copying "
 msgstr ""
 
-#: f_wallpaper.class:1103
+#: f_wallpaper.class:1154
 msgid " Items "
 msgstr ""
 
-#: f_wallpaper.class:1104
+#: f_wallpaper.class:1155
 msgid " To "
 msgstr ""
 
-#: f_wallpaper.class:1136
+#: f_wallpaper.class:1187
 msgid "An unknown error has occurred."
 msgstr ""

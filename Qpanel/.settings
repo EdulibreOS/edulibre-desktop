@@ -40,11 +40,20 @@ StripSpace=False
 Ignore=0
 
 [OpenFile]
-Count=3
+Count=12
 File[1]=".src/Form/f_panel.form"
 Active=2
-File[2]=".src/Form/f_panel.class:2.85"
-File[3]=".src/Modules/M_OBS_Global.module:2.47"
+File[2]=".src/Form/f_panel.class:105.94"
+File[3]=".src/Class/Atom.class:0.0"
+File[4]=".src/Class/DesktopApps.class:0.22"
+File[5]=".src/Class/PushButton.class:0.0"
+File[6]=".src/Form/f_power.form"
+File[7]=".src/Form/f_power.class:24.79"
+File[8]=".src/Modules/M_Theme.module:0.104"
+File[9]=".src/Class/Cls_Start.class:12.25"
+File[10]=".src/Modules/M_Init.module:36.78"
+File[11]=".src/Form/f_progressbar.form"
+File[12]=".src/Modules/LC_MESSAGES.module:86.40"
 
 [Watches]
 Count=0

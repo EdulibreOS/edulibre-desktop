@@ -34,7 +34,7 @@ Public Sub Init_01()
   
   M_Theme.IconTheme
   M_Theme.Show_Theme
- '' M_Core.Show_Windows_Manager
+  M_Core.Show_Windows_Manager
   
   Init_02
 Catch
@@ -50,7 +50,7 @@ Public Sub Init_02()
   Wait 0.2
   Application.Env["XDG_CURRENT_DESKTOP"] = "Innova"
   
-  M_Theme.Show_Theme
+  M_Theme_Launcher.Show_Theme
   Init_03
   
 End

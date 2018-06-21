@@ -93,7 +93,6 @@ Private Sub Position_Write(Value As Integer)
   $hView.Refresh
   
 End
-''gardenias 10
 
 Public Sub View_Draw()
   

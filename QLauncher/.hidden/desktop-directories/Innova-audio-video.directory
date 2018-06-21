@@ -1,0 +1,16 @@
+[Desktop Entry]
+Name=AudioVideo
+Comment=Multimedia menu
+Icon=applications-multimedia
+Type=Directory
+Group=Innova
+ 
+#Translations
+Name[en]=Sound & Video
+Comment[en]=Multimedia menu
+Name[es]=Sonido y vídeo
+Comment[es]=Menú multimedia
+Name[en]=Sound & Video
+Comment[en]=Multimedia menu
+Name[fr]=Son et vidéo
+Comment[fr]=Multimédia
