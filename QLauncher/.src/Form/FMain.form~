@@ -1,0 +1,140 @@
+# Gambas Form File 3.0
+
+{ Form Form
+  MoveScaled(0,0,162,119)
+  { VBoxApps Panel
+    MoveScaled(6,5,79,50)
+    Expand = True
+    Arrangement = Arrange.Vertical
+    Spacing = True
+    Margin = True
+    Border = Border.Plain
+    { Panelsearch HBox
+      MoveScaled(5,1,55,4)
+      Background = Color.Cyan
+      Expand = True
+      AutoResize = True
+      Spacing = True
+      { txtSearchApps ButtonBox
+        MoveScaled(18,0,18,3)
+        Expand = True
+        Picture = Picture["icon:/small/close"]
+        Button = False
+        ClearButton = True
+        Filter = True
+      }
+    }
+    { Separator1 Separator
+      MoveScaled(1,10,9,0)
+      Visible = False
+    }
+    { TextLabel1 TextLabel
+      MoveScaled(18,15,24,4)
+    }
+    { ScrollApps ScrollView
+      MoveScaled(4,20,37,10)
+      Expand = True
+      Arrangement = Arrange.Row
+      Spacing = True
+      Margin = True
+      Padding = 27
+      Border = False
+      ScrollBar = Scroll.Vertical
+    }
+    { Separator3 Separator
+      MoveScaled(0,37,9,0)
+      Visible = False
+    }
+    { PanelInfo Panel
+      MoveScaled(1,40,52,10)
+      Arrangement = Arrange.Vertical
+      Spacing = True
+      Margin = True
+      { !txtnameapp Label
+        MoveScaled(8,2,43,4)
+        #Public = True
+        Font = Font["Bold,+2"]
+        ToolTip = ("test")
+        Alignment = Align.Right
+      }
+      { Pic_Logo_PreviewApp PictureBox
+        MoveScaled(1,2,6,6)
+        Stretch = True
+      }
+      { !txtlabelInfo Label
+        MoveScaled(8,5,43,3.4286)
+        #Public = True
+        Font = Font["+1"]
+        Expand = True
+        Alignment = Align.Right
+      }
+    }
+  }
+  { PanInfo DrawingArea
+    MoveScaled(0,0,57,7)
+    Visible = False
+    Expand = True
+    Arrangement = Arrange.Horizontal
+    Padding = 4
+    { VBox3 VBox
+      MoveScaled(5,1,42,6)
+      Expand = True
+      Spacing = True
+      { !txtlabelcat Label
+        MoveScaled(0,0,13,4)
+        #Public = True
+        Font = Font["+1"]
+        Expand = True
+        Alignment = Align.Right
+      }
+      { !txtnameapp2 Label
+        MoveScaled(26,0,16,4)
+        #Public = True
+        Font = Font["Bold,+2"]
+        ToolTip = ("test")
+        Expand = True
+        Alignment = Align.Right
+      }
+      { !txtlabelInfo2 Label
+        MoveScaled(28,2,13,4)
+        #Public = True
+        Font = Font["+1"]
+        Expand = True
+        Alignment = Align.Right
+      }
+    }
+    { PansepApps3 Panel
+      MoveScaled(48,4,2,3)
+      Arrangement = Arrange.Vertical
+      AutoResize = True
+    }
+    { Pic_Logo_PreviewApp2 PictureBox
+      MoveScaled(50,1,6,6)
+      Stretch = True
+    }
+  }
+  { PanelLauncher Panel
+    MoveScaled(-4,73,68,43)
+    Expand = True
+    Arrangement = Arrange.Horizontal
+    Spacing = True
+    Margin = True
+    Padding = 5
+  }
+  { IconViewCat IconView
+    MoveScaled(100,47,14,17)
+    Expand = True
+    Sorted = True
+    GridSize = 2
+    Border = False
+    ScrollBar = Scroll.None
+  }
+  { IconViewCat2 IconView
+    MoveScaled(100,14,8,17)
+    Expand = True
+    Sorted = True
+    IconLines = 1
+    Border = False
+    ScrollBar = Scroll.None
+  }
+}

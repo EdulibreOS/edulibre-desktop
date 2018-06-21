@@ -1,0 +1,18 @@
+' Gambas class file
+
+Public Sub _new()
+  
+  panIcon.H = 64 + Desktop.Scale * 2
+  picIcon.Resize(64, 64)
+  
+End
+
+Public Sub BtnClose_Click()
+  
+  Me.Close
+  
+End
+
+Public Sub Form_Open()
+  
+End

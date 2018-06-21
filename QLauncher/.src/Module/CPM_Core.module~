@@ -1,0 +1,297 @@
+' Gambas module file
+
+Public sLang As String = ((Left(System.Language, 2)))
+Private iSizeApps As Integer = 96 '92 '48 '86
+Private iSizeCat As Integer = 42 '22 '32
+Private sCat As String
+Public sCurCat As String
+Private ImgButtonApps As PushButton
+Private ImgButtonCat As PushButton
+Public sText As String
+Public sSendApps As String
+
+Public Sub FillList_Cat(Optional sFilter As String)
+  
+  Dim s As String
+  Dim st As String
+  Dim iResult_TextCat As Integer = 1
+  Dim iResult_FormTrans As Integer = 0
+  Dim ii As Integer
+  Dim $aApps As String[]
+  'Dim iSizeCat As Integer 
+  
+  f_launcher.ScrollCat.Children.Clear
+  
+  ' $aApps = New String[]
+  For Each st In DesktopAppsCat
+    If DesktopAppsCat[st].Group.Find("Innova") > - 1 Then
+      If DesktopAppsCat[st].NoDisplay Then Continue
+      If sFilter And If Not InStr(DesktopAppsCat[st].Group, sFilter, 0, gb.IgnoreCase) Then Continue
+      If DesktopAppsCat[st].Category.Count > 0 Then
+        sCat = DesktopAppsCat[st].Category[0] 
+      Endif
+      
+    Endif
+    
+  Next
+  
+  For Each s In DesktopAppsCat 
+    If DesktopAppsCat[s].Group.Find("Innova") > - 1 Then
+      
+      If DesktopAppsCat[s].NoDisplay Then Continue
+      If sFilter And If Not InStr(DesktopAppsCat[s].Group, sFilter, 0, gb.IgnoreCase) Then Continue
+      If DesktopAppsCat[s].Category.Count > 0 Then
+        sCat = DesktopAppsCat[s].Category[0] 
+      Endif
+      
+      ImgButtonCat = New PushButton(f_launcher.ScrollCat) As "IButtonCat"
+      
+      If iResult_TextCat = 1 Then
+        f_launcher.h = 890
+        f_launcher.w = 1010
+        ImgButtonCat.Text = GetAppNameCat(s, sLang)  
+        '      ImgButtonCat.Text = DesktopAppsCat[Last.Item.key].Name
+        f_launcher.VBoxCat.w = 92
+        ImgButtonCat.w = 72
+        ImgButtonCat.h = 72
+        f_launcher.Panel1.Move(0, 0, f_launcher.VBoxCat.W, Desktop.Scale * 8)
+        'f_launcher.Panel1.Move(0, 0, f_launcher.VBoxCat.W, Desktop.Scale * 13)
+        f_launcher.Panel2.Move(0, 0, f_launcher.VBoxCat.W, Desktop.Scale * 8)
+        'f_launcher.Panel2.Move(0, 0, f_launcher.VBoxCat.W, Desktop.Scale * 13)
+        f_launcher.PanelPower2.Arrangement = 0
+        f_launcher.PanelPower2.Move(0, 0, 42, 42)
+        f_launcher.btnSettings.x = 16
+        
+        f_launcher.PanelPower.Arrangement = 0
+        f_launcher.PanelPower.Move(0, 0, 42, 42)
+        f_launcher.btnPower.x = 16
+        
+      Else
+        ImgButtonCat.Text = Null
+        ImgButtonCat.w = 32
+        ImgButtonCat.h = 32
+        f_launcher.VBoxCat.w = 48
+        f_launcher.PanelPower.Move(0, 0, 32, 32)
+        f_launcher.PanelPower2.Move(0, 0, 32, 32)
+        
+        f_launcher.Panel1.Move(0, 0, f_launcher.VBoxCat.W, Desktop.Scale * 2) '6
+        f_launcher.Panel2.Move(0, 0, f_launcher.VBoxCat.W, Desktop.Scale * 2)
+        
+      Endif
+      ImgButtonCat.Mouse = 13
+      ImgButtonCat.Picture = DesktopAppsCat[s].GetIcon(iSizeCat).Picture
+      
+      ImgButtonCat.Font.Size = 8
+      
+      ImgButtonCat.Background = Color.Transparent
+      ImgButtonCat.Tag = s
+      
+    Endif
+    DesktopAppsCat[s].Reset
+  Next
+  'Catch
+  '  Debug "ERROR [ " & DConv(Error.Text) & " ]"
+  
+End
+
+Public Sub FillList_All(Optional sFilter As String)
+  
+  Dim s As String
+  
+  f_launcher.ScrollApps.Children.Clear
+  
+  For Each s In DesktopApps
+    
+    If DesktopApps[s].NoDisplay Then Continue
+    If sFilter And If Not InStr(DesktopApps[s].Name, sFilter, 0, gb.IgnoreCase) Then Continue
+    
+    ImgButtonApps = New PushButton(f_launcher.ScrollApps) As "IButtonApps"
+    ImgButtonApps.w = iSizeApps 'iSize
+    ImgButtonApps.h = iSizeApps 'iSize
+    ImgButtonApps.Mouse = 13
+    ImgButtonApps.Picture = DesktopApps[s].GetIcon(iSizeApps).Picture
+    ImgButtonApps.Text = GetAppName(s, sLANG)  
+    ''ImgButtonApps.Font.Size = 8
+    ''ImgButtonApps.Foreground = &00E9E9E9 '&003F3F3F 'Color.White
+    ImgButtonApps.Tag = s
+    
+    f_launcher.ViewApp.Add(s, GetAppNameCat(s, sLang), DesktopAppsCat[s].GetIcon(iSizeCat).Picture)
+    '  f_launcher5.ViewApp.Background = Color.Transparent
+    
+  Next
+  
+End
+
+Public Sub FillList_Apps(Optional sFilter As String)
+  
+  Dim s As String
+  
+  f_launcher.ScrollApps.Children.Clear
+  
+  If Not sCat Then
+    
+    For Each s In DesktopApps
+      
+      If DesktopApps[s].Category.Find(sCurCat) > -1 Then
+        If DesktopApps[s].NoDisplay Then Continue
+        If sFilter And If Not InStr(DesktopApps[s].Name, sFilter, 0, gb.IgnoreCase) Then Continue
+        
+        ImgButtonApps = New PushButton(f_launcher.ScrollApps) As "IButtonApps"
+        ImgButtonApps.w = iSizeApps
+        ImgButtonApps.h = iSizeApps
+        ImgButtonApps.Mouse = 13
+        ImgButtonApps.Picture = DesktopApps[s].GetIcon(iSizeApps).Picture
+        ImgButtonApps.Text = GetAppName(s, sLANG)
+        ImgButtonApps.Font.Size = 8
+        ''ImgButtonApps.Font.Bold = True
+        'ImgButtonApps.Font.RichTextHeight(GetAppName(s, LANG), f_launcher.w)
+        ''    ImgButtonApps.Foreground = &00E9E9E9 '&003F3F3F 'Color.White
+        ImgButtonApps.Tag = s
+        
+      Endif
+      
+    Next
+    
+  Endif
+  
+  'Catch
+  
+End
+
+Public Sub GetAppNameCat(sApp As String, Language As String) As String
+  
+  Dim hAppCat As DesktopAppsCat = DesktopAppsCat[sApp]
+  
+  If hAppCat.GetName(Language) Then 
+    Return hAppCat.GetName(Language)
+  Else
+    If hAppCat.GetGenericName(Language) Then
+      Return hAppCat.GetGenericName(Language)
+    Else
+      If hAppCat.Name Then 
+        Return hAppCat.Name
+      Endif
+    Endif
+  Endif
+  Return hAppCat.Name
+Catch
+  '  Debug "ERROR [ " & DConv(Error.Text) & " ]"
+  
+End
+
+Public Function GetAppName(sApp As String, Language As String) As String
+  
+  Dim hApp As DesktopApps = DesktopApps[sApp]
+  
+  If hApp.GetName(Language) Then 
+    Return hApp.GetName(Language)
+  Else
+    If hApp.GetGenericName(Language) Then
+      Return hApp.GetGenericName(Language)
+    Else
+      If hApp.Name Then 
+        Return hApp.Name
+      Endif
+    Endif
+  Endif
+  
+  Return hApp.Name
+  'Catch
+  '  Debug "ERROR [ " & DConv(Error.Text) & " ]"
+  
+End
+
+Public Function GetAppComent(sApp As String, Language As String) As String
+  
+  Dim hApps As DesktopApps = DesktopApps[sApp]
+  
+  If hApps.GetComment(Language) Then 
+    Return hApps.GetComment(Language)
+  Else
+    If hApps.GetGenericName(Language) Then
+      Return hApps.GetGenericName(Language)
+    Else
+      If hApps.Comment Then 
+        Return hApps.Comment
+      Endif
+    Endif
+  Endif
+  Return hApps.Comment
+  
+  'Catch
+  ' Debug "ERROR [ " & DConv(Error.Text) & " ]"
+  
+End
+
+Public Sub IButtonCat_Enter()
+  
+  initColor
+  
+  sText = m_core.GetAppNameCat(Last.tag, sLANG)
+  ' f_launcher.txtlabelInfo.Text = (Html(sText))
+  M_Core.sCurCat = DesktopAppsCat[Last.tag].Name
+  M_Core.FillList_Apps
+  
+End
+
+Private Sub initColor()
+  
+  ''f_launcher.ScrollApps.Background = Color.Transparent
+  f_launcher.VBoxApps.Background = Color.Transparent
+  f_launcher.PanelInfo.Background = Color.Transparent
+  f_launcher.txtlabelInfo.Background = Color.Transparent
+  f_launcher.VBoxCat.Background = Color.Transparent
+  
+End
+
+Public Sub IButtonApps_Menu()
+  
+  'If mouse.Left Then
+  'f_launcher.mnuApps.popup '(Last.x, Last.y)
+  'Endif
+  
+  'BarraMenus.popup '(Last.x, Last.y)
+  'f_launcher.ShowModal
+  'f_launcher.mnuApps.popup '(Last.x, Last.y)
+  
+  f_launcher.mnuApps.Popup(Last.ScreenX, Last.ScreenY + Last.H)
+Catch 
+  
+End
+
+Public Sub IButtonApps_Leave()
+  
+  f_launcher.txtlabelInfo.Text = Null
+  f_launcher.txtnameapp.Text = Null
+  f_launcher.Pic_Logo_PreviewApp.Picture = Null
+  
+End
+
+Public Sub IButtonApps_Enter()
+  
+  Dim sTextNam As String = GetAppName(Last.Tag, sLANG)
+  Dim sTextCom As String = GetAppComent(Last.Tag, sLANG)
+  
+  'If Not IsNull(sText) Then
+  '   f_launcher.txtlabelInfo.Expand = True
+  '    Endif
+  ' If IsNull(sText) Then
+  '   f_launcher.txtlabelInfo.Expand = False
+  '    Endif
+  
+  f_launcher.txtnameapp.Text = (Html(sTextNam)) 
+  f_launcher.txtlabelInfo.Text = (Html(sTextCom))
+  f_launcher.Pic_Logo_PreviewApp.Picture = Last.Picture
+  'f_launcher.hToggle_AppS.Tooltip = DesktopEntry.Name
+  'ImgButtonApps.Tooltip = GetAppName(s, LANG)
+  
+  sSendApps = Last.Tag
+  
+End
+
+Public Sub IButtonApps_Click()
+  
+  DesktopApps[Last.Tag].Exec()
+  f_launcher.Close
+  
+End

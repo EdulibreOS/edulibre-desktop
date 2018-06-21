@@ -1,0 +1,8 @@
+' Gambas class file
+
+Public Sub Form_Open()
+  
+  ''TextLabel1.Background = Color.RGB(43, 167, 248, 0.30)
+  TextLabel1.Background = Color.RGB(44, 167, 248, 0.3)
+  
+End

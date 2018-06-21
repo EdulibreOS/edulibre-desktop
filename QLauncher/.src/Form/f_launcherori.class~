@@ -1,0 +1,205 @@
+' Gambas class file
+
+Private sText As String
+Private sDir_AppsFav As String 
+Private sFile_AppsFav As String
+Private iSizeAppsFav As Integer = 92
+Private hToggle_AppS As CButton
+Private ImgButtonApps As PushButton
+
+Public Sub _new()
+  
+  f_launcher.txtSearchApps.SetFocus
+  
+End
+
+Public Sub Form_Open()
+  
+  M_Core.FillList_Cat
+  
+  btnPower.Image = Picture["img/shutdown/system-shutdown.png"].Image
+  btnBookmark.Image = Picture["icon:/48/bookmark"].Image
+  btnSettings.Image = Picture["icon:/32/system"].Image
+  
+  txtSearchApps.Background = Color.Transparent
+  initColor
+  Me.Maximized = True
+  
+End
+
+Private Sub initColor()
+  
+  ScrollApps.Background = Color.Transparent
+  VBoxApps.Background = Color.Transparent
+  PanelInfo.Background = Color.Transparent
+  txtlabelInfo.Background = Color.Transparent
+  VBoxCat.Background = Color.Transparent
+  
+End
+
+Public Sub txtSearchApps_Change()
+  
+  txtSearchApps.Text = Lower$((txtSearchApps.text))
+  m_core.FillList_All(Last.text)
+  
+End
+
+Public Sub ViewCat_MouseMove()
+  
+  ' If Not ViewCat.FindAt(Mouse.x, Mouse.y) Then
+  '   ViewCat.Mouse = Mouse.Pointing
+  '   'ViewCat.Tooltip = m_core.GetAppNameCat(Last.Item.Key, m_core.LANG)
+  '   sText = m_core.GetAppNameCat(Last.Item.Key, m_core.LANG)
+  '   txtlabelInfo.Text = (Html(sText))
+  '   'M_Core.sCurCat = ViewCat.Item.Text
+  '   M_Core.sCurCat = DesktopAppsCat[Last.Item.key].Name
+  '   M_Core.FillList_Apps
+  '   initColor
+  ' Endif
+  
+  'Catch
+  
+End
+
+Public Sub txtSearchApps_KeyRelease()
+  
+  If Key.Code = Key.Down Then
+    '   ViewCat.SetFocus
+  Endif
+  
+End
+
+Public Sub btnPower_MouseDown()
+  
+  f_power.ShowModal
+  
+End
+
+Public Sub mnuSwitchUser_Click()
+  
+  Dim user_sys As String
+  
+  Shell "whoami" To user_sys
+  Shell "pkill -KILL -u " & user_sys
+  
+End
+
+Public Sub Form_Leave()
+  
+  'Me.Close(True)
+  'If mnuApps.Visible = True Then
+  '  Me.Show
+  '  Else
+  'Me.Close
+  'Endif
+  
+End
+
+Public Sub ViewCat_Select()
+  
+  sText = m_core.GetAppNameCat(Last.Item.Key, m_core.LANG)
+  txtlabelInfo.Text = (Html(sText))
+  M_Core.sCurCat = DesktopAppsCat[Last.Item.key].Name
+  M_Core.FillList_Apps
+Catch
+  
+End
+
+Public Sub mnuLink_Click()
+  
+  Dim Copy_Apps As String
+  Dim sSend As String 
+  Dim sFile_Origen As String = "/usr/share/applications/" & M_Core.sSendApps & ".desktop"
+  Dim sFile_Origen_KDE As String = "/usr/share/applications/kde4/" & M_Core.sSendApps & ".desktop"
+  Dim sDest As String
+  
+  sDest = Desktop.GetDirectory("DESKTOP")
+  
+  Copy_Apps = "cp -r " & sFile_Origen & " " & sDest 
+  Shell Copy_Apps Wait
+  
+  Copy_Apps = "cp -r " & sFile_Origen_KDE & " " & sDest 
+  Shell Copy_Apps Wait
+  
+  '  f_wallpaper.ivwDesktop.Refresh
+  
+  ' f_panel.sRefresh_DellApps
+  
+End
+
+Public Sub mnuSend_Click()
+  
+  Dim Copy_Apps As String
+  Dim sSend As String = Application.Path &/ "Apps"
+  Dim sFile_Origen As String = "/usr/share/applications/" & M_Core.sSendApps & ".desktop"
+  Dim sFile_Origen_KDE As String = "/usr/share/applications/kde4/" & M_Core.sSendApps & ".desktop"
+  
+  Copy_Apps = "cp -r " & sFile_Origen & " " & sSend 
+  Shell Copy_Apps Wait
+  
+  Copy_Apps = "cp -r " & sFile_Origen_KDE & " " & sSend 
+  Shell Copy_Apps Wait
+  
+  ' f_panel.sRefresh_DellApps
+  
+End
+
+Public Sub Form_KeyPress()
+  
+  If Key.Code = Key.Esc Then
+    Me.Close
+  Endif
+  
+End
+
+Public Sub Form_Resize()
+  
+  PanelInfo.Move(Me.w - 965, Me.h - 75, 864, 70)
+  
+  txtnameapp.Move(PanelInfo.w - 270, 20, 200, 24)
+  txtlabelInfo.Move(PanelInfo.w - 770, 35, 700, 24)
+  Pic_Logo_PreviewApp.Move(PanelInfo.w - 60, 15, 48, 48)
+  
+  ScrollApps.Move(VBoxApps.ClientH / 1 - 768, VBoxApps.ClientW / 20, 1200, 800)
+  Panelsearch.W = VBoxApps.w - 15
+  
+End
+
+Public Sub App_Fav_Select(Optional sFilter As String)
+  
+  Dim DesktopEntry As DesktopFile
+  Dim pIcon As Picture
+  
+  sDir_AppsFav = Desktop.ConfigDir &/ "Innova/App_Favorites"
+  ScrollApps.Children.Clear
+  For Each sFile_AppsFav In Dir(sDir_AppsFav, "*.desktop").Sort(gb.IgnoreCase)
+    DesktopEntry = New DesktopFile(sDir_AppsFav &/ sFile_AppsFav)
+    pIcon = M_DesktopEntry[DesktopEntry.Path, 48].Image.Stretch(iSizeAppsFav, iSizeAppsFav).Picture
+    '  hToggle_AppS = New CButton(ScrollApps) As "CButtonApps"
+    '  hToggle_AppS.w = iSizeAppsFav
+    '  hToggle_AppS.h = iSizeAppsFav
+    '  hToggle_AppS.Mouse = 13
+    '  hToggle_AppS.Image = pIcon.Image
+    '  hToggle_AppS.Tooltip = DesktopEntry.Name
+    '  hToggle_AppS.Tag = DesktopEntry.Path
+    
+    ImgButtonApps = New PushButton(ScrollApps) As "CButtonApps"
+    ImgButtonApps.w = iSizeAppsFav 'iSize
+    ImgButtonApps.h = iSizeAppsFav 'iSize
+    ImgButtonApps.Mouse = 13
+    ImgButtonApps.Picture = pIcon.Image.Picture
+    ImgButtonApps.Text = DesktopEntry.Name 'GetAppName(s, LANG)  
+    ImgButtonApps.Font.Size = 8
+    ImgButtonApps.Foreground = &00E9E9E9 '&003F3F3F 'Color.White
+    ImgButtonApps.Tag = DesktopEntry.Path
+    
+  Next
+  'Catch
+  
+End
+
+Public Sub btnBookmark_Enter()
+  
+  App_Fav_Select
+  
+End

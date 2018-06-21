@@ -1,0 +1,16 @@
+' Gambas module file
+
+Public sResult_Theme As String
+Public Settings_Core_Innova As New Settings(Desktop.ConfigDir &/ "Innova/Innova_Config.conf")
+
+Public Sub IconTheme()
+  
+  Try sResult_Theme = Settings_Core_Innova["Style_Desktop/Theme_Name_Icons"]
+  
+  Application.Theme = sResult_Theme
+  Wait 0.5
+  Form1.Show
+  'Catch
+  '  Debug "ERROR [ " & DConv(Error.Text) & " ]"
+  
+End
