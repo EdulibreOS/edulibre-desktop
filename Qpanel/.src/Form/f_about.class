@@ -94,7 +94,6 @@ Private Sub GetAuthor()
       If Not sLig Then Continue
       If Left(sLig) = "-" Then Break
       
-      '   sLig = RemoveLink(sLig)
       If Right(sLig) <> "." Then sLig &= "."
       sText &= sLig & "<br>"
       
@@ -136,9 +135,7 @@ Private Sub GetAuthor()
     sText &= "</blockquote><br>\n"
     
   Next
-  
-  'txtAuthor.X = Desktop.Scale
-  'txtAuthor.W = txtAuthor.Parent.W - Desktop.Scale * 2
+
   txtAuthor.Text = sText
   txtAuthor.Adjust
   
@@ -202,4 +199,10 @@ End
 
 Public Sub Grid_Draw(X As Integer, Y As Integer, Width As Integer, Height As Integer, Row As Integer, Column As Integer)
   
+End
+
+Public Sub picLogo3_MouseDown()
+
+  
+
 End

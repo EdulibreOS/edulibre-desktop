@@ -20,6 +20,7 @@
 ' Boston, MA  02110-1301  USA
 
 ' Homepage: http://http://sourceforge.net/projects/innovadesktop
+' This code belongs to Gambas3
 
 Public Name As String
 Public Weight As Integer

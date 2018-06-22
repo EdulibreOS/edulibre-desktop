@@ -24,9 +24,7 @@
 Public Sub Form_Open()
   
   Me.Center
-  
-  ' M_OBS_Global.Add(Me)
-  'M_Transparent.Transparent
+ 
   M_Core.Show_Preview_Wallpaper
   
 End
@@ -65,7 +63,7 @@ Public Sub txtselectfondo_Click()
   img_Fondo.Picture = Picture.Load(Dialog.Path)
   
   If Error Then 
-    'if can't open the file then show an error message and quit sub
+  
     Message.Error("Unable to open the file : " & Dialog.Path)
     Return
   Endif
@@ -92,7 +90,6 @@ End
 
 Public Sub Form_Arrange()
   
-  'Me.Resize(800, 600)
   PictureBoxBack.Resize(PanelWallpeaper.w, PanelWallpeaper.h)
   
 End

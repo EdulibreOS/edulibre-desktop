@@ -40,8 +40,7 @@ Public Sub Gallery()
   $Files.Insert(Dir(sDir, "*.jpg"))
   $Files.Insert(Dir(sDir, "*.jpeg"))
   $Files.Insert(Dir(sDir, "*.bmp"))
-  'For Each sDir In [Desktop.DataDir &/ "Innova", "/usr/share/Innova"]
-  
+   
   For Each sImage In $Files
     Inc i
     ListViewImage.Add(i, sImage, Picture[sDir &/ sImage].Image.Stretch(128, 72).Picture)
@@ -82,14 +81,6 @@ Public Sub txtselectwallpaper_Change()
   Else
     BtnOk.Enabled = True
   Endif
-  
-End
-
-Public Sub BtnOk_Click()
-  
-  ' f_settings.Show
-  ' f_settings.txtselectfondo.Text = sDir &/ sImage_Wall
-  ' Me.Close
   
 End
 

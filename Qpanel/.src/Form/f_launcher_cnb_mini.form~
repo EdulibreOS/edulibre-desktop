@@ -99,7 +99,7 @@
         Margin = True
         Padding = 8
         Border = False
-        ScrollBar = Scroll.None
+        ScrollBar = Scroll.Vertical
       }
     }
   }

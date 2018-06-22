@@ -20,6 +20,7 @@
 ' Boston, MA  02110-1301  USA
 
 ' Homepage: http://http://sourceforge.net/projects/innovadesktop
+' Part of this code belongs to Gambas3, Fabien Bodard and was adapted for Innova Project
 
 Private $sLastName As String
 
@@ -95,11 +96,10 @@ Public Sub Show_Files_Desktop()
   sPC = Settings_Core_Innova["Desktop/Show_Icon_PC"]
   sTrash = Settings_Core_Innova["Desktop/Show_Icon_Trash"]
   
-  'iSize = M_Var_Global.iSize_Icons_View 
   
   If (sPC = "1") Then
     Inc i
-    ''ivwDesktop.Add(i & "System", ("System"), Picture["icon:/" & iSize_Icon & "/computer"])
+  
     Try ivwDesktop.Add("System", ("System"), Picture["icon:/" & iSize_Icon & "/computer"])
   Endif
   
@@ -117,7 +117,7 @@ Public Sub Show_Files_Desktop()
   
   For Each sFiles In Dir(sDir) '.Sort(gb.Natural)
     If IsDir(sDir &/ sFiles) Then
-      'ivwDesktop.Add(i & sFiles, sFiles, Picture["icon:/" & iSize_Icon & "/directory"]).Editable = Access(sDir, gb.Write)
+     
       ivwDesktop.Add(sFiles, sFiles, Picture["icon:/" & iSize_Icon & "/directory"]).Editable = Access(sDir, gb.Write)
     Endif
   Next
@@ -129,15 +129,15 @@ Public Sub Show_Files_Desktop()
     If Not (InStr(sFiles, ".desktop")) Then
       
       If Not (InStr(sFiles, ".jpg") Or InStr(sFiles, ".png") Or InStr(sFiles, ".bmp") Or InStr(sFiles, ".jpeg") Or InStr(sFiles, ".gif") Or InStr(sFiles, ".xpm")) Then
-        'ivwDesktop.Add(i & sFiles, sFiles, img.Picture).Editable = Access(sDir, gb.Write)
+      
         Try ivwDesktop.Add(sFiles, sFiles, img.Picture).Editable = Access(sDir, gb.Write)
       Endif
       
     Else
       DesktopEntry = New DesktopFile(sDir &/ sFiles)
-      'pIcon = M_DesktopEntry[DesktopEntry.Path, iSize_Icon]
+     
       pIcon = M_DesktopEntry[DesktopEntry.Path, iSize_Icon].Image.Stretch(iSize_Icon, iSize_Icon).Picture
-      'ivwDesktop.Add(i & sFiles, sFiles, pIcon).Editable = Access(sDir, gb.Write)
+    
       Try ivwDesktop.Add(sFiles, DesktopEntry.Name, pIcon).Editable = Access(sDir, gb.Write)
     Endif
     
@@ -148,14 +148,12 @@ Public Sub Show_Files_Desktop()
     PicWall = Picture[sDir &/ sFiles]
     iTam = (iSize_Icon * PicWall.Height) \ PicWall.Width
     PicWall = Picture[sDir &/ sFiles].Image.Stretch(iSize_Icon, iTam).Picture
-    Print sFiles
-    'ivwDesktop.Add(i & sFiles, sFiles, PicWall)
+   
     Try ivwDesktop.Add(sFiles, sFiles, PicWall)
     
   Next
   
-  'ivwDesktop.Add(i & sFiles, sFiles, Picture["icon:/" & iSize_Icon & "/directory"]).Editable = Access(sDir, gb.Write)
-  'Catch
+
   
 End
 
@@ -202,7 +200,6 @@ Public Sub Form_Open()
     Me.Width = Desktop.Width ''
     Me.Height = Desktop.Height ''
   Else  
-    'Me.FullScreen = True
     Me.Maximized = True
     Me.Width = Desktop.Width
     Me.Height = Desktop.Height
@@ -327,7 +324,7 @@ Public Sub mnuNewFile_Click()
         Break
       Else
         Try hFile = Open sDir &/ sResult For Create
-        '   File_Desktop
+
       Endif
     Endif
     
@@ -526,7 +523,7 @@ End
 Public Sub ivwDesktop_DblClick()
   
   Dim sResult_FM As String 
-  'Dim sfiles As String
+
   Dim sFM As String
   Dim sCurrent As String
   Dim sLastCurrent As String
@@ -536,13 +533,13 @@ Public Sub ivwDesktop_DblClick()
   Try sResult_FM = Settings_Core_Innova["Panel_Command/File_Manager", f_panel]
   
   If IsDir(sDir &/ ivwDesktop.Item.Text) Then
-    'Exec [sResult_FM, ivwDesktop.Dir &/ ivwDesktop.Current]   
+   
     Exec [sResult_FM, sDir &/ sLastCurrent]   
   Else
     
-    'If File.Ext(ivwDesktop.Item.Text) = "desktop" Then
+  
     If ivwDesktop.Item.Key Ends "desktop" Then 
-      'runDesktopFile(sDir &/ ivwDesktop.Item.Key)
+     
       DesktopApps_Desk[File.BaseName(ivwDesktop.Item.Key)].Exec() 
       
     Else
@@ -555,7 +552,7 @@ Public Sub ivwDesktop_DblClick()
     Shell ("./" & sLastCurrent)
   Endif
   
-  'If (sLastCurrent = "System") Or (sLastCurrent = "1System") Then
+  
   If (ivwDesktop.Item.Key = "System") Then
     Exec [sResult_FM, "/"]  
   Endif
@@ -778,7 +775,7 @@ Public Sub mnuDelete_Click()
         For Each strFile In strFiles
           
           ' If (InStr(strFile, ".desktop")) Then
-          Print Str$(strFile)
+        
           strFile = sDir &/ strFile
           strData = strData & strFile & "\n"
           If Not IsDir(strFile) Then 
@@ -927,54 +924,7 @@ Public Sub TimerWallRand_Timer()
   
 End
 
-Public Sub ivwDesktop_Drop()
-  
-  Dim a As String
-  Dim b As String[]
-  Dim sDir As String
-  Dim sCopy As String
-  
-  sDir = Desktop.GetDirectory("DESKTOP") 'M_XDG_DIR.sPath_DESKTOP
-  a = Drag.Paste("text/uri-list") ' limitamos el tipo de los datos pegados
-  b = Split(a, gb.CrLf, "", True) ' cargamos la lista de rutas en un array b
-  ' escapando las terminaciones de línea
-  a = Null  ' reutilizamos la variable "a"
-  
-  For Each a In b
-    a = Right$(a, -7) ' quitamos "file://";
-    a = URLDecode(a)  ' descodificamos las cadenas
-    a = RTrim(a)
-    '  Print a
-    
-    If Not IsDir(a) Then 
-      Try Copy a To sDir &/ File.Name(a)
-    Else
-      sCopy = "cp -R " & a & " " & sDir
-      Shell sCopy Wait
-    Endif  
-    
-    ivwDesktop.Refresh
-    
-  Next
-  
-End
 
-Public Sub ivwDesktop_MouseDrag()
-  
-  Dim cad As String
-  
-  sDir = Desktop.GetDirectory("DESKTOP")
-  'If Mouse.left Then 
-  
-  If ivwDesktop.Key = Null Then Return '"" Then Return
-  
-  If Mouse.Left Then
-    Drag.Icon = ivwDesktop.Current.Picture ' Picture["icon:/32/file"]
-    'FileChooser1.Drag(FileChooser1.SelectedPath)
-    ivwDesktop.Drag(sDir &/ ivwDesktop.Key, "text/uri-list.text")
-  Endif
-  
-End
 
 Public Sub ivwDesktop_GotFocus()
   
@@ -1119,7 +1069,6 @@ Public Sub mnuPaste_Click()
   
   Dim nFiles As Integer
   Dim sName As String
-  'Dim iSize As Integer
   Dim iSize As Float
   
   sDir = Desktop.GetDirectory("DESKTOP") 
@@ -1212,7 +1161,7 @@ End
 
 Public Sub mnuabout3_Click()
   
-  'f_about_innova.ShowModal
+
   f_about.ShowModal
   
 End

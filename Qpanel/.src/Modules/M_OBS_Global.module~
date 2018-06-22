@@ -36,13 +36,13 @@ End
 Public Sub OBS_KeyPress()
   
   If (Key.Code = Key.Esc) Then
-    f_launcher_mini.Close
-    f_launcher.Close
+    '    f_launcher_mini.Close
+    '   f_launcher.Close
   Endif
   
   If (key.Code) Then
-    f_launcher_mini.txtSearchApps.SetFocus
-    f_launcher.txtSearchApps.SetFocus
+    '  f_launcher_mini.txtSearchApps.SetFocus
+    ' f_launcher.txtSearchApps.SetFocus
   End If
   
 End
