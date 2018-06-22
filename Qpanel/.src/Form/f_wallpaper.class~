@@ -1,8 +1,8 @@
 ' Gambas class file
 
-' Innova Project - Launcher of APP
-'
+' Innova Project 
 ' Copyright (C) Herberth Guzmán
+' herberthguzman@gmail.com
 '
 ' This program is free software; you can redistribute it and/or modify
 ' it under the terms of the GNU General Public License as published by
@@ -24,7 +24,7 @@
 Private $sLastName As String
 
 Private sPath As String
-Public sDir As String = Desktop.GetDirectory("DESKTOP") & "/" 'M_XDG_DIR.spath_desktop & "/"
+Public sDir As String = Desktop.GetDirectory("DESKTOP") & "/" 
 Public sLanguage As String = ((Left(System.Language, 2)))
 
 Private $MX As Integer
@@ -53,42 +53,9 @@ Public Sub _new()
   
   M_Theme.Show_Theme
   
-  'With $hWatcher = New DesktopWatcher(Me) As "MyDTWatcher"
-  '  .RootWindow = True
-  'End With
-  
   $hWatcher = New DesktopWatcher(True) As "MyDTWatcher"
   
-  'If $bWatch Then $hWatcher = New Watcher(Me) As "Watcher"
-  '$hWatcher = New DesktopWatcher(If(True, X11.RootWindow, 0)) As "MyDTWatcher"
-  
-  ''M_Launcher_Show.Main
-  ''recuperar X11.SetWindowProperty(f_wallpaper.Id, Atom["_NET_WM_STATE"], Atom["ATOM"], Atom[" _NET_WM_STATE_BELOW"])
   X11.SetWindowProperty(f_wallpaper.Id, Atom["_NET_WM_WINDOW_TYPE"], Atom["ATOM"], Atom["_NET_WM_WINDOW_TYPE_DESKTOP"])
-  
-End
-
-Public Sub MyDTWatcher_Change()
-  
-  'Print "1"
-  
-End
-
-Public Sub MyDTWatcher_Windows()
-  
-  'RefreshViewAfter
-  'Reload
-  
-  'Show_Files_Desktop
-  'RefreshViewLater()
-End
-
-Public Sub MyDTWatcher_ActiveWindow()
-  
-  'ivwDesktop.Refresh
-  'Wait
-  'Show_Files_Desktop
-  ' Print "3"
   
 End
 
@@ -223,12 +190,9 @@ Public Sub Form_Open()
   Show_Files_Desktop
   
   With ivwDesktop
-    ' .IconSize = M_Var_Global.iSize_Icons_View
-    ' .Dir = sDir
+    
     .Background = Color.Transparent
   End With
-  
-  ' M_Transparent.Transparent
   
   Try sResult_WM = Settings_Core_Innova["Session_Windows_Manager/Windows_Manager", f_wallpaper]
   
@@ -244,41 +208,7 @@ Public Sub Form_Open()
     Me.Height = Desktop.Height
   Endif
   
-  'M_Core.Randomize_Wallpaper
-  
-  ' Try sResult_Rnd_True = Settings_Core_Innova["Desktop/Wallpaper_Desktop_Random", f_settings]
-  ''recuperarTry sResult_Dir_Wallpaper_Desktop_Random = Settings_Core_Innova["Desktop/Dir_Wallpaper_Desktop_Random", f_settings]
-  
-  ' If (sResult_Rnd_True = "1") Then
-  '   Try sResult_Desktop_Wall_Rand = Settings_Core_Innova["Desktop/Image_Wallpaper_Desktop_Random", f_wallpaper]
-  '   f_wallpaper.img_Fondo.Picture = Picture[sResult_Dir_Wallpaper_Desktop_Random &/ sResult_Desktop_Wall_Rand]
-  '   img_Fondo.Refresh
-  '   Wait 0.5
-  
-  ' Print sResult_Dir_Wallpaper_Desktop_Random &/ sResult_Desktop_Wall_Rand
-  ''recuperarTry sResult_Desktop_Wall = Settings_Core_Innova["Desktop/Wallpaper_Desktop", f_wallpaper]
-  ''recuperarIf Not IsNull(sResult_Desktop_Wall) Then
-  '' recuperarf_wallpaper.img_Fondo.Picture = Picture[sResult_Desktop_Wall]
-  ''recuperarEndif
-  
-  ''recuperarTry sResult_Desktop_Wall_Rand = Settings_Core_Innova["Desktop/Image_Wallpaper_Desktop_Random", f_wallpaper]
-  ''recuperarIf Not IsNull(sResult_Desktop_Wall_Rand) Then
-  ''recuperarM_Core.Randomize_Wallpaper
-  ''recuperarf_wallpaper.img_Fondo.Picture = Picture[sResult_Dir_Wallpaper_Desktop_Random &/ sResult_Desktop_Wall_Rand]
-  ''recuperarimg_Fondo.Refresh
-  ''recuperarTimerWallRand.Start
-  ''recuperarPrint sResult_Dir_Wallpaper_Desktop_Random &/ sResult_Desktop_Wall_Rand
-  'recuperar Else
-  'recuperar  TimerWallRand.Start
-  'recuperar Endif
-  
-  ''recuperarEndif
-  
   Me.SetFocus
-  
-  ' If IsNull(Clipboard.Clear) Then
-  'mnuPaste.Enabled = False
-  'Endif
   
 End
 
@@ -340,7 +270,6 @@ End
 Public Sub Form_Close()
   
   Stop Event
-  'f_wallpaper.Show
   
 End
 
@@ -685,32 +614,15 @@ Public Sub Properties_Mixed()
     
   Endif
   
-  ''bueno f_properties.Show
-  ''bueno   f_properties.Move(Mouse.ScreenX, Mouse.ScreenY)
-  ''bueno f_properties.FilePropertiesDesktop.Path = sDir
-  
-  'f_properties.x = f_wallpaper.X 
-  'f_properties.y = f_wallpaper.y
-  
 End
 
 Public Sub mnuProperties1_Click()
   
   Dim strFiles As String[]
-  'Dim strData As String
-  'Dim strFile As String
-  
-  ' If (strFiles.Count > 0) Then
-  '   Properties_Mixed
-  ' Endif
   
   If (ivwDesktop.Item.Key = "System") Then
     Shell "/usr/bin/PCInfo.gambas"
   Else
-    
-    '  f_properties.Show
-    '  f_properties.Move(Mouse.ScreenX, Mouse.ScreenY)
-    '  f_properties.FilePropertiesDesktop.Path = sDir &/ $sLastName
     
     strFiles = GetSelection()
     
@@ -733,63 +645,6 @@ Public Sub mnucompress_Click()
   
   f_compress.Show
   f_compress.txtfilename.Text = ivwDesktop.Current.Text
-  
-End
-
-Public Sub mnucompress_Click001()
-  
-  Dim Cp As New Compress
-  Dim sPath_Tmp As String
-  Dim sName As String
-  'Dim sDir As String
-  Cp.Type = "zlib"
-  sName = ivwDesktop.Item.Text
-  sName = URLDecode(sName)
-  
-  'Print sDir &/ ivwDesktop.Item.Text
-  
-  ' If IsDir(sDir &/ sName) Then
-  'Print sDir & sName
-  '   Cp.Fil(sDir &/ sName, sDir &/ File.BaseName(sName) & ".gz", Cp.Max)
-  ' Endif
-  
-  Cp.Type = "zlib"
-  Cp.File(User.Home &/ "mio", User.Home &/ "test.gz", Cp.Max)
-  
-  ' sPath_Tmp = Mid$(sDir &/ sName, RInStr(sDir &/ sName, "/") + 1) 'sacamos el nombre del directorio de la ruta
-  ' Shell "cp -R " & sDir &/ sName & " " & "/tmp"  'COPIO EL DIRECTORIO EN USER.HOME Y LISTO
-  ' Shell "cd " & sDir &/ " ;tar -c " & sPath_Tmp &/ " | bzip2 > " & sPath_Tmp & ".tar.bz2" 'COMPRIMIMOS EL ARCHIVO
-  ' Else
-  'Cp.Type = "zlib"
-  ''   Cp.File(sDir &/ sName, sDir &/ File.BaseName(sName) & ".gz", Cp.Max)
-  '  ivwDesktop.Reload
-  ' Endif 
-  
-  'comando = "cd /tmp/pintascreenGuarda/;tar czvf \"" & File.Name(rutafichero) & ".tar.gz\" *"
-  
-End
-
-Public Sub mnucompress_Click002()
-  
-  Dim Cp As New Compress
-  Dim sPath_Tmp As String
-  Dim sName As String
-  Dim sDir As String
-  
-  sName = ivwDesktop.Item.Text
-  sName = URLDecode(sName)
-  
-  If IsDir(sDir &/ sName) Then
-    
-    sPath_Tmp = Mid$(sDir &/ sName, RInStr(sDir &/ sName, "/") + 1) 'sacamos el nombre del directorio de la ruta
-    Shell "cp -R " & sDir &/ sName & " " & "/tmp"  'COPIO EL DIRECTORIO EN USER.HOME Y LISTO
-    Shell "cd " & sDir &/ " ;tar -c " & sPath_Tmp &/ " | bzip2 > " & sPath_Tmp & ".tar.bz2" 'COMPRIMIMOS EL ARCHIVO
-  Else
-    Cp.Type = "zlib"
-    Cp.File(sDir &/ sName, sDir &/ File.BaseName(sName) & ".gz", Cp.Max)
-    '  ivwDesktop.Reload
-  Endif 
-  '  mnuRefresh_Click
   
 End
 
@@ -841,8 +696,6 @@ End
 
 Public Sub mnuWidget_Click()
   
-  'f_settings.Show
-  'f_settings.IconPanelInnova.Index = 5 
   'Shell User.Home &/ "QSettings.gambas"
   Shell "/usr/bin/QSettings.gambas"
   
@@ -916,16 +769,7 @@ Public Sub mnuDelete_Click()
   Dim sType As String = "text/uri-list"
   Dim sKey As String
   
-  'Try sKey = ivwDesktop.Item.Key
-  
-  ' Print sKey
-  
-  ' If (InStr(sKey, ".desktop")) Then
   strFiles = GetSelection_fDesktop()
-  
-  ' Else
-  '   strFiles = GetSelection()
-  ' Endif
   
   If strFiles.Count > 0 Then
     Select Message.Question((LC_MESSAGES.MSG_QUESTION_WRITE_FILE_EXIST), ("&Yes"), ("&No"))
@@ -943,11 +787,6 @@ Public Sub mnuDelete_Click()
             Shell "rm -rf " & Shell$(strFile)
           Endif  
           
-          ' Endif
-          'Print strFile
-          
-          'Endif
-          '  Print strFile
         Next
       Case 2
         ivwDesktop.UnselectAll
@@ -960,10 +799,6 @@ Public Sub mnuDelete_Click()
   Endif
   
   mnuRefresh_Click
-  
-  'Catch
-  
-  ''Kill_Files
   
 End
 
@@ -1044,9 +879,6 @@ Static Public Sub Decode(Path As String) As String
 End
 
 Static Private Function URLDecode(txt As String) As String
-  ''' Descodifica los caracteres hexadecimales en las URI's recorriendo la cadena dada
-  ''' Params: txt la URI a descodificar
-  ''' Return: la URI descodificada
   
   Dim txt_len As Integer
   Dim i As Integer
@@ -1058,22 +890,20 @@ Static Private Function URLDecode(txt As String) As String
   txt_len = Len(txt)
   i = 1
   Do While i <= txt_len
-    ' Examinar el siguiente caracter
+    
     ch = Mid$(txt, i, 1)
     If ch = "+" Then
-      ' Convertir a espacio
+      
       resultado = resultado & " "
     Else If ch <> "%" Then
-      ' Normal, no cambiar
+      
       resultado = resultado & ch
     Else If i > txt_len - 2 Then
       resultado = resultado & ch
     Else
-      ' Obtener los siguientes caracteres hex.
+      
       digits = Mid$(txt, i + 1, 2)
-      ' Debug digits
-      ' aquí convertimos el valor hexadecimal a entero y
-      ' se lo pasamos a Chr que devuelve el carácter correcto.
+      
       resultado = resultado & Chr$(CInt(Val("&" & digits)))
       i = i + 2
     Endif
@@ -1081,159 +911,6 @@ Static Private Function URLDecode(txt As String) As String
   Loop
   
   Return resultado
-  
-End
-
-Public Sub mnuPaste_Clickori()
-  
-  Dim a As String
-  Dim b As String[]
-  Dim sDir As String
-  Dim sCopy As String
-  Dim sResult As String
-  
-  Dim aarchivos As New String[]  
-  Dim unarchivo As String
-  Dim incrementos As Float
-  
-  sDir = Desktop.GetDirectory("DESKTOP") 'M_XDG_DIR.sPath_DESKTOP
-  a = Clipboard.Paste("text/uri-list") ' limitamos el tipo de los datos pegados
-  b = Split(a, gb.CrLf, "", True) ' cargamos la lista de rutas en un array b
-  ' escapando las terminaciones de línea
-  a = Null  ' reutilizamos la variable "a"
-  
-  f_progressbar.Show
-  f_progressbar.ProgressBar1.Value = 0
-  If sDir Then
-    unarchivo = a
-    incrementos = 1 / b.Count
-    
-    For Each a In b
-      a = Right$(a, -7) ' quitamos "file://";
-      a = URLDecode(a)  ' descodificamos las cadenas
-      a = RTrim(a)
-      
-      If Exist(sDir &/ File.Name(a)) Then
-        Message.Title = ("Innova Desktop - Copy File")
-        If Message.Question("<span style=\"color:#" & "0000FF" & ";margin-left:1em;\">" & ("There is already a file with the same name in this location.  ") & "</span>" & "<b><span style=\"color:#" & "088906" & ";margin-left:1em;\">" & UCase(File.Name(a)) & "</span></b>" & "<span style=\"color:#" & "CC0000" & ";margin-left:1em;\">" & (" Overwrite it with the new file?"), ("Copy and Replace"), ("Don't Copy")) = 1 Then
-          Kill sDir &/ File.Name(a)
-        Endif
-      Endif
-      
-      If Not IsDir(a) Then 
-        Try Copy a To sDir &/ File.Name(a)
-      Else
-        f_progressbar.ProgressBar1.Value += incrementos
-        f_progressbar.lblStatus.Text = "Copiando " & unarchivo
-        sCopy = "cp -R " & a & " " & sDir
-        Shell sCopy Wait
-      Endif 
-      'f_progressbar.ProgressBar1.Value += incrementos
-      ' f_progressbar.lblStatus.Text = "Copiando " & a
-      Wait 0.01    
-    Next
-    ' Message.Info("Copia completada")
-    f_progressbar.Close
-  Else
-    Message.Info("Faltan los directorios")
-  Endif  
-  
-  mnuRefresh_Click
-  
-  'Catch
-  
-End
-
-Public Sub mnuPaste_Click_Nuevo()
-  
-  Dim a As String
-  Dim b As String[]
-  Dim sDir As String
-  Dim sCopy As String
-  Dim sResult As String
-  
-  Dim aarchivos As New String[]  
-  Dim unarchivo As String
-  Dim incrementos As Float 
-  
-  Dim directoriorigen As String
-  
-  sDir = Desktop.GetDirectory("DESKTOP") 'M_XDG_DIR.sPath_DESKTOP
-  a = Clipboard.Paste("text/uri-list") ' limitamos el tipo de los datos pegados
-  b = Split(a, gb.CrLf, "", True) ' cargamos la lista de rutas en un array b
-  
-  ' escapando las terminaciones de línea
-  a = Null  ' reutilizamos la variable "a"
-  f_progressbar.Show
-  f_progressbar.ProgressBar1.Value = 0
-  'incrementos = 1 / b.Count
-  'b = Dir(sDir, "*", gb.File)
-  ' incrementos = 1 / aarchivos.Count
-  incrementos = 1 / b.Count
-  For Each a In b
-    a = Right$(a, -7) ' quitamos "file://";
-    a = URLDecode(a)  ' descodificamos las cadenas
-    a = RTrim(a)
-    ' Print a
-    If Exist(sDir &/ File.Name(a)) Then
-      Message.Title = ("Innova Desktop - Copy File")
-      If Message.Question("<span style=\"color:#" & "0000FF" & ";margin-left:1em;\">" & ("There is already a file with the same name in this location.  ") & "</span>" & "<b><span style=\"color:#" & "088906" & ";margin-left:1em;\">" & UCase(File.Name(a)) & "</span></b>" & "<span style=\"color:#" & "CC0000" & ";margin-left:1em;\">" & (" Overwrite it with the new file?"), ("Copy and Replace"), ("Don't Copy")) = 1 Then
-        Kill sDir &/ File.Name(a)
-      Endif
-    Endif
-    
-    '  Private directoriorigen As String = "/home/edulibreos/mio/" 'Desktop.GetDirectory("DESKTOP")
-    'Private directoriodestino As String = "/home/edulibreos/Escritorio" 'Desktop.GetDirectory("DESKTOP")
-    ' directoriorigen = File.Dir(a)
-    'Print directoriorigen
-    'aarchivos = Dir(directoriorigen, "*", gb.File)
-    'aarchivos = Dir(directoriorigen, File.Name(a), gb.File)
-    'incrementos = 1 / aarchivos.Count
-    
-    ' For Each unarchivo In aarchivos
-    
-    '  Print unarchivo
-    
-    'f_progressbar.ProgressBar1.Value += incrementos
-    'f_progressbar.lblStatus.Text = "Copiando " '& File.Name(a)
-    'lblStatus.Text = "Copiando " & unarchivo
-    'Wait 0.01     
-    ' Para copiar, descomentar
-    '      Copy directoriorigen &/ unarchivo To sDir &/ unarchivo
-    'sCopy = "cp -R " & a & " " & sDir
-    'Shell sCopy Wait
-    'Copy directoriorigen To directoriodestino 
-    
-    If Not IsDir(a) Then 
-      f_progressbar.ProgressBar1.Value += incrementos
-      f_progressbar.lblStatus.Text = "Copiando " & a
-      ' Try Copy a To sDir &/ File.Name(a)
-      
-    Else
-      f_progressbar.ProgressBar1.Value += incrementos
-      'f_progressbar.lblStatus.Text = "Copiando " & File.Name(a)
-      f_progressbar.lblStatus.Text = "Copiando " & (a)
-      'Print unarchivo
-      'Print sDir
-      Wait 0.1
-      sCopy = "cp -R " & a & " " & sDir
-      Shell sCopy Wait
-      
-      f_progressbar.ProgressBar1.Value += incrementos
-      f_progressbar.lblStatus.Text = "Copiando " & a
-      Wait 0.01    
-      
-    Endif 
-    
-    Wait 0.01    
-    
-    'Next
-    
-  Next
-  
-  mnuRefresh_Click
-  
-  'Catch
   
 End
 
@@ -1297,25 +974,6 @@ Public Sub ivwDesktop_MouseDrag()
     ivwDesktop.Drag(sDir &/ ivwDesktop.Key, "text/uri-list.text")
   Endif
   
-  ' If ivwDesktop.Count > 0 Then
-  '  cad = ivwDesktop.Key
-  ' Last.Drag(cad) 
-  '   Drag.Icon = Stock["copy"]      
-  'Endif
-  
-  'Drag.Icon = Last.Picture
-  'Last.Drag(Drag.Icon.Image)
-  'MovingButton = Val(Last.Tag)
-  'ivwDesktop.Drag(sDir &/ ivwDesktop.Item.Text, "text/uri-list.text")
-  
-  'Message(ivwDesktop.Drag(sDir &/ ivwDesktop.Item.Text, "text/uri-list.text"))
-  
-  'clsFileView1.Drag(clsFileView1.Current, "text/uri-list")
-  ' ivwDesktop.drag(sDir &/ ivwDesktop.Item.Text, "text/uri-list")
-  '    Drag.Icon = Stock["copy"]      
-  'Endif 
-  'Catch
-  
 End
 
 Public Sub ivwDesktop_GotFocus()
@@ -1329,11 +987,8 @@ End
 
 Public Sub ivwDesktop_MouseMove()
   
-  'Dim sName As String 
-  
   If Not ivwDesktop.FindAt(Mouse.x, Mouse.y) Then
     
-    ' sName = ivwDesktop.item.Text
     Try $sLastName = ivwDesktop.Item.Text
   Endif
   
@@ -1343,8 +998,7 @@ Public Sub mnuAscending_Click()
   
   If mnuAscending.Checked = True Then
     ivwDesktop.Sorted = True
-    '  Else
-    '    ivwDesktop.Sorted = False
+    
   Endif
   
   If mnuAscending.Checked = False Then
@@ -1352,8 +1006,6 @@ Public Sub mnuAscending_Click()
     ivwDesktop.Clear
     Show_Files_Desktop
   Endif
-  
-  'ivwIcons.Sorted = Not ivwIcons.Sorted  
   
 End
 
@@ -1425,10 +1077,8 @@ Public Sub mnutrash_Click()
   Dim sOrigen As String
   Dim sDestiny As String
   
-  'sOrigen = sDir & $sLastName
   sDestiny = Desktop.DataDir &/ "Trash/info"
   
-  'strFiles = GetSelection 'ivwDesktop.Item.Text
   strFiles = GetSelection()
   If strFiles.Count > 0 Then
     Select Message.Question((LC_MESSAGES.MSG_QUESTION_DELETE_FILE_TRASH), ("&Yes"), ("&No"))
@@ -1438,11 +1088,6 @@ Public Sub mnutrash_Click()
           strFile = sDir &/ strFile
           strData = strData & strFile & "\n"
           Shell "mv -f " & Shell$(strFile) & " " & Desktop.DataDir &/ "Trash/info"
-          'Print strFile
-          'Print sDestiny
-          'Move strFile To sDestiny
-          'Shell "mv " & strFile & " " & Desktop.DataDir &/ "Trash/info"  'COPIO EL DIRECTORIO EN TASH
-          'Shell "mv " & Shell$(strFile)
           
         Next
         
@@ -1471,20 +1116,17 @@ Public Sub mnuPaste_Click()
   Dim sDir As String
   Dim sCopy As String
   Dim sResult As String
-  'Dim aarchivos As New String[]  
-  'Dim unarchivo As String
-  'Dim incrementos As Float
   
   Dim nFiles As Integer
   Dim sName As String
   'Dim iSize As Integer
   Dim iSize As Float
   
-  sDir = Desktop.GetDirectory("DESKTOP") 'M_XDG_DIR.sPath_DESKTOP
-  a = Clipboard.Paste("text/uri-list") ' limitamos el tipo de los datos pegados
-  b = Split(a, gb.CrLf, "", True) ' cargamos la lista de rutas en un array b
-  ' escapando las terminaciones de línea
-  a = Null  ' reutilizamos la variable "a"
+  sDir = Desktop.GetDirectory("DESKTOP") 
+  a = Clipboard.Paste("text/uri-list") 
+  b = Split(a, gb.CrLf, "", True)
+  
+  a = Null 
   
   nFiles = 0
   nFiles = b.Count
@@ -1494,42 +1136,36 @@ Public Sub mnuPaste_Click()
   If sDir Then
     
     For Each a In b
-      a = Right$(a, -7) ' quitamos "file://";
-      a = URLDecode(a)  ' descodificamos las cadenas
+      a = Right$(a, -7) 
+      a = URLDecode(a)  
       a = RTrim(a)
       
       If Exist(sDir &/ File.Name(a)) Then
         Message.Title = ("Innova Desktop - Copy File")
         If Message.Question("<span style=\"color:#" & "0000FF" & ";margin-left:1em;\">" & ("There is already a file with the same name in this location.  ") & "</span>" & "<b><span style=\"color:#" & "088906" & ";margin-left:1em;\">" & UCase(File.Name(a)) & "</span></b>" & "<span style=\"color:#" & "CC0000" & ";margin-left:1em;\">" & (" Overwrite it with the new file?"), ("Copy and Replace"), ("Don't Copy")) = 1 Then
           Try Kill sDir &/ File.Name(a)
-          ''Message("entre aqui")
+          
         Endif
       Endif
       
       If Not IsDir(a) Then 
         
-        sName = Left$(a, -4) ' conseguimos el nombre
-        ''Exec ["convert", a, nombre & ".jpg"]  ' ejecutamos para convertir de formato
-        
+        sName = Left$(a, -4)
         f_progressbar.lblStatus2.Text = ("Copying ") & nFiles & (" Items ")
         f_progressbar.lblStatus.Text = ("Copying ") & File.Name(a) & (" To ") & sDir
         iSize = Stat(a).Size
         
         f_progressbar.lblSize.Text = getText(iSize)
         f_progressbar.ProgressBar1.Value += (1 / nFiles)
-        'f_progressbar.ProgressBar1.Background = Color.RGB(100, 200, 100)
-        f_progressbar.ProgressBar1.Background = &336b87& '&003B46& 'Color.RGB(201, 201, 255)
-        ' f_progressbar.ProgressBar1.Foreground = Color.White
+        
+        f_progressbar.ProgressBar1.Background = &336b87&
         
         Wait 0.5
         
         Try Copy a To sDir &/ File.Name(a) 
         
-        'sCopy = "cp -R " & a & " " & sDir &/ File.Name(a)
-        'Shell sCopy Wait
-        
       Else
-        sName = Left$(a, -4) ' conseguimos el nombre
+        sName = Left$(a, -4) 
         
         f_progressbar.lblStatus2.Text = ("Copying ") & nFiles & (" Items ")
         f_progressbar.lblStatus.Text = ("Copying ") & File.Name(a) & (" To ") & sDir
@@ -1545,7 +1181,7 @@ Public Sub mnuPaste_Click()
       Endif 
       
     Next
-    ' Message.Info("Copia completada")
+    
     f_progressbar.Hide
   Else
     Message.Info(("An unknown error has occurred."))

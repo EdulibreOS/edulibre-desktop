@@ -96,8 +96,7 @@ Public Sub dwgWelcome_Draw()
     Y = Paint.Font.Ascent
     'X = PaintText("EdulibreOS " & Application.Version, 8, Y, Color.White) 'TEXT_COLOR)
     X = PaintText("EdulibreOS", 8, Y, Color.White) 'TEXT_COLOR)"
-    'Paint.Font = Font["+12,Bold"]
-    'PaintText(Project.FullVersionWithRevision, X + 8, Paint.Font.Ascent, Color.White) 'Color.SelectedForeground)
+  
     
     Paint.Font = Font["+4,Bold"]
     Y += Paint.Font.Height

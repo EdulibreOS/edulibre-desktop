@@ -216,7 +216,7 @@ Public Sub picSys_MouseDown()
   
   'Shell User.Home &/ "QSettings.gambas"
   Shell "/usr/bin/QSettings.gambas"
-
+  
 End
 
 Public Sub Form_KeyPress()

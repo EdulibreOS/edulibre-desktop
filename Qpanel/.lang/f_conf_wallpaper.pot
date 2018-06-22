@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-06-04 18:53 UTC\n"
+"POT-Creation-Date: 2018-06-19 15:30 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -22,31 +22,31 @@ msgstr ""
 msgid "Close"
 msgstr ""
 
-#: f_conf_wallpaper.class:49
+#: f_conf_wallpaper.class:47
 msgid "The theme has been changed successfully."
 msgstr ""
 
-#: f_conf_wallpaper.class:58
+#: f_conf_wallpaper.class:56
 msgid "Image Archive"
 msgstr ""
 
-#: f_conf_wallpaper.class:59
+#: f_conf_wallpaper.class:57
 msgid "Image PNG"
 msgstr ""
 
-#: f_conf_wallpaper.class:59
+#: f_conf_wallpaper.class:57
 msgid "Image JPG"
 msgstr ""
 
-#: f_conf_wallpaper.class:59
+#: f_conf_wallpaper.class:57
 msgid "Image JPEG"
 msgstr ""
 
-#: f_conf_wallpaper.class:59
+#: f_conf_wallpaper.class:57
 msgid "Image SVG"
 msgstr ""
 
-#: f_conf_wallpaper.class:59
+#: f_conf_wallpaper.class:57
 msgid "Image BMP of Windows"
 msgstr ""
 

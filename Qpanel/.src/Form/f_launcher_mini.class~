@@ -17,7 +17,7 @@ Public Sub Form_Open()
   
   M_OBS_Global.Add(Me)
   
-  M_Theme_Launcher.Show_Theme
+  M_Theme.Show_Theme
   
   M_Core.FillList_Cat_Mini
   'm_core.FillList_All_Mini()

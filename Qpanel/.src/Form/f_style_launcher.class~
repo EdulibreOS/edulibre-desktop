@@ -30,7 +30,7 @@ Public Sub Form_Open()
   Dim sDir As String
   Dim sImage As String
   
-  M_Theme_Launcher.Show_Theme
+  M_Theme.Show_Theme
   ListViewImage.Clear
   
   For Each sDir In ["/usr/share/Innova/Launcher", Desktop.ConfigDir &/ "Innova/Launcher"]

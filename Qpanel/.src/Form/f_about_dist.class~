@@ -2,9 +2,9 @@
 
 ' Gambas class file
 
-' Innova Project - Launcher of APP
-'
+' Innova Project 
 ' Copyright (C) Herberth Guzmán
+' herberthguzman@gmail.com
 '
 ' This program is free software; you can redistribute it and/or modify
 ' it under the terms of the GNU General Public License as published by
@@ -22,18 +22,12 @@
 ' Boston, MA  02110-1301  USA
 
 ' Homepage: http://http://sourceforge.net/projects/innovadesktop
-''inestable Private AllCat As String[] = ["Version = " & Application.version, "Framework = " & System.FullVersion, "Developed = Gambas" & System.version, "LibCore = " & "libQt5Core", "Build Type = " & "Preview", "Language = " & System.Language, "Theme = " & Style.Name]
-'Private AllCat As String[] = ["Version = " & Application.version, "Framework = " & System.FullVersion, "Developed = Gambas" & System.version, "LibCore = " & "libQt5Core", "Build Type = " & ("Stable"), "Language = " & System.Language, "Theme = " & Style.Name]
+' Part of this code belongs to Gambas3 and was adapted for Innova Project
+
 Private cx As New Connection
 Private rs As Result
 
 Public Sub Form_Open()
-  
-  'lblVersion.Text = Application.Version
-  
-  'lbldesktop.Text = "Innova Desktop" 
-  '  lblversion.Text = ("Version ") & Application.Version
-  ' Grid.Background = Color.Transparent
   
 End
 
@@ -123,8 +117,5 @@ Public Sub FillsList()
 End
 
 Public Sub Grid_Draw(X As Integer, Y As Integer, Width As Integer, Height As Integer, Row As Integer, Column As Integer)
-  
-  'Draw.Text((AllCat[row]) & "gambas ", x + 0, y, Width, Height, align.Left)
-  ' Draw.Text(AllCat[row], x + 48, y, Width, Height, align.Left)
   
 End

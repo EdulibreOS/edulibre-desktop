@@ -21,7 +21,7 @@ Geometry=[-1,-1,224,280]
 Path="/home/edulibreos/Launcher_CNB.gambas"
 
 [OpenFile]
-File[1]=".src/Module/M_Core.module:8.504"
+File[1]=".src/Module/M_Core.module:74.503"
 Active=1
 Count=16
 File[2]=".src/Form/f_power.form"

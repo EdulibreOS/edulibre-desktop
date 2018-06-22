@@ -48,8 +48,6 @@ Private $sShortcut As String
 Public Sub _new()
   
   $hObs = New Observer(Me) As "DrawingArea"
-  '$hTimer = New Timer As "Timer"
-  '$hTimer.Delay = 50
   Me.Mouse = Mouse.Pointing
   $hTimer = New Timer As "Timer"
   
@@ -81,30 +79,6 @@ Public Sub DrawingArea_MouseUp()
   
 End
 
-'Public Sub DrawingArea_DblClick()
-'  
-'  Raise Click
-'  Stop Event
-'  
-'End
-
-' Public Sub Timer_Timer()
-'   
-'   If $bInside Then
-'     $fOpacity = Min(MAX_OPACITY, $fOpacity + 0.1)
-'     If $fOpacity >= MAX_OPACITY Then
-'       $hTimer.Stop
-'     Endif
-'   Else
-'     $fOpacity = Max(MIN_OPACITY, $fOpacity - 0.1)
-'     If $fOpacity <= MIN_OPACITY Then
-'       $hTimer.Stop
-'     Endif
-'   Endif
-'   
-'   SetOpacity
-'   
-' End
 
 Public Sub DrawingArea_Draw()
   
@@ -145,11 +119,7 @@ Private Sub SetOpacity()
     Paint.Font = Font["Bold,+3"]
     
     Paint.Brush = Paint.Color(Color.SetAlpha(Color.White, 64))
-    'For X = -2 To 2
-    '  For Y = -2 To 2
-    '    Paint.DrawText($sShortcut, $hDraw.W - 16 + X, $hDraw.H - 16 + Y, 16, 16, Align.Center)
-    '  Next
-    'Next
+   
     Paint.Arc($hDraw.W - 12, $hDraw.H - 12, 12)
     Paint.Fill
     

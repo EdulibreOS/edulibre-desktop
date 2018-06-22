@@ -7,13 +7,6 @@ Project Management
 Español translation
 
 ------------------------------------------
-Xumak
-alianzas@xumak.com
-Guatemala
-Project Management
-Main Sponsor.
-
-------------------------------------------
 Benoît Minisini
 gambas@users.sourceforge.net
 France
@@ -98,12 +91,6 @@ Testing
 Translation
 
 ------------------------------------------
-Stuardo Rodriguez
-str@maphpia.com
-Guatemala
-Initial Design Improvements
-
-------------------------------------------
 Juan José Gonzalez
 josego990@gmail.com
 Guatemala
@@ -115,4 +102,11 @@ Mario Roberto Guzmán
 mrguzmanmuralles@gmail.com
 Guatemala
 Initial Design Improvements
+Bug reports
+
+Eduardo Garcia
+edu.agarcia5@gmail.com
+Guatemala
+Initial Design Improvements
+Testing
 Bug reports
