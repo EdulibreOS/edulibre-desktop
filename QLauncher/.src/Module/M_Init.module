@@ -50,7 +50,7 @@ Public Sub Init_03()
   'f_launcher.Show
   
   Try sResult = Settings_Core_Innova["Launcher/Style_Launcher"]
-  iShow = Settings_Core_Innova["Launcher/iShow", f_launcher]
+  Try iShow = Settings_Core_Innova["Launcher/iShow", f_launcher]
   ' Try iShow = Settings_Core_Innova["Launcher/Show"]
   
   Wait 0.1

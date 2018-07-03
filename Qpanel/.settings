@@ -42,9 +42,9 @@ Ignore=0
 [OpenFile]
 Count=5
 File[1]=".src/Form/f_panel.form"
-Active=5
+Active=3
 File[2]=".src/Form/f_panel.class:0.0"
-File[3]=".src/Modules/M_Init.module:16.34"
+File[3]=".src/Modules/M_Init.module:2.67"
 File[4]=".src/Modules/M_Theme.module:93.24"
 File[5]=".src/Class/Cls_Start.class:14.19"
 
