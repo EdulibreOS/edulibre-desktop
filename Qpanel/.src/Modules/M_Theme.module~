@@ -138,7 +138,6 @@ Public Function Show_Theme()
     f_conf_wallpaper.Picture = Picture[sPath_Theme &/ sResult_Inn_Look_Img]
     f_compress.Picture = Picture[sPath_Theme &/ sResult_Inn_Look_Img]
     f_gallery_wallpaper.Picture = Picture[sPath_Theme &/ sResult_Inn_Look_Img]
-    f_power.Picture = Picture[sPath_Theme &/ sResult_Inn_Look_Img]
     f_progressbar.Picture = Picture[sPath_Theme &/ sResult_Inn_Look_Img]
     f_properties.Picture = Picture[sPath_Theme &/ sResult_Inn_Look_Img]
     f_properties_mixed.Picture = Picture[sPath_Theme &/ sResult_Inn_Look_Img]

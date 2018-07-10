@@ -40,8 +40,8 @@ Private $iLast As Integer
 
 Private iValue As Integer
 
-Static Private BACKGROUND_COLOR As Integer = &212121& '&H3398C3& '&HFFAF5F&
-Static Private TEXT_COLOR As Integer = &e0e0e0& '&HDF6B00& ' &z '&HFFAF5F&
+Static Private BACKGROUND_COLOR As Integer = &5060BA '&212121& '&H3398C3& '&HFFAF5F&
+Static Private TEXT_COLOR As Integer = &FFFFFF '&e0e0e0& '&HDF6B00& ' &z '&HFFAF5F&
 
 Private $hWatcher As DesktopWatcher
 Private hWindWatch As DesktopWatcher
@@ -570,17 +570,17 @@ End
 
 Public Sub ToggleTask_MouseDown()
   
-  If Mouse.Left Then
-    Last.Background = BACKGROUND_COLOR
-    Last.Foreground = TEXT_COLOR
-  Endif
+  ' If Mouse.Left Then
+  '   Last.Background = BACKGROUND_COLOR
+  '   Last.Foreground = TEXT_COLOR
+  ' Endif
   
 End
 
 Public Sub ToggleTask_MouseUp()
   
-  Last.Background = Color.Transparent
-  Last.Foreground = Color.Black
+  'Last.Background = Color.Transparent
+  'Last.Foreground = Color.Black
   
 End
 
@@ -609,8 +609,17 @@ Public Sub ToggleTask_Enter()
   iValue = Last.Tag
   
   hToggleTask.Tooltip = Last.text
+  Last.Background = BACKGROUND_COLOR
   
 Catch
+  
+End
+
+Public Sub ToggleTask_Leave()
+  
+  'Last.Background = Color.Transparent
+  'Last.Foreground = Color.Black
+  '  f_screeshot.Hide
   
 End
 
@@ -662,6 +671,18 @@ Public Sub PictureBox1_MouseDown()
   
 End
 
+Private Sub img_tray()
+  
+  Dim DH As Integer
+  ' ' 
+  
+  Paint.Begin(SystrayDrawingArea)
+  DH = 1 + SystrayDrawingArea.H / M_Theme.$hImage.H
+  Paint.DrawImage(M_Theme.$hImage, 0, - DH, SystrayDrawingArea.W, SystrayDrawingArea.H + DH * 2)
+  Paint.End
+  
+End
+
 Public Sub ArrangeTray()
   
   Dim I As Integer
@@ -669,6 +690,7 @@ Public Sub ArrangeTray()
   Dim DH As Integer
   Dim iSizeSisTray As Integer
   
+  img_tray
   iSize = iSizePanel
   
   If IsNull(iSize) Then
