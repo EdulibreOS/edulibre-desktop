@@ -40,8 +40,8 @@ Private $iLast As Integer
 
 Private iValue As Integer
 
-Static Private BACKGROUND_COLOR As Integer = &212121& '&H3398C3& '&HFFAF5F&
-Static Private TEXT_COLOR As Integer = &e0e0e0& '&HDF6B00& ' &z '&HFFAF5F&
+Static Private BACKGROUND_COLOR As Integer = &5060BA '&212121& '&H3398C3& '&HFFAF5F&
+Static Private TEXT_COLOR As Integer = &FFFFFF '&e0e0e0& '&HDF6B00& ' &z '&HFFAF5F&
 
 Private $hWatcher As DesktopWatcher
 Private hWindWatch As DesktopWatcher
@@ -199,7 +199,7 @@ Public Sub App_Default(Optional sFilter As String)
   AppsDefault.Children.Clear
   sDir_Apps = Desktop.ConfigDir &/ "Innova/Panel/AppsDefault"
   
-  hCButton_Home = New Picture(AppsDefault) As "btnHome"
+  hCButton_Home = New CButton(AppsDefault) As "btnHome"
   hCButton_Home.w = iSize 
   hCButton_Home.h = iSize 
   hCButton_Home.Mouse = 13
@@ -208,7 +208,7 @@ Public Sub App_Default(Optional sFilter As String)
   For Each sFile_Apps In Dir(sDir_Apps, "*.desktop").Sort(gb.IgnoreCase)
     DesktopEntry = New DesktopFile(sDir_Apps &/ sFile_Apps)
     pIcon = M_DesktopEntry[DesktopEntry.Path, 48].Image.Stretch(iSize, iSize).Picture
-    hCButton_App_Default = New Picture(AppsDefault) As "CButtonAppDefault"
+    hCButton_App_Default = New CButton(AppsDefault) As "CButtonAppDefault"
     hCButton_App_Default.w = iSize 
     hCButton_App_Default.h = iSize 
     hCButton_App_Default.Mouse = 13
@@ -570,17 +570,17 @@ End
 
 Public Sub ToggleTask_MouseDown()
   
-  If Mouse.Left Then
-    Last.Background = BACKGROUND_COLOR
-    Last.Foreground = TEXT_COLOR
-  Endif
+  ' If Mouse.Left Then
+  '   Last.Background = BACKGROUND_COLOR
+  '   Last.Foreground = TEXT_COLOR
+  ' Endif
   
 End
 
 Public Sub ToggleTask_MouseUp()
   
-  Last.Background = Color.Transparent
-  Last.Foreground = Color.Black
+  'Last.Background = Color.Transparent
+  'Last.Foreground = Color.Black
   
 End
 
@@ -609,8 +609,17 @@ Public Sub ToggleTask_Enter()
   iValue = Last.Tag
   
   hToggleTask.Tooltip = Last.text
+  Last.Background = BACKGROUND_COLOR
   
 Catch
+  
+End
+
+Public Sub ToggleTask_Leave()
+  
+  'Last.Background = Color.Transparent
+  'Last.Foreground = Color.Black
+  '  f_screeshot.Hide
   
 End
 

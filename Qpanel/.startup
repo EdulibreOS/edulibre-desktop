@@ -2,11 +2,11 @@ Cls_Start
 Qpanel
 0
 0
-0.1.69
+0.1.70
 
 gb.args
 gb.image
-gb.qt4
+gb.qt5
 gb.form
 gb.compress
 gb.compress.bzlib2

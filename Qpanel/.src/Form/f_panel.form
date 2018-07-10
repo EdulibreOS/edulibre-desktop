@@ -10,7 +10,6 @@
   Stacking = Window.Above
   Sticky = True
   SkipTaskbar = True
-  Transparent = True
   Arrangement = Arrange.Horizontal
   Padding = 1
   { mnuMain Menu

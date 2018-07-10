@@ -2,7 +2,7 @@
 Title=QLauncher
 Startup=Cls_Start
 Icon=img/App-Launcher.png
-Version=0.0.58
+Version=0.0.59
 Component=gb.image
 Component=gb.qt5
 Component=gb.form
