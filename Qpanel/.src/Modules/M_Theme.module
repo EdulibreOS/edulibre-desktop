@@ -23,6 +23,7 @@
 
 Public sResult_Theme As String
 Public Settings_Core_Innova As New Settings(Desktop.ConfigDir &/ "Innova/Innova_Config.conf")
+Public $hImage As Image
 
 Public Sub IconTheme()
   
@@ -124,8 +125,10 @@ Public Function Show_Theme()
     
     If Not IsNull(sResult_Img_Panel) Then
       f_panel.Picture = Picture[sResult_Img_Panel]
+      $hImage = Image.Load(sResult_Img_Panel)
     Else
       f_panel.Picture = Picture[sPath_Theme &/ sResult_Inn_Panel_Img]
+      $hImage = Image.Load(sPath_Theme &/ sResult_Inn_Panel_Img)
     Endif
     
     If Not IsNull(sResult_Background_Panel) Then

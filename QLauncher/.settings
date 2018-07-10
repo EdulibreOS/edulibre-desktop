@@ -21,19 +21,10 @@ Geometry=[-1,-1,224,280]
 Path="/home/edulibreos/Launcher_CNB.gambas"
 
 [OpenFile]
-File[1]=".src/Module/M_Core.module:74.503"
-Active=4
-Count=11
-File[2]=".src/Module/M_DB.module:14.50"
-File[3]=".src/Module/M_DesktopEntry.module:0.2"
-File[4]=".src/Module/M_Init.module:50.52"
-File[5]=".src/Module/M_OBS_Global.module:1.15"
-File[6]=".src/Module/M_Theme.module:2.158"
-File[7]=".src/Module/M_Var_Global.module:0.1"
-File[8]=".src/Class/App/DesktopApps.class:34.28"
-File[9]=".src/Form/f_launcher.form"
-File[10]=".src/Form/f_launcher_cnb_mini.form"
-File[11]=".src/Form/f_launcher_mini.form"
+File[1]=".src/Form/f_power.form"
+Active=2
+Count=2
+File[2]=".src/Form/f_power.class:3.38"
 
 [Watches]
 Count=0
