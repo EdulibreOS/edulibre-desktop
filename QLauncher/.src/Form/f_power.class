@@ -28,9 +28,13 @@ Public Sub Form_Open()
   M_Theme.Show_Theme
   Me.Center
   
-  btn1.Picture = Image.Load("img/shutdown/shutdown.png").Picture
-  btn2.Picture = Image.Load("img/shutdown/restart.png").Picture
-  btn3.Picture = Image.Load("img/shutdown/suspend.png").Picture
+  ' btn1.Picture = Image.Load("img/shutdown/shutdown.png").Picture
+  ' btn2.Picture = Image.Load("img/shutdown/restart.png").Picture
+  ' btn3.Picture = Image.Load("img/shutdown/suspend.png").Picture
+  
+  btn1.Picture = Image.Load("img/shutdown/shutdown.svg").Picture
+  btn2.Picture = Image.Load("img/shutdown/reboot.svg").Picture
+  btn3.Picture = Image.Load("img/shutdown/logout.svg").Picture
   
 End
 
@@ -87,36 +91,36 @@ End
 
 Public Sub btn1_Enter()
   
-  btn1.Picture = Image.Load("img/shutdown/shutdown_highlight.png").Picture
+  '  btn1.Picture = Image.Load("img/shutdown/shutdown_highlight.png").Picture
   
 End
 
 Public Sub btn1_Leave()
   
-  btn1.Picture = Image.Load("img/shutdown/shutdown.png").Picture
+  ' btn1.Picture = Image.Load("img/shutdown/shutdown.png").Picture
   
 End
 
 Public Sub btn2_Enter()
   
-  btn2.Picture = Image.Load("img/shutdown/restart_highlight.png").Picture
+  ' btn2.Picture = Image.Load("img/shutdown/restart_highlight.png").Picture
   
 End
 
 Public Sub btn2_Leave()
   
-  btn2.Picture = Image.Load("img/shutdown/restart.png").Picture
+  ' btn2.Picture = Image.Load("img/shutdown/restart.png").Picture
   
 End
 
 Public Sub btn3_Enter()
   
-  btn3.Picture = Image.Load("img/shutdown/suspend_highlight.png").Picture
+  ' btn3.Picture = Image.Load("img/shutdown/suspend_highlight.png").Picture
   
 End
 
 Public Sub btn3_Leave()
   
-  btn3.Picture = Image.Load("img/shutdown/suspend.png").Picture
+  ' btn3.Picture = Image.Load("img/shutdown/suspend.png").Picture
   
 End
