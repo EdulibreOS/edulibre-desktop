@@ -38,14 +38,6 @@ Public Sub Form_Open()
   
 End
 
-Public Sub PanelLauncher_Draw()
-  
-End
-
-Public Sub IconViewCat_MouseMove()
-  
-End
-
 Public Sub IconViewCat_Select()
   
   Dim iResult As Integer 

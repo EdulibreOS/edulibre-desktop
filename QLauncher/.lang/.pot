@@ -3,121 +3,121 @@ msgid ""
 msgstr ""
 "#-#-#-#-#  #project.pot (QLauncher 3.11.2)  #-#-#-#-#\n"
 "Project-Id-Version: QLauncher 3.11.2\n"
-"POT-Creation-Date: 2018-07-10 21:36 UTC\n"
+"POT-Creation-Date: 2018-07-12 20:06 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  CAnimation.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-07-10 21:36 UTC\n"
+"POT-Creation-Date: 2018-07-12 20:05 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  CButton.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-07-10 21:36 UTC\n"
+"POT-Creation-Date: 2018-07-12 20:05 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  CCat.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-07-10 21:36 UTC\n"
+"POT-Creation-Date: 2018-07-12 20:05 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  Cls_Start.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-07-10 21:36 UTC\n"
+"POT-Creation-Date: 2018-07-12 20:05 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  DesktopApps.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-07-10 21:36 UTC\n"
+"POT-Creation-Date: 2018-07-12 20:05 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  DesktopAppsCat.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-07-10 21:36 UTC\n"
+"POT-Creation-Date: 2018-07-12 20:05 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  M_Core.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-07-10 21:36 UTC\n"
+"POT-Creation-Date: 2018-07-12 20:05 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  M_DB.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-07-10 21:36 UTC\n"
+"POT-Creation-Date: 2018-07-12 20:05 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  M_DesktopEntry.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-07-10 21:36 UTC\n"
+"POT-Creation-Date: 2018-07-12 20:05 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  M_Init.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-07-10 21:36 UTC\n"
+"POT-Creation-Date: 2018-07-12 20:05 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  M_OBS_Global.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-07-10 21:36 UTC\n"
+"POT-Creation-Date: 2018-07-12 20:05 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  M_Theme.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-07-10 21:36 UTC\n"
+"POT-Creation-Date: 2018-07-12 20:05 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  M_Var_Global.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-07-10 21:36 UTC\n"
+"POT-Creation-Date: 2018-07-12 20:05 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  PushButton.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-07-10 21:36 UTC\n"
+"POT-Creation-Date: 2018-07-12 20:05 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  f_launcher.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-07-10 21:36 UTC\n"
+"POT-Creation-Date: 2018-07-12 20:05 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  f_launcher_cnb_mini.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-07-10 21:36 UTC\n"
+"POT-Creation-Date: 2018-07-12 20:05 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  f_launcher_mini.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-07-10 21:36 UTC\n"
+"POT-Creation-Date: 2018-07-12 20:05 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  f_power.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-07-10 21:36 UTC\n"
+"POT-Creation-Date: 2018-07-12 20:05 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  f_style_launcher.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-07-10 21:36 UTC\n"
+"POT-Creation-Date: 2018-07-12 20:05 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -190,39 +190,39 @@ msgstr ""
 msgid "Diversificado"
 msgstr ""
 
-#: M_Core.module:796 f_launcher_mini.class:227
+#: M_Core.module:796 f_launcher_mini.class:229
 msgid "Category: "
 msgstr ""
 
-#: f_launcher.form:68 f_launcher_cnb_mini.form:41 f_launcher_mini.form:51
+#: f_launcher.form:69 f_launcher_cnb_mini.form:41 f_launcher_mini.form:51
 msgid "mnuBookmark"
 msgstr ""
 
-#: f_launcher.form:72 f_launcher_cnb_mini.form:45 f_launcher_mini.form:55
+#: f_launcher.form:73 f_launcher_cnb_mini.form:45 f_launcher_mini.form:55
 msgid "Delete Bookmark"
 msgstr ""
 
-#: f_launcher.form:78 f_launcher_mini.form:61
+#: f_launcher.form:79 f_launcher_mini.form:61
 msgid "mnuLauncher"
 msgstr ""
 
-#: f_launcher.form:82 f_launcher_mini.form:65
+#: f_launcher.form:83 f_launcher_mini.form:65
 msgid "Open"
 msgstr ""
 
-#: f_launcher.form:92 f_launcher_mini.form:73
+#: f_launcher.form:93 f_launcher_mini.form:73
 msgid "Add to Desktop"
 msgstr ""
 
-#: f_launcher.form:98 f_launcher_mini.form:78
+#: f_launcher.form:99 f_launcher_mini.form:78
 msgid "Add to Panel"
 msgstr ""
 
-#: f_launcher.form:104 f_launcher_mini.form:83
+#: f_launcher.form:105 f_launcher_mini.form:83
 msgid "Add to Bookmark"
 msgstr ""
 
-#: f_launcher.form:349
+#: f_launcher.form:350
 msgid "test"
 msgstr ""
 
@@ -242,27 +242,27 @@ msgstr ""
 msgid "usuario"
 msgstr ""
 
-#: f_launcher_mini.class:99
+#: f_launcher_mini.class:100
 msgid "Image Archive"
 msgstr ""
 
-#: f_launcher_mini.class:100
+#: f_launcher_mini.class:101
 msgid "Image PNG"
 msgstr ""
 
-#: f_launcher_mini.class:100
+#: f_launcher_mini.class:101
 msgid "Image JPG"
 msgstr ""
 
-#: f_launcher_mini.class:100
+#: f_launcher_mini.class:101
 msgid "Image JPEG"
 msgstr ""
 
-#: f_launcher_mini.class:100
+#: f_launcher_mini.class:101
 msgid "Image SVG"
 msgstr ""
 
-#: f_launcher_mini.class:100
+#: f_launcher_mini.class:101
 msgid "Image BMP of Windows"
 msgstr ""
 

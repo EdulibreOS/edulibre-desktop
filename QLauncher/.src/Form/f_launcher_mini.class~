@@ -1,5 +1,27 @@
 ' Gambas class file
 
+' Innova Project 
+' Copyright (C) Herberth Guzmán
+' herberthguzman@gmail.com
+'
+' This program is free software; you can redistribute it and/or modify
+' it under the terms of the GNU General Public License as published by
+' the Free Software Foundation; either version 2 of the License, or
+' (at your option) any later version.
+'
+' This program is distributed in the hope that it will be useful,
+' but WITHOUT ANY WARRANTY; without even the implied warranty of
+' MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+' GNU General Public License for more details.
+'
+' You should have received a copy of the GNU General Public License
+' along with this program; if not, write to the Free Software
+' Foundation, Inc., 51 Franklin St, Fifth Floor,
+' Boston, MA  02110-1301  USA
+
+' Homepage: http://http://sourceforge.net/projects/innovadesktop
+' This code belongs to Fabien Bodard and was adapted for Innova Project
+
 Public Settings_Core_Innova As New Settings(Desktop.ConfigDir &/ "Innova/Innova_Config.conf")
 Private DesktopEntry As DesktopFile
 Private sDir_AppsFav As String 
@@ -23,7 +45,7 @@ Public Sub Form_Open()
   IconViewApp.Background = Color.Transparent
   txtSearchApps.Background = Color.Transparent
   
-  m_core.Show_Opacity_Launcher
+  'm_core.Show_Opacity_Launcher
   m_core.Show_Background_Launcher
   m_core.Show_Cat_Hide_Launcher
   
@@ -201,7 +223,8 @@ Public Sub IconViewApp_MouseMove()
     
     $Category = Split(DesktopApps[Last.Item.Key]._$Category, "\n", " ", True)
     For Each sCat In $Category
-      sCat = Replace$($Category[0], ";", " \n", True)
+      ' sCat = Replace$($Category[0], ";", " \n", True)
+      sCat = Replace$($Category[0], ";", Space(2), True)
       txtlabelcat.Text = ("Category: ") & sCat
     Next
     
@@ -437,7 +460,7 @@ Public Sub IconViewApp_Select()
   
 End
 
-Public Sub PanelLauncher_Draw()
+Public Sub PanelLauncher_Draw_Evaluar()
   
   Dim X, Y, W, H As Float
   Dim hBrush As PaintBrush
