@@ -1,0 +1,14 @@
+[Desktop Entry]
+Name=Game
+Comment=Games and amusements
+Icon=applications-games
+Type=Directory
+Group=Innova
+ 
+#Translations
+Name[es]=Juegos
+Comment[es]=Juegos y distracciones
+Name[en]=Game
+Comment[en]=Games and amusements
+Name[fr]=Jeux
+Comment[fr]=Jeux et divertissements

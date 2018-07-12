@@ -1,9 +1,8 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: QLauncher 3.10.0\n"
-"POT-Creation-Date: 2018-02-19 18:49 UTC\n"
-"PO-Revision-Date: 2018-01-29 18:04 UTC\n"
+"Project-Id-Version: QLauncher 3.11.2\n"
+"PO-Revision-Date: 2018-07-12 17:44 UTC\n"
 "Last-Translator: edulibreos <edulibreos@edulibreos-OptiPlex-755>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
@@ -14,107 +13,107 @@ msgstr ""
 msgid "QLauncher"
 msgstr ""
 
-#: FMain.form:88 f_launcher.form:347 f_launcherori.form:172
-msgid "test"
-msgstr ""
-
-#: M_Core.module:33
+#: M_Core.module:54
 msgid "AudioVideo"
 msgstr ""
 
-#: M_Core.module:33
+#: M_Core.module:54
 msgid "Development"
 msgstr ""
 
-#: M_Core.module:33
+#: M_Core.module:54
 msgid "Education"
 msgstr ""
 
-#: M_Core.module:33
+#: M_Core.module:54
 msgid "Game"
 msgstr ""
 
-#: M_Core.module:33
+#: M_Core.module:54
 msgid "Graphics"
 msgstr ""
 
-#: M_Core.module:33
+#: M_Core.module:54
 msgid "Network"
 msgstr ""
 
-#: M_Core.module:33
+#: M_Core.module:54
 msgid "Office"
 msgstr ""
 
-#: M_Core.module:33
+#: M_Core.module:54
 msgid "Other"
 msgstr ""
 
-#: M_Core.module:33
+#: M_Core.module:54
 msgid "Settings"
 msgstr "Configuración"
 
-#: M_Core.module:33
+#: M_Core.module:54
 msgid "System"
 msgstr "Sistema"
 
-#: M_Core.module:33
+#: M_Core.module:54
 msgid "Utility"
 msgstr ""
 
-#: M_Core.module:36
+#: M_Core.module:57
 msgid "Básico"
 msgstr ""
 
-#: M_Core.module:36
+#: M_Core.module:57
 msgid "Diversificado"
 msgstr ""
 
-#: M_Core.module:36
+#: M_Core.module:57
 msgid "Preescolar"
 msgstr ""
 
-#: M_Core.module:36
+#: M_Core.module:57
 msgid "Primaria Avanzada"
 msgstr ""
 
-#: M_Core.module:36
+#: M_Core.module:57
 msgid "Primaria Básica"
 msgstr ""
 
-#: M_Core.module:776 f_launcher_mini.class:205
+#: M_Core.module:796 f_launcher_mini.class:228
 msgid "Category: "
-msgstr "Categoria:"
+msgstr "Categoria: "
 
-#: f_launcher.form:66 f_launcher_cnb_mini.form:41 f_launcher_mini.form:51
+#: f_launcher.form:69 f_launcher_cnb_mini.form:41 f_launcher_mini.form:52
 msgid "mnuBookmark"
 msgstr ""
 
-#: f_launcher.form:70 f_launcher_cnb_mini.form:45 f_launcher_mini.form:55
+#: f_launcher.form:73 f_launcher_cnb_mini.form:45 f_launcher_mini.form:56
 msgid "Delete Bookmark"
 msgstr "Eliminar Favoritos"
 
-#: f_launcher.form:76 f_launcher_mini.form:61
+#: f_launcher.form:79 f_launcher_mini.form:62
 msgid "mnuLauncher"
 msgstr ""
 
-#: f_launcher.form:80 f_launcher_mini.form:65 f_launcherori.form:53
+#: f_launcher.form:83 f_launcher_mini.form:66
 msgid "Open"
 msgstr "Abrir"
 
-#: f_launcher.form:90 f_launcher_mini.form:73
+#: f_launcher.form:93 f_launcher_mini.form:74
 msgid "Add to Desktop"
 msgstr "Agregar a Escritorio"
 
-#: f_launcher.form:96 f_launcher_mini.form:78 f_launcherori.form:61
+#: f_launcher.form:99 f_launcher_mini.form:79
 msgid "Add to Panel"
 msgstr "Agregar a Panel"
 
-#: f_launcher.form:102 f_launcher_mini.form:83
+#: f_launcher.form:105 f_launcher_mini.form:84
 msgid "Add to Bookmark"
 msgstr "Agregar a Favoritos"
 
-#: f_launcher_cnb_mini.form:62 f_launcher_mini.form:100
+#: f_launcher.form:350
+msgid "test"
+msgstr ""
+
+#: f_launcher_cnb_mini.form:62 f_launcher_mini.form:101
 msgid "Show Categories"
 msgstr "Mostrar Categorias"
 
@@ -122,40 +121,36 @@ msgstr "Mostrar Categorias"
 msgid "User"
 msgstr "Usuario"
 
-#: f_launcher_mini.class:77
+#: f_launcher_mini.class:99
 msgid "Image Archive"
 msgstr "Archivo de Imagen "
 
-#: f_launcher_mini.class:78
+#: f_launcher_mini.class:100
 msgid "Image BMP of Windows"
 msgstr "Imagen BMP de Windows"
 
-#: f_launcher_mini.class:78
+#: f_launcher_mini.class:100
 msgid "Image JPEG"
 msgstr "Imagen JPEG"
 
-#: f_launcher_mini.class:78
+#: f_launcher_mini.class:100
 msgid "Image JPG"
 msgstr "Imagen JPG"
 
-#: f_launcher_mini.class:78
+#: f_launcher_mini.class:100
 msgid "Image PNG"
 msgstr "Imagen PNG"
 
-#: f_launcher_mini.class:78
+#: f_launcher_mini.class:100
 msgid "Image SVG"
 msgstr "Imagen SVG"
 
-#: f_launcher_mini.form:209
+#: f_launcher_mini.form:216
 msgid "Change Image"
 msgstr "Cambiar Imagen"
 
-#: f_launcher_mini.form:218
+#: f_launcher_mini.form:225
 msgid "usuario"
-msgstr ""
-
-#: f_launcherori.form:49
-msgid "r"
 msgstr ""
 
 #: f_power.form:27
@@ -181,3 +176,4 @@ msgstr "Seleccionar estilo del Launcher - Innova"
 #: f_style_launcher.form:34
 msgid "Style Launcher"
 msgstr "Estilo del Launcher"
+

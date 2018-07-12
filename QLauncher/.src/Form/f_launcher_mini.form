@@ -119,7 +119,7 @@
       Margin = True
       Padding = 5
       { !txtlabelcat Label
-        MoveScaled(1,2,17,2)
+        MoveScaled(0,0,35,3)
         #Public = True
         Visible = False
       }

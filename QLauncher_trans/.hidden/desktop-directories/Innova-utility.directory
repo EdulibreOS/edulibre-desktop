@@ -1,0 +1,14 @@
+[Desktop Entry]
+Name=Utility
+Comment=Desktop Utility
+Icon=applications-accessories
+Type=Directory
+Group=Innova
+ 
+#Translations
+Name[es]=Accesorios
+Comment[es]=Accesorios del escritorio
+Name[en]=Accessories
+Comment[en]=Desktop accessories
+Name[fr]=Accessoires
+Comment[fr]=Accessoires du bureau
