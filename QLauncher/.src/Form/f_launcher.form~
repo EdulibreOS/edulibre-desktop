@@ -3,12 +3,15 @@
 { Form Form
   MoveScaled(0,0,146,77)
   NoTabFocus = True
+  Persistent = True
   Border = False
   Stacking = Window.Above
   Sticky = True
   SkipTaskbar = True
+  Transparent = True
   Arrangement = Arrange.Vertical
   Spacing = True
+  Margin = True
   Padding = 2
   { mnuDel_Bookmark Menu
     Text = ("mnuBookmark")
@@ -212,7 +215,7 @@
           Margin = True
           Padding = 27
           Border = False
-          ScrollBar = Scroll.None
+          ScrollBar = Scroll.Vertical
         }
         { PansepApps2 Panel
           MoveScaled(67,9,6,3)
@@ -257,6 +260,7 @@
           { !txtlabelInfo Label
             MoveScaled(27,4,13,3)
             #Public = True
+            Font = Font["8"]
             Expand = True
             Alignment = Align.Right
           }

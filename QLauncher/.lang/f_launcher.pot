@@ -5,40 +5,40 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-07-10 21:36 UTC\n"
+"POT-Creation-Date: 2018-07-12 20:05 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: f_launcher.form:68
+#: f_launcher.form:69
 msgid "mnuBookmark"
 msgstr ""
 
-#: f_launcher.form:72
+#: f_launcher.form:73
 msgid "Delete Bookmark"
 msgstr ""
 
-#: f_launcher.form:78
+#: f_launcher.form:79
 msgid "mnuLauncher"
 msgstr ""
 
-#: f_launcher.form:82
+#: f_launcher.form:83
 msgid "Open"
 msgstr ""
 
-#: f_launcher.form:92
+#: f_launcher.form:93
 msgid "Add to Desktop"
 msgstr ""
 
-#: f_launcher.form:98
+#: f_launcher.form:99
 msgid "Add to Panel"
 msgstr ""
 
-#: f_launcher.form:104
+#: f_launcher.form:105
 msgid "Add to Bookmark"
 msgstr ""
 
-#: f_launcher.form:349
+#: f_launcher.form:350
 msgid "test"
 msgstr ""
 

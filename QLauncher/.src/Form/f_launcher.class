@@ -63,6 +63,7 @@ Public Sub Form_Open()
   ScrollApps.arrangement = Arrange.Row
   
   m_core.Show_Opacity_Launcher
+  m_core.Show_Transparent_Launcher
   m_core.Show_Background_Launcher
   m_core.Show_Cat_Hide_Launcher
   
@@ -84,12 +85,12 @@ End
 
 Public Sub txtSearchApps_Change()
   
-  M_Core.object_lock(txtSearchApps)
+  'M_Core.object_lock(txtSearchApps)
   
   txtSearchApps.Text = Lower$((txtSearchApps.text))
   
   m_core.FillList_All(Last.Text)
-  M_Core.object_unlock(txtSearchApps)
+  'M_Core.object_unlock(txtSearchApps)
   
 End
 

@@ -879,6 +879,23 @@ Catch
   
 End
 
+Public Sub Show_Transparent_Launcher()
+  
+  Dim iResult As Integer
+  
+  Try iResult = Settings_Core_Innova["Launcher/Transparent"]
+  If iResult = 1 Then
+    f_launcher.Transparent = True 
+     f_launcher_mini.Transparent = True
+  Else
+    f_launcher.Transparent = False
+    f_launcher_mini.Transparent = False
+  Endif
+Catch
+  Debug "ERROR [ " & DConv(Error.Text) & " ]"
+  
+End
+
 Public Sub Show_Background_Launcher()
   
   Dim sResult As String 
