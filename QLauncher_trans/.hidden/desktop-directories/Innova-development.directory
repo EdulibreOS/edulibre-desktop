@@ -1,0 +1,14 @@
+[Desktop Entry]
+Name=Development
+Comment=Tools for software development
+Icon=applications-development
+Type=Directory
+Group=Innova
+ 
+#Translations
+Name[es]=Programación
+Comment[es]=Herramientas para el desarrollo del software
+Name[en]=Development
+Comment[en]=Tools for software development
+Name[fr]=Développement
+Comment[fr]=Outils de développement logiciels

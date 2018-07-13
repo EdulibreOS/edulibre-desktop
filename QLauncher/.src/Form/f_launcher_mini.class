@@ -45,8 +45,12 @@ Public Sub Form_Open()
   IconViewApp.Background = Color.Transparent
   txtSearchApps.Background = Color.Transparent
   
+<<<<<<< HEAD
   m_core.Show_Transparent_Launcher
   m_core.Show_Opacity_Launcher
+=======
+  'm_core.Show_Opacity_Launcher
+>>>>>>> 5bc3640627c0dc2772b6c25e25c61733b54236d3
   m_core.Show_Background_Launcher
   m_core.Show_Cat_Hide_Launcher
   

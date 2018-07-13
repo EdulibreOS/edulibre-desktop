@@ -1,0 +1,14 @@
+[Desktop Entry]
+Name=Network
+Comment=Programs for Internet access such as web and email
+Icon=applications-internet
+Type=Directory
+Group=Innova
+ 
+#Translations
+Name[es]=Internet
+Comment[es]=Programas para acceso a Internet, tales como web y correo electrónico
+Name[en]=Internet
+Comment[en]=Programs for Internet access such as web and email
+Name[fr]=Internet
+Comment[fr]=Programmes pour accéder à Internet tels que le Web ou la messagerie

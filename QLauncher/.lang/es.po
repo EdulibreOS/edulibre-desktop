@@ -2,7 +2,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: QLauncher 3.11.2\n"
+<<<<<<< HEAD
 "PO-Revision-Date: 2018-07-13 17:56 UTC\n"
+=======
+"PO-Revision-Date: 2018-07-12 17:44 UTC\n"
+>>>>>>> 5bc3640627c0dc2772b6c25e25c61733b54236d3
 "Last-Translator: edulibreos <edulibreos@edulibreos-OptiPlex-755>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
@@ -77,6 +81,7 @@ msgstr ""
 msgid "Primaria Básica"
 msgstr ""
 
+<<<<<<< HEAD
 #: M_Core.module:796 f_launcher_mini.class:229
 msgid "Category: "
 msgstr "Categoria: "
@@ -106,6 +111,37 @@ msgid "Add to Panel"
 msgstr "Agregar a Panel"
 
 #: f_launcher.form:105 f_launcher_mini.form:83
+=======
+#: M_Core.module:796 f_launcher_mini.class:228
+msgid "Category: "
+msgstr "Categoria: "
+
+#: f_launcher.form:69 f_launcher_cnb_mini.form:41 f_launcher_mini.form:52
+msgid "mnuBookmark"
+msgstr ""
+
+#: f_launcher.form:73 f_launcher_cnb_mini.form:45 f_launcher_mini.form:56
+msgid "Delete Bookmark"
+msgstr "Eliminar Favoritos"
+
+#: f_launcher.form:79 f_launcher_mini.form:62
+msgid "mnuLauncher"
+msgstr ""
+
+#: f_launcher.form:83 f_launcher_mini.form:66
+msgid "Open"
+msgstr "Abrir"
+
+#: f_launcher.form:93 f_launcher_mini.form:74
+msgid "Add to Desktop"
+msgstr "Agregar a Escritorio"
+
+#: f_launcher.form:99 f_launcher_mini.form:79
+msgid "Add to Panel"
+msgstr "Agregar a Panel"
+
+#: f_launcher.form:105 f_launcher_mini.form:84
+>>>>>>> 5bc3640627c0dc2772b6c25e25c61733b54236d3
 msgid "Add to Bookmark"
 msgstr "Agregar a Favoritos"
 
@@ -113,7 +149,11 @@ msgstr "Agregar a Favoritos"
 msgid "test"
 msgstr ""
 
+<<<<<<< HEAD
 #: f_launcher_cnb_mini.form:62 f_launcher_mini.form:100
+=======
+#: f_launcher_cnb_mini.form:62 f_launcher_mini.form:101
+>>>>>>> 5bc3640627c0dc2772b6c25e25c61733b54236d3
 msgid "Show Categories"
 msgstr "Mostrar Categorias"
 
@@ -121,6 +161,7 @@ msgstr "Mostrar Categorias"
 msgid "User"
 msgstr "Usuario"
 
+<<<<<<< HEAD
 #: f_launcher_mini.class:100
 msgid "Image Archive"
 msgstr "Archivo de Imagen "
@@ -142,17 +183,41 @@ msgid "Image PNG"
 msgstr "Imagen PNG"
 
 #: f_launcher_mini.class:101
+=======
+#: f_launcher_mini.class:99
+msgid "Image Archive"
+msgstr "Archivo de Imagen "
+
+#: f_launcher_mini.class:100
+msgid "Image BMP of Windows"
+msgstr "Imagen BMP de Windows"
+
+#: f_launcher_mini.class:100
+msgid "Image JPEG"
+msgstr "Imagen JPEG"
+
+#: f_launcher_mini.class:100
+msgid "Image JPG"
+msgstr "Imagen JPG"
+
+#: f_launcher_mini.class:100
+msgid "Image PNG"
+msgstr "Imagen PNG"
+
+#: f_launcher_mini.class:100
+>>>>>>> 5bc3640627c0dc2772b6c25e25c61733b54236d3
 msgid "Image SVG"
 msgstr "Imagen SVG"
 
-#: f_launcher_mini.form:209
+#: f_launcher_mini.form:216
 msgid "Change Image"
 msgstr "Cambiar Imagen"
 
-#: f_launcher_mini.form:218
+#: f_launcher_mini.form:225
 msgid "usuario"
 msgstr ""
 
+<<<<<<< HEAD
 #: f_power.form:41
 msgid "Restart"
 msgstr ""
@@ -174,6 +239,9 @@ msgid "This will close all open applications and turn off this device."
 msgstr "Esto cerrará todas las aplicaciones abiertas y apagará este dispositivo."
 
 #: f_power_1.form:27
+=======
+#: f_power.form:27
+>>>>>>> 5bc3640627c0dc2772b6c25e25c61733b54236d3
 msgid "Power Off"
 msgstr "Apagar"
 

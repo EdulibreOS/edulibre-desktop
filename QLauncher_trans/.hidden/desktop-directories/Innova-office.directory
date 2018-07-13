@@ -1,0 +1,14 @@
+[Desktop Entry]
+Name=Office
+Comment=Office Applications
+Icon=applications-office
+Type=Directory
+Group=Innova
+ 
+#Translations
+Name[es]=Oficina
+Comment[es]=Aplicaciones de oficina
+Name[en]=Office
+Comment[en]=Office Applications
+Name[fr]=Bureautique
+Comment[fr]=Applications bureautiques

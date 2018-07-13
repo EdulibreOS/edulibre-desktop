@@ -1,0 +1,13 @@
+[Desktop Entry]
+Name=Education
+Comment=Desktop education
+Icon=applications-science
+Type=Directory
+Group=Innova
+ 
+#Translations
+Name[es]=Educación
+Comment[es]=Educación del escritorio
+Name[en]=Education
+Comment[en]=Desktop education
+Name[fr]=Éducation

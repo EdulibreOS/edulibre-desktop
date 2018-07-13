@@ -5,7 +5,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Qpanel 3.11.2\n"
+<<<<<<< HEAD
 "POT-Creation-Date: 2018-07-13 03:04 UTC\n"
+=======
+"POT-Creation-Date: 2018-07-11 20:13 UTC\n"
+>>>>>>> 5bc3640627c0dc2772b6c25e25c61733b54236d3
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
