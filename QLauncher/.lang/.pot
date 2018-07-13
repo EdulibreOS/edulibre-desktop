@@ -3,121 +3,207 @@ msgid ""
 msgstr ""
 "#-#-#-#-#  #project.pot (QLauncher 3.11.2)  #-#-#-#-#\n"
 "Project-Id-Version: QLauncher 3.11.2\n"
+<<<<<<< HEAD
+"POT-Creation-Date: 2018-07-13 18:00 UTC\n"
+=======
 "POT-Creation-Date: 2018-07-12 18:12 UTC\n"
+>>>>>>> 5bc3640627c0dc2772b6c25e25c61733b54236d3
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  CAnimation.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
+<<<<<<< HEAD
+"POT-Creation-Date: 2018-07-13 18:00 UTC\n"
+=======
 "POT-Creation-Date: 2018-07-12 18:12 UTC\n"
+>>>>>>> 5bc3640627c0dc2772b6c25e25c61733b54236d3
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  CButton.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
+<<<<<<< HEAD
+"POT-Creation-Date: 2018-07-13 18:00 UTC\n"
+=======
 "POT-Creation-Date: 2018-07-12 18:12 UTC\n"
+>>>>>>> 5bc3640627c0dc2772b6c25e25c61733b54236d3
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  CCat.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
+<<<<<<< HEAD
+"POT-Creation-Date: 2018-07-13 18:00 UTC\n"
+=======
 "POT-Creation-Date: 2018-07-12 18:12 UTC\n"
+>>>>>>> 5bc3640627c0dc2772b6c25e25c61733b54236d3
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  Cls_Start.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
+<<<<<<< HEAD
+"POT-Creation-Date: 2018-07-13 18:00 UTC\n"
+=======
 "POT-Creation-Date: 2018-07-12 18:12 UTC\n"
+>>>>>>> 5bc3640627c0dc2772b6c25e25c61733b54236d3
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  DesktopApps.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
+<<<<<<< HEAD
+"POT-Creation-Date: 2018-07-13 18:00 UTC\n"
+=======
 "POT-Creation-Date: 2018-07-12 18:12 UTC\n"
+>>>>>>> 5bc3640627c0dc2772b6c25e25c61733b54236d3
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  DesktopAppsCat.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
+<<<<<<< HEAD
+"POT-Creation-Date: 2018-07-13 18:00 UTC\n"
+=======
 "POT-Creation-Date: 2018-07-12 18:12 UTC\n"
+>>>>>>> 5bc3640627c0dc2772b6c25e25c61733b54236d3
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  M_Core.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
+<<<<<<< HEAD
+"POT-Creation-Date: 2018-07-13 18:00 UTC\n"
+=======
 "POT-Creation-Date: 2018-07-12 18:12 UTC\n"
+>>>>>>> 5bc3640627c0dc2772b6c25e25c61733b54236d3
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  M_DB.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
+<<<<<<< HEAD
+"POT-Creation-Date: 2018-07-13 18:00 UTC\n"
+=======
 "POT-Creation-Date: 2018-07-12 18:12 UTC\n"
+>>>>>>> 5bc3640627c0dc2772b6c25e25c61733b54236d3
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  M_DesktopEntry.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
+<<<<<<< HEAD
+"POT-Creation-Date: 2018-07-13 18:00 UTC\n"
+=======
 "POT-Creation-Date: 2018-07-12 18:12 UTC\n"
+>>>>>>> 5bc3640627c0dc2772b6c25e25c61733b54236d3
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  M_Init.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
+<<<<<<< HEAD
+"POT-Creation-Date: 2018-07-13 18:00 UTC\n"
+=======
 "POT-Creation-Date: 2018-07-12 18:12 UTC\n"
+>>>>>>> 5bc3640627c0dc2772b6c25e25c61733b54236d3
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  M_OBS_Global.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
+<<<<<<< HEAD
+"POT-Creation-Date: 2018-07-13 18:00 UTC\n"
+=======
 "POT-Creation-Date: 2018-07-12 18:12 UTC\n"
+>>>>>>> 5bc3640627c0dc2772b6c25e25c61733b54236d3
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  M_Theme.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
+<<<<<<< HEAD
+"POT-Creation-Date: 2018-07-13 18:00 UTC\n"
+=======
 "POT-Creation-Date: 2018-07-12 18:12 UTC\n"
+>>>>>>> 5bc3640627c0dc2772b6c25e25c61733b54236d3
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  M_Var_Global.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
+<<<<<<< HEAD
+"POT-Creation-Date: 2018-07-13 18:00 UTC\n"
+=======
 "POT-Creation-Date: 2018-07-12 18:12 UTC\n"
+>>>>>>> 5bc3640627c0dc2772b6c25e25c61733b54236d3
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  PushButton.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
+<<<<<<< HEAD
+"POT-Creation-Date: 2018-07-13 18:00 UTC\n"
+=======
 "POT-Creation-Date: 2018-07-12 18:12 UTC\n"
+>>>>>>> 5bc3640627c0dc2772b6c25e25c61733b54236d3
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  f_launcher.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
+<<<<<<< HEAD
+"POT-Creation-Date: 2018-07-13 18:00 UTC\n"
+=======
 "POT-Creation-Date: 2018-07-12 18:12 UTC\n"
+>>>>>>> 5bc3640627c0dc2772b6c25e25c61733b54236d3
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  f_launcher_cnb_mini.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
+<<<<<<< HEAD
+"POT-Creation-Date: 2018-07-13 18:00 UTC\n"
+=======
 "POT-Creation-Date: 2018-07-12 18:12 UTC\n"
+>>>>>>> 5bc3640627c0dc2772b6c25e25c61733b54236d3
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  f_launcher_mini.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
+<<<<<<< HEAD
+"POT-Creation-Date: 2018-07-13 18:00 UTC\n"
+=======
 "POT-Creation-Date: 2018-07-12 18:12 UTC\n"
+>>>>>>> 5bc3640627c0dc2772b6c25e25c61733b54236d3
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  f_power.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
+<<<<<<< HEAD
+"POT-Creation-Date: 2018-07-13 18:00 UTC\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"#-#-#-#-#  f_power_1.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
+"Project-Id-Version: $(PACKAGE) $(VERSION)\n"
+"POT-Creation-Date: 2018-07-13 18:00 UTC\n"
+=======
 "POT-Creation-Date: 2018-07-12 18:12 UTC\n"
+>>>>>>> 5bc3640627c0dc2772b6c25e25c61733b54236d3
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  f_style_launcher.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
+<<<<<<< HEAD
+"POT-Creation-Date: 2018-07-13 18:00 UTC\n"
+=======
 "POT-Creation-Date: 2018-07-12 18:12 UTC\n"
+>>>>>>> 5bc3640627c0dc2772b6c25e25c61733b54236d3
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -190,7 +276,11 @@ msgstr ""
 msgid "Diversificado"
 msgstr ""
 
+<<<<<<< HEAD
+#: M_Core.module:796 f_launcher_mini.class:229
+=======
 #: M_Core.module:796 f_launcher_mini.class:228
+>>>>>>> 5bc3640627c0dc2772b6c25e25c61733b54236d3
 msgid "Category: "
 msgstr ""
 
@@ -242,43 +332,63 @@ msgstr ""
 msgid "usuario"
 msgstr ""
 
-#: f_launcher_mini.class:99
+#: f_launcher_mini.class:100
 msgid "Image Archive"
 msgstr ""
 
-#: f_launcher_mini.class:100
+#: f_launcher_mini.class:101
 msgid "Image PNG"
 msgstr ""
 
-#: f_launcher_mini.class:100
+#: f_launcher_mini.class:101
 msgid "Image JPG"
 msgstr ""
 
-#: f_launcher_mini.class:100
+#: f_launcher_mini.class:101
 msgid "Image JPEG"
 msgstr ""
 
-#: f_launcher_mini.class:100
+#: f_launcher_mini.class:101
 msgid "Image SVG"
 msgstr ""
 
-#: f_launcher_mini.class:100
+#: f_launcher_mini.class:101
 msgid "Image BMP of Windows"
 msgstr ""
 
-#: f_power.form:27
+#: f_power.form:41
+msgid "Restart"
+msgstr ""
+
+#: f_power.form:50
+msgid "Cancel"
+msgstr ""
+
+#: f_power.form:59
+msgid "Shut Down"
+msgstr ""
+
+#: f_power.form:72
+msgid "Are you sure you want to Shut Down..?"
+msgstr ""
+
+#: f_power.form:78
+msgid "This will close all open applications and turn off this device."
+msgstr ""
+
+#: f_power_1.form:27
 msgid "Power Off"
 msgstr ""
 
-#: f_power.form:33
+#: f_power_1.form:33
 msgid "Reboot"
 msgstr ""
 
-#: f_power.form:39
+#: f_power_1.form:39
 msgid "Close Session"
 msgstr ""
 
-#: f_power.form:58 f_style_launcher.form:57
+#: f_power_1.form:58 f_style_launcher.form:57
 msgid "Close"
 msgstr ""
 

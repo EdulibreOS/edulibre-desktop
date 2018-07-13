@@ -460,7 +460,7 @@ Public Sub IconViewApp_Select()
   
 End
 
-Public Sub PanelLauncher_Draw()
+Public Sub PanelLauncher_Draw_Evaluar()
   
   Dim X, Y, W, H As Float
   Dim hBrush As PaintBrush

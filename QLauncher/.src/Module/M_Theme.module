@@ -98,7 +98,7 @@ Public Function Show_Theme()
     
     f_launcher.Picture = Picture[sPath_Theme &/ sResult_Img_Launcher].Image.Stretch(Desktop.W, Desktop.h).Picture
     f_launcher_mini.Picture = Picture[sPath_Theme &/ sResult_Img_Launcher].Image.Stretch(f_launcher_mini.W, f_launcher_mini.h).Picture
-    f_power.Picture = Picture[sPath_Theme &/ sResult_Img_Look].Image.Stretch(Desktop.W, Desktop.h).Picture
+    ' f_power.Picture = Picture[sPath_Theme &/ sResult_Img_Look].Image.Stretch(Desktop.W, Desktop.h).Picture
     f_style_launcher.Picture = Picture[sPath_Theme &/ sResult_Img_Launcher].Image.Stretch(f_launcher_mini.W, f_launcher_mini.h).Picture
     
     ''FONT COLOR
@@ -114,7 +114,7 @@ Public Function Show_Theme()
     Next
     
     For Each ctrl In f_power.Controls
-      Try ctrl.Foreground = Val(sResult_Inn_Font_Color) 
+      'Try ctrl.Foreground = Val(sResult_Inn_Font_Color) 
       
     Next
     
@@ -130,7 +130,7 @@ Public Function Show_Theme()
       M_Core.sFontName = (sResult_Inn_Font_Name) 
     Next
     For Each ctrl In f_power.Controls
-      Try ctrl.Font.Name = (sResult_Inn_Font_Name) 
+      ' Try ctrl.Font.Name = (sResult_Inn_Font_Name) 
     Next
     
     ''FONT SIZE
@@ -151,7 +151,7 @@ Public Function Show_Theme()
     Endif
     
     For Each ctrl In f_power.Controls
-      Try ctrl.Font.Size = (iResult_Inn_Font_Size) 
+      '  Try ctrl.Font.Size = (iResult_Inn_Font_Size) 
     Next
   Endif 
   

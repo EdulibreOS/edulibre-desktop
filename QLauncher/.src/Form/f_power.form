@@ -1,31 +1,15 @@
 # Gambas Form File 3.0
 
 { Form Form
-  MoveScaled(0,0,61,26)
+  MoveScaled(0,0,57.1429,17)
+  Background = Color.White
   Border = False
   Stacking = Window.Above
-  Transparent = True
-  { Panel1 Panel
-    MoveScaled(0,0,61,26)
-    Border = Border.Plain
-  }
-  { btn1 PushButton
-    MoveScaled(4,2,16,16)
-    Mouse = Mouse.Pointing
-    Text = ("Power Off")
-  }
-  { btn2 PushButton
-    MoveScaled(22,2,16,16)
-    Mouse = Mouse.Pointing
-    Text = ("Reboot")
-  }
-  { btn3 PushButton
-    MoveScaled(40,2,16,16)
-    Mouse = Mouse.Pointing
-    Text = ("Close Session")
-  }
+  Spacing = True
+  Margin = True
+  Padding = 5
   { HBoxAppCom HBox
-    MoveScaled(1,21,59,4)
+    MoveScaled(4,12,51,4)
     Expand = True
     Spacing = True
     Padding = 5
@@ -35,17 +19,45 @@
       Arrangement = Arrange.Vertical
       AutoResize = True
     }
-    { BtnClose Button
-      MoveScaled(15,0,16,4)
+    { btn2 Button
+      MoveScaled(3,0,12.1429,3.5714)
+      Font = Font["8"]
+      Background = &H007FFF&
+      Foreground = Color.White
       Mouse = Mouse.Pointing
-      Text = Shortcut(("Close"), "C")
-      Picture = Picture["icon:/small/cancel"]
+      Text = Shortcut(("Restart"), "R")
     }
-    { Panel2 Panel
-      MoveScaled(35,0,3,3)
-      Expand = True
-      Arrangement = Arrange.Vertical
-      AutoResize = True
+    { BtnClose Button
+      MoveScaled(18,0,12.1429,3.5714)
+      Font = Font["8"]
+      Background = &H007F3D&
+      Foreground = Color.White
+      Mouse = Mouse.Pointing
+      Text = Shortcut(("Cancel"), "C")
     }
+    { btn1 Button
+      MoveScaled(34,0,12.1429,3.5714)
+      Font = Font["8"]
+      Background = &HFF0000&
+      Foreground = Color.White
+      Mouse = Mouse.Pointing
+      Text = Shortcut(("Shut Down"), "S")
+    }
+  }
+  { PictureBox1 PictureBox
+    MoveScaled(1,1,6,6)
+    Picture = Picture["img/shutdown/switch-512.png"]
+    Stretch = True
+  }
+  { Label1 Label
+    MoveScaled(10,1,46,4)
+    Font = Font["Bold,+1"]
+    Text = ("Are you sure you want to Shut Down..?")
+  }
+  { Label2 TextLabel
+    MoveScaled(10,5,46,6)
+    Font = Font["-1"]
+    Text = ("This will close all open applications and turn off this device.")
+    Alignment = Align.TopLeft
   }
 }
