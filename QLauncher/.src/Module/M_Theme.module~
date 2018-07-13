@@ -103,26 +103,6 @@ Public Function Show_Theme()
     
     ''FONT COLOR
     
-    ' For Each ctrl In f_launcher.Controls
-    '   ctrl.Foreground = Val(sResult_Font_Color) 
-    '   M_Core.sFontColor = Val(sResult_Font_Color) 
-    ' Next
-    
-    ' If IsNull(sResult_Font_Color) Then
-    ' sColor = (sResult_Inn_Font_Color)
-    
-    '  For Each ctrl In f_launcher.Controls
-    '    ctrl.Foreground = Val(sResult_Inn_Font_Color) 
-    '    M_Core.sFontColor = Val(sResult_Inn_Font_Color) 
-    '  Next
-    'Else
-    '  For Each ctrl In f_launcher.Controls
-    '    ctrl.Foreground = Val(sResult_Font_Color) 
-    '    M_Core.sFontColor = Val(sResult_Font_Color) 
-    '  Next
-    
-    'Endif
-    
     For Each ctrl In f_launcher.Controls
       Try ctrl.Foreground = Val(sResult_Inn_Font_Color) 
       M_Core.sFontColor = Val(sResult_Inn_Font_Color) 
@@ -134,10 +114,11 @@ Public Function Show_Theme()
     Next
     
     For Each ctrl In f_power.Controls
-      Try ctrl.Foreground = Val(sResult_Inn_Font_Color) 
+      'Try ctrl.Foreground = Val(sResult_Inn_Font_Color) 
       
     Next
-    f_power.BtnClose.Foreground = Color.Black
+    
+    'f_power.BtnClose.Foreground = Color.Black
     ''FONT NAME
     
     For Each ctrl In f_launcher.Controls
@@ -149,7 +130,7 @@ Public Function Show_Theme()
       M_Core.sFontName = (sResult_Inn_Font_Name) 
     Next
     For Each ctrl In f_power.Controls
-      Try ctrl.Font.Name = (sResult_Inn_Font_Name) 
+      ' Try ctrl.Font.Name = (sResult_Inn_Font_Name) 
     Next
     
     ''FONT SIZE
@@ -170,7 +151,7 @@ Public Function Show_Theme()
     Endif
     
     For Each ctrl In f_power.Controls
-      Try ctrl.Font.Size = (iResult_Inn_Font_Size) 
+      '  Try ctrl.Font.Size = (iResult_Inn_Font_Size) 
     Next
   Endif 
   

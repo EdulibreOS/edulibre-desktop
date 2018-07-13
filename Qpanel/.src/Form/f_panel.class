@@ -871,7 +871,7 @@ Private Sub lsbWindSelectActiveWindow()
   If Not lsbWind.Exist(Desktop.ActiveWindow) Then Return
   Object.Lock(lsbWind)
   lsbWind[Desktop.ActiveWindow].Selected = True
-  $iLast2 = Desktop.ActiveWindow
+  '$iLast2 = Desktop.ActiveWindow
   Object.Unlock(lsbWind)
 Catch
   

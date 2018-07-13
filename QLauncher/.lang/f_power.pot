@@ -5,24 +5,28 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-07-12 20:05 UTC\n"
+"POT-Creation-Date: 2018-07-13 18:00 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: f_power.form:27
-msgid "Power Off"
+#: f_power.form:41
+msgid "Restart"
 msgstr ""
 
-#: f_power.form:33
-msgid "Reboot"
+#: f_power.form:50
+msgid "Cancel"
 msgstr ""
 
-#: f_power.form:39
-msgid "Close Session"
+#: f_power.form:59
+msgid "Shut Down"
 msgstr ""
 
-#: f_power.form:58
-msgid "Close"
+#: f_power.form:72
+msgid "Are you sure you want to Shut Down..?"
+msgstr ""
+
+#: f_power.form:78
+msgid "This will close all open applications and turn off this device."
 msgstr ""
 

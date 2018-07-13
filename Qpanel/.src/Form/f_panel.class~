@@ -671,6 +671,18 @@ Public Sub PictureBox1_MouseDown()
   
 End
 
+Private Sub img_tray()
+  
+  Dim DH As Integer
+  ' ' 
+  
+  Paint.Begin(SystrayDrawingArea)
+  DH = 1 + SystrayDrawingArea.H / M_Theme.$hImage.H
+  Paint.DrawImage(M_Theme.$hImage, 0, - DH, SystrayDrawingArea.W, SystrayDrawingArea.H + DH * 2)
+  Paint.End
+  
+End
+
 Public Sub ArrangeTray()
   
   Dim I As Integer
@@ -678,6 +690,7 @@ Public Sub ArrangeTray()
   Dim DH As Integer
   Dim iSizeSisTray As Integer
   
+  img_tray
   iSize = iSizePanel
   
   If IsNull(iSize) Then
