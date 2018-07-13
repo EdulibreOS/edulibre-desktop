@@ -1,0 +1,14 @@
+[Desktop Entry]
+Name=Settings
+Comment=Personal preferences
+Icon=preferences-desktop
+Type=Directory
+Group=Innova
+ 
+#Translations
+Name[es]=Preferencias
+Comment[es]=Preferencias personales
+Name[en]=Preferences
+Comment[en]=Personal preferences
+Name[fr]=Préférences
+Comment[fr]=Préférences personnelles

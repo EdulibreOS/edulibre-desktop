@@ -62,7 +62,8 @@ Public Sub Form_Open()
   ScrollApps.expand = True 
   ScrollApps.arrangement = Arrange.Row
   
-  m_core.Show_Opacity_Launcher
+' m_core.Show_Opacity_Launcher
+  m_core.Show_Transparent_Launcher
   m_core.Show_Background_Launcher
   m_core.Show_Cat_Hide_Launcher
   
@@ -145,7 +146,7 @@ Public Sub mnuSend_Click()
   Dim sCopy As String
   
   M_Core.SendPanel
-  f_panel.App_Bookmarks
+  ''f_panel.App_Bookmarks
   
 End
 
