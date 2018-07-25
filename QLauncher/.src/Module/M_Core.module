@@ -86,7 +86,7 @@ Public Sub FillList_Cat(Optional sFilter As String)
   If iResult_Text = 1 Then
     f_launcher.IconViewCat.Orientation = 1
     iw = ((Desktop.Width / 100) * 10) / 3.5 '2.7  '= Desktop.Width - ((Desktop.Width / 100) * 10)     
-    f_launcher.VBoxCat.w = iSizeCat * 1.8 '2.2
+    f_launcher.VBoxCat.w = iSizeCat * 2 '1.8 '2.2
     iSizeCat = iw + 2 '4
   Else
     ''HORIZONTAL
@@ -869,13 +869,13 @@ End
 
 Public Sub Show_Opacity_Launcher()
   
-  'Dim iResult As Integer
+  Dim iResult As Integer
   
-  'iResult = Settings_Core_Innova["Launcher/Opacity"]
-  'f_launcher.Opacity = iResult
-  'f_launcher_mini.Opacity = iResult
-  'Catch
-  ' Debug "ERROR [ " & DConv(Error.Text) & " ]"
+  iResult = Settings_Core_Innova["Launcher/Opacity"]
+  f_launcher.Opacity = iResult
+  f_launcher_mini.Opacity = iResult
+Catch
+  Debug "ERROR [ " & DConv(Error.Text) & " ]"
   
 End
 
@@ -886,22 +886,7 @@ Public Sub Show_Transparent_Launcher()
   Try iResult = Settings_Core_Innova["Launcher/Transparent"]
   If iResult = 1 Then
     f_launcher.Transparent = True 
-  Else
-    f_launcher.Transparent = False
-  Endif
-  'Catch
-  ' Debug "ERROR [ " & DConv(Error.Text) & " ]"
-  
-End
-
-Public Sub Show_Transparent_Launcher()
-  
-  Dim iResult As Integer
-  
-  Try iResult = Settings_Core_Innova["Launcher/Transparent"]
-  If iResult = 1 Then
-    f_launcher.Transparent = True 
-     f_launcher_mini.Transparent = True
+    f_launcher_mini.Transparent = True
   Else
     f_launcher.Transparent = False
     f_launcher_mini.Transparent = False

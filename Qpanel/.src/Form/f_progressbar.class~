@@ -20,8 +20,9 @@
 ' Boston, MA  02110-1301  USA
 
 ' Homepage: http://http://sourceforge.net/projects/innovadesktop
+' Part of this code belongs to Gambas3 and was adapted for Innova Project
 
-Private directoriorigen As String 'Desktop.GetDirectory("DESKTOP")
+Private directoriorigen As String 
 Private directoriodestino As String = Desktop.GetDirectory("DESKTOP")
 
 Public Sub Form_Open()
@@ -65,10 +66,26 @@ Public Sub Copy_Progress()
   For Each unarchivo In aarchivos
     ProgressBar1.Value += incrementos
     lblStatus.Text = "Copiando " & unarchivo
+    
+    f_wallpaper.Show_Files_Desktop
     Wait 0.01     
     
     Copy directoriorigen To directoriodestino 
     
   Next
+  
+End
+
+Public Sub lblStatus_MouseDown()
+  
+End
+
+Public Sub ProgressBar1_MouseDown()
+  
+End
+
+Public Sub Form_Close()
+  
+  Stop Event
   
 End

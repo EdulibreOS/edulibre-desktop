@@ -152,19 +152,24 @@ Public Function Show_Theme()
     Next
     
     For Each ctrl In f_panel.Controls
-      f_panel.TextLabelDate.Foreground = Val(sResult_Inn_Font_Color) 
-      
+      ctrl.Foreground = Val(sResult_Inn_Font_Color) 
+      '  f_panel.TextLabelDate.Foreground = Val(sResult_Inn_Font_Color) 
     Next
     
-    For Each ctrl In f_date.Controls
+    For Each ctrl In f_progressbar.Controls
       
-      f_date.panDay.Foreground = Val(sResult_Inn_Font_Color) 
-      f_date.panDate.Foreground = Val(sResult_Inn_Font_Color) 
-      f_date.panweek.Foreground = Val(sResult_Inn_Font_Color) 
-      
+      ctrl.Foreground = Val(sResult_Inn_Font_Color) 
     Next
+    
+    f_date.panDay.Foreground = Val(sResult_Inn_Font_Color) 
+    f_date.panDate.Foreground = Val(sResult_Inn_Font_Color) 
+    f_date.panweek.Foreground = Val(sResult_Inn_Font_Color) 
     
     For Each ctrl In f_wallpaper.Controls
+      Try ctrl.Font.Name = (sResult_Inn_Font_Name) 
+    Next
+    
+    For Each ctrl In f_progressbar.Controls
       Try ctrl.Font.Name = (sResult_Inn_Font_Name) 
     Next
     
@@ -175,6 +180,9 @@ Public Function Show_Theme()
       Try ctrl.Font.Name = (sResult_Inn_Font_Name) 
     Next
     For Each ctrl In f_wallpaper.Controls
+      Try ctrl.Font.Size = (iResult_Inn_Font_Size) 
+    Next
+    For Each ctrl In f_progressbar.Controls
       Try ctrl.Font.Size = (iResult_Inn_Font_Size) 
     Next
     

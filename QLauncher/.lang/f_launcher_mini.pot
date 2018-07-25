@@ -5,11 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-<<<<<<< HEAD
-"POT-Creation-Date: 2018-07-13 18:00 UTC\n"
-=======
-"POT-Creation-Date: 2018-07-12 18:12 UTC\n"
->>>>>>> 5bc3640627c0dc2772b6c25e25c61733b54236d3
+"POT-Creation-Date: 2018-07-16 16:10 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -78,11 +74,7 @@ msgstr ""
 msgid "Image BMP of Windows"
 msgstr ""
 
-<<<<<<< HEAD
 #: f_launcher_mini.class:229
-=======
-#: f_launcher_mini.class:228
->>>>>>> 5bc3640627c0dc2772b6c25e25c61733b54236d3
 msgid "Category: "
 msgstr ""
 
