@@ -66,6 +66,7 @@ Public Sub Copy_Progress()
   For Each unarchivo In aarchivos
     ProgressBar1.Value += incrementos
     lblStatus.Text = "Copiando " & unarchivo
+    
     Wait 0.01     
     
     Copy directoriorigen To directoriodestino 
@@ -75,13 +76,15 @@ Public Sub Copy_Progress()
 End
 
 Public Sub lblStatus_MouseDown()
-
   
-
 End
 
 Public Sub ProgressBar1_MouseDown()
-
   
+End
 
+Public Sub Form_Close()
+  
+  Stop Event
+  
 End

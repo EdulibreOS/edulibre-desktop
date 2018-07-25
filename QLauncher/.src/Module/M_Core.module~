@@ -874,8 +874,8 @@ Public Sub Show_Opacity_Launcher()
   iResult = Settings_Core_Innova["Launcher/Opacity"]
   f_launcher.Opacity = iResult
   f_launcher_mini.Opacity = iResult
-  'Catch
-  ' Debug "ERROR [ " & DConv(Error.Text) & " ]"
+Catch
+  Debug "ERROR [ " & DConv(Error.Text) & " ]"
   
 End
 
@@ -886,23 +886,10 @@ Public Sub Show_Transparent_Launcher()
   Try iResult = Settings_Core_Innova["Launcher/Transparent"]
   If iResult = 1 Then
     f_launcher.Transparent = True 
+     f_launcher_mini.Transparent = True
   Else
     f_launcher.Transparent = False
-  Endif
-  'Catch
-  ' Debug "ERROR [ " & DConv(Error.Text) & " ]"
-  
-End
-
-Public Sub Show_Transparent_Launcher()
-  
-  Dim iResult As Integer
-  
-  Try iResult = Settings_Core_Innova["Launcher/Transparent"]
-  If iResult = 1 Then
-    f_launcher.Transparent = True 
-  Else
-    f_launcher.Transparent = False
+    f_launcher_mini.Transparent = False
   Endif
 Catch
   Debug "ERROR [ " & DConv(Error.Text) & " ]"

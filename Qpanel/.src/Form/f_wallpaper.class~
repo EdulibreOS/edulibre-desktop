@@ -96,10 +96,9 @@ Public Sub Show_Files_Desktop()
   sPC = Settings_Core_Innova["Desktop/Show_Icon_PC"]
   sTrash = Settings_Core_Innova["Desktop/Show_Icon_Trash"]
   
-  
   If (sPC = "1") Then
     Inc i
-  
+    
     Try ivwDesktop.Add("System", ("System"), Picture["icon:/" & iSize_Icon & "/computer"])
   Endif
   
@@ -117,7 +116,7 @@ Public Sub Show_Files_Desktop()
   
   For Each sFiles In Dir(sDir) '.Sort(gb.Natural)
     If IsDir(sDir &/ sFiles) Then
-     
+      
       ivwDesktop.Add(sFiles, sFiles, Picture["icon:/" & iSize_Icon & "/directory"]).Editable = Access(sDir, gb.Write)
     Endif
   Next
@@ -129,16 +128,17 @@ Public Sub Show_Files_Desktop()
     If Not (InStr(sFiles, ".desktop")) Then
       
       If Not (InStr(sFiles, ".jpg") Or InStr(sFiles, ".png") Or InStr(sFiles, ".bmp") Or InStr(sFiles, ".jpeg") Or InStr(sFiles, ".gif") Or InStr(sFiles, ".xpm")) Then
-      
+        
         Try ivwDesktop.Add(sFiles, sFiles, img.Picture).Editable = Access(sDir, gb.Write)
       Endif
       
     Else
       DesktopEntry = New DesktopFile(sDir &/ sFiles)
-     
+      
       pIcon = M_DesktopEntry[DesktopEntry.Path, iSize_Icon].Image.Stretch(iSize_Icon, iSize_Icon).Picture
-    
-      Try ivwDesktop.Add(sFiles, DesktopEntry.Name, pIcon).Editable = Access(sDir, gb.Write)
+      
+      'Try ivwDesktop.Add(sFiles, DesktopEntry.Name, pIcon).Editable = Access(sDir, gb.Write)
+      Try ivwDesktop.Add(sFiles, File.Name(DesktopEntry.Path), pIcon).Editable = Access(sDir, gb.Write)
     Endif
     
   Next
@@ -148,12 +148,10 @@ Public Sub Show_Files_Desktop()
     PicWall = Picture[sDir &/ sFiles]
     iTam = (iSize_Icon * PicWall.Height) \ PicWall.Width
     PicWall = Picture[sDir &/ sFiles].Image.Stretch(iSize_Icon, iTam).Picture
-   
+    
     Try ivwDesktop.Add(sFiles, sFiles, PicWall)
     
   Next
-  
-
   
 End
 
@@ -324,7 +322,7 @@ Public Sub mnuNewFile_Click()
         Break
       Else
         Try hFile = Open sDir &/ sResult For Create
-
+        
       Endif
     Endif
     
@@ -523,7 +521,7 @@ End
 Public Sub ivwDesktop_DblClick()
   
   Dim sResult_FM As String 
-
+  
   Dim sFM As String
   Dim sCurrent As String
   Dim sLastCurrent As String
@@ -533,13 +531,12 @@ Public Sub ivwDesktop_DblClick()
   Try sResult_FM = Settings_Core_Innova["Panel_Command/File_Manager", f_panel]
   
   If IsDir(sDir &/ ivwDesktop.Item.Text) Then
-   
+    
     Exec [sResult_FM, sDir &/ sLastCurrent]   
   Else
     
-  
     If ivwDesktop.Item.Key Ends "desktop" Then 
-     
+      
       DesktopApps_Desk[File.BaseName(ivwDesktop.Item.Key)].Exec() 
       
     Else
@@ -551,7 +548,6 @@ Public Sub ivwDesktop_DblClick()
   If File.Ext(sLastCurrent) = "gambas" Or File.Ext(sLastCurrent) = "sh" Or File.Ext(sLastCurrent) = "bin" Then
     Shell ("./" & sLastCurrent)
   Endif
-  
   
   If (ivwDesktop.Item.Key = "System") Then
     Exec [sResult_FM, "/"]  
@@ -775,7 +771,7 @@ Public Sub mnuDelete_Click()
         For Each strFile In strFiles
           
           ' If (InStr(strFile, ".desktop")) Then
-        
+          
           strFile = sDir &/ strFile
           strData = strData & strFile & "\n"
           If Not IsDir(strFile) Then 
@@ -923,8 +919,6 @@ Public Sub TimerWallRand_Timer()
   Endif
   
 End
-
-
 
 Public Sub ivwDesktop_GotFocus()
   
@@ -1161,7 +1155,6 @@ End
 
 Public Sub mnuabout3_Click()
   
-
   f_about.ShowModal
   
 End

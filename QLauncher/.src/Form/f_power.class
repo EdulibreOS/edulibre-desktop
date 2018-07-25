@@ -61,7 +61,7 @@ Public Sub Form_KeyPress()
   
 End
 
-Public Sub BtnClose_Click()
+Public Sub btn4_Click()
   
   Me.Close
   

@@ -23,6 +23,7 @@
 
 Public sResult_Theme As String
 Public Settings_Core_Innova As New Settings(Desktop.ConfigDir &/ "Innova/Innova_Config.conf")
+Public $hImage As Image
 
 Public Sub IconTheme()
   
@@ -124,8 +125,10 @@ Public Function Show_Theme()
     
     If Not IsNull(sResult_Img_Panel) Then
       f_panel.Picture = Picture[sResult_Img_Panel]
+      $hImage = Image.Load(sResult_Img_Panel)
     Else
       f_panel.Picture = Picture[sPath_Theme &/ sResult_Inn_Panel_Img]
+      $hImage = Image.Load(sPath_Theme &/ sResult_Inn_Panel_Img)
     Endif
     
     If Not IsNull(sResult_Background_Panel) Then
@@ -149,19 +152,24 @@ Public Function Show_Theme()
     Next
     
     For Each ctrl In f_panel.Controls
+      ctrl.Foreground = Val(sResult_Inn_Font_Color) 
+      
+    Next
+    
+    For Each ctrl In f_progressbar.Controls
       f_panel.TextLabelDate.Foreground = Val(sResult_Inn_Font_Color) 
       
     Next
     
-    For Each ctrl In f_date.Controls
-      
-      f_date.panDay.Foreground = Val(sResult_Inn_Font_Color) 
-      f_date.panDate.Foreground = Val(sResult_Inn_Font_Color) 
-      f_date.panweek.Foreground = Val(sResult_Inn_Font_Color) 
-      
-    Next
+    f_date.panDay.Foreground = Val(sResult_Inn_Font_Color) 
+    f_date.panDate.Foreground = Val(sResult_Inn_Font_Color) 
+    f_date.panweek.Foreground = Val(sResult_Inn_Font_Color) 
     
     For Each ctrl In f_wallpaper.Controls
+      Try ctrl.Font.Name = (sResult_Inn_Font_Name) 
+    Next
+    
+    For Each ctrl In f_progressbar.Controls
       Try ctrl.Font.Name = (sResult_Inn_Font_Name) 
     Next
     
@@ -172,6 +180,9 @@ Public Function Show_Theme()
       Try ctrl.Font.Name = (sResult_Inn_Font_Name) 
     Next
     For Each ctrl In f_wallpaper.Controls
+      Try ctrl.Font.Size = (iResult_Inn_Font_Size) 
+    Next
+    For Each ctrl In f_progressbar.Controls
       Try ctrl.Font.Size = (iResult_Inn_Font_Size) 
     Next
     

@@ -1122,7 +1122,7 @@ Public Sub mnuPaste_Click()
         Shell sCopy Wait
         
       Endif 
-      
+      Show_Files_Desktop
     Next
     
     f_progressbar.Hide
