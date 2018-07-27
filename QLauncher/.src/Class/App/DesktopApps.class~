@@ -1,8 +1,8 @@
 ' Gambas class file
 
-' Innova Project - Launcher of APP
-'
+' Innova Project 
 ' Copyright (C) Herberth Guzmán
+' herberthguzman@gmail.com
 '
 ' This program is free software; you can redistribute it and/or modify
 ' it under the terms of the GNU General Public License as published by
@@ -188,7 +188,7 @@ Static Public Function _get(AppName As String) As DesktopApps
     Return hDApps
     'Break
   Endif
-  
+Catch
   'Next
   
 End
@@ -355,10 +355,27 @@ Private Function Comment_ES_Read() As String
   
 End
 
+Static Private Function svg2image(svg_file As String, w As Integer, h As Integer) As Image
+  
+  Dim hsvg As SvgImage
+  Dim himage As Image
+  
+  hSvg = SvgImage.Load(svg_file)
+  hImage = New Image(w, h, Color.transparent)
+  Paint.Begin(hImage)
+  hSvg.Resize(w, h)
+  hSvg.Paint
+  Paint.End
+  Return hImage
+  
+End
+
 Public Sub GetIcon(Optional Size As Integer = 16) As Image
   
   Dim sPath As String
   Dim hImage As Image
+  Dim sKey As String
+  
   Dim sDir As String
   Dim sSize As String
   Dim hSvg As SvgImage
@@ -379,36 +396,67 @@ Public Sub GetIcon(Optional Size As Integer = 16) As Image
     Endif
     
   Else
+    'If _$IconName Ends ".png" Then _$IconName = File.BaseName(_$IconName)
+    If ((_$IconName Ends ".png") Or (_$IconName Ends ".xpm")) Then _$IconName = File.BaseName(_$IconName)
     
     For Each sDir In [Desktop.DataDir &/ "icons", "/usr/share/icons"]
-      For Each sSize In [CStr(Size), "scalable", "16", "22", "24", "32", "48", "64", "128", "256"]   
-        sPath = Subst(sDir &/ "hicolor/&1x&1/mimetypes/&2.png", sSize, _$IconName)
+      ' For Each sDir In ["/usr/share/icons"]
+      ' For Each sSize In [CStr(Size), "128", "64", "32"]   
+      'For Each sSize In [CStr(Size), "256", "128", "64", "48", "32" "22", "16", "8"]   
+      For Each sSize In [CStr(Size)]   
+        sPath = Subst(sDir &/ "hicolor/&1x&1/apps/&2.png", sSize, _$IconName)
         If Exist(sPath) Then 
           Try hImage = Image.Load(sPath)
           If hImage Then Break
         Endif
+        
+        ' sPath = Subst(sDir &/ "hicolor/&1x&1/apps/&2.xpm", sSize, _$IconName)
+        ' If Exist(sPath) Then 
+        '   Try hImage = Image.Load(sPath)
+        '   If hImage Then Break
+        ' Endif
+        
       Next
       If hImage Then Break
     Next
     
-    If Not hImage Then
-      sPath = Subst("/usr/share/pixmaps/&1.png", _$IconName)
-      If Exist(sPath) Then Try hImage = Image.Load(sPath)
-    Endif
+    ' If Not hImage Then
+    '   sPath = Subst("/usr/share/pixmaps/&1.png", _$IconName)
+    '   If Exist(sPath) Then Try hImage = Image.Load(sPath)
+    ' Endif
     
-    If Not hImage Then
-      For Each s In ["apps", "actions", "places", "devices", "categories", "emblems", "mime", "misc", "status", "mimetypes"]
-        Try hImage = Stock[CStr(Size) &/ s &/ _$IconName].Image
-        If hImage Then Break
-        
-        If IsNull(hImage) Then
-          Try hImage = Stock[CStr(Size) &/ s &/ "cog"].Image
-        Endif
-        
-      Next
-    Endif
+    'For Each sPath In [Subst("/usr/share/pixmaps/&1.png", _$IconName), Subst("/usr/share/pixmaps/&1.xpm", _$IconName)]
+    
+    '   Try hImage = Image.Load(sPath)
+    '   sPath = Subst("/usr/share/pixmaps/&1.png", _$IconName)
+    '  If Exist(sPath) Then Try hImage = Image.Load(sPath)
+    'Endif
+    
+    '   If Exist(sPath) Then 
+    '     Try hImage = Image.Load(sPath)
+    '     If hImage Then Break
+    '   Endif
+    
+    'If Exist(sPath) Then Try hImage = Image.Load(sPath)
+    
+    'Next
     
   Endif
+  If Not hImage Then
+    For Each s In ["apps", "actions", "places", "devices", "categories", "emblems", "mime", "misc", "status", "mimetypes"]
+      'For Each s In ["apps", "actions", "places", "devices"]
+      Try hImage = Stock[CStr(Size) &/ s &/ _$IconName].Image
+      If hImage Then Break
+    Next
+  Endif
+  
+  For Each sPath In [Subst("/usr/share/pixmaps/&1.png", _$IconName), Subst("/usr/share/pixmaps/&1.xpm", _$IconName)]
+    
+    If Not hImage Then
+      Try hImage = Image.Load(sPath)
+    Endif
+    
+  Next
   
   If Not hImage Then hImage = Stock[CStr(Size) &/ "program"].Image
   If hImage.W <> Size Or If hImage.H <> Size Then hImage = hImage.Stretch(Size, Size)
@@ -435,33 +483,36 @@ Private Function NotShowIn_Read() As String
   
 End
 
-Public Sub Exec002(Optional Args As String)
+Public Sub Exec(Optional Args As String)
   
   Dim ars As String[]
+  Dim ars2 As New String[]
+  Dim s As String
   Dim i As Integer
   
   ars = Split(_$Exec, " ")
-  If ars.Count > 0 Then
-    
-    If Not Args Then
-      Exec [ars[0]]
-    Else
-      For i = 0 To ars.Max
-        If ars[i] Begins "%" Then 
-          Try ars.Remove(i, ars.Max - i)
-          Break
-        Endif
-      Next
-      If InStr(ars[ars.Max], "%") Then
-        ars[ars.Max] = Args
-      Endif
-      Exec ars
+  
+  'remove all inclusion pos
+  
+  For Each s In ars
+    If Not (s Begins "%") Then
+      ars2.Add(s)
     Endif
+  Next
+  
+  If Not args Then 
+    
+    'Try Exec [ars[0]]
+    Try Exec ars2
+    'If Error Then Error "Can't execute " & ars2.Join(" ")
+  Else
+    Try Exec ars2.Insert(args)
+    If Error Then Error "Can't execute " & ars2.Insert(args).Join(" ")
   Endif
   
 End
 
-Public Sub Exec(Optional Args As String[])
+Public Sub Exec_(Optional Args As String)
   
   Dim ars As String[]
   Dim ars2 As New String[]
@@ -473,6 +524,11 @@ Public Sub Exec(Optional Args As String[])
   For Each s In ars
     If Not (s Begins "%") Then
       ars2.Add(s)
+    Else 
+      Select Case s
+        Case "%c"
+          ars2.Add(Me.Name)
+      End Select
     Endif
   Next
   
@@ -484,35 +540,6 @@ Public Sub Exec(Optional Args As String[])
     Try Exec ars2.Insert(args)
     If Error Then Error "Can't execute " & ars2.Insert(args).Join(" ")
   Endif
-  
-End
-
-Public Sub Exec001(Optional Args As String)
-  
-  Dim ars As String[]
-  Dim i As Integer
-  
-  'ars1 = Split(_$Exec, " ")
-  ars = Split(_$Exec, " ", "'")
-  
-  If ars.Count > 0 Then
-    
-    If Not Args Then
-      Exec [ars[0]]
-    Else
-      For i = 0 To ars.Max
-        If ars[i] Begins "%" Then 
-          Try ars.Remove(i, ars.Max - i)
-          Break
-        Endif
-      Next
-      If InStr(ars[ars.Max], "%") Then
-        ars[ars.Max] = Args
-      Endif
-      Exec ars
-    Endif
-  Endif
-Catch
   
 End
 

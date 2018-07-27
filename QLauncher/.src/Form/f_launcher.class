@@ -336,18 +336,18 @@ Public Sub PanInfo_Draw()
   Dim hImage As Image
   Dim hBackground As Image
   
-  hImage = Image.Load("img/img_back.png")
-  hBackground = New Image(hImage.W, hImage.H, Color.SetAlpha(Color.TextBackground, 160))
+  'hImage = Image.Load("img/img_back.png")
+  'hBackground = New Image(hImage.W, hImage.H, Color.SetAlpha(Color.TextBackground, 160))
   
   X = 0
   Y = 0
   W = PanInfo.w 
   H = PanInfo.w
   
-  hBrush = Paint.Image(hImage)
-  Paint.Brush = hBrush
+  ' hBrush = Paint.Image(hImage)
+  ' Paint.Brush = hBrush
   Paint.Rectangle(X, Y, W, H)
-  Paint.Fill
+  ' Paint.Fill
   
 End
 

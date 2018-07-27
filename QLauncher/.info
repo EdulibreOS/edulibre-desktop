@@ -208,14 +208,6 @@ Reset
 M
 
 
-GetIconori
-m
-Image
-[(Size)i]
-GetIconhiggins
-m
-Image
-(dIconName)s[(Size)i]
 GetIcon
 m
 Image
