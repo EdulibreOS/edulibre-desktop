@@ -226,9 +226,11 @@
       { PanInfo DrawingArea
         MoveScaled(20,42,57,7)
         Visible = False
+        Background = &H3F3F3F&
         Expand = True
         Arrangement = Arrange.Horizontal
         Padding = 4
+        Border = Border.Plain
         { VBox3 Panel
           MoveScaled(2,0,41,7)
           Expand = True
@@ -260,7 +262,6 @@
           { !txtlabelInfo Label
             MoveScaled(27,4,13,3)
             #Public = True
-            Font = Font["8"]
             Expand = True
             Alignment = Align.Right
           }

@@ -26,7 +26,39 @@
 Public cx As Connection
 Public rs As Result
 Public Settings_Core_Innova As New Settings(Desktop.ConfigDir &/ "Innova/Innova_Config.conf")
+Public Settings_Core_Innova_Usr As New Settings("/usr/share/Innova/Innova_Config.conf")
 Private iResult As Integer
+
+Public Sub Init_00()
+  
+  Dim sResult1 As String
+  Dim sResult2 As String
+  Dim sSend As String = Desktop.ConfigDir 
+  Dim sOrigen As String = "/usr/share/Innova/"
+  Dim sCopy As String
+  
+  Try sResult1 = Settings_Core_Innova["Innova/Version"]
+  Try sResult2 = Settings_Core_Innova_Usr["Innova/Version"]
+  
+  If (sResult1 = sResult2) Then
+    Print sResult1 
+    Print sResult2
+    Init_01
+  Else
+    Shell "rm -r " & sSend &/ "Innova"
+    Wait 0.9
+    Inc Application.Busy
+    
+    sCopy = "cp -r " & sOrigen & " " & sSend 
+    Shell sCopy Wait
+    Wait 0.9
+    Dec Application.Busy
+    Init_01
+  Endif 
+  
+  'Catch
+  
+End
 
 Public Sub Init_01()
   
@@ -62,8 +94,12 @@ Public Sub Init_03()
   
   Dim sExec As String
   
-  f_wallpaper.Show
   f_panel.Show
+  
+  Wait 0.2
+  f_wallpaper.Show
+  X11.SetWindowProperty(f_wallpaper.Id, Atom["_NET_WM_WINDOW_TYPE"], Atom["ATOM"], Atom["_NET_WM_WINDOW_TYPE_DESKTOP"])
+  
   Wait 0.2
   
 End

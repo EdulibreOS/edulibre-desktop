@@ -62,7 +62,7 @@ Public Sub Form_Open()
   ScrollApps.expand = True 
   ScrollApps.arrangement = Arrange.Row
   
-  ' m_core.Show_Opacity_Launcher
+  m_core.Show_Opacity_Launcher
   m_core.Show_Transparent_Launcher
   m_core.Show_Background_Launcher
   m_core.Show_Cat_Hide_Launcher
@@ -336,8 +336,8 @@ Public Sub PanInfo_Draw()
   Dim hImage As Image
   Dim hBackground As Image
   
-  hImage = Image.Load("img/img_back.png")
-  hBackground = New Image(hImage.W, hImage.H, Color.SetAlpha(Color.TextBackground, 160))
+  'hImage = Image.Load("img/img_back.png")
+  'hBackground = New Image(hImage.W, hImage.H, Color.SetAlpha(Color.TextBackground, 160))
   
   X = 0
   Y = 0

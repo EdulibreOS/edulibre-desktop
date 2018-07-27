@@ -107,6 +107,7 @@ Public Function Show_Theme()
       Try ctrl.Foreground = Val(sResult_Inn_Font_Color) 
       M_Core.sFontColor = Val(sResult_Inn_Font_Color) 
     Next
+    f_launcher.Foreground = &00DFDFDF
     
     For Each ctrl In f_launcher_mini.Controls
       Try ctrl.Foreground = Val(sResult_Inn_Font_Color) 
@@ -135,20 +136,21 @@ Public Function Show_Theme()
     
     ''FONT SIZE
     
-    If (iResult_Inn_Font_Size > 9) Then
-      
-      iResult_Inn_Font_Size = (iResult_Inn_Font_Size - 1)
-      For Each ctrl In f_launcher.Controls
-        Try ctrl.Font.Size = (iResult_Inn_Font_Size) 
-        M_Core.iFontSize = (iResult_Inn_Font_Size) 
-      Next
-      For Each ctrl In f_launcher_mini.Controls
-        Try ctrl.Font.Size = (iResult_Inn_Font_Size) 
-        M_Core.iFontSize = (iResult_Inn_Font_Size) 
-      Next
-      f_launcher.txtnameapp.Font = Font["Bold,+2"]
-      f_launcher.txtlabelInfo.Font = Font["+1"]
-    Endif
+    '  If (iResult_Inn_Font_Size > 9) Then
+    
+    '  iResult_Inn_Font_Size = (iResult_Inn_Font_Size - 1)
+    For Each ctrl In f_launcher.Controls
+      Try ctrl.Font.Size = (iResult_Inn_Font_Size) 
+      M_Core.iFontSize = (iResult_Inn_Font_Size) 
+    Next
+    For Each ctrl In f_launcher_mini.Controls
+      Try ctrl.Font.Size = (iResult_Inn_Font_Size) 
+      M_Core.iFontSize = (iResult_Inn_Font_Size) 
+    Next
+    f_launcher.txtnameapp.Font = Font["Bold,+2"]
+    f_launcher.txtlabelInfo.Font = Font["-1"]
+    f_launcher.txtlabelcat.Font = Font["-1"]
+    ' Endif
     
     For Each ctrl In f_power.Controls
       '  Try ctrl.Font.Size = (iResult_Inn_Font_Size) 

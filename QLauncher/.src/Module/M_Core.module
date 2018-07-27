@@ -339,6 +339,7 @@ Public Sub FillList_All(Optional sFilter As String)
     If iResult_Text = 1 Then
       'ImgButtonApps.Text = GetAppName(s, sLANG)
       ImgButtonApps.Text = DesktopApps[s].Name
+      ImgButtonApps.Tooltip = GetAppName(s, sLANG)
     Endif
     ImgButtonApps.Foreground = (sFontColor) 
     ImgButtonApps.Background = Color.Transparent
@@ -374,6 +375,7 @@ Public Sub FillList_All_CNB_Mini(Optional sFilter As String)
     
     If iResult_Text = 1 Then
       ImgBtnAppsCNB.Text = DesktopApps[s].Name
+      ImgBtnAppsCNB.Tooltip = GetAppName(s, sLANG)
     Endif
     
     ImgBtnAppsCNB.Mouse = 13
@@ -452,9 +454,9 @@ Public Sub FillList_Apps(Optional sFilter As String)
         ImgButtonApps.h = iSizeApps
         
         If iResult_Text = 1 Then
-          'ImgButtonApps.Text = GetAppName(s, sLANG)
+          
           ImgButtonApps.Text = DesktopApps[s].Name
-          'ImgButtonApps.Text = GetAppName(s, sLANG)
+          ImgButtonApps.Tooltip = GetAppName(s, sLANG)
         Endif
         
         ImgButtonApps.Mouse = 13
@@ -552,6 +554,7 @@ Public Sub FillList_Apps_CNB_Mini(Optional sFilter As String)
         If iResult_Text = 1 Then
           'ImgButtonApps.Text = GetAppName(s, sLANG)
           ImgBtnAppsCNB.Text = DesktopApps[s].Name
+          ImgBtnAppsCNB.Tooltip = GetAppName(s, sLANG)
         Endif
         
         ImgBtnAppsCNB.Mouse = 13
@@ -792,11 +795,10 @@ Public Sub IButtonApps_Enter()
   f_launcher.Pic_Logo_PreviewApp.Picture = Last.Picture
   
   For Each sCat In $Category
-    sCat = Replace$($Category[0], ";", " \n", True)
+    ' sCat = Replace$($Category[0], ";", " \n", True)
+    sCat = Replace$($Category[0], ";", Space(2), True)
     f_launcher.txtlabelcat.Text = ("Category: ") & sCat
   Next
-  
-  'ImgBtnCatCNB.Tooltip = sTextCom
   
   sSendApps = Last.Tag
   sAppsExec = Last.Tag

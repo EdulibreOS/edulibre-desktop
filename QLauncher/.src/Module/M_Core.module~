@@ -86,7 +86,7 @@ Public Sub FillList_Cat(Optional sFilter As String)
   If iResult_Text = 1 Then
     f_launcher.IconViewCat.Orientation = 1
     iw = ((Desktop.Width / 100) * 10) / 3.5 '2.7  '= Desktop.Width - ((Desktop.Width / 100) * 10)     
-    f_launcher.VBoxCat.w = iSizeCat * 1.8 '2.2
+    f_launcher.VBoxCat.w = iSizeCat * 2 '1.8 '2.2
     iSizeCat = iw + 2 '4
   Else
     ''HORIZONTAL
@@ -339,6 +339,7 @@ Public Sub FillList_All(Optional sFilter As String)
     If iResult_Text = 1 Then
       'ImgButtonApps.Text = GetAppName(s, sLANG)
       ImgButtonApps.Text = DesktopApps[s].Name
+      ImgButtonApps.Tooltip = GetAppName(s, sLANG)
     Endif
     ImgButtonApps.Foreground = (sFontColor) 
     ImgButtonApps.Background = Color.Transparent
@@ -374,6 +375,7 @@ Public Sub FillList_All_CNB_Mini(Optional sFilter As String)
     
     If iResult_Text = 1 Then
       ImgBtnAppsCNB.Text = DesktopApps[s].Name
+      ImgBtnAppsCNB.Tooltip = GetAppName(s, sLANG)
     Endif
     
     ImgBtnAppsCNB.Mouse = 13
@@ -452,9 +454,9 @@ Public Sub FillList_Apps(Optional sFilter As String)
         ImgButtonApps.h = iSizeApps
         
         If iResult_Text = 1 Then
-          'ImgButtonApps.Text = GetAppName(s, sLANG)
+          
           ImgButtonApps.Text = DesktopApps[s].Name
-          'ImgButtonApps.Text = GetAppName(s, sLANG)
+          ImgButtonApps.Tooltip = GetAppName(s, sLANG)
         Endif
         
         ImgButtonApps.Mouse = 13
@@ -552,6 +554,7 @@ Public Sub FillList_Apps_CNB_Mini(Optional sFilter As String)
         If iResult_Text = 1 Then
           'ImgButtonApps.Text = GetAppName(s, sLANG)
           ImgBtnAppsCNB.Text = DesktopApps[s].Name
+          ImgBtnAppsCNB.Tooltip = GetAppName(s, sLANG)
         Endif
         
         ImgBtnAppsCNB.Mouse = 13
@@ -886,7 +889,7 @@ Public Sub Show_Transparent_Launcher()
   Try iResult = Settings_Core_Innova["Launcher/Transparent"]
   If iResult = 1 Then
     f_launcher.Transparent = True 
-     f_launcher_mini.Transparent = True
+    f_launcher_mini.Transparent = True
   Else
     f_launcher.Transparent = False
     f_launcher_mini.Transparent = False

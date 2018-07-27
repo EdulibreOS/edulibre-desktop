@@ -23,7 +23,7 @@
 
 Static Public Sub Main()
   
-  M_Init.Init_01
+  M_Init.Init_00
   Try X11Systray.Show(f_panel.SystrayDrawingArea.Handle)
   
 End
