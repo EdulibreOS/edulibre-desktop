@@ -610,15 +610,17 @@ Public Sub ToggleTask_Enter()
   
   hToggleTask.Tooltip = Last.text
   Last.Background = BACKGROUND_COLOR
-  
+  Last.Foreground = Color.Black
+  'Last.Foreground = M_Theme.sResult_Inn_Font_Color
 Catch
   
 End
 
 Public Sub ToggleTask_Leave()
   
-  'Last.Background = Color.Transparent
+  Last.Background = Color.Transparent
   'Last.Foreground = Color.Black
+  Last.Foreground = M_Var_Global.sResult_Inn_Font_Color 'M_Theme.sResult_Inn_Font_Color
   '  f_screeshot.Hide
   
 End

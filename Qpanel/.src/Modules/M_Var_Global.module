@@ -51,3 +51,5 @@ Public sLang As String = ((Left(System.Language, 2)))
 Public sFontColor As String
 Public sPicUser As String
 Public sGroup_Cat As String
+Public sResult_Inn_Font_Color As String 
+ 

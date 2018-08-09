@@ -56,7 +56,7 @@ Public Sub _new()
   
   $hWatcher = New DesktopWatcher(True) As "MyDTWatcher"
   
-  ' X11.SetWindowProperty(f_wallpaper.Id, Atom["_NET_WM_STATE"], Atom["ATOM"], Atom[" _NET_WM_STATE_BELOW"])
+  X11.SetWindowProperty(f_wallpaper.Id, Atom["_NET_WM_STATE"], Atom["ATOM"], Atom[" _NET_WM_STATE_BELOW"])
   X11.SetWindowProperty(f_wallpaper.Id, Atom["_NET_WM_WINDOW_TYPE"], Atom["ATOM"], Atom["_NET_WM_WINDOW_TYPE_DESKTOP"])
   
 End

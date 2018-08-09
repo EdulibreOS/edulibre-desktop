@@ -212,6 +212,10 @@ GetIcon
 m
 Image
 [(Size)i]
+GetIcon001
+m
+Image
+[(Size)i]
 Exec
 m
 

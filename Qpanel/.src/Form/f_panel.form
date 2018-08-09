@@ -95,6 +95,11 @@
     { PanelSep3 Panel
       MoveScaled(71,1,5,4)
     }
+    { PanelTaskList HSplit
+      MoveScaled(79,0,18,4.5714)
+      Expand = True
+      Spacing = True
+    }
     { PanelTaskIcon Panel
       MoveScaled(79,4,18,4.5714)
       Visible = False
@@ -103,17 +108,11 @@
       Arrangement = Arrange.Horizontal
       Spacing = True
     }
-    { PanelTaskList HSplit
-      MoveScaled(79,0,18,4.5714)
-      Expand = True
-      Spacing = True
-    }
     { PanelSep4 Panel
       MoveScaled(101,0,5,4)
     }
     { SystrayDrawingArea DrawingArea
       MoveScaled(142,0,8,6)
-      Border = Border.Plain
       Cached = True
     }
     { PanelDate Panel

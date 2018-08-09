@@ -598,8 +598,8 @@ Public Sub ToggleTask_Click()
   
   Desktop.Windows.FromHandle(iId).Activate()
   
-Catch
-  Debug "ERROR [ " & DConv(Error.Text) & " ]"
+  Catch
+   Debug "ERROR [ " & DConv(Error.Text) & " ]"
   'Catch
   
 End
@@ -610,15 +610,17 @@ Public Sub ToggleTask_Enter()
   
   hToggleTask.Tooltip = Last.text
   Last.Background = BACKGROUND_COLOR
-  
+  Last.Foreground = Color.Black
+  'Last.Foreground = M_Theme.sResult_Inn_Font_Color
 Catch
   
 End
 
 Public Sub ToggleTask_Leave()
   
-  'Last.Background = Color.Transparent
+  Last.Background = Color.Transparent
   'Last.Foreground = Color.Black
+  Last.Foreground = M_Var_Global.sResult_Inn_Font_Color 'M_Theme.sResult_Inn_Font_Color
   '  f_screeshot.Hide
   
 End
@@ -871,7 +873,7 @@ Private Sub lsbWindSelectActiveWindow()
   If Not lsbWind.Exist(Desktop.ActiveWindow) Then Return
   Object.Lock(lsbWind)
   lsbWind[Desktop.ActiveWindow].Selected = True
-  $iLast2 = Desktop.ActiveWindow
+  '$iLast2 = Desktop.ActiveWindow
   Object.Unlock(lsbWind)
 Catch
   

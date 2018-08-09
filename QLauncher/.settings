@@ -21,9 +21,13 @@ Geometry=[-1,-1,224,280]
 Path="/home/edulibreos/Launcher_Tablet.gambas"
 
 [OpenFile]
-File[1]=".src/Class/App/DesktopApps.class:3.409"
-Active=1
-Count=1
+File[1]=".src/Class/App/DesktopApps.class:6.403"
+Active=5
+Count=5
+File[2]=".src/Module/M_Theme.module:26.41"
+File[3]=".src/Form/f_launcher.class:20.50"
+File[4]=".src/Module/M_Init.module:20.37"
+File[5]=".src/Form/f_power.form"
 
 [Watches]
 Count=0

@@ -24,6 +24,7 @@
 Public sResult_Theme As String
 Public Settings_Core_Innova As New Settings(Desktop.ConfigDir &/ "Innova/Innova_Config.conf")
 Public $hImage As Image
+Public sResult_Inn_Font_Color As String 
 
 Public Sub IconTheme()
   
@@ -63,7 +64,7 @@ Public Function Show_Theme()
   Dim sResult_Inn_SearchImg As String 
   Dim sResult_Inn_LogoImg As String 
   Dim sResult_Inn_LauncherImg As String 
-  Dim sResult_Inn_Font_Color As String 
+  '  Dim sResult_Inn_Font_Color As String 
   Dim sResult_Inn_Font_Name As String 
   Dim iResult_Inn_Font_Size As String 
   Dim sResult_Inn_Logo_Img_Dist As String 
@@ -153,11 +154,11 @@ Public Function Show_Theme()
     
     For Each ctrl In f_panel.Controls
       ctrl.Foreground = Val(sResult_Inn_Font_Color) 
+      M_Var_Global.sResult_Inn_Font_Color = Val(sResult_Inn_Font_Color) 
       '  f_panel.TextLabelDate.Foreground = Val(sResult_Inn_Font_Color) 
     Next
     
     For Each ctrl In f_progressbar.Controls
-      
       ctrl.Foreground = Val(sResult_Inn_Font_Color) 
     Next
     
