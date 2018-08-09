@@ -22,6 +22,7 @@
 ' Homepage: http://http://sourceforge.net/projects/innovadesktop
 ' This code belongs to Nagato Project and was adapted for Innova Project
 
+Private Const sIcons As String = "/usr/share/icons/" 
 Private Const HicolorIcons As String = "/usr/share/icons/hicolor/128x128/apps"
 Private Const PixmapIcons As String = "/usr/share/pixmaps"
 
@@ -57,6 +58,7 @@ Private Function setPath()
   $path = ""
   
   If $desktopFile.Icon Begins "/" Then $path = getIconPathFormDesktopFileData($desktopFile.Icon)
+  If Not $path Then $path = getIconPath(sIcons & M_Theme.sResult_Theme)
   If Not $path Then $path = getIconPath(HicolorIcons)
   If Not $path Then $path = getIconPath(PixmapIcons)
   
