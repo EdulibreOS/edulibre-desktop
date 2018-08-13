@@ -40,12 +40,13 @@ StripSpace=False
 Ignore=0
 
 [OpenFile]
-Count=4
+Count=5
 File[1]=".src/Form/f_panel.form"
-Active=4
+Active=3
 File[2]=".src/Form/f_panel.class:28.438"
-File[3]=".src/Modules/M_DesktopEntry.module:2.39"
+File[3]=".src/Modules/M_DesktopEntry.module:53.24"
 File[4]=".src/Form/f_wallpaper.form"
+File[5]=".src/Form/f_wallpaper.class:2.467"
 
 [Watches]
 Count=0

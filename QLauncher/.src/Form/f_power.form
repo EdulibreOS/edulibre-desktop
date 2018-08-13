@@ -19,13 +19,13 @@
       Arrangement = Arrange.Vertical
       AutoResize = True
     }
-    { btn2 Button
-      MoveScaled(1,0,12.1429,3.5714)
+    { btn4 Button
+      MoveScaled(3,0,12.1429,3.5714)
       Font = Font["8"]
-      Background = &H007FFF&
+      Background = &H042C37&
       Foreground = Color.White
       Mouse = Mouse.Pointing
-      Text = Shortcut(("Restart"), "R")
+      Text = Shortcut(("Close"), "C")
     }
     { Btn3 Button
       MoveScaled(14,0,12.1429,3.5714)
@@ -35,21 +35,21 @@
       Mouse = Mouse.Pointing
       Text = Shortcut(("Logout"), "L")
     }
+    { btn2 Button
+      MoveScaled(25,0,12.1429,3.5714)
+      Font = Font["8"]
+      Background = &H007FFF&
+      Foreground = Color.White
+      Mouse = Mouse.Pointing
+      Text = Shortcut(("Restart"), "R")
+    }
     { btn1 Button
-      MoveScaled(27,0,12.1429,3.5714)
+      MoveScaled(39,0,12.1429,3.5714)
       Font = Font["8"]
       Background = &HFF0000&
       Foreground = Color.White
       Mouse = Mouse.Pointing
       Text = Shortcut(("Shutdown"), "S")
-    }
-    { btn4 Button
-      MoveScaled(39,0,12.1429,3.5714)
-      Font = Font["8"]
-      Background = &H042C37&
-      Foreground = Color.White
-      Mouse = Mouse.Pointing
-      Text = Shortcut(("Close"), "C")
     }
   }
   { PictureBox1 PictureBox

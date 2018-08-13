@@ -96,9 +96,10 @@ End
 
 Public Sub btnPower_MouseDown()
   
-  f_power.Show
+  'f_power.Show
   Me.Close
-  
+  f_power.ShowModal
+
 End
 
 Public Sub mnuSwitchUser_Click()

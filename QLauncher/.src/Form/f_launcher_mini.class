@@ -127,6 +127,7 @@ End
 
 Public Sub picPower_MouseDown()
   
+  Me.Close
   f_power.ShowModal
   
 End
@@ -509,6 +510,6 @@ End
 
 Public Sub IconViewApp_Click()
   
-  'IconViewApp_DblClick
+  IconViewApp_DblClick
   
 End

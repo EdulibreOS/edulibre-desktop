@@ -1,6 +1,6 @@
 # Gambas Project File 3.0
 Title=Qpanel
-Startup=Cls_Start
+Startup=f_wallpaper
 Icon=img/desktop-environment-innova.png
 Version=0.1.95
 Component=gb.args

@@ -14,7 +14,6 @@
   SkipTaskbar = True
   { mnuPopup Menu
     Text = ("mnuPopup")
-    Visible = False
     { mnuOpen Menu
       Text = Shortcut(("Open"), "O")
       Picture = Picture["icon:/small/open"]
@@ -216,7 +215,7 @@
     Delay = 0
   }
   { panView Panel
-    MoveScaled(3,1,115,85.75)
+    MoveScaled(3,1,115,85.7143)
     Arrangement = Arrange.Fill
     { ivwDesktop IconView
       MoveScaled(24,13,44,40)
