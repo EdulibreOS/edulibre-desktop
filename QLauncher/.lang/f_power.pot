@@ -5,13 +5,13 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-08-03 16:26 UTC\n"
+"POT-Creation-Date: 2018-08-13 11:36 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: f_power.form:42
-msgid "Restart"
+msgid "Close"
 msgstr ""
 
 #: f_power.form:51
@@ -19,11 +19,11 @@ msgid "Logout"
 msgstr ""
 
 #: f_power.form:60
-msgid "Shutdown"
+msgid "Restart"
 msgstr ""
 
 #: f_power.form:69
-msgid "Close"
+msgid "Shutdown"
 msgstr ""
 
 #: f_power.form:82

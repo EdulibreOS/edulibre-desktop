@@ -9,7 +9,7 @@
   Margin = True
   Padding = 5
   { HBoxAppCom HBox
-    MoveScaled(4,12,51,4)
+    MoveScaled(1,12,55,4)
     Expand = True
     Spacing = True
     Padding = 5

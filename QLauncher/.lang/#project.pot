@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: QLauncher 3.11.2\n"
-"POT-Creation-Date: 2018-08-09 17:22 UTC\n"
+"POT-Creation-Date: 2018-08-13 11:36 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"

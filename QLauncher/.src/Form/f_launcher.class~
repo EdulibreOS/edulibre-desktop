@@ -344,10 +344,10 @@ Public Sub PanInfo_Draw()
   W = PanInfo.w 
   H = PanInfo.w
   
-  hBrush = Paint.Image(hImage)
-  Paint.Brush = hBrush
+  ' hBrush = Paint.Image(hImage)
+  ' Paint.Brush = hBrush
   Paint.Rectangle(X, Y, W, H)
-  Paint.Fill
+  ' Paint.Fill
   
 End
 
