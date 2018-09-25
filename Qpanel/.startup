@@ -6,7 +6,7 @@ Qpanel
 
 gb.args
 gb.image
-gb.qt4
+gb.qt5
 gb.form
 gb.compress
 gb.compress.bzlib2

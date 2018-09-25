@@ -1,0 +1,122 @@
+' Gambas module file
+
+Private pro As Process
+
+Public Sub Mio()
+  
+  Dim s As String
+  Dim i As Integer
+  
+  Shell "ps -p " & Application.id To s
+  If InStr(s, "Launcher_Tablet.gambas") > 0 Then
+    ' txl1.Text = "Desde el IDE: "
+    
+    i = 1
+  Else
+    
+    i = 0
+    '  M_DB.Main
+    '   txl1.Text = "Desde ejecutable: "
+  Endif
+  
+  Print i
+  Print s
+  If i = 0 Then
+    '   M_DB.Main
+  Else
+    f_launcher.Close
+  Endif
+  
+End
+
+Public Function Werun(strProc1 As String) As Integer '' Devuelve si el programa se ejecuta desde el ide o no
+  
+  Dim strProcRaw1 As String
+  Dim strPProc As String
+  Dim strProcRaw2 As String
+  Dim intMode As Integer
+  
+  ' Averiguar el PPID
+  strProcRaw1 = ""
+  Shell "ps -ef | grep " & strProc1 & " | grep Launcher_Tablet.gambas" To strProcRaw1 
+  strProcRaw1 = Replace(strProcRaw1, "\t", "|")
+  strProcRaw1 = Replace(strProcRaw1, " ", "|")
+  strProcRaw1 = Replace(strProcRaw1, "||", "|")
+  strProcRaw1 = Replace(strProcRaw1, "||", "|")
+  strProcRaw1 = Replace(strProcRaw1, "||", "|")
+  
+  'Shell "ps -ef | grep " & strProc1 & " | grep gbx3 | cut -d ''-f2" To strPProc
+  
+  If strProcRaw1 <> "" Then
+    strPProc = Split(strProcRaw1, "|")[2]
+    'Averiguar el nombre del programa padre
+    Shell "ps -ef | grep " & strPProc & " | grep gbr3" To strProcRaw2
+    strProcRaw2 = Replace(strProcRaw2, "  ", " ")
+    strProcRaw2 = Replace(strProcRaw2, "\t", "|")
+    strProcRaw2 = Replace(strProcRaw2, " ", "|")
+    strProcRaw2 = Replace(strProcRaw2, "||", "|")
+    strProcRaw2 = Replace(strProcRaw2, "||", "|")
+    strProcRaw2 = Replace(strProcRaw2, "||", "|")
+    
+    If strProcRaw2 <> "" Then
+      If Split(strProcRaw2, "|")[1] = strPProc Then
+        intMode = 1 ' Se esta ejecutando desde el IDE
+      Else
+        intMode = 0 ' Se esta ejecutando desde un paquete
+      Endif
+    Endif
+    
+  Endif
+  
+  Return intMode
+  
+End
+
+Public Sub Main()
+  
+  Dim s As String
+  Dim i As Integer
+  Dim p As String
+  Dim strProc1 As String
+  'Shell "ps -p " & Application.Name To s
+  '  Print s
+  
+  's = File.Load("/proc" &/ CStr(Application.Id) &/ "comm")
+  'Print s  
+  ' M_DB.Main
+  ' Shell "ps -ef | grep -i Launcher.gambas | awk {'print $11'}" To s
+  'Shell "ps -ef | grep -i Launcher.gambas" To p
+  'Print p
+  
+  ' Shell "ps -p " & Application.id To s
+  's = File.Load("/proc" &/ CStr(Application.Id) &/ "comm")
+  'Shell "ps -ef | grep " & strProc1 & " | grep Launcher" To s
+  ' Shell "ps -ef | grep -i Launcher.gambas | awk {'print $15'}  " To s
+  Print Application.Name
+  
+  s = File.Load("/proc" &/ CStr(Application.id) &/ "comm")
+  s = Trim(s)
+  Message(s)
+  If Left(s, 4) = "QLauncher" Then
+    Print "Desde el IDE: "
+  Else
+    Print "Desde ejecutable: "
+  Endif
+  
+  's = LTrim(s)
+  
+  'Print s
+  'If s = "Launcher.gambas" Then
+  ' i = 1
+  ' M_Core.iShow = True
+  'M_DB.Main
+  'f_launcher.Close
+  ' f_launcher.Show
+  'f_launcher.Visible = If(f_launcher.Visible = 1, 0, 1)  
+  'Else
+  '  i = 0
+  
+  '  M_DB.Main
+  'Endif
+  
+End

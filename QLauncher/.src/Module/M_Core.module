@@ -33,6 +33,7 @@ Private ImgBtnAppsCNB As PushButton
 Private ImgBtnCatCNB As PushButton
 Private ImgButtonCat As PushButton
 Private ImgButtonCatAll As PushButton
+Private sPanel As Panel
 Public sText As String
 Public sSendApps As String
 Public sSendApps1 As String
@@ -54,14 +55,39 @@ Private iResult_Size As Integer
 Private AllCat As String[] = [("Development"), ("Other"), ("Office"), ("Network"), ("Game"), ("AudioVideo"), ("System"), ("Settings"), ("Utility"), ("Graphics"), ("Education")]
 
 'Private AllCatCNB As String[] = [("Primero"), ("Segundo"), ("Tercero"), ("Cuarto"), ("Quinto"), ("Sexto")]
-Private AllCatCNB As String[] = [("Preescolar"), ("Primaria Básica"), ("Primaria Avanzada"), ("Básico"), ("Diversificado")]
-
-'Private cImgCatCNB As Collection = ["Primero": "primero", "Segundo": "segundo", "Tercero": "tercero", "Cuarto": "cuarto", "Quinto": "quinto", "Sexto": "sexto"]
-Private cImgCatCNB As Collection = ["Preescolar": "primero", "Primaria Básica": "segundo", "Primaria Avanzada": "tercero", "Básico": "cuarto", "Diversificado": "quinto"]
+Private AllCatCNB As String[] = [("Preprimaria"), ("Primaria Basica"), ("Primaria Avanzada")]
+Private cImgCatCNB As Collection = ["Preprimaria": "0", "Primaria Basica": "1", "Primaria Avanzada": "2"]
 
 Private cImgCat As Collection = ["Development": "development", "Other": "other", "Office": "office", "Network": "internet", "Game": "games", "AudioVideo": "multimedia", "System": "system", "Settings": "accessories", "Utility": "utilities", "Graphics": "graphics"]
 
 Private aCurCatApps As New String[]
+Private AllPrePri As String[] = [("Cuatro Años"), ("Cinco Años"), ("Seis Años")]
+Private AllPriBas As String[] = [("Primer Grado"), ("Segundo Grado"), ("Tercer Grado")]
+Private AllPriAva As String[] = [("Cuarto Grado"), ("Quinto Grado"), ("Sexto Grado")]
+
+'Private AllMaterias As String[] = [("Comunicación y Lenguaje"), ("Matemáticas"), ("Medio Social y Natural"), ("Ciencias Naturales y Tecnología"), ("Ciencias Sociales"), ("Expresión Artística"), ("Educación Física"), ("Formación Ciudadana"), ("Productividad y Desarrollo ")]
+Private AllPrePrimaria As String[] = [("Destrezas de Aprendizaje"), ("Comunicación y Lenguaje"), ("Medio Social y Natural"), ("Expresión Artística"), ("Educación Física")]
+Private AllPrimerGrado As String[] = [("Comunicación y Lenguaje L1"), ("Matemáticas"), ("Medio Social y Natural"), ("Expresión Artística"), ("Educación Física"), ("Formación Ciudadana")]
+Private AllSegundoGrado As String[] = [("Comunicación y Lenguaje L2"), ("Matemáticas"), ("Medio Social y Natural"), ("Expresión Artística"), ("Educación Física"), ("Formación Ciudadana")]
+Private AllTercerGrado As String[] = [("Comunicación y Lenguaje L3"), ("Matemáticas"), ("Medio Social y Natural"), ("Expresión Artística"), ("Educación Física"), ("Formación Ciudadana")]
+
+Private cImgPriGra As Collection = ["Comunicación y Lenguaje L1": "l", "Comunicación y Lenguaje L2": "l", "Comunicación y Lenguaje L3": "l", "Matemáticas": "m", "Medio Social y Natural": "n", "Expresión Artística": "a", "Educación Física": "f", "Formación Ciudadana": "c"]
+Private cImgPrePrimaria As Collection = ["Destrezas de Aprendizaje": "a", "Comunicación y Lenguaje": "l", "Medio Social y Natural": "n", "Expresión Artística": "a", "Educación Física": "f"]
+
+Private AllPrimariaAvanzada As String[] = [("Comunicación y Lenguaje"), ("Matemáticas"), ("Ciencias Naturales y Tecnología"), ("Ciencias Sociales"), ("Expresión Artística"), ("Educación Física"), ("Formación Ciudadana"), ("Productividad y Desarrollo")]
+Private cImgCuartoGra As Collection = ["Comunicación y Lenguaje": "l", "Matemáticas": "m", "Ciencias Naturales y Tecnología": "t", "Ciencias Sociales": "s", "Expresión Artística": "a", "Formación Ciudadana": "c", "Educación Física": "f", "Productividad y Desarrollo": "d"]
+
+Private cImgPriBas As Collection = ["Primer Grado": "1", "Segundo Grado": "2", "Tercer Grado": "3"]
+Private cImgPriAva As Collection = ["Cuarto Grado": "4", "Quinto Grado": "5", "Sexto Grado": "6"]
+Private cImgPrePri As Collection = ["Cuatro Años": "4", "Cinco Años": "5", "Seis Años": "6"]
+
+Private iSizeCNB As Integer = 64
+
+Private sLastGrado As String
+Private sLastMateria As String
+Private s1 As String
+Private s2 As String
+Private s3 As String
 
 Public Sub FillList_Cat(Optional sFilter As String)
   
@@ -191,13 +217,17 @@ Public Sub FillList_Cat_CNB_Mini(Optional sFilter As String)
   Dim i As Integer = -1
   
   iSizeCat = Settings_Core_Innova["Launcher/Icon_Size"]
+  iSizeCat = iSizeCat + 10 ' 20 '25
+  
   f_launcher_cnb_mini.PanelCat.w = iSizeCat
+  
+  f_launcher_cnb_mini.Panel11.h = f_launcher_cnb_mini.PanelCat.h / 3
   
   If AllCatCNB = Null Then Return
   
-  'f_launcher_cnb_mini.IconViewCat.Clear
-  f_launcher_cnb_mini.ScrollCat.Children.Clear
-  f_launcher_cnb_mini.ScrollCat.Background = Color.Transparent
+  f_launcher_cnb_mini.IconViewCat.Clear
+  ''f_launcher_cnb_mini.ScrollCat.Children.Clear
+  '' f_launcher_cnb_mini.ScrollCat.Background = Color.Transparent
   f_launcher_cnb_mini.PanelCat.Background = Color.Transparent
   
   For Each s In AllCatCNB
@@ -214,18 +244,18 @@ Public Sub FillList_Cat_CNB_Mini(Optional sFilter As String)
     
     ImgBtnCatCNB.Mouse = 13
     
-    ImgBtnCatCNB.Picture = Picture["img/cnb/" & LCase(cImgCatCNB[s] & ".png")].Image.Stretch(48, 48).Picture
+    ImgBtnCatCNB.Picture = Picture["img/cnb/malla_curricular/" & LCase(cImgCatCNB[s] & ".svg")].Image.Stretch(iSizeCNB, iSizeCNB).Picture
     
-    ' ImgBtnCatCNB.Foreground = (sFontColor)
+    ImgBtnCatCNB.Foreground = (sFontColor)
     ImgBtnCatCNB.Background = Color.Transparent
-    'Try ImgBtnCatCNB.Font.Size = (iFontSize)
-    'ImgBtnCatCNB.Font.Name = (sFontName)
+    Try ImgBtnCatCNB.Font.Size = (iFontSize - 1)
+    ImgBtnCatCNB.Font.Name = (sFontName)
     ImgBtnCatCNB.Tag = s
     
-    'f_launcher_cnb.IconViewCat.Add(AllCat[i], GetCat(AllCat[i], sLang), Stock["32/categories/applications-" & LCase(cImgCat[s])].Image.Picture)
+    '  f_launcher_cnb.IconViewCat.Add(AllCat[i], GetCat(AllCat[i], sLang), Stock["32/categories/applications-" & LCase(cImgCat[s])].Image.Picture)
     'f_launcher_cnb.IconViewCat.Add(i, AllCatCNB[i], Picture["img/cnb/Primero.png"].Image.Stretch(32, 32).Picture)
     
-    'Try f_launcher_cnb_mini.IconViewCat.Add(AllCatCNB[i], AllCatCNB[i], Picture["img/cnb/" & LCase(cImgCatCNB[s] & ".png")].Image.Stretch(48, 48).Picture)
+    f_launcher_cnb_mini.IconViewCat.Add(i, AllCatCNB[i], Picture["img/cnb/malla_curricular/" & LCase(cImgCatCNB[s] & ".svg")].Image.Stretch(iSizeCNB, iSizeCNB).Picture)
     'Try f_launcher_cnb_mini.IconViewCat.Add(AllCatCNB[i], AllCatCNB[i])
     'f_launcher_cnb_mini.IconViewCat.Background = Color.Transparent
     'Try f_launcher_cnb_mini.IconViewCat.Font.Size = (iFontSize + 2)
@@ -236,7 +266,7 @@ Public Sub FillList_Cat_CNB_Mini(Optional sFilter As String)
   
 End
 
-Public Sub IButtonCatCNB_Click()
+Public Sub IButtonCatCNB_Click_original()
   
   Dim iResult As Integer 
   
@@ -251,7 +281,417 @@ Public Sub IButtonCatCNB_Click()
   
 End
 
+Public Sub IButtonCatCNB_Leave()
+  
+  'f_launcher_cnb_mini.HBoxArea.Visible = False
+  'f_launcher_cnb_mini.HBoxGrado.Visible = False
+  'f_launcher_cnb_mini.HBoxApps.Visible = False
+  
+End
+
 Public Sub IButtonCatCNB_Enter()
+  
+  f_launcher_cnb_mini.PanelApp.Visible = 1
+  f_launcher_cnb_mini.ScrollApps.Children.Clear
+  f_launcher_cnb_mini.txtSearchApps.Clear
+  
+End
+
+Public Sub IButtonCatCNB_Click()
+  
+  Dim i As Integer = -1 
+  Dim s As String
+  
+  ' f_launcher_cnb_mini.HBoxGrado.Visible = True
+  
+  Dim iResult As Integer 
+  
+  Try iResult = Settings_Core_Innova["Launcher/Cat_MouseMove"]
+  
+  If iResult = 0 Then
+    M_Core.sCurCat = Last.tag 'DesktopAppsCat[Last.Item.key].Name
+    M_Core.FillList_Apps_CNB_Mini
+    f_launcher_cnb_mini.txtSearchApps.Clear
+    
+  Endif
+  
+  f_launcher_cnb_mini.ScrollGrado.Children.Clear
+  f_launcher_cnb_mini.ScrollArea.Children.Clear
+  
+  sPanel = New Panel(f_launcher_cnb_mini.ScrollGrado) As "sPanel"
+  sPanel.Arrangement = Arrange.Vertical
+  'sPanel.Expand = True
+  sPanel.Margin = True
+  'sPanel.W = f_launcher_cnb_mini.PanelGrado.w / 8
+  sPanel.W = f_launcher_cnb_mini.PanelGrado.w / 5
+  
+  If Last.tag = "Preprimaria" Then
+    For Each s In AllPrePri
+      Inc i  
+      
+      ImgBtnCatCNB = New PushButton(f_launcher_cnb_mini.ScrollGrado) As "IButtonPrimaria"
+      ImgBtnCatCNB.w = iSizeCat 
+      ImgBtnCatCNB.h = iSizeCat - 10
+      ImgBtnCatCNB.Text = AllPrePri[i]
+      ImgBtnCatCNB.Mouse = 13
+      ImgBtnCatCNB.Picture = Picture["img/cnb/" & LCase(cImgPrePri[s] & ".svg")].Image.Stretch(iSizeCNB, iSizeCNB).Picture
+      ImgBtnCatCNB.Foreground = (sFontColor)
+      ImgBtnCatCNB.Background = Color.Transparent
+      Try ImgBtnCatCNB.Font.Size = (iFontSize - 1)
+      ImgBtnCatCNB.Font.Name = (sFontName)
+      ImgBtnCatCNB.Tag = s
+      ' IconViewCat2.Add(i, AllPriBas[i], Picture["img/cnb/" & LCase(cImgPriBas[s] & ".svg")].Image.Stretch(32, 32).Picture)
+      
+    Next
+    
+  Endif
+  
+  If Last.tag = "Primaria Basica" Then
+    For Each s In AllPriBas
+      Inc i  
+      
+      ImgBtnCatCNB = New PushButton(f_launcher_cnb_mini.ScrollGrado) As "IButtonPrimaria"
+      ImgBtnCatCNB.w = iSizeCat 
+      ImgBtnCatCNB.h = iSizeCat - 10
+      ImgBtnCatCNB.Text = AllPriBas[i]
+      ImgBtnCatCNB.Mouse = 13
+      ImgBtnCatCNB.Picture = Picture["img/cnb/" & LCase(cImgPriBas[s] & ".svg")].Image.Stretch(iSizeCNB, iSizeCNB).Picture
+      ImgBtnCatCNB.Foreground = (sFontColor)
+      ImgBtnCatCNB.Background = Color.Transparent
+      Try ImgBtnCatCNB.Font.Size = (iFontSize)
+      ImgBtnCatCNB.Font.Name = (sFontName)
+      ImgBtnCatCNB.Tag = s
+      ' IconViewCat2.Add(i, AllPriBas[i], Picture["img/cnb/" & LCase(cImgPriBas[s] & ".svg")].Image.Stretch(32, 32).Picture)
+      
+    Next
+    
+  Endif
+  
+  If Last.tag = "Primaria Avanzada" Then
+    For Each s In AllPriAva
+      Inc i  
+      
+      ImgBtnCatCNB = New PushButton(f_launcher_cnb_mini.ScrollGrado) As "IButtonPrimaria"
+      ImgBtnCatCNB.w = iSizeCat 
+      ImgBtnCatCNB.h = iSizeCat - 10
+      ImgBtnCatCNB.Text = AllPriAva[i]
+      ImgBtnCatCNB.Mouse = 13
+      ImgBtnCatCNB.Picture = Picture["img/cnb/" & LCase(cImgPriAva[s] & ".svg")].Image.Stretch(iSizeCNB, iSizeCNB).Picture
+      ImgBtnCatCNB.Foreground = (sFontColor)
+      ImgBtnCatCNB.Background = Color.Transparent
+      Try ImgBtnCatCNB.Font.Size = (iFontSize)
+      ImgBtnCatCNB.Font.Name = (sFontName)
+      ImgBtnCatCNB.Tag = s
+      ' IconViewCat2.Add(i, AllPriBas[i], Picture["img/cnb/" & LCase(cImgPriBas[s] & ".svg")].Image.Stretch(32, 32).Picture)
+      
+    Next
+  Endif
+  s1 = Last.tag
+  f_launcher_cnb_mini.lblinfogrado.text = s1
+  
+End
+
+Public Sub IButtonPrimaria_Click() 
+  
+  Dim s As String
+  Dim i As Integer
+  
+  ' f_launcher_cnb_mini.HBoxArea.Visible = True
+  sLastGrado = Last.Tag
+  
+  If Last.tag = "Cuatro Años" Then
+    f_launcher_cnb_mini.ScrollArea.Children.Clear
+    For Each s In AllPrePrimaria
+      Inc i  
+      
+      ImgButtonApps = New PushButton(f_launcher_cnb_mini.ScrollArea) As "IButtonPB"
+      ImgButtonApps.w = iSizeCat 
+      ImgButtonApps.h = iSizeCat - 10
+      ImgButtonApps.Text = s 'AllPrimerGrado[i]
+      ImgButtonApps.Mouse = 13
+      ImgButtonApps.Picture = Picture["img/cnb/malla_curricular/" & LCase(cImgPrePrimaria[s] & ".svg")].Image.Stretch(iSizeCNB, iSizeCNB).Picture
+      ImgButtonApps.Foreground = (sFontColor)
+      ImgButtonApps.Background = Color.Transparent
+      Try ImgButtonApps.Font.Size = (iFontSize)
+      ImgButtonApps.Font.Name = (sFontName)
+      ImgButtonApps.Tag = s
+      '  ImgButtonApps.Tooltip = AllPrePrimaria[i]
+      ' IconViewCat2.Add(i, AllPriBas[i], Picture["img/cnb/" & LCase(cImgPriBas[s] & ".svg")].Image.Stretch(32, 32).Picture)
+      
+      '  sLastMateria = Last.text
+    Next
+    '  sLastMateria = Last.Tooltip
+  Endif
+  
+  If Last.tag = "Cinco Años" Then
+    f_launcher_cnb_mini.ScrollArea.Children.Clear
+    For Each s In AllPrePrimaria
+      Inc i  
+      
+      ImgButtonApps = New PushButton(f_launcher_cnb_mini.ScrollArea) As "IButtonPB"
+      ImgButtonApps.w = iSizeCat 
+      ImgButtonApps.h = iSizeCat - 10
+      ImgButtonApps.Text = s 'AllPrimerGrado[i]
+      ImgButtonApps.Mouse = 13
+      ImgButtonApps.Picture = Picture["img/cnb/malla_curricular/" & LCase(cImgPrePrimaria[s] & ".svg")].Image.Stretch(iSizeCNB, iSizeCNB).Picture
+      ImgButtonApps.Foreground = (sFontColor)
+      ImgButtonApps.Background = Color.Transparent
+      Try ImgButtonApps.Font.Size = (iFontSize)
+      ImgButtonApps.Font.Name = (sFontName)
+      ImgButtonApps.Tag = s
+      ' IconViewCat2.Add(i, AllPriBas[i], Picture["img/cnb/" & LCase(cImgPriBas[s] & ".svg")].Image.Stretch(32, 32).Picture)
+      ' sLastGrado = Last.Text
+      ' Print Last.text
+      ' Print Last.tag
+      ' Print s
+      ' Print AllPrePrimaria[i]
+      
+    Next
+  Endif
+  
+  If Last.tag = "Seis Años" Then
+    f_launcher_cnb_mini.ScrollArea.Children.Clear
+    For Each s In AllPrePrimaria
+      Inc i  
+      
+      ImgButtonApps = New PushButton(f_launcher_cnb_mini.ScrollArea) As "IButtonPB"
+      ImgButtonApps.w = iSizeCat 
+      ImgButtonApps.h = iSizeCat - 10
+      ImgButtonApps.Text = s 'AllPrimerGrado[i]
+      ImgButtonApps.Mouse = 13
+      ImgButtonApps.Picture = Picture["img/cnb/malla_curricular/" & LCase(cImgPrePrimaria[s] & ".svg")].Image.Stretch(iSizeCNB, iSizeCNB).Picture
+      ImgButtonApps.Foreground = (sFontColor)
+      ImgButtonApps.Background = Color.Transparent
+      Try ImgButtonApps.Font.Size = (iFontSize)
+      ImgButtonApps.Font.Name = (sFontName)
+      ImgButtonApps.Tag = s
+      ' IconViewCat2.Add(i, AllPriBas[i], Picture["img/cnb/" & LCase(cImgPriBas[s] & ".svg")].Image.Stretch(32, 32).Picture)
+      '  sLastGrado = Last.Text
+      
+    Next
+  Endif
+  
+  If Last.tag = "Primer Grado" Then
+    f_launcher_cnb_mini.ScrollArea.Children.Clear
+    For Each s In AllPrimerGrado
+      Inc i  
+      
+      ImgButtonApps = New PushButton(f_launcher_cnb_mini.ScrollArea) As "IButtonPB"
+      ImgButtonApps.w = iSizeCat 
+      ImgButtonApps.h = iSizeCat - 10
+      ImgButtonApps.Text = s 'AllPrimerGrado[i]
+      ImgButtonApps.Mouse = 13
+      ImgButtonApps.Picture = Picture["img/cnb/malla_curricular/" & LCase(cImgPriGra[s] & ".svg")].Image.Stretch(iSizeCNB, iSizeCNB).Picture
+      ImgButtonApps.Foreground = (sFontColor)
+      ImgButtonApps.Background = Color.Transparent
+      Try ImgButtonApps.Font.Size = (iFontSize)
+      ImgButtonApps.Font.Name = (sFontName)
+      ImgButtonApps.Tag = s
+      ' IconViewCat2.Add(i, AllPriBas[i], Picture["img/cnb/" & LCase(cImgPriBas[s] & ".svg")].Image.Stretch(32, 32).Picture)
+      
+    Next
+  Endif
+  
+  If Last.tag = "Segundo Grado" Then
+    f_launcher_cnb_mini.ScrollArea.Children.Clear
+    For Each s In AllSegundoGrado
+      Inc i  
+      
+      ImgButtonApps = New PushButton(f_launcher_cnb_mini.ScrollArea) As "IButtonPB"
+      ImgButtonApps.w = iSizeCat 
+      ImgButtonApps.h = iSizeCat - 10
+      ImgButtonApps.Text = s 'AllPrimerGrado[i]
+      ImgButtonApps.Mouse = 13
+      ImgButtonApps.Picture = Picture["img/cnb/malla_curricular/" & LCase(cImgPriGra[s] & ".svg")].Image.Stretch(iSizeCNB, iSizeCNB).Picture
+      ImgButtonApps.Foreground = (sFontColor)
+      ImgButtonApps.Background = Color.Transparent
+      Try ImgButtonApps.Font.Size = (iFontSize)
+      ImgButtonApps.Font.Name = (sFontName)
+      ImgButtonApps.Tag = s
+      ' IconViewCat2.Add(i, AllPriBas[i], Picture["img/cnb/" & LCase(cImgPriBas[s] & ".svg")].Image.Stretch(32, 32).Picture)
+      
+    Next
+  Endif
+  
+  If Last.tag = "Tercer Grado" Then
+    f_launcher_cnb_mini.ScrollArea.Children.Clear
+    For Each s In AllTercerGrado
+      Inc i  
+      
+      ImgButtonApps = New PushButton(f_launcher_cnb_mini.ScrollArea) As "IButtonPB"
+      ImgButtonApps.w = iSizeCat 
+      ImgButtonApps.h = iSizeCat - 10
+      ImgButtonApps.Text = s 'AllPrimerGrado[i]
+      ImgButtonApps.Mouse = 13
+      ImgButtonApps.Picture = Picture["img/cnb/malla_curricular/" & LCase(cImgPriGra[s] & ".svg")].Image.Stretch(iSizeCNB, iSizeCNB).Picture
+      ImgButtonApps.Foreground = (sFontColor)
+      ImgButtonApps.Background = Color.Transparent
+      Try ImgButtonApps.Font.Size = (iFontSize)
+      ImgButtonApps.Font.Name = (sFontName)
+      ImgButtonApps.Tag = s
+      ' IconViewCat2.Add(i, AllPriBas[i], Picture["img/cnb/" & LCase(cImgPriBas[s] & ".svg")].Image.Stretch(32, 32).Picture)
+      
+    Next
+  Endif
+  
+  If Last.tag = "Cuarto Grado" Then
+    f_launcher_cnb_mini.ScrollArea.Children.Clear
+    For Each s In AllPrimariaAvanzada
+      Inc i  
+      
+      ImgButtonApps = New PushButton(f_launcher_cnb_mini.ScrollArea) As "IButtonPB"
+      ImgButtonApps.w = iSizeCat 
+      ImgButtonApps.h = iSizeCat - 10
+      ImgButtonApps.Text = s 'AllPrimerGrado[i]
+      ImgButtonApps.Mouse = 13
+      ImgButtonApps.Picture = Picture["img/cnb/malla_curricular/" & LCase(cImgCuartoGra[s] & ".svg")].Image.Stretch(iSizeCNB, iSizeCNB).Picture
+      ImgButtonApps.Foreground = (sFontColor)
+      ImgButtonApps.Background = Color.Transparent
+      Try ImgButtonApps.Font.Size = (iFontSize)
+      ImgButtonApps.Font.Name = (sFontName)
+      ImgButtonApps.Tag = s
+      ' IconViewCat2.Add(i, AllPriBas[i], Picture["img/cnb/" & LCase(cImgPriBas[s] & ".svg")].Image.Stretch(32, 32).Picture)
+      
+    Next
+  Endif
+  
+  If Last.tag = "Quinto Grado" Then
+    f_launcher_cnb_mini.ScrollArea.Children.Clear
+    For Each s In AllPrimariaAvanzada
+      Inc i  
+      
+      ImgButtonApps = New PushButton(f_launcher_cnb_mini.ScrollArea) As "IButtonPB"
+      ImgButtonApps.w = iSizeCat 
+      ImgButtonApps.h = iSizeCat - 10
+      ImgButtonApps.Text = s 'AllPrimerGrado[i]
+      ImgButtonApps.Mouse = 13
+      ImgButtonApps.Picture = Picture["img/cnb/malla_curricular/" & LCase(cImgCuartoGra[s] & ".svg")].Image.Stretch(iSizeCNB, iSizeCNB).Picture
+      ImgButtonApps.Foreground = (sFontColor)
+      ImgButtonApps.Background = Color.Transparent
+      Try ImgButtonApps.Font.Size = (iFontSize)
+      ImgButtonApps.Font.Name = (sFontName)
+      ImgButtonApps.Tag = s
+      ' IconViewCat2.Add(i, AllPriBas[i], Picture["img/cnb/" & LCase(cImgPriBas[s] & ".svg")].Image.Stretch(32, 32).Picture)
+      
+    Next
+  Endif
+  
+  If Last.tag = "Sexto Grado" Then
+    f_launcher_cnb_mini.ScrollArea.Children.Clear
+    For Each s In AllPrimariaAvanzada
+      Inc i  
+      
+      ImgButtonApps = New PushButton(f_launcher_cnb_mini.ScrollArea) As "IButtonPB"
+      ImgButtonApps.w = iSizeCat 
+      ImgButtonApps.h = iSizeCat - 10
+      ImgButtonApps.Text = s 'AllPrimerGrado[i]
+      ImgButtonApps.Mouse = 13
+      ImgButtonApps.Picture = Picture["img/cnb/malla_curricular/" & LCase(cImgCuartoGra[s] & ".svg")].Image.Stretch(iSizeCNB, iSizeCNB).Picture
+      ImgButtonApps.Foreground = (sFontColor)
+      ImgButtonApps.Background = Color.Transparent
+      Try ImgButtonApps.Font.Size = (iFontSize)
+      ImgButtonApps.Font.Name = (sFontName)
+      ImgButtonApps.Tag = s
+      ' IconViewCat2.Add(i, AllPriBas[i], Picture["img/cnb/" & LCase(cImgPriBas[s] & ".svg")].Image.Stretch(32, 32).Picture)
+      
+    Next
+  Endif
+  
+  ' sLastMateria = Last.text
+  s2 = Last.tag
+  f_launcher_cnb_mini.lblinfogrado.text = s1 & " - " & s2
+Catch
+  
+End
+
+Public Sub IButtonPB_Enter()
+  
+End
+
+Public Sub IButtonPB_Click()
+  
+  ' Dim sTextNam As String = (Last.Text)
+  ' Dim sTextCom As String = (Last.Tooltip)
+  ' Dim sExec As String = Last.tag
+  
+  'f_launcher_cnb_mini.lblinfogrado.text = ImgButtonApps.tag
+  
+  Try s3 = Last.tag
+  f_launcher_cnb_mini.lblinfogrado.text = s1 & " - " & s2 & " - " & s3
+  
+  M_Core.sCurCat = Last.tag 'DesktopAppsCat[Last.Item.key].Name
+  M_Core.FillList_Apps_CNB_Mini
+  
+  Try sLastMateria = Last.tag
+  
+  'Catch
+  ' f_launcher_cnb_mini.txtmateria.Text = (Html(sLastMateria))
+  
+  ' sLastGrado = Last.Tag
+  
+  ' f_launcher_cnb_mini.txtnameapp.Text = (Html(sTextNam)) 
+  'f_launcher_cnb_mini.txtlabelInfo.Text = (Html(sTextCom))
+  'f_launcher_cnb_mini.Pic_Logo_PreviewApp.Picture = Last.Picture
+  
+  ' f_launcher_cnb_mini.txtgrado.Text = (Html(sLastGrado))
+  ' f_launcher_cnb_mini.txtmateria.Text = (Html(sLastMateria))
+  
+End
+
+Public Sub Materias()
+  
+  Dim i As Integer = -1 
+  Dim s As String
+  Dim ss As String
+  Dim sss As String
+  
+  f_launcher_cnb_mini.ScrollApps.Children.Clear
+  
+  For Each s In AllPriBas
+    If Last.Current.Text Ends s Then 
+      Inc i  
+      
+      ImgBtnCatCNB = New PushButton(f_launcher_cnb_mini.ScrollApps) As "IButtonCurso"
+      ImgBtnCatCNB.w = iSizeCat 
+      ImgBtnCatCNB.h = iSizeCat - 10
+      ImgBtnCatCNB.Text = AllPriAva[i]
+      ImgBtnCatCNB.Mouse = 13
+      ImgBtnCatCNB.Picture = Picture["img/cnb/" & LCase(cImgPriAva[s] & ".svg")].Image.Stretch(64, 64).Picture
+      ImgBtnCatCNB.Foreground = (sFontColor)
+      ImgBtnCatCNB.Background = Color.Transparent
+      Try ImgBtnCatCNB.Font.Size = (iFontSize)
+      ImgBtnCatCNB.Font.Name = (sFontName)
+      ImgBtnCatCNB.Tag = s
+      
+    Endif
+  Next
+  
+  For Each s In AllPriAva
+    If Last.Current.Text Ends s Then 
+      For Each ss In AllPrimariaAvanzada
+        Inc i  
+        Inc i  
+        
+        ImgBtnCatCNB = New PushButton(f_launcher_cnb_mini.ScrollApps) As "IButtonCurso"
+        ImgBtnCatCNB.w = iSizeCat 
+        ImgBtnCatCNB.h = iSizeCat - 10
+        ImgBtnCatCNB.Text = AllPriAva[i]
+        ImgBtnCatCNB.Mouse = 13
+        ImgBtnCatCNB.Picture = Picture["img/cnb/" & LCase(cImgPriAva[s] & ".svg")].Image.Stretch(64, 64).Picture
+        ImgBtnCatCNB.Foreground = (sFontColor)
+        ImgBtnCatCNB.Background = Color.Transparent
+        Try ImgBtnCatCNB.Font.Size = (iFontSize)
+        ImgBtnCatCNB.Font.Name = (sFontName)
+        ImgBtnCatCNB.Tag = s
+      Next
+    Endif
+  Next
+  
+  'Catch
+  
+End
+
+Public Sub IButtonCatCNB_Enter_original()
   
   Dim iResult As Integer 
   
@@ -263,12 +703,6 @@ Public Sub IButtonCatCNB_Enter()
     M_Core.FillList_Apps_CNB_Mini
     
   Endif
-  
-End
-
-Public Sub IButtonCatCNB_Leavel()
-  
-  ' f_launcher_cnb_mini.txtlabelcat.Visible = False
   
 End
 
@@ -347,7 +781,6 @@ Public Sub FillList_All(Optional sFilter As String)
     ImgButtonApps.Font.Name = (sFontName)
     ImgButtonApps.Tag = s
     
-    Print s
     ' DesktopApps[s].Reset
   Next
   'Catch
@@ -363,6 +796,7 @@ Public Sub FillList_All_CNB_Mini(Optional sFilter As String)
   iSizeApps = Settings_Core_Innova["Launcher/Icon_Size"]
   
   f_launcher_cnb_mini.ScrollApps.Children.Clear
+  f_launcher_cnb_mini.ScrollArea.Children.Clear
   
   For Each s In DesktopApps
     
@@ -370,6 +804,7 @@ Public Sub FillList_All_CNB_Mini(Optional sFilter As String)
     If sFilter And If Not InStr(DesktopApps[s].Name, sFilter, 0, gb.IgnoreCase) Then Continue
     
     ImgBtnAppsCNB = New PushButton(f_launcher_cnb_mini.ScrollApps) As "IButtonApps"
+    ImgBtnAppsCNB = New PushButton(f_launcher_cnb_mini.ScrollArea) As "IButtonApps"
     ImgBtnAppsCNB.w = iSizeApps - 5
     ImgBtnAppsCNB.h = iSizeApps - 5
     
@@ -383,10 +818,11 @@ Public Sub FillList_All_CNB_Mini(Optional sFilter As String)
     
     'ImgBtnAppsCNB.Foreground = (sFontColor)
     ImgBtnAppsCNB.Background = Color.Transparent
-    Try ImgBtnAppsCNB.Font.Size = (iFontSize)
+    Try ImgBtnAppsCNB.Font.Size = (iFontSize - 1)
     ImgBtnAppsCNB.Font.Name = (sFontName)
     ImgBtnAppsCNB.Tag = s
     DesktopApps[s].Reset
+    
   Next
   
 End
@@ -460,8 +896,9 @@ Public Sub FillList_Apps(Optional sFilter As String)
         Endif
         
         ImgButtonApps.Mouse = 13
-        
-        ImgButtonApps.Picture = DesktopApps[s].GetIcon(iSizeApps).Stretch(iSizeApps, iSizeApps).Picture
+        Print iSizeApps
+        ''  ImgButtonApps.Picture = DesktopApps[s].GetIcon(iSizeApps).Stretch(iSizeApps, iSizeApps).Picture
+        ImgButtonApps.Picture = DesktopApps[s].GetIcon(48).Stretch(iSizeApps, iSizeApps).Picture
         
         ImgButtonApps.Foreground = (sFontColor)
         ImgButtonApps.Background = Color.Transparent
@@ -538,6 +975,7 @@ Public Sub FillList_Apps_CNB_Mini(Optional sFilter As String)
   
   ' iSizeApps = iSizeApps '/ 2
   f_launcher_cnb_mini.ScrollApps.Children.Clear
+  f_launcher_cnb_mini.ScrollArea.Children.Clear
   
   If Not sCat Then
     
@@ -548,6 +986,7 @@ Public Sub FillList_Apps_CNB_Mini(Optional sFilter As String)
         If sFilter And If Not InStr(DesktopApps[s].Name, sFilter, 0, gb.IgnoreCase) Then Continue
         
         ImgBtnAppsCNB = New PushButton(f_launcher_cnb_mini.ScrollApps) As "IButtonApps"
+        ImgBtnAppsCNB = New PushButton(f_launcher_cnb_mini.ScrollArea) As "IButtonApps"
         ImgBtnAppsCNB.w = iSizeApps - 5
         ImgBtnAppsCNB.h = iSizeApps - 5
         
@@ -563,8 +1002,9 @@ Public Sub FillList_Apps_CNB_Mini(Optional sFilter As String)
         
         'ImgBtnAppsCNB.Foreground = (sFontColor)
         ImgBtnAppsCNB.Background = Color.Transparent
-        Try ImgBtnAppsCNB.Font.Size = (iFontSize)
-        ImgBtnAppsCNB.Font.Name = (sFontName)
+        ImgBtnAppsCNB.Font.Size = 10
+        ' Try ImgBtnAppsCNB.Font.Size = (iFontSize)
+        ' ImgBtnAppsCNB.Font.Name = (sFontName)
         ImgBtnAppsCNB.Tag = s
         
         '  f_launcher_cnb_mini.IconViewApp.Add(s, DesktopApps[s].Name, DesktopApps[s].GetIcon(iSizeApps).Stretch(iSizeApps, iSizeApps).Picture)
@@ -578,7 +1018,7 @@ Public Sub FillList_Apps_CNB_Mini(Optional sFilter As String)
     Next
     ' DesktopApps[s].Reset
   Endif
-Catch
+  'Catch
   '  Debug "ERROR [ " & DConv(Error.Text) & " ]"
   
 End
@@ -772,6 +1212,11 @@ Public Sub IButtonApps_Leave()
   f_launcher.txtnameapp.Text = Null
   f_launcher.Pic_Logo_PreviewApp.Picture = Null
   
+  ' f_launcher_cnb_mini.PanInfo.Visible = False
+  ' f_launcher_cnb_mini.txtlabelInfo.Text = Null
+  ' f_launcher_cnb_mini.txtnameapp.Text = Null
+  ' f_launcher_cnb_mini.Pic_Logo_PreviewApp.Picture = Null
+  
 End
 
 Public Sub IButtonApps_Enter()
@@ -783,21 +1228,27 @@ Public Sub IButtonApps_Enter()
   Dim sCat As String
   
   f_launcher.PanInfo.Visible = True
-  
+  f_launcher_cnb_mini.PanInfo.Visible = True
   f_launcher.txtnameapp.Text = (Html(sTextNam)) 
+  f_launcher_cnb_mini.txtnameapp.Text = (Html(sTextNam)) 
+  f_launcher_cnb_mini.txtgrado.Text = (Html(sLastGrado)) 
+  f_launcher_cnb_mini.txtmateria.Text = (Html(sLastMateria)) 
   
   If sTextCom Begins "s" Then 
     sTextCom = Right$(sTextCom, -2) 
     f_launcher.txtlabelInfo.Text = (Html(sTextCom))
+    f_launcher_cnb_mini.txtlabelInfo.Text = (Html(sTextCom))
   Else
     f_launcher.txtlabelInfo.Text = (Html(sTextCom))
+    f_launcher_cnb_mini.txtlabelInfo.Text = (Html(sTextCom))
   Endif
   f_launcher.Pic_Logo_PreviewApp.Picture = Last.Picture
-  
+  f_launcher_cnb_mini.Pic_Logo_PreviewApp.Picture = Last.Picture
   For Each sCat In $Category
     ' sCat = Replace$($Category[0], ";", " \n", True)
     sCat = Replace$($Category[0], ";", Space(2), True)
     f_launcher.txtlabelcat.Text = ("Category: ") & sCat
+    f_launcher_cnb_mini.txtlabelcat.Text = ("Category: ") & sCat
   Next
   
   sSendApps = Last.Tag
@@ -889,12 +1340,12 @@ Public Sub Show_Transparent_Launcher()
   If iResult = 1 Then
     f_launcher.Transparent = True 
     f_launcher_mini.Transparent = True
-  Else
-    f_launcher.Transparent = False
-    f_launcher_mini.Transparent = False
+    'Else
+    '  f_launcher.Transparent = False
+    ' f_launcher_mini.Transparent = False
   Endif
-Catch
-  Debug "ERROR [ " & DConv(Error.Text) & " ]"
+  'Catch
+  ' Debug "ERROR [ " & DConv(Error.Text) & " ]"
   
 End
 
