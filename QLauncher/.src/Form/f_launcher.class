@@ -38,6 +38,13 @@ Private $hLogo As Image
 Private sDel As String
 Private iResult As Integer
 Private $aList As String[]
+Private pro As Process 
+
+Public Sub _free()
+  
+  Try pro.Kill
+  
+End 
 
 Public Sub _new()
   
@@ -47,6 +54,8 @@ Public Sub _new()
 End
 
 Public Sub Form_Open()
+  
+  ' Try pro = Exec ["Launcher_Tablet.gambas"] 
   
   M_Theme.Show_Theme
   
@@ -99,7 +108,7 @@ Public Sub btnPower_MouseDown()
   'f_power.Show
   Me.Close
   f_power.ShowModal
-
+  
 End
 
 Public Sub mnuSwitchUser_Click()

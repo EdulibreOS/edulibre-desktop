@@ -79,6 +79,8 @@ Static Private Sub MakeAppList()
     If Not Exist(sPath &/ "applications") Then Continue
     AddFile(sPath &/ "applications")
     
+    AddFile(sPath &/ "applications")
+    
   Next
   $aApps.Sort(gb.Natural)
   
@@ -370,7 +372,7 @@ Static Private Function svg2image(svg_file As String, w As Integer, h As Integer
   
 End
 
-Public Sub GetIco001n(Optional Size As Integer = 16) As Image
+Public Sub GetIcon001(Optional Size As Integer = 16) As Image
   
   Dim sPath As String
   Dim hImage As Image
@@ -439,7 +441,76 @@ Public Sub GetIco001n(Optional Size As Integer = 16) As Image
   
 End
 
-Public Sub GetIcon(Optional Size As Integer = 16) As Image
+Public Sub GetIcon002(Optional Size As Integer = 16) As Image
+  
+  Dim sPath As String
+  Dim hImage As Image
+  Dim sDir As String
+  Dim sSize As String
+  Dim hSvg As SvgImage
+  Dim s As String
+  
+  If $hImage Then Return $hImage
+  
+  If Exist(_$IconName) Then 
+    If _$IconName Ends ".svg" Then
+      hSvg = SvgImage.Load(_$IconName)
+      hImage = New Image(Size, Size)
+      Paint.Begin(hImage)
+      hSvg.Resize(size, Size)
+      hSvg.Paint
+      Paint.End
+    Else
+      Try hImage = Image.Load(_$IconName)
+    Endif
+    
+  Else
+    For Each sDir In [Desktop.DataDir &/ "icons", "/usr/share/icons"]
+      For Each sSize In [CStr(Size), "scalable", "16", "22", "24", "32", "48", "64", "128", "256"]   
+        sPath = Subst(sDir &/ "hicolor/&1x&1/mimetypes/&2.png", sSize, _$IconName)
+        If Exist(sPath) Then 
+          Try hImage = Image.Load(sPath)
+          If hImage Then Break
+        Endif
+      Next
+      If hImage Then Break
+    Next
+    
+    If Not hImage Then
+      sPath = Subst("/usr/share/pixmaps/&1.png", _$IconName)
+      If Exist(sPath) Then Try hImage = Image.Load(sPath)
+    Endif
+    
+    If Not hImage Then
+      For Each s In ["apps", "actions", "places", "devices", "categories", "emblems", "mime", "misc", "status", "mimetypes"]
+        Try hImage = Stock[CStr(Size) &/ s &/ _$IconName].Image
+        If hImage Then Break
+        
+        For Each sPath In [Subst("/usr/share/pixmaps/&1.png", _$IconName), Subst("/usr/share/pixmaps/&1.xpm", _$IconName)]
+          
+          If Not hImage Then
+            Try hImage = Image.Load(sPath)
+          Endif
+          
+        Next
+        
+        If IsNull(hImage) Then
+          Try hImage = Stock[CStr(Size) &/ s &/ "cog"].Image
+        Endif
+        
+      Next
+    Endif
+    
+  Endif
+  
+  If Not hImage Then hImage = Stock[CStr(Size) &/ "program"].Image
+  If hImage.W <> Size Or If hImage.H <> Size Then hImage = hImage.Stretch(Size, Size)
+  $hImage = hImage
+  Return hImage
+  
+End
+
+Public Sub GetIcon(Optional Size As Integer = 32) As Image
   
   Dim sPath As String
   Dim hImage As Image

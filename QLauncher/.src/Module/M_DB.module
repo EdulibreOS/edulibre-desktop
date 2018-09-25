@@ -29,7 +29,7 @@ Public Procedure Connect() As Connection
   $Con.Type = "sqlite3"
   ' conector.Host = (Application.Path &/ "DB/")
   $Con.Host = (Desktop.ConfigDir &/ "Innova/")
-  $Con.Name = "DBInnova.dat"
+  $Con.Name = "edulibcap.db"
   Try $Con.Open()
   Return $Con
   

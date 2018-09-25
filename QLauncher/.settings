@@ -1,12 +1,16 @@
 [Bookmarks]
 f_launcher=[359]
-M_Core=[332]
+M_Core=[282,354]
+f_launcher_cnb_mini=[7]
 
 [Breakpoints]
 Count=0
 
 [DebugWindow]
 Count=0
+
+[DebugWindow/BarraMenus]
+Geometry=[848,384,224,280]
 
 [DebugWindow/PushButton]
 Geometry=[848,384,224,280]
@@ -17,19 +21,18 @@ Geometry=[0,16,224,280]
 [DebugWindow/mnuOpen]
 Geometry=[-1,-1,224,280]
 
+[DebugWindow/picSettings]
+Geometry=[848,384,224,280]
+
 [Executable]
 Path="/home/edulibreos/Launcher_Tablet.gambas"
 
 [OpenFile]
-File[1]=".src/Class/App/DesktopApps.class:6.403"
-Active=5
-Count=7
-File[2]=".src/Module/M_Theme.module:26.41"
-File[3]=".src/Form/f_launcher.class:15.98"
-File[4]=".src/Form/f_launcher_mini.form"
-File[5]=".src/Form/f_launcher_mini.class:10.129"
-File[6]=".src/Form/f_launcher.form"
-File[7]=".src/Module/M_DesktopEntry.module:53.23"
+File[1]=".src/Form/f_launcher_cnb_mini.form"
+Active=3
+Count=3
+File[2]=".src/Module/M_Core.module:68.223"
+File[3]=".src/Form/f_launcher_cnb_mini.class:2.148"
 
 [Watches]
 Count=0

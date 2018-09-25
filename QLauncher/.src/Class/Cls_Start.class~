@@ -1,8 +1,8 @@
 ' Gambas class file
 
-' Innova Project - Launcher of APP
-'
+' Innova Project 
 ' Copyright (C) Herberth Guzmán
+' herberthguzman@gmail.com
 '
 ' This program is free software; you can redistribute it and/or modify
 ' it under the terms of the GNU General Public License as published by
@@ -23,6 +23,9 @@
 
 Static Public Sub Main()
   
-  M_DB.Main
+  'M_Run.Mio
+  'M_Run.Werun("Launcher_Tablet.gambas")
+  M_Run.Main
+  'M_DB.Main
   
 End

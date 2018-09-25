@@ -23,6 +23,9 @@
 
 Static Public Sub Main()
   
+  'M_Run.Mio
+  'M_Run.Werun("Launcher_Tablet.gambas")
+  'M_Run.Main
   M_DB.Main
   
 End
