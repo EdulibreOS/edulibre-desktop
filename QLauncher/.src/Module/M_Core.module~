@@ -221,7 +221,7 @@ Public Sub FillList_Cat_CNB_Mini(Optional sFilter As String)
   
   f_launcher_cnb_mini.PanelCat.w = iSizeCat
   
-  f_launcher_cnb_mini.Panel11.h = f_launcher_cnb_mini.PanelCat.h / 2.5
+  f_launcher_cnb_mini.Panel11.h = f_launcher_cnb_mini.PanelCat.h / 3
   
   If AllCatCNB = Null Then Return
   
@@ -248,7 +248,7 @@ Public Sub FillList_Cat_CNB_Mini(Optional sFilter As String)
     
     ImgBtnCatCNB.Foreground = (sFontColor)
     ImgBtnCatCNB.Background = Color.Transparent
-    Try ImgBtnCatCNB.Font.Size = (iFontSize - 1)
+    Try ImgBtnCatCNB.Font.Size = (iFontSize)
     ImgBtnCatCNB.Font.Name = (sFontName)
     ImgBtnCatCNB.Tag = s
     
@@ -1000,11 +1000,11 @@ Public Sub FillList_Apps_CNB_Mini(Optional sFilter As String)
         
         ImgBtnAppsCNB.Picture = DesktopApps[s].GetIcon(iSizeApps).Stretch(iSizeApps, iSizeApps).Picture
         
-        'ImgBtnAppsCNB.Foreground = (sFontColor)
+        ImgBtnAppsCNB.Foreground = (sFontColor)
         ImgBtnAppsCNB.Background = Color.Transparent
-        ImgBtnAppsCNB.Font.Size = 10
-        ' Try ImgBtnAppsCNB.Font.Size = (iFontSize)
-        ' ImgBtnAppsCNB.Font.Name = (sFontName)
+        'ImgBtnAppsCNB.Font.Size = 10
+        Try ImgBtnAppsCNB.Font.Size = (iFontSize)
+        ImgBtnAppsCNB.Font.Name = (sFontName)
         ImgBtnAppsCNB.Tag = s
         
         '  f_launcher_cnb_mini.IconViewApp.Add(s, DesktopApps[s].Name, DesktopApps[s].GetIcon(iSizeApps).Stretch(iSizeApps, iSizeApps).Picture)
