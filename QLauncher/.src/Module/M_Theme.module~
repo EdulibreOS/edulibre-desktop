@@ -98,6 +98,8 @@ Public Function Show_Theme()
     
     f_launcher.Picture = Picture[sPath_Theme &/ sResult_Img_Launcher].Image.Stretch(Desktop.W, Desktop.h).Picture
     f_launcher_mini.Picture = Picture[sPath_Theme &/ sResult_Img_Launcher].Image.Stretch(f_launcher_mini.W, f_launcher_mini.h).Picture
+    f_launcher_cnb_mini.Picture = Picture[sPath_Theme &/ sResult_Img_Launcher].Image.Stretch(f_launcher_cnb_mini.W, f_launcher_cnb_mini.h).Picture
+    f_cnb_info.Picture = Picture[sPath_Theme &/ sResult_Img_Launcher].Image.Stretch(f_cnb_info.W, f_cnb_info.h).Picture
     'f_info_cnb.Picture = Picture[sPath_Theme &/ sResult_Img_Launcher].Image.Stretch(f_info_cnb.W, f_info_cnb.h).Picture
     
     ' f_power.Picture = Picture[sPath_Theme &/ sResult_Img_Look].Image.Stretch(Desktop.W, Desktop.h).Picture
@@ -116,6 +118,10 @@ Public Function Show_Theme()
       M_Core.sFontColor = Val(sResult_Inn_Font_Color) 
     Next
     
+    For Each ctrl In f_cnb_info.Controls
+      Try ctrl.Foreground = Val(sResult_Inn_Font_Color) 
+      M_Core.sFontColor = Val(sResult_Inn_Font_Color) 
+    Next
     For Each ctrl In f_power.Controls
       'Try ctrl.Foreground = Val(sResult_Inn_Font_Color) 
       
@@ -129,6 +135,10 @@ Public Function Show_Theme()
       M_Core.sFontName = (sResult_Inn_Font_Name) 
     Next
     For Each ctrl In f_launcher_mini.Controls
+      Try ctrl.Font.Name = (sResult_Inn_Font_Name) 
+      M_Core.sFontName = (sResult_Inn_Font_Name) 
+    Next
+    For Each ctrl In f_cnb_info.Controls
       Try ctrl.Font.Name = (sResult_Inn_Font_Name) 
       M_Core.sFontName = (sResult_Inn_Font_Name) 
     Next
@@ -149,9 +159,14 @@ Public Function Show_Theme()
       Try ctrl.Font.Size = (iResult_Inn_Font_Size) 
       M_Core.iFontSize = (iResult_Inn_Font_Size) 
     Next
+    For Each ctrl In f_cnb_info.Controls
+      Try ctrl.Font.Size = (iResult_Inn_Font_Size) 
+      M_Core.iFontSize = (iResult_Inn_Font_Size) 
+    Next
     f_launcher.txtnameapp.Font = Font["Bold,+2"]
     f_launcher.txtlabelInfo.Font = Font["-1"]
     f_launcher.txtlabelcat.Font = Font["-1"]
+    f_cnb_info.lbltitle.Font = Font["Bold,+2"]
     ' Endif
     
     For Each ctrl In f_power.Controls

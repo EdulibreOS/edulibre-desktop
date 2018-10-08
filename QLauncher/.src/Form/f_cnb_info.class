@@ -1,0 +1,116 @@
+' Gambas class file
+
+Private sQry As String
+Private cx As New Connection
+
+Private rs As Result
+Private s As TextArea
+Private GridCom As GridView
+Private GridInd As GridView
+Private GridCont As GridView
+
+Public Sub Leer()
+  
+  Dim i As Integer
+  Dim iCor As Integer
+  Dim iRndColor As Integer
+  Dim iFont As Integer = 11
+  
+  cx = M_DB.Connect()
+  ' sQry = ("SELECT tbl_programa.idtbl_programa, tbl_programa.descripcion, tbl_actividad.contenido, tbl_actividad.competencia_grado ,tbl_actividad.indicador_logro  FROM tbl_programa, tbl_actividad WHERE tbl_programa.idtbl_programa = tbl_actividad.id_programa AND tbl_programa.descripcion LIKE '" & txtnameapp.Text & "'") 
+  sQry = ("SELECT DISTINCT programa,grado,materia FROM tbl_clas_ped WHERE tbl_clas_ped.Programa LIKE '" & txtnameapp.Text & "'") 
+  
+  rs = cx.Exec(sQry)
+  
+  GridCom = New GridView(ScrollCompetencia) As "GridCom"
+  
+  ''COMPETENCIA
+  
+  GridCom.Clear
+  GridCom.Expand = True 
+  GridCom.Grid = False
+  GridCom.Header = GridView.Both
+  
+  GridCom.Columns.Count = 5
+  GridCom.Rows.Height = 60
+  GridCom.Mode = Select.Single
+  GridCom.ScrollBar = True
+  GridCom.Columns[0].Text = ("Logo")
+  GridCom.Columns[1].Text = ("Programa")
+  GridCom.Columns[2].Text = ("Grado")
+  GridCom.Columns[3].Text = ("Materia")
+  GridCom.columns[0].width = 50
+  GridCom.columns[1].width = 100
+  GridCom.columns[2].width = 100
+  GridCom.Columns[0].Alignment = Align.Center
+  GridCom.Columns[3].Expand = True
+  GridCom.Columns[2].Alignment = Align.Justify
+  GridCom.columns[3].width = 100
+  GridCom.columns[4].width = 0
+  
+  GridCom.Rows.Count = rs.Count 
+  
+  Randomize
+  
+  For i = 0 To rs.Count - 1
+    'iRndColor = Rand(&00836780, &00fae693)
+    iRndColor = Rand(&00fee7ea, &00d3b9c5)
+    
+    Inc iCor
+    
+    GridCom[i, 0].Picture = Pic_Logo_PreviewApp.Picture.Image.Stretch(48, 48).Picture
+    GridCom[i, 1].RichText = rs!Programa
+    GridCom[i, 1].Background = iRndColor
+    GridCom[i, 1].Font.Size = iFont 
+    '  GridCom[i, 2].RichText = iCor & " - " & rs!Grado
+    GridCom[i, 2].RichText = rs!Grado
+    GridCom[i, 2].Background = iRndColor
+    GridCom[i, 2].WordWrap = True
+    GridCom[i, 3].Background = iRndColor
+    GridCom[i, 2].Font.Size = iFont 
+    GridCom[i, 3].RichText = rs!Materia 'iCor & " - " & rs!Materia
+    GridCom[i, 3].Font.Size = iFont 
+    ' GridCom[i, 2].RichText = "<b><u><font color=#005FBF>" & rs!competencia_grado & "</font></u></b>"
+    ' Gridcom[i, 1].RichText &= "<br><font size=-1>" & rs!Grado & "</font>"
+    rs.MoveNext
+    
+  Next
+  
+End
+
+Public Sub Form_Open()
+  
+  M_Theme.Show_Theme
+  TBCNB.Background = Color.Transparent
+  Leer
+  Wait 0.5
+  
+End
+
+Public Sub picClose_MouseDown()
+  
+  Me.Close
+  
+End
+
+Public Sub PanInfo_Draw()
+  
+  Dim X, Y, W, H As Float
+  Dim hBrush As PaintBrush
+  Dim hImage As Image
+  Dim hBackground As Image
+  
+  hImage = Image.Load("img/button.png").Stretch(PanInfo.W, PanInfo.H)
+  hBackground = New Image(hImage.W, hImage.H, Color.SetAlpha(Color.TextBackground, 160))
+  
+  X = 0
+  Y = 0
+  W = PanInfo.W 
+  H = 56
+  
+  hBrush = Paint.Image(hImage)
+  Paint.Brush = hBrush
+  Paint.Rectangle(X, Y, W, H)
+  Paint.Fill
+  
+End

@@ -20,10 +20,10 @@ Public Sub Form_Open()
   
   M_Core.FillList_Cat_CNB_Mini
   M_Core.User_System
+  M_Theme.Show_Theme
   
-  spicture = Picture["img/cnb/Launcher-CNB.png"].Image.Stretch(Me.W, Me.H)
-  
-  Me.Picture = spicture.Picture
+  '  spicture = Picture["img/cnb/Launcher-CNB.png"].Image.Stretch(Me.W, Me.H)
+  ' Me.Picture = spicture.Picture
   
   Me.ScrollGrado.Background = Color.Transparent
   Me.ScrollArea.Background = Color.Transparent
@@ -146,7 +146,13 @@ End
 
 Public Sub txtSearchApps_Change()
   
-  PanelApp.Visible = 0 
+  ScrollGrado.Children.Clear
+  ScrollArea.Children.Clear
+  
+  PanelApp.Visible = 1
+  PanelGrado.Visible = 0 'If(PanelApp.Visible = 0, 1, 0)  
+  PanelArea.Visible = 1
+  
   txtSearchApps.Text = Lower$((txtSearchApps.text))
   m_core.FillList_All_CNB_Mini(Last.text)
   
@@ -193,5 +199,14 @@ Public Sub PanInfo2_Draw()
   Paint.Brush = hBrush
   Paint.Rectangle(X, Y, W, H)
   Paint.Fill
+  
+End
+
+Public Sub picInfo_MouseDown()
+  
+  f_cnb_info.Pic_Logo_PreviewApp.Picture = Pic_Logo_PreviewApp.Picture
+  f_cnb_info.txtnameapp.Text = txtnameapp.Text
+  f_cnb_info.txtlabelInfo.Text = txtlabelInfo.Text
+  f_cnb_info.Show
   
 End

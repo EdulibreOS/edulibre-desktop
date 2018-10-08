@@ -1,7 +1,7 @@
 # Gambas Form File 3.0
 
 { Form Form
-  MoveScaled(0,0,114,100)
+  MoveScaled(0,0,142.8571,100)
   NoTabFocus = True
   Persistent = True
   Border = False
@@ -42,7 +42,7 @@
       Arrangement = Arrange.Vertical
       AutoResize = True
     }
-    { picLaunch2 PictureBox
+    { picLaunch PictureBox
       MoveScaled(84,0,6,6)
       Mouse = Mouse.Pointing
       ToolTip = ("Style Launcher")
@@ -92,7 +92,6 @@
       Spacing = True
       Margin = True
       Padding = 5
-      Border = Border.Plain
       { HBoxNivel Panel
         MoveScaled(0,0,22,4)
         Visible = False
@@ -168,7 +167,6 @@
         Spacing = True
         Margin = True
         Padding = 5
-        Border = Border.Plain
         { ScrollGrado ScrollView
           MoveScaled(6,6,8,13)
           Expand = True
@@ -204,7 +202,6 @@
         Spacing = True
         Margin = True
         Padding = 5
-        Border = Border.Plain
         { ScrollArea ScrollView
           MoveScaled(4,2,8,13)
           Expand = True
@@ -221,7 +218,7 @@
         Foreground = &H002F5F&
         Arrangement = Arrange.Horizontal
         Padding = 4
-        { picSettings3 PictureBox
+        { picInfo PictureBox
           MoveScaled(0,0,6.8571,6.8571)
           Mouse = Mouse.Pointing
           ToolTip = ("Show Información de la Aplicacion")

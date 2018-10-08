@@ -1,0 +1,103 @@
+# Gambas Form File 3.0
+
+{ Form Form
+  MoveScaled(0,0,104,63)
+  Border = False
+  Stacking = Window.Above
+  Arrangement = Arrange.Vertical
+  Spacing = True
+  Margin = True
+  Padding = 5
+  { hzoStyle2 HBox
+    MoveScaled(0,0,65,4)
+    Spacing = True
+    Indent = True
+    { lbltitle Label
+      MoveScaled(0,0,45,4)
+      Font = Font["+3"]
+      Background = &HFFFFFF&
+      Expand = True
+      Text = ("Información")
+      Alignment = Align.Center
+      Border = Border.Plain
+    }
+    { picClose PictureBox
+      MoveScaled(58,0,4,4)
+      Mouse = Mouse.Pointing
+      ToolTip = ("Cerrar Ventana")
+      Picture = Picture["img/cnb/close.png"]
+      Stretch = True
+    }
+  }
+  { PanelApp Panel
+    MoveScaled(1,4,85,64)
+    Expand = True
+    Arrangement = Arrange.Vertical
+    Spacing = True
+    Margin = True
+    Padding = 5
+    { TBCNB TabPanel
+      MoveScaled(2,13,77,27)
+      Expand = True
+      Arrangement = Arrange.Vertical
+      Index = 0
+      Text = ("Información")
+      { ScrollCompetencia ScrollView
+        MoveScaled(5,5,8,14)
+        Expand = True
+        Arrangement = Arrange.Fill
+        Spacing = True
+        Margin = True
+        Padding = 6
+        ScrollBar = Scroll.None
+      }
+      Index = 0
+    }
+    { PanInfo DrawingArea
+      MoveScaled(23,48,57,8)
+      Foreground = &H002F5F&
+      Arrangement = Arrange.Horizontal
+      Padding = 4
+      Border = Border.Plain
+      { VBox3 Panel
+        MoveScaled(2,0,41,7)
+        Expand = True
+        Arrangement = Arrange.Vertical
+        { PansepApps4 Panel
+          MoveScaled(-9,0,51,4)
+          Arrangement = Arrange.Horizontal
+          AutoResize = True
+          { PansepApps5 Panel
+            MoveScaled(10,1,28,2)
+            Arrangement = Arrange.Vertical
+            Spacing = True
+            Margin = True
+          }
+          { !txtnameapp Label
+            MoveScaled(32,0,16,4)
+            #Public = True
+            Font = Font["Bold,+2"]
+            ToolTip = ("test")
+            Expand = True
+            Alignment = Align.Right
+          }
+        }
+        { !txtlabelInfo Label
+          MoveScaled(27,4,13,4)
+          #Public = True
+          Expand = True
+          Alignment = Align.Right
+        }
+      }
+      { PansepApps3 Panel
+        MoveScaled(45,4,2,3)
+        Arrangement = Arrange.Vertical
+        AutoResize = True
+      }
+      { Pic_Logo_PreviewApp PictureBox
+        MoveScaled(50,1,6,6)
+        Stretch = True
+      }
+    }
+  }
+}

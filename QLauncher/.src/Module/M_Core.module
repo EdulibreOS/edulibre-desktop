@@ -248,7 +248,7 @@ Public Sub FillList_Cat_CNB_Mini(Optional sFilter As String)
     
     ImgBtnCatCNB.Foreground = (sFontColor)
     ImgBtnCatCNB.Background = Color.Transparent
-    Try ImgBtnCatCNB.Font.Size = (iFontSize - 1)
+    Try ImgBtnCatCNB.Font.Size = (iFontSize)
     ImgBtnCatCNB.Font.Name = (sFontName)
     ImgBtnCatCNB.Tag = s
     
@@ -337,7 +337,7 @@ Public Sub IButtonCatCNB_Click()
       ImgBtnCatCNB.Picture = Picture["img/cnb/" & LCase(cImgPrePri[s] & ".svg")].Image.Stretch(iSizeCNB, iSizeCNB).Picture
       ImgBtnCatCNB.Foreground = (sFontColor)
       ImgBtnCatCNB.Background = Color.Transparent
-      Try ImgBtnCatCNB.Font.Size = (iFontSize - 1)
+      Try ImgBtnCatCNB.Font.Size = (iFontSize)
       ImgBtnCatCNB.Font.Name = (sFontName)
       ImgBtnCatCNB.Tag = s
       ' IconViewCat2.Add(i, AllPriBas[i], Picture["img/cnb/" & LCase(cImgPriBas[s] & ".svg")].Image.Stretch(32, 32).Picture)
@@ -1000,11 +1000,11 @@ Public Sub FillList_Apps_CNB_Mini(Optional sFilter As String)
         
         ImgBtnAppsCNB.Picture = DesktopApps[s].GetIcon(iSizeApps).Stretch(iSizeApps, iSizeApps).Picture
         
-        'ImgBtnAppsCNB.Foreground = (sFontColor)
+        ImgBtnAppsCNB.Foreground = (sFontColor)
         ImgBtnAppsCNB.Background = Color.Transparent
-        ImgBtnAppsCNB.Font.Size = 10
-        ' Try ImgBtnAppsCNB.Font.Size = (iFontSize)
-        ' ImgBtnAppsCNB.Font.Name = (sFontName)
+        'ImgBtnAppsCNB.Font.Size = 10
+        Try ImgBtnAppsCNB.Font.Size = (iFontSize)
+        ImgBtnAppsCNB.Font.Name = (sFontName)
         ImgBtnAppsCNB.Tag = s
         
         '  f_launcher_cnb_mini.IconViewApp.Add(s, DesktopApps[s].Name, DesktopApps[s].GetIcon(iSizeApps).Stretch(iSizeApps, iSizeApps).Picture)
