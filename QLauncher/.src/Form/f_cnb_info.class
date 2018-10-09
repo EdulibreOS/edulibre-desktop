@@ -54,8 +54,8 @@ Public Sub Leer()
   
   For i = 0 To rs.Count - 1
     'iRndColor = Rand(&00836780, &00fae693)
-    iRndColor = Rand(&00fee7ea, &00d3b9c5)
-    
+    '  iRndColor = Rand(&00fee7ea, &00d3b9c5)
+    iRndColor = Color.Transparent 
     Inc iCor
     
     GridCom[i, 0].Picture = Pic_Logo_PreviewApp.Picture.Image.Stretch(48, 48).Picture
@@ -112,5 +112,13 @@ Public Sub PanInfo_Draw()
   Paint.Brush = hBrush
   Paint.Rectangle(X, Y, W, H)
   Paint.Fill
+  
+End
+
+Public Sub Form_KeyPress()
+  
+  If Key.Code = Key.Esc Then
+    Me.Close
+  Endif
   
 End

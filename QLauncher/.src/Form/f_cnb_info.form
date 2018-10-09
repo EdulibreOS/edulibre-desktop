@@ -77,7 +77,6 @@
             MoveScaled(32,0,16,4)
             #Public = True
             Font = Font["Bold,+2"]
-            ToolTip = ("test")
             Expand = True
             Alignment = Align.Right
           }
@@ -95,7 +94,7 @@
         AutoResize = True
       }
       { Pic_Logo_PreviewApp PictureBox
-        MoveScaled(50,1,6,6)
+        MoveScaled(49,1,7,6)
         Stretch = True
       }
     }

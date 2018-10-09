@@ -210,3 +210,41 @@ Public Sub picInfo_MouseDown()
   f_cnb_info.Show
   
 End
+
+Public Sub Form_Deactivate()
+  
+  If m_core.iShow = True Then
+    f_launcher_cnb_mini.show
+  Endif
+  
+  If m_core.iShow = False Then
+    f_launcher_cnb_mini.Close
+  Endif
+  M_Core.iShow = False
+  
+End
+
+Public Sub mnuOpen_Click()
+  
+  ' DesktopApps[M_Core.sAppsExec].Exec_()
+  
+  'DesktopApps[Last.Tag].Exec_()
+  m_core.IButtonApps_Ejecutar
+
+End
+
+Public Sub mnuSendDesk_Click()
+  ''
+  
+  M_Core.SendDesk
+  
+End
+
+Public Sub mnuInfo_Click()
+  
+  f_cnb_info.Pic_Logo_PreviewApp.Picture = Pic_Logo_PreviewApp.Picture
+  f_cnb_info.txtnameapp.Text = txtnameapp.Text
+  f_cnb_info.txtlabelInfo.Text = txtlabelInfo.Text
+  f_cnb_info.Show
+  
+End

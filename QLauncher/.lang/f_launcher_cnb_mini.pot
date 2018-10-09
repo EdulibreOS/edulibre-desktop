@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-10-08 21:41 UTC\n"
+"POT-Creation-Date: 2018-10-09 17:59 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -74,31 +74,59 @@ msgstr ""
 msgid "Productividad y Desarrollo"
 msgstr ""
 
-#: f_launcher_cnb_mini.form:107
+#: f_launcher_cnb_mini.form:77
+msgid "mnuLauncher"
+msgstr ""
+
+#: f_launcher_cnb_mini.form:81
+msgid "Open"
+msgstr ""
+
+#: f_launcher_cnb_mini.form:92
+msgid "Add to Desktop"
+msgstr ""
+
+#: f_launcher_cnb_mini.form:98
+msgid "Add to Panel"
+msgstr ""
+
+#: f_launcher_cnb_mini.form:105
+msgid "Add to Bookmark"
+msgstr ""
+
+#: f_launcher_cnb_mini.form:114
+msgid "Información de la aplicación"
+msgstr ""
+
+#: f_launcher_cnb_mini.form:119
+msgid "Ayuda de la aplicación CNB"
+msgstr ""
+
+#: f_launcher_cnb_mini.form:164
 msgid "Style Launcher"
 msgstr ""
 
-#: f_launcher_cnb_mini.form:175
+#: f_launcher_cnb_mini.form:232
 msgid "Nivel"
 msgstr ""
 
-#: f_launcher_cnb_mini.form:233
+#: f_launcher_cnb_mini.form:290
 msgid "Información"
 msgstr ""
 
-#: f_launcher_cnb_mini.form:271
+#: f_launcher_cnb_mini.form:328
 msgid "Area"
 msgstr ""
 
-#: f_launcher_cnb_mini.form:307
-msgid "Show Información de la Aplicacion"
+#: f_launcher_cnb_mini.form:364
+msgid "Mostrar Información de la Aplicacion"
 msgstr ""
 
-#: f_launcher_cnb_mini.form:401
+#: f_launcher_cnb_mini.form:458
 msgid "Aplicaciones"
 msgstr ""
 
-#: f_launcher_cnb_mini.form:457
+#: f_launcher_cnb_mini.form:514
 msgid "User"
 msgstr ""
 

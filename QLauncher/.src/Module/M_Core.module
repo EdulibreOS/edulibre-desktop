@@ -624,6 +624,8 @@ Public Sub IButtonPB_Click()
   
   Try sLastMateria = Last.tag
   
+  '  sSendApps = Last.Tag
+  ' sAppsExec = Last.Tag
   'Catch
   ' f_launcher_cnb_mini.txtmateria.Text = (Html(sLastMateria))
   
@@ -1199,8 +1201,15 @@ Public Sub IButtonApps_Menu()
   
   'f_launcher.mnuApps.Popup(Last.ScreenX, Last.ScreenY + Last.H)
   iShow = True
-  f_launcher.mnuApps.Popup()
+  ' f_launcher.mnuApps.Popup()
   
+  If f_launcher.Visible = True Then
+    f_launcher.mnuApps.Popup()
+  Endif
+  
+  If f_launcher_cnb_mini.Visible = True Then
+    f_launcher_cnb_mini.mnuApps.Popup()
+  Endif
   'object.Unlock(f_launcher)
   
 End
@@ -1248,12 +1257,14 @@ Public Sub IButtonApps_Enter()
     ' sCat = Replace$($Category[0], ";", " \n", True)
     sCat = Replace$($Category[0], ";", Space(2), True)
     f_launcher.txtlabelcat.Text = ("Category: ") & sCat
-    f_launcher_cnb_mini.txtlabelcat.Text = ("Category: ") & sCat
+    '  f_launcher_cnb_mini.txtlabelcat.Text = ("Category: ") & sCat
   Next
   
   sSendApps = Last.Tag
   sAppsExec = Last.Tag
-Catch
+  
+  'Message(Last.Tag)
+  'Catch
   
 End
 
@@ -1263,6 +1274,8 @@ Public Sub IButtonApps_Click()
   'If InStr(Last.tag, ".") Then
   '  Shell "flatpak run " & Last.tag
   ' Endif
+  'M_Core.sAppsExec = Last.tag
+  ' DesktopApps[sAppsExec].Exec_()
   DesktopApps[Last.Tag].Exec_()
   f_launcher.Close
   f_launcher_cnb_mini.Close
