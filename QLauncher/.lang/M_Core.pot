@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-10-08 21:41 UTC\n"
+"POT-Creation-Date: 2018-10-09 17:59 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -154,7 +154,7 @@ msgstr ""
 msgid "Productividad y Desarrollo"
 msgstr ""
 
-#: M_Core.module:1250
+#: M_Core.module:1259
 msgid "Category: "
 msgstr ""
 

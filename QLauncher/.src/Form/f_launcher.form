@@ -28,6 +28,7 @@
       Text = ("Open")
       Picture = Picture["icon:/small/open"]
       Checked = True
+      Visible = False
       Tag = "Open"
     }
     { Menu1 Menu

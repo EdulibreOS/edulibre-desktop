@@ -262,7 +262,6 @@
           { !txtlabelInfo Label
             MoveScaled(27,4,13,3)
             #Public = True
-            Font = Font["-3"]
             Expand = True
             Alignment = Align.Right
           }

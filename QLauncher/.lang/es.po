@@ -2,6 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: QLauncher 3.11.2\n"
+"POT-Creation-Date: 2018-10-09 15:21 UTC\n"
 "PO-Revision-Date: 2018-07-16 16:09 UTC\n"
 "Last-Translator: edulibreos <edulibreos@edulibreos-OptiPlex-755>\n"
 "Language: es\n"
@@ -13,111 +14,236 @@ msgstr ""
 msgid "QLauncher"
 msgstr ""
 
-#: M_Core.module:54
+#: M_Core.module:55
 msgid "AudioVideo"
 msgstr ""
 
-#: M_Core.module:54
+#: M_Core.module:55
 msgid "Development"
 msgstr ""
 
-#: M_Core.module:54
+#: M_Core.module:55
 msgid "Education"
 msgstr ""
 
-#: M_Core.module:54
+#: M_Core.module:55
 msgid "Game"
 msgstr ""
 
-#: M_Core.module:54
+#: M_Core.module:55
 msgid "Graphics"
 msgstr ""
 
-#: M_Core.module:54
+#: M_Core.module:55
 msgid "Network"
 msgstr ""
 
-#: M_Core.module:54
+#: M_Core.module:55
 msgid "Office"
 msgstr ""
 
-#: M_Core.module:54
+#: M_Core.module:55
 msgid "Other"
 msgstr ""
 
-#: M_Core.module:54
+#: M_Core.module:55
 msgid "Settings"
 msgstr "Configuración"
 
-#: M_Core.module:54
+#: M_Core.module:55
 msgid "System"
 msgstr "Sistema"
 
-#: M_Core.module:54
+#: M_Core.module:55
 msgid "Utility"
 msgstr ""
 
-#: M_Core.module:57
-msgid "Básico"
+#: M_Core.module:58
+msgid "Preprimaria"
 msgstr ""
 
-#: M_Core.module:57
-msgid "Diversificado"
-msgstr ""
-
-#: M_Core.module:57
-msgid "Preescolar"
-msgstr ""
-
-#: M_Core.module:57
+#: M_Core.module:58
 msgid "Primaria Avanzada"
 msgstr ""
 
-#: M_Core.module:57
-msgid "Primaria Básica"
+#: M_Core.module:58
+msgid "Primaria Basica"
 msgstr ""
 
-#: M_Core.module:796 f_launcher_mini.class:229
+#: M_Core.module:64
+msgid "Cinco Años"
+msgstr ""
+
+#: M_Core.module:64
+msgid "Cuatro Años"
+msgstr ""
+
+#: M_Core.module:64
+msgid "Seis Años"
+msgstr ""
+
+#: M_Core.module:65 f_launcher_cnb_mini.class:3
+msgid "Primer Grado"
+msgstr ""
+
+#: M_Core.module:65 f_launcher_cnb_mini.class:3
+msgid "Segundo Grado"
+msgstr ""
+
+#: M_Core.module:65 f_launcher_cnb_mini.class:3
+msgid "Tercer Grado"
+msgstr ""
+
+#: M_Core.module:66 f_launcher_cnb_mini.class:4
+msgid "Cuarto Grado"
+msgstr ""
+
+#: M_Core.module:66 f_launcher_cnb_mini.class:4
+msgid "Quinto Grado"
+msgstr ""
+
+#: M_Core.module:66 f_launcher_cnb_mini.class:4
+msgid "Sexto Grado"
+msgstr ""
+
+#: M_Core.module:69 f_launcher_cnb_mini.class:6
+msgid "Comunicación y Lenguaje"
+msgstr ""
+
+#: M_Core.module:69
+msgid "Destrezas de Aprendizaje"
+msgstr ""
+
+#: M_Core.module:69 f_launcher_cnb_mini.class:6
+msgid "Educación Física"
+msgstr ""
+
+#: M_Core.module:69 f_launcher_cnb_mini.class:6
+msgid "Expresión Artística"
+msgstr ""
+
+#: M_Core.module:69 f_launcher_cnb_mini.class:6
+msgid "Medio Social y Natural"
+msgstr ""
+
+#: M_Core.module:70
+msgid "Comunicación y Lenguaje L1"
+msgstr ""
+
+#: M_Core.module:70 f_launcher_cnb_mini.class:6
+msgid "Formación Ciudadana"
+msgstr ""
+
+#: M_Core.module:70 f_launcher_cnb_mini.class:6
+msgid "Matemáticas"
+msgstr ""
+
+#: M_Core.module:71
+msgid "Comunicación y Lenguaje L2"
+msgstr ""
+
+#: M_Core.module:72
+msgid "Comunicación y Lenguaje L3"
+msgstr ""
+
+#: M_Core.module:77 f_launcher_cnb_mini.class:6
+msgid "Ciencias Naturales y Tecnología"
+msgstr ""
+
+#: M_Core.module:77 f_launcher_cnb_mini.class:6
+msgid "Ciencias Sociales"
+msgstr ""
+
+#: M_Core.module:77 f_launcher_cnb_mini.class:10
+msgid "Productividad y Desarrollo"
+msgstr ""
+
+#: M_Core.module:1250 f_launcher_mini.class:230
 msgid "Category: "
 msgstr "Categoria: "
 
-#: f_launcher.form:69 f_launcher_cnb_mini.form:41 f_launcher_mini.form:51
-msgid "mnuBookmark"
+#: f_cnb_info.class:38
+#, fuzzy
+msgid "Logo"
+msgstr "Cerrar Sesión"
+
+#: f_cnb_info.class:39
+msgid "Programa"
 msgstr ""
 
-#: f_launcher.form:73 f_launcher_cnb_mini.form:45 f_launcher_mini.form:55
-msgid "Delete Bookmark"
-msgstr "Eliminar Favoritos"
-
-#: f_launcher.form:79 f_launcher_mini.form:61
-msgid "mnuLauncher"
+#: f_cnb_info.class:40
+msgid "Grado"
 msgstr ""
 
-#: f_launcher.form:83 f_launcher_mini.form:65
-msgid "Open"
-msgstr "Abrir"
+#: f_cnb_info.class:41
+msgid "Materia"
+msgstr ""
 
-#: f_launcher.form:93 f_launcher_mini.form:73
-msgid "Add to Desktop"
-msgstr "Agregar a Escritorio"
+#: f_cnb_info.form:38 f_launcher_cnb_mini.form:271
+msgid "Información"
+msgstr ""
 
-#: f_launcher.form:99 f_launcher_mini.form:78
-msgid "Add to Panel"
-msgstr "Agregar a Panel"
+#: f_cnb_info.form:46
+msgid "Cerrar Ventana"
+msgstr ""
 
-#: f_launcher.form:105 f_launcher_mini.form:83
-msgid "Add to Bookmark"
-msgstr "Agregar a Favoritos"
-
-#: f_launcher.form:350
+#: f_cnb_info.form:106 f_launcher.form:352
 msgid "test"
 msgstr ""
 
-#: f_launcher_cnb_mini.form:62 f_launcher_mini.form:100
-msgid "Show Categories"
-msgstr "Mostrar Categorias"
+#: f_launcher.form:69 f_launcher_mini.form:51
+msgid "mnuBookmark"
+msgstr ""
 
-#: f_launcher_cnb_mini.form:170
+#: f_launcher.form:73 f_launcher_mini.form:55
+msgid "Delete Bookmark"
+msgstr "Eliminar Favoritos"
+
+#: f_launcher.form:79 f_launcher_cnb_mini.form:74 f_launcher_mini.form:61
+msgid "mnuLauncher"
+msgstr ""
+
+#: f_launcher.form:83 f_launcher_cnb_mini.form:78 f_launcher_mini.form:65
+msgid "Open"
+msgstr "Abrir"
+
+#: f_launcher.form:93 f_launcher_cnb_mini.form:88 f_launcher_mini.form:73
+msgid "Add to Desktop"
+msgstr "Agregar a Escritorio"
+
+#: f_launcher.form:99 f_launcher_cnb_mini.form:94 f_launcher_mini.form:78
+msgid "Add to Panel"
+msgstr "Agregar a Panel"
+
+#: f_launcher.form:105 f_launcher_cnb_mini.form:100 f_launcher_mini.form:83
+msgid "Add to Bookmark"
+msgstr "Agregar a Favoritos"
+
+#: f_launcher_cnb_mini.class:6
+msgid "Productividad y Desarrollo "
+msgstr ""
+
+#: f_launcher_cnb_mini.form:145 f_style_launcher.form:34
+msgid "Style Launcher"
+msgstr "Estilo del Launcher"
+
+#: f_launcher_cnb_mini.form:213
+msgid "Nivel"
+msgstr ""
+
+#: f_launcher_cnb_mini.form:309
+msgid "Area"
+msgstr ""
+
+#: f_launcher_cnb_mini.form:345
+msgid "Show Información de la Aplicacion"
+msgstr ""
+
+#: f_launcher_cnb_mini.form:439
+msgid "Aplicaciones"
+msgstr ""
+
+#: f_launcher_cnb_mini.form:495
 msgid "User"
 msgstr "Usuario"
 
@@ -145,6 +271,10 @@ msgstr "Imagen PNG"
 msgid "Image SVG"
 msgstr "Imagen SVG"
 
+#: f_launcher_mini.form:100
+msgid "Show Categories"
+msgstr "Mostrar Categorias"
+
 #: f_launcher_mini.form:209
 msgid "Change Image"
 msgstr "Cambiar Imagen"
@@ -153,21 +283,21 @@ msgstr "Cambiar Imagen"
 msgid "usuario"
 msgstr ""
 
-#: f_power.form:42
-msgid "Restart"
-msgstr "Reiniciar"
+#: f_power.form:42 f_style_launcher.form:57
+msgid "Close"
+msgstr "Cerrar"
 
 #: f_power.form:51
 msgid "Logout"
 msgstr "Cerrar Sesión"
 
 #: f_power.form:60
+msgid "Restart"
+msgstr "Reiniciar"
+
+#: f_power.form:69
 msgid "Shutdown"
 msgstr "Apagar"
-
-#: f_power.form:69 f_power_1.form:58 f_style_launcher.form:57
-msgid "Close"
-msgstr "Cerrar"
 
 #: f_power.form:82
 msgid "Are you sure you want to Shut Down..?"
@@ -177,23 +307,15 @@ msgstr "¿Estás seguro de que quieres Apagar...?"
 msgid "This will close all open applications and turn off this device."
 msgstr "Esto cerrará todas las aplicaciones abiertas y apagará este dispositivo."
 
-#: f_power_1.form:27
-msgid "Power Off"
-msgstr "Apagar"
-
-#: f_power_1.form:33
-msgid "Reboot"
-msgstr "Reiniciar"
-
-#: f_power_1.form:39
-msgid "Close Session"
-msgstr "Cerrar Sesión"
-
 #: f_style_launcher.form:14
 msgid "Select Style Launcher - Innova"
 msgstr "Seleccionar estilo del Launcher - Innova"
 
-#: f_style_launcher.form:34
-msgid "Style Launcher"
-msgstr "Estilo del Launcher"
+#~ msgid "Close Session"
+#~ msgstr "Cerrar Sesión"
 
+#~ msgid "Reboot"
+#~ msgstr "Reiniciar"
+
+#~ msgid "Power Off"
+#~ msgstr "Apagar"

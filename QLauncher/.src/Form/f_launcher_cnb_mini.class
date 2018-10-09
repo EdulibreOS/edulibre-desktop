@@ -223,3 +223,19 @@ Public Sub Form_Deactivate()
   M_Core.iShow = False
   
 End
+
+Public Sub mnuSendDesk_Click()
+  ''
+  
+  M_Core.SendDesk
+  
+End
+
+Public Sub mnuInfo_Click()
+  
+  f_cnb_info.Pic_Logo_PreviewApp.Picture = Pic_Logo_PreviewApp.Picture
+  f_cnb_info.txtnameapp.Text = txtnameapp.Text
+  f_cnb_info.txtlabelInfo.Text = txtlabelInfo.Text
+  f_cnb_info.Show
+  
+End

@@ -337,7 +337,7 @@ Public Sub IButtonCatCNB_Click()
       ImgBtnCatCNB.Picture = Picture["img/cnb/" & LCase(cImgPrePri[s] & ".svg")].Image.Stretch(iSizeCNB, iSizeCNB).Picture
       ImgBtnCatCNB.Foreground = (sFontColor)
       ImgBtnCatCNB.Background = Color.Transparent
-      Try ImgBtnCatCNB.Font.Size = (iFontSize - 1)
+      Try ImgBtnCatCNB.Font.Size = (iFontSize)
       ImgBtnCatCNB.Font.Name = (sFontName)
       ImgBtnCatCNB.Tag = s
       ' IconViewCat2.Add(i, AllPriBas[i], Picture["img/cnb/" & LCase(cImgPriBas[s] & ".svg")].Image.Stretch(32, 32).Picture)
@@ -624,6 +624,8 @@ Public Sub IButtonPB_Click()
   
   Try sLastMateria = Last.tag
   
+  '  sSendApps = Last.Tag
+  ' sAppsExec = Last.Tag
   'Catch
   ' f_launcher_cnb_mini.txtmateria.Text = (Html(sLastMateria))
   
@@ -1199,8 +1201,15 @@ Public Sub IButtonApps_Menu()
   
   'f_launcher.mnuApps.Popup(Last.ScreenX, Last.ScreenY + Last.H)
   iShow = True
-  f_launcher.mnuApps.Popup()
+  ' f_launcher.mnuApps.Popup()
   
+  If f_launcher.Visible = True Then
+    f_launcher.mnuApps.Popup()
+  Endif
+  
+  If f_launcher_cnb_mini.Visible = True Then
+    f_launcher_cnb_mini.mnuApps.Popup()
+  Endif
   'object.Unlock(f_launcher)
   
 End
@@ -1253,7 +1262,9 @@ Public Sub IButtonApps_Enter()
   
   sSendApps = Last.Tag
   sAppsExec = Last.Tag
-Catch
+  
+  'Message(Last.Tag)
+  'Catch
   
 End
 
@@ -1263,6 +1274,8 @@ Public Sub IButtonApps_Click()
   'If InStr(Last.tag, ".") Then
   '  Shell "flatpak run " & Last.tag
   ' Endif
+  'M_Core.sAppsExec = Last.tag
+  ' DesktopApps[sAppsExec].Exec_()
   DesktopApps[Last.Tag].Exec_()
   f_launcher.Close
   f_launcher_cnb_mini.Close
