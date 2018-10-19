@@ -98,7 +98,7 @@ Public Function Show_Theme()
     
     f_launcher.Picture = Picture[sPath_Theme &/ sResult_Img_Launcher].Image.Stretch(Desktop.W, Desktop.h).Picture
     f_launcher_mini.Picture = Picture[sPath_Theme &/ sResult_Img_Launcher].Image.Stretch(f_launcher_mini.W, f_launcher_mini.h).Picture
-    f_launcher_cnb_mini.Picture = Picture[sPath_Theme &/ sResult_Img_Launcher].Image.Stretch(f_launcher_cnb_mini.W, f_launcher_cnb_mini.h).Picture
+    f_launcher_cnb.Picture = Picture[sPath_Theme &/ sResult_Img_Launcher].Image.Stretch(f_launcher_cnb.W, f_launcher_cnb.h).Picture
     f_cnb_info.Picture = Picture[sPath_Theme &/ sResult_Img_Launcher].Image.Stretch(f_cnb_info.W, f_cnb_info.h).Picture
     'f_info_cnb.Picture = Picture[sPath_Theme &/ sResult_Img_Launcher].Image.Stretch(f_info_cnb.W, f_info_cnb.h).Picture
     

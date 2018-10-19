@@ -15,17 +15,18 @@ Public Sub Leer()
   Dim iCor As Integer
   Dim iRndColor As Integer
   Dim iFont As Integer = 11
+  Dim a As Integer
+  Dim b As New String[]
   
   cx = M_DB.Connect()
-  ' sQry = ("SELECT tbl_programa.idtbl_programa, tbl_programa.descripcion, tbl_actividad.contenido, tbl_actividad.competencia_grado ,tbl_actividad.indicador_logro  FROM tbl_programa, tbl_actividad WHERE tbl_programa.idtbl_programa = tbl_actividad.id_programa AND tbl_programa.descripcion LIKE '" & txtnameapp.Text & "'") 
-  sQry = ("SELECT DISTINCT programa,grado,materia FROM tbl_clas_ped WHERE tbl_clas_ped.Programa LIKE '" & txtnameapp.Text & "'") 
   
-  rs = cx.Exec(sQry)
+  b = Split(txtnameapp.Text, " ") 
+  For a = 0 To b.max
+    sQry = ("SELECT DISTINCT programa,grado,materia FROM tbl_clas_ped WHERE Programa LIKE '%" & b[a] & "%' ORDER BY grado ASC, materia ASC") 
+    rs = cx.Exec(sQry)
+  Next
   
   GridCom = New GridView(ScrollCompetencia) As "GridCom"
-  
-  ''COMPETENCIA
-  
   GridCom.Clear
   GridCom.Expand = True 
   GridCom.Grid = False
@@ -39,30 +40,27 @@ Public Sub Leer()
   GridCom.Columns[1].Text = ("Programa")
   GridCom.Columns[2].Text = ("Grado")
   GridCom.Columns[3].Text = ("Materia")
-  GridCom.columns[0].width = 50
-  GridCom.columns[1].width = 100
-  GridCom.columns[2].width = 100
+  GridCom.columns[0].width = 0
+  GridCom.columns[1].width = 150
+  GridCom.columns[2].width = 125
   GridCom.Columns[0].Alignment = Align.Center
   GridCom.Columns[3].Expand = True
   GridCom.Columns[2].Alignment = Align.Justify
   GridCom.columns[3].width = 100
   GridCom.columns[4].width = 0
-  
   GridCom.Rows.Count = rs.Count 
   
-  Randomize
-  
   For i = 0 To rs.Count - 1
-    'iRndColor = Rand(&00836780, &00fae693)
-    '  iRndColor = Rand(&00fee7ea, &00d3b9c5)
+    
     iRndColor = Color.Transparent 
     Inc iCor
     
     GridCom[i, 0].Picture = Pic_Logo_PreviewApp.Picture.Image.Stretch(48, 48).Picture
     GridCom[i, 1].RichText = rs!Programa
+    GridCom[i, 1].Font.Bold = True
     GridCom[i, 1].Background = iRndColor
-    GridCom[i, 1].Font.Size = iFont 
-    '  GridCom[i, 2].RichText = iCor & " - " & rs!Grado
+    ' GridCom[i, 1].Font.Size = iFont 
+    'GridCom[i, 2].RichText = iCor & " - " & rs!Grado
     GridCom[i, 2].RichText = rs!Grado
     GridCom[i, 2].Background = iRndColor
     GridCom[i, 2].WordWrap = True
@@ -85,11 +83,14 @@ Public Sub Form_Open()
   Leer
   Wait 0.5
   
+  txtnameapp.Font.Size = 14
+  txtnameapp.Font.Bold = 1
+  
 End
 
 Public Sub picClose_MouseDown()
   
-  Me.Close
+  f_cnb_info.Close()
   
 End
 
@@ -118,7 +119,14 @@ End
 Public Sub Form_KeyPress()
   
   If Key.Code = Key.Esc Then
-    Me.Close
+    Me.Close()
   Endif
+  
+End
+
+Public Sub picClose2_MouseDown()
+  
+  M_Init.Init_03
+  Me.Close()
   
 End

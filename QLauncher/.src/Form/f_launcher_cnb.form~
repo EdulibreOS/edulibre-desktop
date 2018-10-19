@@ -1,13 +1,56 @@
 # Gambas Form File 3.0
 
 { Form Form
-  MoveScaled(0,0,106,79)
-  Picture = Picture["img/cnb/Inn_panel.png"]
+  MoveScaled(0,0,142.8571,100)
+  NoTabFocus = True
+  Persistent = True
   Border = False
+  Stacking = Window.Above
+  Sticky = True
+  SkipTaskbar = True
+  Transparent = True
   Arrangement = Arrange.Vertical
+  { mnuApps Menu
+    Text = ("mnuLauncher")
+    Visible = False
+    { mnuOpen Menu
+      Text = ("Open")
+      Picture = Picture["icon:/small/open"]
+      Checked = True
+      Tag = "Open"
+    }
+    { Menu1 Menu
+      Visible = False
+    }
+    { mnuSendDesk Menu
+      Text = ("Add to Desktop")
+      Picture = Picture["icon:/small/desktop"]
+      Tag = "Desktop"
+    }
+    { mnuSend Menu
+      Text = ("Add to Panel")
+      Picture = Picture["icon:/small/new"]
+      Visible = False
+      Tag = "Panel"
+    }
+    { mnuSendBook Menu
+      Text = ("Add to Bookmark")
+      Picture = Picture["icon:/small/bookmark"]
+      Visible = False
+    }
+    { Menu2 Menu
+    }
+    { mnuInfo Menu
+      Text = ("Información de la aplicación")
+      Picture = Picture["icon:/small/info"]
+    }
+    { mnuAyuda Menu
+      Text = ("Ayuda de la aplicación CNB")
+      Picture = Picture["icon:/small/help"]
+    }
+  }
   { Pansearch Panel
-    MoveScaled(1,0,92,6)
-    Expand = True
+    MoveScaled(0,0,92,6)
     Arrangement = Arrange.Horizontal
     AutoResize = True
     Spacing = True
@@ -16,8 +59,7 @@
     { picSettings PictureBox
       MoveScaled(1,0,6,6)
       Mouse = Mouse.Pointing
-      ToolTip = ("Show Categories")
-      Picture = Picture["img/cnb/go-previous.svg"]
+      Picture = Picture["img/cnb/search-icon.svg"]
       Stretch = True
     }
     { Panel3 Panel
@@ -27,114 +69,349 @@
     }
     { txtSearchApps ButtonBox
       MoveScaled(18,0,18,3)
-      Font = Font["+6"]
+      Font = Font["+5"]
+      Foreground = &H005FBF&
       Expand = True
       Picture = Picture["icon:/small/close"]
       Button = False
       ClearButton = True
-      Filter = True
     }
     { Panel5 Panel
       MoveScaled(45,0,1,3)
       Arrangement = Arrange.Vertical
       AutoResize = True
     }
-    { lblusuario2 TextLabel
-      MoveScaled(66,0,13,5)
-      Font = Font["+6"]
-      AutoResize = True
-      Text = ("User")
-      Alignment = Align.Right
-      Transparent = True
-    }
-    { PicUsuario PictureBox
-      MoveScaled(79,0,6,6)
+    { picLaunch PictureBox
+      MoveScaled(84,0,6,6)
       Mouse = Mouse.Pointing
-      Picture = Picture["img/cnb/preferences-desktop-personal.svg"]
+      ToolTip = ("Style Launcher")
+      Picture = Picture["img/cnb/launcher.svg"]
       Stretch = True
     }
   }
-  { PanelLauncher DrawingArea
-    MoveScaled(0,6,81,65)
+  { PanelCat3 Panel
+    MoveScaled(166,6,12,53)
+    Visible = False
     Arrangement = Arrange.Horizontal
     Spacing = True
     Margin = True
-    Padding = 5
+    Padding = 1
+    { IconViewCat3 ListView
+      MoveScaled(3,17,25,6)
+      Font = Font["+2"]
+      Expand = True
+      Border = False
+      ScrollBar = Scroll.None
+    }
+  }
+  { PanelCat2 Panel
+    MoveScaled(156,7,9,53)
+    Visible = False
+    Arrangement = Arrange.Horizontal
+    Spacing = True
+    Margin = True
+    Padding = 1
+    { IconViewCat2 ListView
+      MoveScaled(3,17,25,6)
+      Font = Font["+2"]
+      Expand = True
+      Border = False
+      ScrollBar = Scroll.None
+    }
+  }
+  { PanelLauncher DrawingArea
+    MoveScaled(0,6,113,83)
+    Arrangement = Arrange.Horizontal
+    Spacing = True
+    Margin = True
+    Padding = 1
     { PanelCat Panel
-      MoveScaled(0,0,28,64)
-      Arrangement = Arrange.Vertical
-      Spacing = True
-      Margin = True
-      Padding = 1
-      { IconViewCat ListView
-        MoveScaled(3,17,21,6)
-        Font = Font["+8"]
-        Expand = True
-        Border = False
-        ScrollBar = Scroll.None
-      }
-    }
-    { Panel2 Panel
-      MoveScaled(29,0,0,24)
-      Background = &HBFBFBF&
-    }
-    { PanelApp Panel
-      MoveScaled(30,0,51,63.5714)
+      MoveScaled(3,8,23,50)
       Arrangement = Arrange.Vertical
       Spacing = True
       Margin = True
       Padding = 5
-      { !txtlabelcat Label
-        MoveScaled(1,2,17,2)
-        #Public = True
+      { HBoxNivel Panel
+        MoveScaled(0,0,22,4)
         Visible = False
+        Arrangement = Arrange.Horizontal
+        Spacing = True
+        Margin = True
+        Padding = 2
+        Indent = True
+        { lbltitle Label
+          MoveScaled(2,0,7.1429,4)
+          Background = &H007FFF&
+          Foreground = &HFFFFFF&
+          Expand = True
+          Text = ("Nivel")
+          Alignment = Align.Center
+          Border = Border.Plain
+        }
       }
-      { IconViewApp ListView
-        MoveScaled(8,9,21.4286,20)
+      { Panel11 Panel
+        MoveScaled(6,12,1.7143,3)
+        Arrangement = Arrange.Vertical
+        Margin = True
+      }
+      { ScrollCat ScrollView
+        MoveScaled(3,19,11,8)
         Expand = True
-        Sorted = True
+        Arrangement = Arrange.Vertical
+        Spacing = True
+        Padding = 1
+        Border = False
+        ScrollBar = Scroll.None
+      }
+      { IconViewCat ListView
+        MoveScaled(1,42,25,6)
+        Visible = False
+        Font = Font["+2"]
+        Expand = True
         Border = False
         ScrollBar = Scroll.None
       }
     }
-  }
-  { Pansearch2 Panel
-    MoveScaled(1,72,82,6)
-    Expand = True
-    Arrangement = Arrange.Horizontal
-    AutoResize = True
-    Spacing = True
-    Margin = True
-    Padding = 4
-    { picLaunch PictureBox
-      MoveScaled(32,0,6,6)
-      Mouse = Mouse.Pointing
-      Picture = Picture["img/cnb/launcher-program.svg"]
-      Stretch = True
-    }
-    { picSys PictureBox
-      MoveScaled(38,0,6,6)
-      Mouse = Mouse.Pointing
-      Picture = Picture["img/cnb/computer.svg"]
-      Stretch = True
-    }
-    { picBook PictureBox
-      MoveScaled(44,0,6,6)
-      Mouse = Mouse.Pointing
-      Picture = Picture["img/cnb/bookmark-new.svg"]
-      Stretch = True
-    }
-    { Panel11 Panel
-      MoveScaled(68,1,1.7143,3)
+    { PanelApp Panel
+      MoveScaled(28,1,76,81)
       Expand = True
       Arrangement = Arrange.Vertical
+      Spacing = True
       Margin = True
+      Padding = 5
+      { HBoxGrado Panel
+        MoveScaled(1,0,74,5)
+        Arrangement = Arrange.Horizontal
+        Spacing = True
+        Margin = True
+        Padding = 2
+        Indent = True
+        { PanInfo2 DrawingArea
+          MoveScaled(2,0,44,4)
+          Expand = True
+          Arrangement = Arrange.Horizontal
+          Padding = 4
+          { lblinfogrado Label
+            MoveScaled(25,0,14,4)
+            Font = Font["Bold"]
+            Foreground = &H002F5F&
+            Expand = True
+            Text = ("Información")
+            Alignment = Align.Center
+          }
+        }
+      }
+      { PanelGrado Panel
+        MoveScaled(1,5,73,24)
+        Arrangement = Arrange.Vertical
+        Spacing = True
+        Margin = True
+        Padding = 5
+        { ScrollGrado ScrollView
+          MoveScaled(6,6,8,13)
+          Expand = True
+          Arrangement = Arrange.Row
+          Spacing = True
+          Margin = True
+          Padding = 8
+          ScrollBar = Scroll.None
+        }
+      }
+      { HBoxArea Panel
+        MoveScaled(1,29,22,4)
+        Visible = False
+        Arrangement = Arrange.Horizontal
+        Spacing = True
+        Margin = True
+        Padding = 2
+        Indent = True
+        { lbltitle3 Label
+          MoveScaled(2,0,7.1429,4)
+          Background = &H007FFF&
+          Foreground = &HFFFFFF&
+          Expand = True
+          Text = ("Area")
+          Alignment = Align.Center
+          Border = Border.Plain
+        }
+      }
+      { PanelArea Panel
+        MoveScaled(1,33,30,25)
+        Expand = True
+        Arrangement = Arrange.Vertical
+        Spacing = True
+        Margin = True
+        Padding = 5
+        { ScrollArea ScrollView
+          MoveScaled(4,2,8,13)
+          Expand = True
+          Arrangement = Arrange.Row
+          Spacing = True
+          Margin = True
+          Padding = 8
+          ScrollBar = Scroll.None
+        }
+      }
+      { PanInfo DrawingArea
+        MoveScaled(6,72,69,8)
+        Visible = False
+        Foreground = &H002F5F&
+        Arrangement = Arrange.Horizontal
+        Padding = 4
+        Border = Border.Plain
+        { picInfo PictureBox
+          MoveScaled(0,0,6.8571,6.8571)
+          Mouse = Mouse.Pointing
+          ToolTip = ("Mostrar Información de la Aplicacion")
+          Picture = Picture["img/cnb/bar_help.svg"]
+          Stretch = True
+        }
+        { VBox3 Panel
+          MoveScaled(9,0,41,11)
+          Expand = True
+          Arrangement = Arrange.Vertical
+          { PansepApps4 Panel
+            MoveScaled(2,0,51,4)
+            Arrangement = Arrange.Horizontal
+            AutoResize = True
+            { !txtnameapp Label
+              MoveScaled(22,0,16,4)
+              #Public = True
+              Font = Font["Bold,+2"]
+              Expand = True
+              Alignment = Align.Right
+            }
+          }
+          { PansepApps5 Panel
+            MoveScaled(-10,4,51,3)
+            Arrangement = Arrange.Horizontal
+            AutoResize = True
+            { !txtlabelInfo Label
+              MoveScaled(29,0,16,3)
+              #Public = True
+              Font = Font["Bold"]
+              Expand = True
+              Alignment = Align.Right
+            }
+          }
+          { PansepApps1 Panel
+            MoveScaled(-10,7,51,3)
+            Visible = False
+            Arrangement = Arrange.Horizontal
+            AutoResize = True
+            { !txtgrado Label
+              MoveScaled(0,0,16,3)
+              #Public = True
+              Font = Font["-1"]
+              Expand = True
+              Alignment = Align.Left
+            }
+            { !txtmateria Label
+              MoveScaled(34,0,16,3)
+              #Public = True
+              Font = Font["-1"]
+              Expand = True
+              Alignment = Align.Right
+            }
+          }
+        }
+        { PansepApps3 Panel
+          MoveScaled(53,4,2,3)
+          Arrangement = Arrange.Vertical
+          AutoResize = True
+        }
+        { Pic_Logo_PreviewApp PictureBox
+          MoveScaled(58,0,6.8571,6.8571)
+          Stretch = True
+        }
+      }
     }
-    { picPower PictureBox
-      MoveScaled(76,0,6,6)
-      Mouse = Mouse.Pointing
-      Picture = Picture["img/cnb/system-shutdown.svg"]
-      Stretch = True
+    { PanelApps Panel
+      MoveScaled(109,1,30,64)
+      Visible = False
+      Expand = True
+      Arrangement = Arrange.Vertical
+      Spacing = True
+      Margin = True
+      Padding = 5
+      { HBoxApps Panel
+        MoveScaled(0,0,22,4)
+        Visible = False
+        Arrangement = Arrange.Horizontal
+        Spacing = True
+        Margin = True
+        Padding = 2
+        Indent = True
+        { lbltitle4 Label
+          MoveScaled(2,0,7.1429,4)
+          Background = &H007FFF&
+          Foreground = &HFFFFFF&
+          Expand = True
+          Text = ("Aplicaciones")
+          Alignment = Align.Center
+          Border = Border.Plain
+        }
+      }
+      { ScrollApps ScrollView
+        MoveScaled(6,12,8,13)
+        Expand = True
+        Arrangement = Arrange.Row
+        Spacing = True
+        Margin = True
+        Padding = 8
+        ScrollBar = Scroll.None
+      }
+    }
+  }
+  { Panel2 Panel
+    MoveScaled(16,90,1.7143,1.7143)
+    Expand = True
+    Arrangement = Arrange.Vertical
+    Margin = True
+  }
+  { Panel4 Panel
+    MoveScaled(1,92,113,9)
+    Arrangement = Arrange.Horizontal
+    Spacing = True
+    Margin = True
+    Padding = 2
+    { PanInfouser DrawingArea
+      MoveScaled(0,0,101,8)
+      Expand = True
+      Arrangement = Arrange.Horizontal
+      Padding = 4
+      { picSettings2 PictureBox
+        MoveScaled(0,1,8,7)
+        Mouse = Mouse.Pointing
+        Picture = Picture["img/cnb/Edu_logo.png"]
+        Stretch = True
+      }
+      { Panel1 Panel
+        MoveScaled(8,4,1,3)
+        Arrangement = Arrange.Vertical
+        Margin = True
+      }
+      { lblusuario TextLabel
+        MoveScaled(12,3,7,5)
+        Font = Font["+5"]
+        Foreground = &H002F5F&
+        Expand = True
+        Text = ("User")
+        Alignment = Align.Left
+        Transparent = True
+      }
+      { PansepApps2 Panel
+        MoveScaled(37,4,3,3)
+        Expand = True
+        Arrangement = Arrange.Vertical
+        AutoResize = True
+      }
+      { picPower PictureBox
+        MoveScaled(41,1,8,7)
+        Mouse = Mouse.Pointing
+        Picture = Picture["img/cnb/bar_exit.svg"]
+        Stretch = True
+      }
     }
   }
 }

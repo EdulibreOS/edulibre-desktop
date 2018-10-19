@@ -166,7 +166,7 @@ Public Function Show_Theme()
     f_launcher.txtnameapp.Font = Font["Bold,+2"]
     f_launcher.txtlabelInfo.Font = Font["-1"]
     f_launcher.txtlabelcat.Font = Font["-1"]
-    f_cnb_info.lbltitle.Font = Font["Bold,+2"]
+    f_cnb_info.lbltitle.Font = Font["Bold,+4"]
     ' Endif
     
     For Each ctrl In f_power.Controls

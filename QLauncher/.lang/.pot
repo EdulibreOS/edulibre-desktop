@@ -3,139 +3,139 @@ msgid ""
 msgstr ""
 "#-#-#-#-#  #project.pot (QLauncher 3.11.4)  #-#-#-#-#\n"
 "Project-Id-Version: QLauncher 3.11.4\n"
-"POT-Creation-Date: 2018-10-09 17:59 UTC\n"
+"POT-Creation-Date: 2018-10-19 19:04 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  CAnimation.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-10-09 17:59 UTC\n"
+"POT-Creation-Date: 2018-10-19 19:04 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  CButton.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-10-09 17:59 UTC\n"
+"POT-Creation-Date: 2018-10-19 19:04 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  CCat.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-10-09 17:59 UTC\n"
+"POT-Creation-Date: 2018-10-19 19:04 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  Cls_Start.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-10-09 17:59 UTC\n"
+"POT-Creation-Date: 2018-10-19 19:04 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  DesktopApps.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-10-09 17:59 UTC\n"
+"POT-Creation-Date: 2018-10-19 19:04 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  DesktopAppsCat.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-10-09 17:59 UTC\n"
+"POT-Creation-Date: 2018-10-19 19:04 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  MDB_Connection.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-10-09 17:59 UTC\n"
+"POT-Creation-Date: 2018-10-19 19:04 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  M_Core.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-10-09 17:59 UTC\n"
+"POT-Creation-Date: 2018-10-19 19:04 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  M_DB.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-10-09 17:59 UTC\n"
+"POT-Creation-Date: 2018-10-19 19:04 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  M_DesktopEntry.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-10-09 17:59 UTC\n"
+"POT-Creation-Date: 2018-10-19 19:04 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  M_Init.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-10-09 17:59 UTC\n"
+"POT-Creation-Date: 2018-10-19 19:04 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  M_OBS_Global.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-10-09 17:59 UTC\n"
+"POT-Creation-Date: 2018-10-19 19:04 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  M_Run.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-10-09 17:59 UTC\n"
+"POT-Creation-Date: 2018-10-19 19:04 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  M_Theme.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-10-09 17:59 UTC\n"
+"POT-Creation-Date: 2018-10-19 19:04 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  M_Var_Global.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-10-09 17:59 UTC\n"
+"POT-Creation-Date: 2018-10-19 19:04 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  PushButton.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-10-09 17:59 UTC\n"
+"POT-Creation-Date: 2018-10-19 19:04 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  f_cnb_info.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-10-09 17:59 UTC\n"
+"POT-Creation-Date: 2018-10-19 19:04 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  f_launcher.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-10-09 17:59 UTC\n"
+"POT-Creation-Date: 2018-10-19 19:04 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"#-#-#-#-#  f_launcher_cnb_mini.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
+"#-#-#-#-#  f_launcher_cnb.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-10-09 17:59 UTC\n"
+"POT-Creation-Date: 2018-10-19 19:04 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  f_launcher_mini.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-10-09 17:59 UTC\n"
+"POT-Creation-Date: 2018-10-19 19:04 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  f_power.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-10-09 17:59 UTC\n"
+"POT-Creation-Date: 2018-10-19 19:04 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  f_style_launcher.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-10-09 17:59 UTC\n"
+"POT-Creation-Date: 2018-10-19 19:04 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -212,27 +212,27 @@ msgstr ""
 msgid "Seis Años"
 msgstr ""
 
-#: M_Core.module:65 f_launcher_cnb_mini.class:3
+#: M_Core.module:65 f_launcher_cnb.class:3
 msgid "Primer Grado"
 msgstr ""
 
-#: M_Core.module:65 f_launcher_cnb_mini.class:3
+#: M_Core.module:65 f_launcher_cnb.class:3
 msgid "Segundo Grado"
 msgstr ""
 
-#: M_Core.module:65 f_launcher_cnb_mini.class:3
+#: M_Core.module:65 f_launcher_cnb.class:3
 msgid "Tercer Grado"
 msgstr ""
 
-#: M_Core.module:66 f_launcher_cnb_mini.class:4
+#: M_Core.module:66 f_launcher_cnb.class:4
 msgid "Cuarto Grado"
 msgstr ""
 
-#: M_Core.module:66 f_launcher_cnb_mini.class:4
+#: M_Core.module:66 f_launcher_cnb.class:4
 msgid "Quinto Grado"
 msgstr ""
 
-#: M_Core.module:66 f_launcher_cnb_mini.class:4
+#: M_Core.module:66 f_launcher_cnb.class:4
 msgid "Sexto Grado"
 msgstr ""
 
@@ -240,19 +240,19 @@ msgstr ""
 msgid "Destrezas de Aprendizaje"
 msgstr ""
 
-#: M_Core.module:69 f_launcher_cnb_mini.class:6
+#: M_Core.module:69 f_launcher_cnb.class:6
 msgid "Comunicación y Lenguaje"
 msgstr ""
 
-#: M_Core.module:69 f_launcher_cnb_mini.class:6
+#: M_Core.module:69 f_launcher_cnb.class:6
 msgid "Medio Social y Natural"
 msgstr ""
 
-#: M_Core.module:69 f_launcher_cnb_mini.class:6
+#: M_Core.module:69 f_launcher_cnb.class:6
 msgid "Expresión Artística"
 msgstr ""
 
-#: M_Core.module:69 f_launcher_cnb_mini.class:6
+#: M_Core.module:69 f_launcher_cnb.class:6
 msgid "Educación Física"
 msgstr ""
 
@@ -260,11 +260,11 @@ msgstr ""
 msgid "Comunicación y Lenguaje L1"
 msgstr ""
 
-#: M_Core.module:70 f_launcher_cnb_mini.class:6
+#: M_Core.module:70 f_launcher_cnb.class:6
 msgid "Matemáticas"
 msgstr ""
 
-#: M_Core.module:70 f_launcher_cnb_mini.class:6
+#: M_Core.module:70 f_launcher_cnb.class:6
 msgid "Formación Ciudadana"
 msgstr ""
 
@@ -276,43 +276,47 @@ msgstr ""
 msgid "Comunicación y Lenguaje L3"
 msgstr ""
 
-#: M_Core.module:77 f_launcher_cnb_mini.class:6
+#: M_Core.module:77 f_launcher_cnb.class:6
 msgid "Ciencias Naturales y Tecnología"
 msgstr ""
 
-#: M_Core.module:77 f_launcher_cnb_mini.class:6
+#: M_Core.module:77 f_launcher_cnb.class:6
 msgid "Ciencias Sociales"
 msgstr ""
 
-#: M_Core.module:77 f_launcher_cnb_mini.class:10
+#: M_Core.module:77 f_launcher_cnb.class:8
 msgid "Productividad y Desarrollo"
 msgstr ""
 
-#: M_Core.module:1259 f_launcher_mini.class:230
+#: M_Core.module:1261 f_launcher_mini.class:230
 msgid "Category: "
 msgstr ""
 
-#: f_cnb_info.form:38 f_launcher_cnb_mini.form:290
+#: f_cnb_info.form:40 f_launcher_cnb.form:291
 msgid "Información"
 msgstr ""
 
-#: f_cnb_info.form:46
+#: f_cnb_info.form:49
+msgid "Regresar"
+msgstr ""
+
+#: f_cnb_info.form:57 f_style_launcher.form:45
 msgid "Cerrar Ventana"
 msgstr ""
 
-#: f_cnb_info.class:38
+#: f_cnb_info.class:39
 msgid "Logo"
 msgstr ""
 
-#: f_cnb_info.class:39
+#: f_cnb_info.class:40
 msgid "Programa"
 msgstr ""
 
-#: f_cnb_info.class:40
+#: f_cnb_info.class:41
 msgid "Grado"
 msgstr ""
 
-#: f_cnb_info.class:41
+#: f_cnb_info.class:42
 msgid "Materia"
 msgstr ""
 
@@ -324,63 +328,63 @@ msgstr ""
 msgid "Delete Bookmark"
 msgstr ""
 
-#: f_launcher.form:79 f_launcher_cnb_mini.form:77 f_launcher_mini.form:61
+#: f_launcher.form:79 f_launcher_cnb.form:77 f_launcher_mini.form:61
 msgid "mnuLauncher"
 msgstr ""
 
-#: f_launcher.form:83 f_launcher_cnb_mini.form:81 f_launcher_mini.form:65
+#: f_launcher.form:83 f_launcher_cnb.form:81 f_launcher_mini.form:65
 msgid "Open"
 msgstr ""
 
-#: f_launcher.form:94 f_launcher_cnb_mini.form:92 f_launcher_mini.form:73
+#: f_launcher.form:94 f_launcher_cnb.form:92 f_launcher_mini.form:73
 msgid "Add to Desktop"
 msgstr ""
 
-#: f_launcher.form:100 f_launcher_cnb_mini.form:98 f_launcher_mini.form:78
+#: f_launcher.form:100 f_launcher_cnb.form:98 f_launcher_mini.form:78
 msgid "Add to Panel"
 msgstr ""
 
-#: f_launcher.form:106 f_launcher_cnb_mini.form:105 f_launcher_mini.form:83
+#: f_launcher.form:106 f_launcher_cnb.form:105 f_launcher_mini.form:83
 msgid "Add to Bookmark"
 msgstr ""
 
-#: f_launcher.form:353
+#: f_launcher.form:355
 msgid "test"
 msgstr ""
 
-#: f_launcher_cnb_mini.class:6
+#: f_launcher_cnb.class:6
 msgid "Productividad y Desarrollo "
 msgstr ""
 
-#: f_launcher_cnb_mini.form:114
+#: f_launcher_cnb.form:114
 msgid "Información de la aplicación"
 msgstr ""
 
-#: f_launcher_cnb_mini.form:119
+#: f_launcher_cnb.form:119
 msgid "Ayuda de la aplicación CNB"
 msgstr ""
 
-#: f_launcher_cnb_mini.form:164 f_style_launcher.form:34
+#: f_launcher_cnb.form:164 f_style_launcher.form:37
 msgid "Style Launcher"
 msgstr ""
 
-#: f_launcher_cnb_mini.form:232
+#: f_launcher_cnb.form:232
 msgid "Nivel"
 msgstr ""
 
-#: f_launcher_cnb_mini.form:328
+#: f_launcher_cnb.form:330
 msgid "Area"
 msgstr ""
 
-#: f_launcher_cnb_mini.form:364
+#: f_launcher_cnb.form:367
 msgid "Mostrar Información de la Aplicacion"
 msgstr ""
 
-#: f_launcher_cnb_mini.form:458
+#: f_launcher_cnb.form:461
 msgid "Aplicaciones"
 msgstr ""
 
-#: f_launcher_cnb_mini.form:514
+#: f_launcher_cnb.form:517
 msgid "User"
 msgstr ""
 
@@ -388,11 +392,11 @@ msgstr ""
 msgid "Show Categories"
 msgstr ""
 
-#: f_launcher_mini.form:209
+#: f_launcher_mini.form:210
 msgid "Change Image"
 msgstr ""
 
-#: f_launcher_mini.form:218
+#: f_launcher_mini.form:219
 msgid "usuario"
 msgstr ""
 
@@ -420,7 +424,7 @@ msgstr ""
 msgid "Image BMP of Windows"
 msgstr ""
 
-#: f_power.form:42 f_style_launcher.form:57
+#: f_power.form:42 f_style_launcher.form:71
 msgid "Close"
 msgstr ""
 
@@ -444,6 +448,10 @@ msgstr ""
 msgid "This will close all open applications and turn off this device."
 msgstr ""
 
-#: f_style_launcher.form:14
+#: f_style_launcher.form:15
 msgid "Select Style Launcher - Innova"
+msgstr ""
+
+#: f_style_launcher.form:54
+msgid "Press double click to apply the changes"
 msgstr ""

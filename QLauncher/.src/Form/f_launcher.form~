@@ -28,6 +28,7 @@
       Text = ("Open")
       Picture = Picture["icon:/small/open"]
       Checked = True
+      Visible = False
       Tag = "Open"
     }
     { Menu1 Menu
@@ -192,6 +193,7 @@
         }
         { picExpand PictureBox
           MoveScaled(72,0,4.5714,4.5714)
+          Visible = False
           Mouse = Mouse.Pointing
           Picture = Picture["img/contract.png"]
           Stretch = True

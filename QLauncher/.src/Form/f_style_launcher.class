@@ -53,7 +53,48 @@ End
 
 Public Sub BtnClose_Click()
   
+  ' Dim sResult As String 
+  
+  ' Settings_Core_Innova.Reload()
+  ' Try sResult = Settings_Core_Innova["Launcher/Style_Launcher"]
+  
+  'If sResult = "Mini" Then
+  '  f_launcher_mini.Show
+  'Endif
+  
+  ' If sResult = "Tablet" Then
+  '   f_launcher.Show
+  ' Endif
+  
+  'If sResult = "CNB" Then
+  '  f_launcher_cnb.Show
+  'Endif
+  
+  Me.Close
+  
+End
+
+Public Sub ListViewImage_DblClick()
+  
   Dim sResult As String 
+  
+  'M_Core.Update_Style_Launcher
+  Settings_Core_Innova.Reload()
+  Try sResult = Settings_Core_Innova["Launcher/Style_Launcher"]
+  
+  If f_launcher_mini.Visible = True Then
+    f_launcher_mini.Visible = False
+  Endif
+  If f_launcher.Visible = True Then
+    f_launcher.Visible = False
+  Endif
+  If f_launcher_cnb.Visible = True Then
+    f_launcher_cnb.Visible = False
+  Endif
+  
+  'Me.Close
+  
+  Wait 0.1
   
   Settings_Core_Innova.Reload()
   Try sResult = Settings_Core_Innova["Launcher/Style_Launcher"]
@@ -67,18 +108,10 @@ Public Sub BtnClose_Click()
   Endif
   
   If sResult = "CNB" Then
-    f_launcher_cnb_mini.Show
+    f_launcher_cnb.Show
   Endif
   
   Me.Close
-  
-End
-
-Public Sub ListViewImage_DblClick()
-  
-  'M_Core.Update_Style_Launcher
-  
-  'Me.Close
   
 End
 
@@ -105,7 +138,7 @@ Public Sub ListViewImage_Select()
   
 End
 
-Public Sub ListViewImage_Click()
+Public Sub ListViewImage_Click001()
   
   Dim sResult As String 
   
@@ -115,8 +148,8 @@ Public Sub ListViewImage_Click()
   If f_launcher.Visible = True Then
     f_launcher.Visible = False
   Endif
-  If f_launcher_cnb_mini.Visible = True Then
-    f_launcher_cnb_mini.Visible = False
+  If f_launcher_cnb.Visible = True Then
+    f_launcher_cnb.Visible = False
   Endif
   
   Me.Hide
@@ -135,9 +168,23 @@ Public Sub ListViewImage_Click()
   Endif
   
   If sResult = "CNB" Then
-    f_launcher_cnb_mini.Show
+    f_launcher_cnb.Show
   Endif
   'Wait 0.1
   'f_style_launcher.Close
+  
+End
+
+Public Sub picClose_MouseDown()
+  
+  Me.Close
+  
+End
+
+Public Sub Form_KeyPress()
+  
+  If Key.Code = Key.Esc Then
+    Me.Close
+  Endif
   
 End
