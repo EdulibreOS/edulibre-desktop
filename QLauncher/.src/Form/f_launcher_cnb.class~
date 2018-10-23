@@ -1,38 +1,223 @@
 ' Gambas class file
 
-Public Settings_Core_Innova As New Settings(Desktop.ConfigDir &/ "Innova/Innova_Config.conf")
-Private DesktopEntry As DesktopFile
-Private sDir_AppsFav As String 
-Private sFile_AppsFav As String
-Public sLang As String = ((Left(System.Language, 2)))
-Private sDel As String
+Private AllPriBas As String[] = [("Primer Grado"), ("Segundo Grado"), ("Tercer Grado")]
+Private AllPriAva As String[] = [("Cuarto Grado"), ("Quinto Grado"), ("Sexto Grado")]
+
+Private AllMaterias As String[] = [("Comunicación y Lenguaje"), ("Matemáticas"), ("Medio Social y Natural"), ("Ciencias Naturales y Tecnología"), ("Ciencias Sociales"), ("Expresión Artística"), ("Educación Física"), ("Formación Ciudadana"), ("Productividad y Desarrollo ")]
+Private AllPrimerGrado As String[] = [("Comunicación y Lenguaje"), ("Matemáticas"), ("Medio Social y Natural"), ("Expresión Artística"), ("Educación Física"), ("Formación Ciudadana")]
+Private AllCuartoGrado As String[] = [("Comunicación y Lenguaje"), ("Matemáticas"), ("Ciencias Naturales y Tecnología"), ("Ciencias Sociales"), ("Expresión Artística"), ("Educación Física"), ("Formación Ciudadana"), ("Productividad y Desarrollo")]
+
+Private cImgPriBas As Collection = ["Primer Grado": "1", "Segundo Grado": "2", "Tercer Grado": "3"]
+Private cImgPriAva As Collection = ["Cuarto Grado": "4", "Quinto Grado": "5", "Sexto Grado": "6"]
 
 Public Sub Form_Open()
   
-  M_Core.FillList_Cat_CNB
-  IconViewCat.Background = Color.Transparent  
-
-End
-
-Public Sub PanelLauncher_Draw()
+  Dim sPicture As Image
+  
+  M_Core.FillList_Cat_CNB_Mini
+  M_Core.User_System
+  M_Theme.Show_Theme
+  
+  ' spicture = Picture["img/cnb/Launcher-CNB.png"].Image.Stretch(Me.W, Me.H)
+  ' Me.Picture = spicture.Picture
+  
+  Me.ScrollGrado.Background = Color.Transparent
+  Me.ScrollArea.Background = Color.Transparent
+  Me.ScrollApps.Background = Color.Transparent
+  Me.ScrollCat.Background = Color.Transparent
   
 End
 
-Public Sub IconViewCat_MouseMove()
+Public Sub IconViewCat_Click()
+  
+  Dim i As Integer = -1 
+  Dim s As String
+  
+  IconViewCat2.Clear
+  IconViewCat3.Clear
+  
+  If IconViewCat.Current.Key = 1 Then
+    For Each s In AllPriBas
+      Inc i  
+      IconViewCat2.Add(i, AllPriBas[i], Picture["img/cnb/" & LCase(cImgPriBas[s] & ".svg")].Image.Stretch(32, 32).Picture)
+      IconViewCat2.Sorted = True '
+    Next
+  Endif
+  
+  If IconViewCat.Current.Key = 2 Then
+    For Each s In AllPriAva
+      Inc i  
+      IconViewCat2.Add(i, AllPriAva[i], Picture["img/cnb/" & LCase(cImgPriAva[s] & ".svg")].Image.Stretch(32, 32).Picture)
+      IconViewCat2.Sorted = True '
+    Next
+  Endif
+  'Catch
   
 End
 
-Public Sub IconViewCat_Select()
+Public Sub IconViewCat2_Click()
   
-  Dim iResult As Integer 
+  Dim i As Integer = -1 
+  Dim s As String
+  Dim ss As String
+  Dim sss As String
   
-  '  Try iResult = Settings_Core_Innova["Launcher/Cat_MouseMove"]
+  IconViewCat3.Clear
   
-  ' If iResult = 0 Then
-  'M_Core.sCurCat = DesktopAppsCat[Last.Item.key].Name
-  M_Core.sCurCat = IconViewCat.Item.key 'DesktopAppsCat[Last.Item.key].Name
-  Print IconViewCat.Item.key 
-  M_Core.FillList_Apps_MiniCNB
-  ' Endif
+  For Each s In AllPriBas
+    If IconViewCat2.Current.Text Ends s Then 
+      For Each ss In AllPrimerGrado
+        Inc i  
+        IconViewCat3.Add(i, AllPrimerGrado[i])
+        IconViewCat3.Sorted = True '
+      Next
+    Endif
+  Next
+  
+  For Each s In AllPriAva
+    If IconViewCat2.Current.Text Ends s Then 
+      For Each ss In AllCuartoGrado
+        Inc i  
+        IconViewCat3.Add(i, AllCuartoGrado[i])
+        IconViewCat3.Sorted = True '
+      Next
+    Endif
+  Next
+  
+  'Catch
+  
+End
+
+Public Sub picLaunch_MouseDown()
+  
+  f_style_launcher.ShowModal()
+  
+End
+
+Public Sub picSettings_MouseDown()
+  
+  'PanelCat.Visible = If(PanelCat.Visible = 0, 1, 0)  
+  ScrollGrado.Children.Clear
+  ScrollArea.Children.Clear
+  
+  PanelApp.Visible = 1
+  PanelGrado.Visible = 0 'If(PanelApp.Visible = 0, 1, 0)  
+  PanelArea.Visible = 1
+  
+  m_core.FillList_All_CNB_Mini("")
+  
+End
+
+Public Sub picPower_MouseDown()
+  
+  f_power.ShowModal
+  
+End
+
+Public Sub Form_KeyPress()
+  
+  If Key.Code = Key.Esc Then
+    Me.Close
+  Endif
+  
+End
+
+Public Sub Form_Show()
+  
+  f_launcher_cnb.X = 5
+  f_launcher_cnb.y = Desktop.h - Me.h - 5
+  
+End
+
+Public Sub txtSearchApps_Change()
+  
+  ScrollGrado.Children.Clear
+  ScrollArea.Children.Clear
+  
+  PanelApp.Visible = 1
+  PanelGrado.Visible = 0 'If(PanelApp.Visible = 0, 1, 0)  
+  PanelArea.Visible = 1
+  
+  txtSearchApps.Text = Lower$((txtSearchApps.text))
+  m_core.FillList_All_CNB_Mini(Last.text)
+  
+End
+
+Public Sub PanInfo_Draw()
+  
+  Dim X, Y, W, H As Float
+  Dim hBrush As PaintBrush
+  Dim hImage As Image
+  Dim hBackground As Image
+  
+  hImage = Image.Load("img/button.png").Stretch(PanInfo.W, PanInfo.H)
+  hBackground = New Image(hImage.W, hImage.H, Color.SetAlpha(Color.TextBackground, 160))
+  
+  X = 0
+  Y = 0
+  W = PanInfo.W 
+  H = 56
+  
+  hBrush = Paint.Image(hImage)
+  Paint.Brush = hBrush
+  Paint.Rectangle(X, Y, W, H)
+  Paint.Fill
+  
+End
+
+Public Sub PanInfo2_Draw()
+  
+  Dim X, Y, W, H As Float
+  Dim hBrush As PaintBrush
+  Dim hImage As Image
+  Dim hBackground As Image
+  
+  hImage = Image.Load("img/button.png").Stretch(PanInfo2.W, PanInfo2.H)
+  hBackground = New Image(hImage.W, hImage.H, Color.SetAlpha(Color.TextBackground, 160))
+  
+  X = 0
+  Y = 0
+  W = HBoxGrado.W 
+  H = 56
+  
+  hBrush = Paint.Image(hImage)
+  Paint.Brush = hBrush
+  Paint.Rectangle(X, Y, W, H)
+  Paint.Fill
+  
+End
+
+Public Sub picInfo_MouseDown()
+  
+  'f_cnb_info.Pic_Logo_PreviewApp.Picture = Pic_Logo_PreviewApp.Picture
+  'f_cnb_info.txtnameapp.Text = txtnameapp.Text
+  'f_cnb_info.txtlabelInfo.Text = txtlabelInfo.Text
+  'f_cnb_info.Show
+  
+End
+
+Public Sub Form_Deactivate()
+  
+  If m_core.iShow = True Then
+    f_launcher_cnb.show
+  Endif
+  
+  If m_core.iShow = False Then
+    f_launcher_cnb.Close
+  Endif
+  M_Core.iShow = False
+  
+End
+
+Public Sub mnuInfo_Click()
+  
+  ' M_Core.iShow = True
+  f_cnb_info.Pic_Logo_PreviewApp.Picture = Pic_Logo_PreviewApp.Picture
+  f_cnb_info.txtnameapp.Text = txtnameapp.Text
+  f_cnb_info.txtlabelInfo.Text = txtlabelInfo.Text
+  
+  f_cnb_info.ShowModal)
+  
+  ' f_cnb_info.Close()
   
 End

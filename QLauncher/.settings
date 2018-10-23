@@ -28,13 +28,12 @@ Geometry=[848,384,224,280]
 Path="/home/edulibreos/Launcher_CNB.gambas"
 
 [OpenFile]
-File[1]=".src/Form/f_launcher_cnb_mini.form"
+File[1]=".src/Form/f_launcher_cnb.form"
 Active=4
-Count=5
-File[2]=".src/Form/f_launcher.form"
-File[3]=".src/Form/f_cnb_info.form"
-File[4]=".src/Form/f_cnb_info.class:7.121"
-File[5]=".src/Form/f_launcher.class:7.166"
+Count=4
+File[2]=".src/Form/f_cnb_info.form"
+File[3]=".src/Form/f_cnb_info.class:2.91"
+File[4]=".src/Form/f_launcher_cnb.class:28.198"
 
 [Watches]
 Count=0

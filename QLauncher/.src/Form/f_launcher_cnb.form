@@ -85,7 +85,7 @@
       MoveScaled(84,0,6,6)
       Mouse = Mouse.Pointing
       ToolTip = ("Style Launcher")
-      Picture = Picture["img/cnb/launcher-program.svg"]
+      Picture = Picture["img/cnb/launcher.svg"]
       Stretch = True
     }
   }
@@ -160,6 +160,7 @@
         Arrangement = Arrange.Vertical
         Spacing = True
         Padding = 1
+        Border = False
         ScrollBar = Scroll.None
       }
       { IconViewCat ListView
@@ -213,6 +214,7 @@
           Spacing = True
           Margin = True
           Padding = 8
+          Border = False
           ScrollBar = Scroll.None
         }
       }
@@ -248,6 +250,7 @@
           Spacing = True
           Margin = True
           Padding = 8
+          Border = False
           ScrollBar = Scroll.None
         }
       }

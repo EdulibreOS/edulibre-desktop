@@ -72,7 +72,7 @@ Public Sub Init_03()
     If sResult = "Mini" Then
       f_launcher_mini.Visible = If(f_launcher_mini.Visible = 0, 1, 0)  
     Else If sResult = "CNB" Then
-      f_launcher_cnb_mini.Visible = If(f_launcher_cnb_mini.Visible = 0, 1, 0)  
+      f_launcher_cnb.Visible = If(f_launcher_cnb.Visible = 0, 1, 0)  
     Endif
     
   Endif
@@ -100,7 +100,7 @@ Public Sub Init_03001()
   Endif
   
   If sResult = "CNB" Then
-    f_launcher_cnb_mini.Show
+    f_launcher_cnb.Show
   Endif
   
 End

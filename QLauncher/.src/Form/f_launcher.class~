@@ -275,8 +275,8 @@ End
 
 Public Sub mnuOpen_Click()
   
-  'DesktopApps[M_Core.sAppsExec].Exec
-  DesktopApps[Last.Tag].Exec_()
+  DesktopApps[M_Core.sAppsExec].Exec
+ ' DesktopApps[Last.Tag].Exec_()
 
 End
 

@@ -189,10 +189,12 @@
         }
         { Separator1 Separator
           MoveScaled(71,0,0.2857,4)
+          Visible = False
           Background = &H3F3F3F&
         }
         { picExpand PictureBox
           MoveScaled(72,0,4.5714,4.5714)
+          Visible = False
           Mouse = Mouse.Pointing
           Picture = Picture["img/contract.png"]
           Stretch = True

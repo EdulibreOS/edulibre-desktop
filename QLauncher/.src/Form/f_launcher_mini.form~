@@ -128,7 +128,7 @@
         Expand = True
         Sorted = True
         Border = False
-        ScrollBar = Scroll.Vertical
+        ScrollBar = Scroll.None
       }
     }
   }
