@@ -145,6 +145,7 @@ Public Function Show_Theme()
     f_progressbar.Picture = Picture[sPath_Theme &/ sResult_Inn_Look_Img]
     f_properties.Picture = Picture[sPath_Theme &/ sResult_Inn_Look_Img]
     f_properties_mixed.Picture = Picture[sPath_Theme &/ sResult_Inn_Look_Img]
+    f_screeshot.Picture = Picture[sPath_Theme &/ sResult_Inn_Look_Img]
     
     f_panel.CButtonStart.Image = Image.Load(sPath_Theme &/ sResult_Inn_LogoImg)
     

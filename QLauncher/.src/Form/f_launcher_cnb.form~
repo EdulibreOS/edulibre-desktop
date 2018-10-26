@@ -202,7 +202,7 @@
         }
       }
       { PanelGrado Panel
-        MoveScaled(1,5,73,24)
+        MoveScaled(1,5,73,24.2857)
         Arrangement = Arrange.Vertical
         Spacing = True
         Margin = True
@@ -214,7 +214,12 @@
           Spacing = True
           Margin = True
           Padding = 8
+          Border = False
           ScrollBar = Scroll.None
+        }
+        { Separator1 Separator
+          MoveScaled(28,22,17,0)
+          Background = Color.Blue
         }
       }
       { HBoxArea Panel
@@ -249,6 +254,7 @@
           Spacing = True
           Margin = True
           Padding = 8
+          Border = False
           ScrollBar = Scroll.None
         }
       }

@@ -36,15 +36,14 @@ Private hCButton_App_Default As CButton
 Private hCButton_App_Bookmarks As CButton
 Private hCButton_Home As CButton
 Private hCButton_App_Desktop As ToolButton
-Private $iLast As Integer
-
-Private iValue As Integer
 
 Static Private BACKGROUND_COLOR As Integer = &5060BA '&212121& '&H3398C3& '&HFFAF5F&
 Static Private TEXT_COLOR As Integer = &FFFFFF '&e0e0e0& '&HDF6B00& ' &z '&HFFAF5F&
 
 Private $hWatcher As DesktopWatcher
 Private hWindWatch As DesktopWatcher
+Private $iLast As Integer
+Private iValue As Integer
 Private $iLast2 As Integer
 
 Private _NET_CLIENT_LIST As Integer
@@ -67,6 +66,9 @@ Public _$IconName As String
 Private sExec_Delete As String 
 
 Private pIcon As Picture
+
+Private iId As Integer
+Private img As New Picture
 
 Public Sub Init_Panel()
   
@@ -434,7 +436,7 @@ Private Sub WindList_List()
       hToggleTask.Font.Size = 9
       
       hImage = hWindow.Icon
-      hToggleTask.Tooltip = hWindow.Name 
+      hToggleTask.Tooltip = hWindow.Name
       hToggleTask.Text = Left$(hWindow.Name, 25) 
       hToggleTaskW = hToggleTask.w
       If (sResult_Img_Icon = 1) Then  
@@ -568,29 +570,15 @@ Public Sub ToggleTask_Menu()
   
 End
 
-Public Sub ToggleTask_MouseDown()
-  
-  ' If Mouse.Left Then
-  '   Last.Background = BACKGROUND_COLOR
-  '   Last.Foreground = TEXT_COLOR
-  ' Endif
-  
-End
 
-Public Sub ToggleTask_MouseUp()
-  
-  'Last.Background = Color.Transparent
-  'Last.Foreground = Color.Black
-  
-End
 
 Public Sub ToggleTask_Click()
-  
-  Dim iId As Integer
+
   
   iId = Last.tag 
   
-  If iId = $iLast2 And If Not Desktop.Windows.FromHandle(iId).Minimized Then
+  If iId = $iLast And If Not Desktop.Windows.FromHandle(iId).Minimized Then
+    
     Desktop.Windows.FromHandle(iId).Minimized = True
     Return
     
@@ -604,24 +592,29 @@ Catch
   
 End
 
+
+
 Public Sub ToggleTask_Enter()
   
-  iValue = Last.Tag
+
   
-  hToggleTask.Tooltip = Last.text
-  Last.Background = BACKGROUND_COLOR
-  Last.Foreground = Color.Black
-  'Last.Foreground = M_Theme.sResult_Inn_Font_Color
-Catch
+  iValue = Last.Tag
+  $iLast2 = Last.Tag
+  
+  Try hToggleTask.Tooltip = Last.text
+  Try Last.Background = BACKGROUND_COLOR
+  Try Last.Foreground = Color.Black
+  
+
+  'Catch
   
 End
 
 Public Sub ToggleTask_Leave()
   
   Last.Background = Color.Transparent
-  'Last.Foreground = Color.Black
-  Last.Foreground = M_Var_Global.sResult_Inn_Font_Color 'M_Theme.sResult_Inn_Font_Color
-  '  f_screeshot.Hide
+  Last.Foreground = M_Var_Global.sResult_Inn_Font_Color 
+
   
 End
 
@@ -774,7 +767,7 @@ Public Sub Show_Widget_All_Exec()
   rs = cx.Exec("select * from tb_widgets")
   
   Do While rs.Available 
-    Print Path
+    ' Print Path
     Path = rs!exec
     active = rs!status  
     
@@ -923,5 +916,13 @@ End
 Public Sub CButtonDesktop_Leave()
   
   Last.Background = Color.Transparent
+  
+End
+
+
+
+Public Sub Form_Leave()
+  
+  f_screeshot.Close
   
 End

@@ -2,10 +2,10 @@
 Title=Qpanel
 Startup=f_wallpaper
 Icon=img/desktop-environment-innova.png
-Version=0.1.95
+Version=0.1.98
 Component=gb.args
 Component=gb.image
-Component=gb.qt5
+Component=gb.qt4
 Component=gb.form
 Component=gb.compress
 Component=gb.compress.bzlib2
@@ -16,7 +16,7 @@ Component=gb.db.sqlite3
 Component=gb.desktop
 Component=gb.desktop.x11
 Component=gb.settings
-Environment="GB_GUI=gb.qt5"
+Environment="GB_GUI=gb.qt4"
 TabSize=2
 Translate=1
 Language=en_US

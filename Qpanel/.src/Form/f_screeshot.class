@@ -1,0 +1,25 @@
+' Gambas class file
+
+Public Sub Form_Open()
+  
+  M_Theme.Show_Theme
+  
+  X11.SetWindowProperty(Me.Id, Atom["_NET_WM_WINDOW_TYPE"], Atom["ATOM"], Atom["_NET_WM_WINDOW_TYPE_DOCK"])
+  
+End
+
+Public Sub _new()
+  
+  Me.TopOnly = True
+  
+End
+
+Public Sub txtdscription_MouseDown()
+  
+End
+
+Public Sub Form_Leave()
+  
+  Me.Close
+  
+End
