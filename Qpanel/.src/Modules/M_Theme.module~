@@ -154,11 +154,11 @@ Public Function Show_Theme()
     
     For Each ctrl In f_panel.Controls
       ctrl.Foreground = Val(sResult_Inn_Font_Color) 
+      M_Var_Global.sResult_Inn_Font_Color = Val(sResult_Inn_Font_Color) 
       '  f_panel.TextLabelDate.Foreground = Val(sResult_Inn_Font_Color) 
     Next
     
     For Each ctrl In f_progressbar.Controls
-      
       ctrl.Foreground = Val(sResult_Inn_Font_Color) 
     Next
     

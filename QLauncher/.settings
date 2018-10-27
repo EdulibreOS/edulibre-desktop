@@ -29,11 +29,13 @@ Path="/home/edulibreos/Launcher_CNB.gambas"
 
 [OpenFile]
 File[1]=".src/Form/f_launcher_cnb.form"
-Active=4
-Count=4
-File[2]=".src/Form/f_cnb_info.form"
-File[3]=".src/Form/f_cnb_info.class:2.91"
-File[4]=".src/Form/f_launcher_cnb.class:28.198"
+Active=2
+Count=6
+File[2]=".src/Module/M_Core.module:31.422"
+File[3]=".src/Form/f_launcher_mini.form"
+File[4]=".src/Form/f_launcher_mini.class:30.62"
+File[5]=".src/Form/f_style_launcher.form"
+File[6]=".src/Form/f_style_launcher.class:2.28"
 
 [Watches]
 Count=0

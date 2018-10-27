@@ -23,7 +23,7 @@
 ' Part of this code belongs to Gambas3, Fabien Bodard and was adapted for Innova Project
 
 Private $sLastName As String
-
+Private iResult As Integer
 Private sPath As String
 Public sDir As String = Desktop.GetDirectory("DESKTOP") & "/" 
 Public sLanguage As String = ((Left(System.Language, 2)))
@@ -378,6 +378,11 @@ Public Sub ivwDesktop_Select()
     
   Endif
   
+  
+  Try iResult = Settings_Core_Innova["Panel/Popup_Help"]
+  If iResult = 1 Then
+ Show_Preview_File
+ Endif
 Catch
   
 End 
@@ -934,11 +939,55 @@ Public Sub ivwDesktop_GotFocus()
 End
 
 Public Sub ivwDesktop_MouseMove()
+ 
+    If Not ivwDesktop.FindAt(Mouse.x, Mouse.y) Then  
+    Try $sLastName = ivwDesktop.Item.Text
+    'Show_Preview_File
+  Endif
   
-  If Not ivwDesktop.FindAt(Mouse.x, Mouse.y) Then
+End
+
+Public Sub Show_Preview_File()
+  
+  
+    Dim strFiles As String[]
+  Dim strData As String
+  Dim strFile As String
+  Dim calcSum As Integer = 0
+
+ 
     
     Try $sLastName = ivwDesktop.Item.Text
+    
+   
+  strFiles = GetSelection()
+  If strFiles.Count > 0 Then
+    
+    For Each strFile In strFiles
+      
+      strFile = sDir &/ strFile
+      strData = strData & strFile & "\n"
+      
+      With Stat(strFile)
+        calcSum += Str(.Size) 
+      End With
+      
+    Next
+    Print sDir & $sLastName
+   f_popup.Show
+    f_popup.Move(Mouse.ScreenX, Mouse.ScreenY) 
+    f_popup.lblName.Text = File.Name(sDir & $sLastName)
+   ' f_popup.lbltype.Text = DesktopMime.FromFile(sDir & $sLastName).Type 
+    f_popup.lblsize.Text = getText(calcSum) 
+    
+    f_popup.lblext.Text = DesktopMime.FromFile(sDir & $sLastName).Pattern 
+    f_popup.lblcomment.Text = DesktopMime.FromFile(sDir & $sLastName).GetComment(True) 
+   ' f_popup.picIcon.Picture = DesktopMime.FromFile(sDir & $sLastName).GetIcon(48).Picture 
+       f_popup.picIcon.Picture = ivwDesktop.Current.Picture
   Endif
+  
+  
+   
   
 End
 

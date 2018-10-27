@@ -1,0 +1,35 @@
+# Gambas Form File 3.0
+
+{ Form Form
+  MoveScaled(0,0,69,35)
+  NoTabFocus = True
+  Persistent = True
+  Resizable = False
+  Border = False
+  Stacking = Window.Above
+  Sticky = True
+  SkipTaskbar = True
+  { piclogo PictureBox
+    MoveScaled(3,26,6,6)
+    Stretch = True
+  }
+  { txttitle TextLabel
+    MoveScaled(12,27,55,4)
+    Font = Font["14"]
+  }
+  { txtdscription TextLabel
+    MoveScaled(12,29,55,3)
+    Visible = False
+    Font = Font["10"]
+    Expand = True
+  }
+  { picScreen2 PictureBox
+    MoveScaled(4,5,61,22)
+    Visible = False
+    Stretch = True
+  }
+  { picScreen PictureBox
+    MoveScaled(23,2,22,22)
+    Stretch = True
+  }
+}

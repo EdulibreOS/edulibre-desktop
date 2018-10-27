@@ -202,7 +202,7 @@
         }
       }
       { PanelGrado Panel
-        MoveScaled(1,5,73,24)
+        MoveScaled(1,5,73,24.2857)
         Arrangement = Arrange.Vertical
         Spacing = True
         Margin = True
