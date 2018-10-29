@@ -1,6 +1,7 @@
 [Bookmarks]
 f_panel=[333]
 btnCircle=[131]
+f_wallpaper=[291]
 
 [Breakpoints]
 Count=0
@@ -41,7 +42,7 @@ Ignore=0
 
 [OpenFile]
 Count=2
-File[1]=".src/Form/f_wallpaper.class:26.25"
+File[1]=".src/Form/f_wallpaper.class:19.1257"
 Active=1
 File[2]=".src/Form/f_wallpaper.form"
 
