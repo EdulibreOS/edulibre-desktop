@@ -224,8 +224,68 @@ Public Sub Form_MouseMove()
   
 End
 
+Public Function Mimex(strMimeType As String) As String[] ''Devuelve una lista de los programas que estan asociados al tipo mime que se pasa como parametro.
+  
+  Dim stxOut As New String[]
+  Dim df As DesktopFile
+  
+  For Each df In DesktopFile.FromMime(strMimeType)
+    stxOut.Add(df.ProgramName)
+  Next
+  
+  Return stxOut
+  
+End
+
+Public Sub Create_Apps_Link001()
+  
+  Dim strMimeType As String ' = "application/vnd.oasis.opendocument.text"
+  Dim hInfo As DesktopMime
+  Dim sMimeType As String
+  Dim i As Integer
+  Dim hTest As DesktopFile[]
+  Dim idx As Integer
+  
+  ' hTest = DesktopMime.FromFile(strMimeType)
+  ' Print hInfo.Pattern
+  'DesktopFile.FromMime("application/vnd.oasis.opendocument.text")
+  
+  sPath = sDir &/ ivwDesktop.Item.Text
+  For Each df In DesktopFile.FromMime(DesktopMime.FromFile(sPath).Type)
+    Print df.ProgramName
+  Next
+  
+End
+
+Public Sub Create_Apps_Link_old()
+  
+  Dim sMimeType As String
+  Dim i As Integer
+  Dim hTest As DesktopFile[]
+  Dim idx As Integer
+  
+  sPath = sDir &/ ivwDesktop.Item.Text
+  sMimeType = DesktopMime.FromFile(sPath).Type
+  mnuOpenwith.Children.Clear
+  
+  'If sPath Ends ".desktop" Then 
+  'hTest = DesktopFile.FromMime("text/html")
+  'For idx = 0 To hTest.Max
+  ' Item_Menu_Link = New Menu(mnuOpenwith) As "Items" 
+  '  Item_Menu_Link.text = hTest[idx].Name
+  ' Item_Menu_Link.Picture = hTest[idx].GetIcon(16).Picture
+  'Item_Menu_Link.Tag = i
+  'Next
+  'Endif
+  
+Catch
+  
+End
+
 Public Sub Create_Apps_Link()
   
+  Dim hFile As DesktopFile[]
+  Dim idx As Integer
   Dim sMimeType As String
   Dim i As Integer
   
@@ -233,17 +293,28 @@ Public Sub Create_Apps_Link()
   sMimeType = DesktopMime.FromFile(sPath).Type
   mnuOpenwith.Children.Clear
   
-  For Each df In DesktopFile.FromMime(DesktopMime.FromFile(sPath).Type)
-    Inc i
-    
+  hFile = DesktopFile.FromMime(sMimeType)
+  
+  For idx = 0 To hFile.Max
     Item_Menu_Link = New Menu(mnuOpenwith) As "Items" 
-    Item_Menu_Link.text = df.Name
-    Item_Menu_Link.Picture = df.GetIcon(16).Picture
-    Item_Menu_Link.Tag = i 
+    
+    Item_Menu_Link.text = hFile[idx].Name
+    Item_Menu_Link.Picture = hFile[idx].GetIcon(16).Picture
+    Item_Menu_Link.Tag = idx
     
   Next
   
-Catch
+  If sPath Ends ".desktop" Then 
+    hFile = DesktopFile.FromMime("text/plain")
+    For idx = 0 To hFile.Max
+      Item_Menu_Link = New Menu(mnuOpenwith) As "Items" 
+      Item_Menu_Link.text = hFile[idx].Name
+      Item_Menu_Link.Picture = hFile[idx].GetIcon(16).Picture
+      Item_Menu_Link.Tag = idx
+      
+    Next
+  Endif
+  'Catch
   
 End
 
@@ -378,11 +449,10 @@ Public Sub ivwDesktop_Select()
     
   Endif
   
-  
-  Try iResult = Settings_Core_Innova["Panel/Popup_Help"]
-  If iResult = 1 Then
- Show_Preview_File
- Endif
+  'Try iResult = Settings_Core_Innova["Panel/Popup_Help"]
+  'If iResult = 1 Then
+  'Show_Preview_File
+  'Endif
 Catch
   
 End 
@@ -939,27 +1009,23 @@ Public Sub ivwDesktop_GotFocus()
 End
 
 Public Sub ivwDesktop_MouseMove()
- 
-    If Not ivwDesktop.FindAt(Mouse.x, Mouse.y) Then  
+  
+  If Not ivwDesktop.FindAt(Mouse.x, Mouse.y) Then  
     Try $sLastName = ivwDesktop.Item.Text
-    'Show_Preview_File
+    
   Endif
   
 End
 
 Public Sub Show_Preview_File()
   
-  
-    Dim strFiles As String[]
+  Dim strFiles As String[]
   Dim strData As String
   Dim strFile As String
   Dim calcSum As Integer = 0
-
- 
-    
-    Try $sLastName = ivwDesktop.Item.Text
-    
-   
+  
+  Try $sLastName = ivwDesktop.Item.Text
+  
   strFiles = GetSelection()
   If strFiles.Count > 0 Then
     
@@ -973,21 +1039,22 @@ Public Sub Show_Preview_File()
       End With
       
     Next
-    Print sDir & $sLastName
-   f_popup.Show
+    
+    f_popup.Show
     f_popup.Move(Mouse.ScreenX, Mouse.ScreenY) 
     f_popup.lblName.Text = File.Name(sDir & $sLastName)
-   ' f_popup.lbltype.Text = DesktopMime.FromFile(sDir & $sLastName).Type 
+    ' f_popup.lbltype.Text = DesktopMime.FromFile(sDir & $sLastName).Type 
     f_popup.lblsize.Text = getText(calcSum) 
     
     f_popup.lblext.Text = DesktopMime.FromFile(sDir & $sLastName).Pattern 
     f_popup.lblcomment.Text = DesktopMime.FromFile(sDir & $sLastName).GetComment(True) 
-   ' f_popup.picIcon.Picture = DesktopMime.FromFile(sDir & $sLastName).GetIcon(48).Picture 
-       f_popup.picIcon.Picture = ivwDesktop.Current.Picture
+    ' f_popup.picIcon.Picture = DesktopMime.FromFile(sDir & $sLastName).GetIcon(48).Picture 
+    f_popup.picIcon.Picture = ivwDesktop.Current.Picture
+    ' Print DesktopMime.FromFile(sDir & $sLastName).Type
+    
   Endif
   
-  
-   
+Catch
   
 End
 
@@ -1213,5 +1280,18 @@ Public Sub mnuabout3_Click()
 End
 
 Public Sub mnuSelectApps_Click()
+  
+End
+
+Public Sub ivwDesktop_Click()
+  
+  'Try iResult = Settings_Core_Innova["Panel/Popup_Help"]
+  'If iResult = 1 Then
+  'Show_Preview_File
+  'Endif
+  
+End
+
+Public Sub ivwDesktop_Enter()
   
 End

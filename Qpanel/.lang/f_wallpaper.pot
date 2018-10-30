@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-10-26 03:22 UTC\n"
+"POT-Creation-Date: 2018-10-29 20:29 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -146,79 +146,79 @@ msgstr ""
 msgid "Trash"
 msgstr ""
 
-#: f_wallpaper.class:290
+#: f_wallpaper.class:361
 msgid "Enter a Name..."
 msgstr ""
 
-#: f_wallpaper.class:290
+#: f_wallpaper.class:361
 msgid "Ok"
 msgstr ""
 
-#: f_wallpaper.class:290
+#: f_wallpaper.class:361
 msgid "Cancelar"
 msgstr ""
 
-#: f_wallpaper.class:303
+#: f_wallpaper.class:374
 msgid "Cannot create directory."
 msgstr ""
 
-#: f_wallpaper.class:568
+#: f_wallpaper.class:638
 msgid "trash:/"
 msgstr ""
 
-#: f_wallpaper.class:571
+#: f_wallpaper.class:641
 msgid "trash:///"
 msgstr ""
 
-#: f_wallpaper.class:611
+#: f_wallpaper.class:681
 msgid "Multiple Files"
 msgstr ""
 
-#: f_wallpaper.class:612
+#: f_wallpaper.class:682
 msgid "Files of different types"
 msgstr ""
 
-#: f_wallpaper.class:777
+#: f_wallpaper.class:847
 msgid "&Yes"
 msgstr ""
 
-#: f_wallpaper.class:777
+#: f_wallpaper.class:847
 msgid "&No"
 msgstr ""
 
-#: f_wallpaper.class:1140
+#: f_wallpaper.class:1207
 msgid "Innova Desktop - Copy File"
 msgstr ""
 
-#: f_wallpaper.class:1141
+#: f_wallpaper.class:1208
 msgid "There is already a file with the same name in this location.  "
 msgstr ""
 
-#: f_wallpaper.class:1141
+#: f_wallpaper.class:1208
 msgid " Overwrite it with the new file?"
 msgstr ""
 
-#: f_wallpaper.class:1141
+#: f_wallpaper.class:1208
 msgid "Copy and Replace"
 msgstr ""
 
-#: f_wallpaper.class:1141
+#: f_wallpaper.class:1208
 msgid "Don't Copy"
 msgstr ""
 
-#: f_wallpaper.class:1150
+#: f_wallpaper.class:1217
 msgid "Copying "
 msgstr ""
 
-#: f_wallpaper.class:1150
+#: f_wallpaper.class:1217
 msgid " Items "
 msgstr ""
 
-#: f_wallpaper.class:1151
+#: f_wallpaper.class:1218
 msgid " To "
 msgstr ""
 
-#: f_wallpaper.class:1183
+#: f_wallpaper.class:1250
 msgid "An unknown error has occurred."
 msgstr ""
 

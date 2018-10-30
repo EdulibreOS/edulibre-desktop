@@ -6,3 +6,18 @@ Public Sub Form_Leave()
   Me.Close
 
 End
+
+Public Sub Form_KeyPress()
+  
+  If Key.Code = Key.Esc Then
+    Me.Close
+  Endif
+  
+End
+
+Public Sub Form_Open()
+
+  Wait 4
+  Me.Close
+
+End
