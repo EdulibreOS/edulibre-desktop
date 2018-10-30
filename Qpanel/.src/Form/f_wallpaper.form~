@@ -96,7 +96,6 @@
   }
   { mnuPopup2 Menu
     Text = ("mnuPopup2")
-    Visible = False
     { mnuFile Menu
       Text = ("File")
       { mnuFolder Menu

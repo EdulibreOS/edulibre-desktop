@@ -1169,7 +1169,57 @@ Public Sub mnutrash_Click()
   
 End
 
-Public Sub ivwDesktop_Leave()
+Public Sub Cp_File()
+  
+  Dim flOr, flCp As File
+  Dim origo, copia As String
+  Dim bb As Byte[]
+  Dim quantum, lo As Integer
+  Dim l As Long
+  Dim a As String
+  Dim b As String[]
+  Dim sDir As String
+  Dim sCopy As String
+  Dim sResult As String
+  
+  Dim nFiles As Integer
+  Dim sName As String
+  Dim iSize As Float
+  
+  sDir = Desktop.GetDirectory("DESKTOP") 
+  a = Clipboard.Paste("text/uri-list") 
+  b = Split(a, gb.CrLf, "", True)
+  a = Null 
+  
+  'f_progressbar.ProgressBar1.Value = 0
+  For Each a In b
+    a = Right$(a, -7) 
+    a = URLDecode(a)  
+    a = RTrim(a)
+    origo = a
+    copia = sDir &/ File.Name(a)
+    
+    flOr = Open origo For Read
+    
+    flCp = Open copia For Create
+    
+    lo = Lof(flOr)
+    
+    quantum = lo \ 100
+    
+    bb = New Byte[quantum + (lo Mod 100)]
+    
+    While Not Eof(flOr)
+      If lo - Seek(flOr) < quantum Then quantum = lo - Seek(flOr)
+      bb.Read(flOr, 0, quantum)
+      bb.Write(flCp, 0, quantum)
+      l += quantum
+      f_progressbar.ProgressBar1.Value = ((l * 100) \ lo) / 100
+      Wait 0.001
+    Wend
+  Next
+  flCp.Close
+  flOr.Close
   
 End
 
@@ -1196,6 +1246,7 @@ Public Sub mnuPaste_Click()
   
   f_progressbar.Show
   f_progressbar.ProgressBar1.Value = 0
+  
   If sDir Then
     
     For Each a In b
@@ -1203,13 +1254,12 @@ Public Sub mnuPaste_Click()
       a = URLDecode(a)  
       a = RTrim(a)
       
-      If Exist(sDir &/ File.Name(a)) Then
-        Message.Title = ("Innova Desktop - Copy File")
-        If Message.Question("<span style=\"color:#" & "0000FF" & ";margin-left:1em;\">" & ("There is already a file with the same name in this location.  ") & "</span>" & "<b><span style=\"color:#" & "088906" & ";margin-left:1em;\">" & UCase(File.Name(a)) & "</span></b>" & "<span style=\"color:#" & "CC0000" & ";margin-left:1em;\">" & (" Overwrite it with the new file?"), ("Copy and Replace"), ("Don't Copy")) = 1 Then
-          Try Kill sDir &/ File.Name(a)
-          
-        Endif
-      Endif
+      'If Exist(sDir &/ File.Name(a)) Then
+      '   Message.Title = ("Innova Desktop - Copy File")
+      '   If Message.Question("<span style=\"color:#" & "0000FF" & ";margin-left:1em;\">" & ("There is already a file with the same name in this location.  ") & "</span>" & "<b><span style=\"color:#" & "088906" & ";margin-left:1em;\">" & UCase(File.Name(a)) & "</span></b>" & "<span style=\"color:#" & "CC0000" & ";margin-left:1em;\">" & (" Overwrite it with the new file?"), ("Copy and Replace"), ("Don't Copy")) = 1 Then
+      '     Try Kill sDir &/ File.Name(a)
+      '   Endif
+      ' Endif
       
       If Not IsDir(a) Then 
         
@@ -1219,13 +1269,11 @@ Public Sub mnuPaste_Click()
         iSize = Stat(a).Size
         
         f_progressbar.lblSize.Text = getText(iSize)
-        f_progressbar.ProgressBar1.Value += (1 / nFiles)
+        ' f_progressbar.ProgressBar1.Value += (1 / nFiles)
+        Cp_File
+        ' f_progressbar.ProgressBar1.Background = &336b87&
         
-        f_progressbar.ProgressBar1.Background = &336b87&
-        
-        Wait 0.5
-        
-        Try Copy a To sDir &/ File.Name(a) 
+        ' Try Copy a To sDir &/ File.Name(a) 
         
       Else
         sName = Left$(a, -4) 
@@ -1251,7 +1299,7 @@ Public Sub mnuPaste_Click()
   Endif  
   
   mnuRefresh_Click
-Catch
+  'Catch
   
 End
 
@@ -1285,10 +1333,10 @@ End
 
 Public Sub ivwDesktop_Click()
   
-  'Try iResult = Settings_Core_Innova["Panel/Popup_Help"]
-  'If iResult = 1 Then
-  'Show_Preview_File
-  'Endif
+  Try iResult = Settings_Core_Innova["Panel/Popup_Help"]
+  If iResult = 1 Then
+    Show_Preview_File
+  Endif
   
 End
 

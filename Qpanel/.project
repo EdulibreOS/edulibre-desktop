@@ -2,7 +2,7 @@
 Title=Qpanel
 Startup=Cls_Start
 Icon=img/desktop-environment-innova.png
-Version=0.1.100
+Version=0.1.103
 Component=gb.args
 Component=gb.image
 Component=gb.qt4
