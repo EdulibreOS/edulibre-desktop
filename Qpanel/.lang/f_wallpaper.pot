@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-10-29 20:29 UTC\n"
+"POT-Creation-Date: 2018-10-30 23:16 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -186,39 +186,19 @@ msgstr ""
 msgid "&No"
 msgstr ""
 
-#: f_wallpaper.class:1207
-msgid "Innova Desktop - Copy File"
-msgstr ""
-
-#: f_wallpaper.class:1208
-msgid "There is already a file with the same name in this location.  "
-msgstr ""
-
-#: f_wallpaper.class:1208
-msgid " Overwrite it with the new file?"
-msgstr ""
-
-#: f_wallpaper.class:1208
-msgid "Copy and Replace"
-msgstr ""
-
-#: f_wallpaper.class:1208
-msgid "Don't Copy"
-msgstr ""
-
-#: f_wallpaper.class:1217
+#: f_wallpaper.class:1267
 msgid "Copying "
 msgstr ""
 
-#: f_wallpaper.class:1217
+#: f_wallpaper.class:1267
 msgid " Items "
 msgstr ""
 
-#: f_wallpaper.class:1218
+#: f_wallpaper.class:1268
 msgid " To "
 msgstr ""
 
-#: f_wallpaper.class:1250
+#: f_wallpaper.class:1298
 msgid "An unknown error has occurred."
 msgstr ""
 
