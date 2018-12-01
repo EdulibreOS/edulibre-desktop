@@ -115,11 +115,11 @@ Public Function Show_Theme()
   If sResultTheme Then
     
     If IsNull(sResult_Desktop) Then
-      f_wallpaper.img_Fondo.Picture = Picture[sPath_Theme &/ sResult_Inn_WallpaperImg]
-      f_conf_wallpaper.img_Fondo.Picture = Picture[sPath_Theme &/ sResult_Inn_WallpaperImg]     
+      f_wallpaper.img_Fondo.Picture = Picture[sPath_Theme &/ sResult_Inn_WallpaperImg].Image.Stretch(Desktop.w, Desktop.H).Picture
+      f_conf_wallpaper.img_Fondo.Picture = Picture[sPath_Theme &/ sResult_Inn_WallpaperImg]
     Else
-      f_wallpaper.img_Fondo.Picture = Picture[sResult_Desktop]
-      f_conf_wallpaper.img_Fondo.Picture = Picture[sResult_Desktop]     
+      f_wallpaper.img_Fondo.Picture = Picture[sResult_Desktop].Image.Stretch(Desktop.w, Desktop.H).Picture
+      f_conf_wallpaper.img_Fondo.Picture = Picture[sResult_Desktop]
     Endif
     
     'f_panel.Picture = Picture[sPath_Theme &/ sResult_Inn_Panel_Img]
@@ -146,6 +146,7 @@ Public Function Show_Theme()
     f_properties.Picture = Picture[sPath_Theme &/ sResult_Inn_Look_Img]
     f_properties_mixed.Picture = Picture[sPath_Theme &/ sResult_Inn_Look_Img]
     f_screeshot.Picture = Picture[sPath_Theme &/ sResult_Inn_Look_Img]
+    ' f_popup.Picture = Picture[sPath_Theme &/ sResult_Inn_Look_Img]
     
     f_panel.CButtonStart.Image = Image.Load(sPath_Theme &/ sResult_Inn_LogoImg)
     
@@ -159,6 +160,10 @@ Public Function Show_Theme()
       '  f_panel.TextLabelDate.Foreground = Val(sResult_Inn_Font_Color) 
     Next
     
+    '  For Each ctrl In f_popup.Controls
+    '    ctrl.Foreground = Val(sResult_Inn_Font_Color) 
+    '  Next
+    
     For Each ctrl In f_progressbar.Controls
       ctrl.Foreground = Val(sResult_Inn_Font_Color) 
     Next
@@ -170,7 +175,9 @@ Public Function Show_Theme()
     For Each ctrl In f_wallpaper.Controls
       Try ctrl.Font.Name = (sResult_Inn_Font_Name) 
     Next
-    
+    For Each ctrl In f_popup.Controls
+      Try ctrl.Font.Name = (sResult_Inn_Font_Name) 
+    Next
     For Each ctrl In f_progressbar.Controls
       Try ctrl.Font.Name = (sResult_Inn_Font_Name) 
     Next
@@ -182,6 +189,9 @@ Public Function Show_Theme()
       Try ctrl.Font.Name = (sResult_Inn_Font_Name) 
     Next
     For Each ctrl In f_wallpaper.Controls
+      Try ctrl.Font.Size = (iResult_Inn_Font_Size) 
+    Next
+    For Each ctrl In f_popup.Controls
       Try ctrl.Font.Size = (iResult_Inn_Font_Size) 
     Next
     For Each ctrl In f_progressbar.Controls
@@ -195,6 +205,6 @@ Public Function Show_Theme()
       Try ctrl.Font.Size = (iResult_Inn_Font_Size) 
     Next
   Endif
-  'Catch
+Catch
   
 End

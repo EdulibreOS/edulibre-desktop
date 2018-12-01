@@ -1,5 +1,9 @@
 ' Gambas class file
 
+Public Settings_Core_Innova As New Settings(Desktop.ConfigDir &/ "Innova/Innova_Config.conf")
+Public Settings_App_Educap As New Settings(Desktop.ConfigDir &/ "Innova/Educap.conf")
+Private iResult As Integer
+
 Private AllPriBas As String[] = [("Primer Grado"), ("Segundo Grado"), ("Tercer Grado")]
 Private AllPriAva As String[] = [("Cuarto Grado"), ("Quinto Grado"), ("Sexto Grado")]
 
@@ -25,6 +29,13 @@ Public Sub Form_Open()
   Me.ScrollArea.Background = Color.Transparent
   Me.ScrollApps.Background = Color.Transparent
   Me.ScrollCat.Background = Color.Transparent
+  
+  Settings_Core_Innova.Write(f_launcher)
+  Settings_Core_Innova["Launcher/iShow"] = "1"
+  Settings_Core_Innova.Save
+  
+  iResult = Settings_Core_Innova["Launcher/iShow", f_launcher]
+  txtSearchApps.Background = Color.Transparent
   
 End
 
@@ -96,12 +107,11 @@ End
 
 Public Sub picSettings_MouseDown()
   
-  'PanelCat.Visible = If(PanelCat.Visible = 0, 1, 0)  
   ScrollGrado.Children.Clear
   ScrollArea.Children.Clear
   
   PanelApp.Visible = 1
-  PanelGrado.Visible = 0 'If(PanelApp.Visible = 0, 1, 0)  
+  PanelGrado.Visible = 0 
   PanelArea.Visible = 1
   
   m_core.FillList_All_CNB_Mini("")
@@ -126,6 +136,10 @@ Public Sub Form_Show()
   
   f_launcher_cnb.X = 5
   f_launcher_cnb.y = Desktop.h - Me.h - 5
+  
+  Settings_Core_Innova.Write(f_launcher)
+  Settings_Core_Innova["Launcher/iShow"] = "1"
+  Settings_Core_Innova.Save
   
 End
 
@@ -187,15 +201,6 @@ Public Sub PanInfo2_Draw()
   
 End
 
-Public Sub picInfo_MouseDown()
-  
-  'f_cnb_info.Pic_Logo_PreviewApp.Picture = Pic_Logo_PreviewApp.Picture
-  'f_cnb_info.txtnameapp.Text = txtnameapp.Text
-  'f_cnb_info.txtlabelInfo.Text = txtlabelInfo.Text
-  'f_cnb_info.Show
-  
-End
-
 Public Sub Form_Deactivate()
   
   If m_core.iShow = True Then
@@ -219,5 +224,44 @@ Public Sub mnuInfo_Click()
   f_cnb_info.ShowModal()
   
   ' f_cnb_info.Close()
+  
+End
+
+Public Sub mnuHelp_Click()
+  
+  Update_Name_App
+  Wait 0.1
+  ' Print "Ejecuta Educap"
+  Shell "/usr/bin/educap"
+  
+End
+
+Public Sub Update_Name_App()
+  
+  Settings_App_Educap.Write(f_launcher_cnb)
+  Settings_App_Educap["Educap/Name_App"] = m_core.sSendApps
+  Settings_App_Educap.Save
+  'Catch
+  '  Debug "ERROR [ " & DConv(Error.Text) & " ]"
+  
+End
+
+Public Sub Show_Name_App()
+  
+  Dim sResult As String
+  
+  Try sResult = Settings_App_Educap["Educap/Name_App"]
+  
+  If Not IsNull(sResult) Then
+    Shell "/usr/bin/educap"
+  Endif
+  'Catch
+  '  Debug "ERROR [ " & DConv(Error.Text) & " ]"
+  
+End
+
+Public Sub picLaunch2_MouseDown()
+  
+  Shell "/usr/bin/educap"
   
 End

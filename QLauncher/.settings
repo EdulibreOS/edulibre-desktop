@@ -12,6 +12,9 @@ Count=0
 [DebugWindow/BarraMenus]
 Geometry=[848,384,224,280]
 
+[DebugWindow/M_Init]
+Geometry=[848,384,224,280]
+
 [DebugWindow/PushButton]
 Geometry=[848,384,224,280]
 
@@ -28,14 +31,15 @@ Geometry=[848,384,224,280]
 Path="/home/edulibreos/Launcher_CNB.gambas"
 
 [OpenFile]
-File[1]=".src/Form/f_launcher_cnb.form"
-Active=2
-Count=6
-File[2]=".src/Module/M_Core.module:44.421"
-File[3]=".src/Form/f_launcher_mini.form"
-File[4]=".src/Form/f_launcher_mini.class:30.62"
-File[5]=".src/Form/f_style_launcher.form"
-File[6]=".src/Form/f_style_launcher.class:2.28"
+File[1]=".src/Module/M_Core.module:39.848"
+Active=7
+Count=7
+File[2]=".src/Form/f_launcher_mini.form"
+File[3]=".src/Form/f_launcher_mini.class:0.499"
+File[4]=".src/Form/f_launcher.form"
+File[5]=".src/Form/f_launcher_cnb.form"
+File[6]=".src/Form/f_launcher_cnb.class:2.18"
+File[7]=".src/Form/f_launcher.class:29.57"
 
 [Watches]
 Count=0

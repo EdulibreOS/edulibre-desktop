@@ -24,7 +24,7 @@
 Public Sub Form_Open()
   
   Me.Center
- 
+  
   M_Core.Show_Preview_Wallpaper
   
 End
@@ -54,7 +54,8 @@ End
 Public Sub txtselectfondo_Click()
   
   Dialog.Title = ("Image Archive")
-  Dialog.Filter = ["*.png", ("Image PNG"), "*.jpg", ("Image JPG"), "*.jpeg", ("Image JPEG"), "*.svg", ("Image SVG"), "*.bmp", ("Image BMP of Windows")] 
+  'Dialog.Filter = ["*.png", ("Image PNG"), "*.jpg", ("Image JPG"), "*.jpeg", ("Image JPEG"), "*.svg", ("Image SVG"), "*.bmp", ("Image BMP of Windows")] 
+  Dialog.Filter = ["*.png;*.jpg;*.jpeg;*.bmp", ("Picture files"), "*.svg;*.wmf", ("Drawing files")]
   If Dialog.OpenFile() Then
     Return 
   Endif
@@ -63,12 +64,13 @@ Public Sub txtselectfondo_Click()
   img_Fondo.Picture = Picture.Load(Dialog.Path)
   
   If Error Then 
-  
+      Message.Title = ("Innova Desktop")
     Message.Error("Unable to open the file : " & Dialog.Path)
     Return
   Endif
   
 Catch
+   Message.Title = ("Innova Desktop")
   Message(LC_MESSAGES.MSG_ERR_IMAGE)
   'BtnOk.Enabled = True
   

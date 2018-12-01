@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-10-30 23:16 UTC\n"
+"POT-Creation-Date: 2018-12-01 13:52 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -30,23 +30,15 @@ msgstr ""
 msgid "Image Archive"
 msgstr ""
 
-#: f_conf_wallpaper.class:57
-msgid "Image PNG"
+#: f_conf_wallpaper.class:58
+msgid "Picture files"
 msgstr ""
 
-#: f_conf_wallpaper.class:57
-msgid "Image JPG"
+#: f_conf_wallpaper.class:58
+msgid "Drawing files"
 msgstr ""
 
-#: f_conf_wallpaper.class:57
-msgid "Image JPEG"
-msgstr ""
-
-#: f_conf_wallpaper.class:57
-msgid "Image SVG"
-msgstr ""
-
-#: f_conf_wallpaper.class:57
-msgid "Image BMP of Windows"
+#: f_conf_wallpaper.class:67
+msgid "Innova Desktop"
 msgstr ""
 

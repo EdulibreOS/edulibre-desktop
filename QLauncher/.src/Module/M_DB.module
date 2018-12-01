@@ -34,6 +34,7 @@ Public Procedure Connect() As Connection
   Return $Con
   
   If Error Then
+    Message.Title = ("Innova Desktop")
     Message.Error("Error DB Theme")
     $Con = Null
     Return True 
@@ -41,14 +42,15 @@ Public Procedure Connect() As Connection
   
   Return False 
   
-  'Catch
+Catch
   '  Debug "ERROR [ " & DConv(Error.Text) & " ]" 
   
 End
 
 Public Sub Main()
   
-  M_Init.Init_01
+  M_Run.Main
+  ' M_Init.Init_01
   
 End
 

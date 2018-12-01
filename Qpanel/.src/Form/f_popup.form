@@ -2,6 +2,8 @@
 
 { Form Form
   MoveScaled(0,0,66,15)
+  Foreground = &HE0E0E0&
+  Picture = Picture["img/img_back.png"]
   Border = False
   Stacking = Window.Above
   SkipTaskbar = True
@@ -13,8 +15,8 @@
     Margin = True
     { picIcon PictureBox
       MoveScaled(1,1,10,8)
-      Picture = Picture["icon:/64/file"]
       AutoResize = True
+      Picture = Picture["icon:/64/file"]
     }
     { Panel1 Panel
       MoveScaled(13,0,50,14)

@@ -41,8 +41,6 @@ Public Sub Init_00()
   Try sResult2 = Settings_Core_Innova_Usr["Innova/Version"]
   
   If (sResult1 = sResult2) Then
-    Print sResult1 
-    Print sResult2
     Init_01
   Else
     Shell "rm -r " & sSend &/ "Innova"

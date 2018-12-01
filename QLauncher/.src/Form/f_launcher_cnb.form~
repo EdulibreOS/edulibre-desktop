@@ -41,12 +41,14 @@
     { Menu2 Menu
     }
     { mnuInfo Menu
-      Text = ("Información de la aplicación")
+      Text = ("Information")
       Picture = Picture["icon:/small/info"]
+      Visible = False
     }
-    { mnuAyuda Menu
-      Text = ("Ayuda de la aplicación CNB")
+    { mnuHelp Menu
+      Text = ("Help CNB")
       Picture = Picture["icon:/small/help"]
+      Visible = False
     }
   }
   { Pansearch Panel
@@ -81,11 +83,18 @@
       Arrangement = Arrange.Vertical
       AutoResize = True
     }
+    { picLaunch2 PictureBox
+      MoveScaled(77,0,6,6)
+      Mouse = Mouse.Pointing
+      ToolTip = ("Centro de Ayuda Pedagógica")
+      Picture = Picture["img/cnb/cap.png"]
+      Stretch = True
+    }
     { picLaunch PictureBox
       MoveScaled(84,0,6,6)
       Mouse = Mouse.Pointing
       ToolTip = ("Style Launcher")
-      Picture = Picture["img/cnb/launcher.svg"]
+      Picture = Picture["img/cnb/Launch.png"]
       Stretch = True
     }
   }
@@ -126,7 +135,7 @@
     Margin = True
     Padding = 1
     { PanelCat Panel
-      MoveScaled(3,8,23,50)
+      MoveScaled(2,11,23,50)
       Arrangement = Arrange.Vertical
       Spacing = True
       Margin = True
@@ -155,22 +164,29 @@
         Margin = True
       }
       { ScrollCat ScrollView
-        MoveScaled(3,19,11,8)
+        MoveScaled(3,19,11,21)
         Expand = True
         Arrangement = Arrange.Vertical
         Spacing = True
         Padding = 1
-        Border = False
         ScrollBar = Scroll.None
       }
       { IconViewCat ListView
-        MoveScaled(1,42,25,6)
+        MoveScaled(5,41,7,6)
         Visible = False
         Font = Font["+2"]
         Expand = True
         Border = False
         ScrollBar = Scroll.None
       }
+    }
+    { Panel6 Panel
+      MoveScaled(26,0,0,83)
+      Background = Color.White
+      Spacing = True
+      Margin = True
+      Padding = 2
+      Border = Border.Plain
     }
     { PanelApp Panel
       MoveScaled(28,1,76,81)
@@ -194,7 +210,6 @@
           { lblinfogrado Label
             MoveScaled(25,0,14,4)
             Font = Font["Bold"]
-            Foreground = &H002F5F&
             Expand = True
             Text = ("Información")
             Alignment = Align.Center
@@ -202,7 +217,7 @@
         }
       }
       { PanelGrado Panel
-        MoveScaled(1,5,73,24.2857)
+        MoveScaled(1,5,73,32.8571)
         Arrangement = Arrange.Vertical
         Spacing = True
         Margin = True
@@ -217,13 +232,9 @@
           Border = False
           ScrollBar = Scroll.None
         }
-        { Separator1 Separator
-          MoveScaled(28,22,17,0)
-          Background = Color.Blue
-        }
       }
       { HBoxArea Panel
-        MoveScaled(1,29,22,4)
+        MoveScaled(1,38,22,4)
         Visible = False
         Arrangement = Arrange.Horizontal
         Spacing = True
@@ -241,7 +252,7 @@
         }
       }
       { PanelArea Panel
-        MoveScaled(1,33,30,25)
+        MoveScaled(1,42,30,25)
         Expand = True
         Arrangement = Arrange.Vertical
         Spacing = True
@@ -255,13 +266,12 @@
           Margin = True
           Padding = 8
           Border = False
-          ScrollBar = Scroll.None
+          ScrollBar = Scroll.Vertical
         }
       }
       { PanInfo DrawingArea
         MoveScaled(6,72,69,8)
         Visible = False
-        Foreground = &H002F5F&
         Arrangement = Arrange.Horizontal
         Padding = 4
         Border = Border.Plain
@@ -386,7 +396,7 @@
       Expand = True
       Arrangement = Arrange.Horizontal
       Padding = 4
-      { picSettings2 PictureBox
+      { picUser PictureBox
         MoveScaled(0,1,8,7)
         Mouse = Mouse.Pointing
         Picture = Picture["img/cnb/Edu_logo.png"]
@@ -400,7 +410,6 @@
       { lblusuario TextLabel
         MoveScaled(12,3,7,5)
         Font = Font["+5"]
-        Foreground = &H002F5F&
         Expand = True
         Text = ("User")
         Alignment = Align.Left
@@ -415,7 +424,7 @@
       { picPower PictureBox
         MoveScaled(41,1,8,7)
         Mouse = Mouse.Pointing
-        Picture = Picture["img/cnb/bar_exit.svg"]
+        Picture = Picture["img/cnb/Shutdown.png"]
         Stretch = True
       }
     }

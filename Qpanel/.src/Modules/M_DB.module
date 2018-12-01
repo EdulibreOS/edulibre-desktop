@@ -36,6 +36,7 @@ Public Procedure Connect() As Connection
   Return $Con
   
   If Error Then
+     Message.Title = ("Innova Desktop")
     Message.Error(LC_MESSAGES.MSG_ERR_DB)
     $Con = Null
     Return True 

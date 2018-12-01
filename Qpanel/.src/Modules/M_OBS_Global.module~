@@ -35,7 +35,8 @@ End
 
 Public Sub OBS_KeyPress()
   
-  If (Key.Code = Key.Esc) Then
+  If (Key.Code = Key.F3) Then
+      Shell User.Home &/ "Launcher_Tablet.gambas"
     '    f_launcher_mini.Close
     '   f_launcher.Close
   Endif

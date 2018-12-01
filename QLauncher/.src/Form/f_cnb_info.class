@@ -2,8 +2,8 @@
 
 Private sQry As String
 Private cx As New Connection
-
 Private rs As Result
+
 Private s As TextArea
 Private GridCom As GridView
 Private GridInd As GridView
@@ -49,7 +49,7 @@ Public Sub Leer()
   GridCom.columns[3].width = 100
   GridCom.columns[4].width = 0
   GridCom.Rows.Count = rs.Count 
-  
+  GridCom.Background = Color.Transparent
   For i = 0 To rs.Count - 1
     
     iRndColor = Color.Transparent 
@@ -79,6 +79,8 @@ End
 Public Sub Form_Open()
   
   M_Theme.Show_Theme
+  ScrollCompetencia.Background = Color.Transparent
+  
   TBCNB.Background = Color.Transparent
   Leer
   Wait 0.5
@@ -128,5 +130,11 @@ Public Sub picClose2_MouseDown()
   
   M_Init.Init_03
   Me.Close()
+  
+End
+
+Public Sub Form_Show()
+  
+  lbltitle.Foreground = Color.Black
   
 End

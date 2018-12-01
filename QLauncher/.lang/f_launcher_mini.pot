@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-10-29 00:17 UTC\n"
+"POT-Creation-Date: 2018-12-01 13:54 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -42,12 +42,32 @@ msgstr ""
 msgid "Show Categories"
 msgstr ""
 
-#: f_launcher_mini.form:210
+#: f_launcher_mini.form:130
+msgid "Expand"
+msgstr ""
+
+#: f_launcher_mini.form:212
 msgid "Change Image"
 msgstr ""
 
-#: f_launcher_mini.form:219
+#: f_launcher_mini.form:221
 msgid "usuario"
+msgstr ""
+
+#: f_launcher_mini.form:240
+msgid "Style Launcher"
+msgstr ""
+
+#: f_launcher_mini.form:248
+msgid "Configure the system"
+msgstr ""
+
+#: f_launcher_mini.form:256
+msgid "Bookmarks"
+msgstr ""
+
+#: f_launcher_mini.form:271
+msgid "shut down the system"
 msgstr ""
 
 #: f_launcher_mini.class:100

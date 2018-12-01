@@ -22,6 +22,7 @@
 ' Homepage: http://http://sourceforge.net/projects/innovadesktop
 ' This code belongs to Nagato Project and was adapted for Innova Project
 
+Private Const sIcons As String = "/usr/share/icons/" 
 Private Const HicolorIcons As String = "/usr/share/icons/hicolor/128x128/apps"
 Private Const PixmapIcons As String = "/usr/share/pixmaps"
 
@@ -43,7 +44,17 @@ End
 
 Private Function getIconPathFormDesktopFileData(argPath As String) As String
   
-  Dim sPath As String = PixmapIcons &/ File.BaseName(argPath) & ".png"
+  Dim sPath As String = PixmapIcons &/ File.BaseName(argPath) '& ".png"
+  Dim $Files As String[]
+  Dim sFiles As String
+  
+  '$Files = Dir(sPath, ".png")
+  '$Files.Insert(Dir(sPath, ".svg"))
+  '$Files.Insert(Dir(sPath, ".xpm"))
+  
+  ' For Each sFiles In $Files
+  '   sPath = PixmapIcons &/ File.BaseName(argPath) & sFiles '".svg"
+  ' Next
   
   If Exist(sPath) Then Return sPath
   If Exist(argPath) Then Return argPath
