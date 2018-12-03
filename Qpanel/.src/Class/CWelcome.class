@@ -94,7 +94,7 @@ Public Sub dwgWelcome_Draw()
     Paint.Begin($hText)
     Paint.Font = Font["+10.2,Bold"]
     Y = Paint.Font.Ascent
-    X = PaintText("EdulibreOS v9.0 ", 8, Y, Color.White) 'TEXT_COLOR)
+    X = PaintText("EdulibreOS v10.0 ", 8, Y, Color.White) 'TEXT_COLOR)
     
  
     

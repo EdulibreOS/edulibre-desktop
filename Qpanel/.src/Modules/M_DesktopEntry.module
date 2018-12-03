@@ -45,6 +45,16 @@ End
 Private Function getIconPathFormDesktopFileData(argPath As String) As String
   
   Dim sPath As String = PixmapIcons &/ File.BaseName(argPath) & ".png"
+  Dim $Files As String[]
+  Dim sFiles As String
+  
+  '$Files = Dir(sPath, ".png")
+  '$Files.Insert(Dir(sPath, ".svg"))
+  '$Files.Insert(Dir(sPath, ".xpm"))
+  
+  ' For Each sFiles In $Files
+  '   sPath = PixmapIcons &/ File.BaseName(argPath) & sFiles '".svg"
+  ' Next
   
   If Exist(sPath) Then Return sPath
   If Exist(argPath) Then Return argPath

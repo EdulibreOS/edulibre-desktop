@@ -2,8 +2,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: QLauncher 3.11.4\n"
-"PO-Revision-Date: 2018-10-17 18:38 UTC\n"
-"Last-Translator: edulibreos <edulibreos@edulibreos-OptiPlex-755>\n"
+"PO-Revision-Date: 2018-11-29 17:56 UTC\n"
+"Last-Translator: Herberth Guzman <herbethguzman@gmail.com>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -58,6 +58,10 @@ msgid "Utility"
 msgstr ""
 
 #: M_Core.module:58
+msgid "Apps"
+msgstr ""
+
+#: M_Core.module:58
 msgid "Preprimaria"
 msgstr ""
 
@@ -81,31 +85,31 @@ msgstr ""
 msgid "Seis Años"
 msgstr ""
 
-#: M_Core.module:65 f_launcher_cnb.class:3
+#: M_Core.module:65 f_launcher_cnb.class:7
 msgid "Primer Grado"
 msgstr ""
 
-#: M_Core.module:65 f_launcher_cnb.class:3
+#: M_Core.module:65 f_launcher_cnb.class:7
 msgid "Segundo Grado"
 msgstr ""
 
-#: M_Core.module:65 f_launcher_cnb.class:3
+#: M_Core.module:65 f_launcher_cnb.class:7
 msgid "Tercer Grado"
 msgstr ""
 
-#: M_Core.module:66 f_launcher_cnb.class:4
+#: M_Core.module:66 f_launcher_cnb.class:8
 msgid "Cuarto Grado"
 msgstr ""
 
-#: M_Core.module:66 f_launcher_cnb.class:4
+#: M_Core.module:66 f_launcher_cnb.class:8
 msgid "Quinto Grado"
 msgstr ""
 
-#: M_Core.module:66 f_launcher_cnb.class:4
+#: M_Core.module:66 f_launcher_cnb.class:8
 msgid "Sexto Grado"
 msgstr ""
 
-#: M_Core.module:69 f_launcher_cnb.class:6
+#: M_Core.module:69 f_launcher_cnb.class:10
 msgid "Comunicación y Lenguaje"
 msgstr ""
 
@@ -113,15 +117,15 @@ msgstr ""
 msgid "Destrezas de Aprendizaje"
 msgstr ""
 
-#: M_Core.module:69 f_launcher_cnb.class:6
+#: M_Core.module:69 f_launcher_cnb.class:10
 msgid "Educación Física"
 msgstr ""
 
-#: M_Core.module:69 f_launcher_cnb.class:6
+#: M_Core.module:69 f_launcher_cnb.class:10
 msgid "Expresión Artística"
 msgstr ""
 
-#: M_Core.module:69 f_launcher_cnb.class:6
+#: M_Core.module:69 f_launcher_cnb.class:10
 msgid "Medio Social y Natural"
 msgstr ""
 
@@ -129,11 +133,11 @@ msgstr ""
 msgid "Comunicación y Lenguaje L1"
 msgstr ""
 
-#: M_Core.module:70 f_launcher_cnb.class:6
+#: M_Core.module:70 f_launcher_cnb.class:10
 msgid "Formación Ciudadana"
 msgstr ""
 
-#: M_Core.module:70 f_launcher_cnb.class:6
+#: M_Core.module:70 f_launcher_cnb.class:10
 msgid "Matemáticas"
 msgstr ""
 
@@ -145,39 +149,47 @@ msgstr ""
 msgid "Comunicación y Lenguaje L3"
 msgstr ""
 
-#: M_Core.module:77 f_launcher_cnb.class:6
+#: M_Core.module:77 f_launcher_cnb.class:10
 msgid "Ciencias Naturales y Tecnología"
 msgstr ""
 
-#: M_Core.module:77 f_launcher_cnb.class:6
+#: M_Core.module:77 f_launcher_cnb.class:10
 msgid "Ciencias Sociales"
 msgstr ""
 
-#: M_Core.module:77 f_launcher_cnb.class:10
+#: M_Core.module:77 f_launcher_cnb.class:12
 msgid "Productividad y Desarrollo"
 msgstr ""
 
-#: M_Core.module:1261 f_launcher_mini.class:230
+#: M_Core.module:1267 f_launcher_mini.class:230
 msgid "Category: "
 msgstr "Categoria: "
 
-#: f_cnb_info.class:45
+#: M_DB.module:37
+msgid "Innova Desktop"
+msgstr ""
+
+#: M_Run.module:45
+msgid "yep"
+msgstr ""
+
+#: f_cnb_info.class:39
 msgid "Logo"
 msgstr ""
 
-#: f_cnb_info.class:46
+#: f_cnb_info.class:40
 msgid "Programa"
 msgstr ""
 
-#: f_cnb_info.class:47
+#: f_cnb_info.class:41
 msgid "Grado"
 msgstr ""
 
-#: f_cnb_info.class:48
+#: f_cnb_info.class:42
 msgid "Materia"
 msgstr ""
 
-#: f_cnb_info.form:40 f_launcher_cnb.form:290
+#: f_cnb_info.form:40 f_launcher_cnb.form:310
 msgid "Información"
 msgstr ""
 
@@ -197,63 +209,79 @@ msgstr ""
 msgid "Delete Bookmark"
 msgstr "Eliminar Favoritos"
 
-#: f_launcher.form:79 f_launcher_cnb.form:77 f_launcher_mini.form:61
+#: f_launcher.form:79 f_launcher_cnb.form:79 f_launcher_mini.form:61
 msgid "mnuLauncher"
 msgstr ""
 
-#: f_launcher.form:83 f_launcher_cnb.form:81 f_launcher_mini.form:65
+#: f_launcher.form:83 f_launcher_cnb.form:83 f_launcher_mini.form:65
 msgid "Open"
 msgstr "Abrir"
 
-#: f_launcher.form:94 f_launcher_cnb.form:92 f_launcher_mini.form:73
+#: f_launcher.form:94 f_launcher_cnb.form:94 f_launcher_mini.form:73
 msgid "Add to Desktop"
 msgstr "Agregar a Escritorio"
 
-#: f_launcher.form:100 f_launcher_cnb.form:98 f_launcher_mini.form:78
+#: f_launcher.form:100 f_launcher_cnb.form:100 f_launcher_mini.form:78
 msgid "Add to Panel"
 msgstr "Agregar a Panel"
 
-#: f_launcher.form:106 f_launcher_cnb.form:105 f_launcher_mini.form:83
+#: f_launcher.form:106 f_launcher_cnb.form:107 f_launcher_mini.form:83
 msgid "Add to Bookmark"
 msgstr "Agregar a Favoritos"
 
-#: f_launcher.form:354
-msgid "test"
-msgstr ""
+#: f_launcher.form:146 f_launcher_mini.form:256
+msgid "Bookmarks"
+msgstr "Favoritos"
 
-#: f_launcher_cnb.class:6
-msgid "Productividad y Desarrollo "
-msgstr ""
+#: f_launcher.form:199 f_launcher_mini.form:271
+msgid "shut down the system"
+msgstr "Apagar el sistema"
 
-#: f_launcher_cnb.form:114
-msgid "Información de la aplicación"
-msgstr ""
-
-#: f_launcher_cnb.form:119
-msgid "Ayuda de la aplicación CNB"
-msgstr ""
-
-#: f_launcher_cnb.form:164 f_style_launcher.form:37
+#: f_launcher.form:255 f_launcher_cnb.form:176 f_launcher_mini.form:240 f_style_launcher.form:37
 msgid "Style Launcher"
 msgstr "Estilo del Launcher"
 
-#: f_launcher_cnb.form:232
+#: f_launcher.form:269
+msgid "Configure the system"
+msgstr "Configurar el sistema"
+
+#: f_launcher.form:359
+msgid "test"
+msgstr ""
+
+#: f_launcher_cnb.class:10
+msgid "Productividad y Desarrollo "
+msgstr ""
+
+#: f_launcher_cnb.form:116
+msgid "Information"
+msgstr "Información"
+
+#: f_launcher_cnb.form:122
+msgid "Help CNB"
+msgstr "Ayuda CNB"
+
+#: f_launcher_cnb.form:168
+msgid "Centro de Ayuda Pedagógica"
+msgstr ""
+
+#: f_launcher_cnb.form:244
 msgid "Nivel"
 msgstr ""
 
-#: f_launcher_cnb.form:328
+#: f_launcher_cnb.form:349
 msgid "Area"
 msgstr ""
 
-#: f_launcher_cnb.form:364
+#: f_launcher_cnb.form:385
 msgid "Mostrar Información de la Aplicacion"
 msgstr ""
 
-#: f_launcher_cnb.form:458
+#: f_launcher_cnb.form:479
 msgid "Aplicaciones"
 msgstr ""
 
-#: f_launcher_cnb.form:514
+#: f_launcher_cnb.form:534
 msgid "User"
 msgstr "Usuario"
 
@@ -285,12 +313,20 @@ msgstr "Imagen SVG"
 msgid "Show Categories"
 msgstr "Mostrar Categorias"
 
-#: f_launcher_mini.form:210
+#: f_launcher_mini.form:130
+msgid "Expand"
+msgstr "Expandir"
+
+#: f_launcher_mini.form:212
 msgid "Change Image"
 msgstr "Cambiar Imagen"
 
-#: f_launcher_mini.form:219
+#: f_launcher_mini.form:221
 msgid "usuario"
+msgstr ""
+
+#: f_launcher_mini.form:248
+msgid "configure the system"
 msgstr ""
 
 #: f_power.form:42 f_style_launcher.form:71

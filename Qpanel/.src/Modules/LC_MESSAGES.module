@@ -29,7 +29,7 @@ Public Const MSG_ERR_REC As String = ("Error processing the system information")
 Public Const MSG_ERR_WINMAN As String = ("You must select valid windows manager")
 Public Const MSG_ERR_IMAGE As String = ("Format not valid")
 Public Const MSG_ERR_DEL_ITEMS As String = ("No item selected to remove")
-
+Public Const MSG_ERR_CP_ITEMS As String = ("It is not possible to copy file in the same directory")
 'Public Const MSG_ERR_CREATE_DIR As String = ("Cannot create directory.")
 
 Public Const MSG_INF_INN_EJECT As String = ("Innova Desktop in execution...")

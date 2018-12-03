@@ -96,8 +96,7 @@ Public Sub dwgWelcome_Draw()
     Y = Paint.Font.Ascent
     X = PaintText("EdulibreOS v9.0 ", 8, Y, Color.White) 'TEXT_COLOR)
     
-    'Paint.Font = Font["+12,Bold"]
-    'PaintText(Project.FullVersionWithRevision, X + 8, Paint.Font.Ascent, Color.White) 'Color.SelectedForeground)
+ 
     
     Paint.Font = Font["+4,Bold"]
     Y += Paint.Font.Height
@@ -105,7 +104,7 @@ Public Sub dwgWelcome_Draw()
     
     Paint.Font = Font["Italic,Bold"]
     Y += Paint.Font.Height + 16
-    'PaintText(("This program is published under the GNU General Public License.") & "\n" & ("The Gambas font is published under the SIL Open Font License."), 12, Y, Color.SelectedForeground)
+   
     PaintText(("This operating system EdulibreOS ") & "\n" & ("Is published under the GNU General Public License."), 12, Y, Color.SelectedForeground)
     Paint.End
     

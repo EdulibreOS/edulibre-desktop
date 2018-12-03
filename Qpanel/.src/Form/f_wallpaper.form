@@ -20,9 +20,11 @@
       Picture = Picture["icon:/small/open"]
     }
     { mnuOpenwith Menu
-      Text = ("Open with")
+      Text = ("Choose an application")
+      Visible = False
       { mnuSelectApps Menu
         Text = ("Select aplication")
+        Visible = False
       }
     }
     { Menu5 Menu
@@ -126,8 +128,20 @@
     { mnusort Menu
       Text = ("Sort by File")
       { mnuAscending Menu
-        Text = ("Ascending")
-        Toggle = True
+        Text = ("Ascending (A - Z)")
+        Radio = True
+      }
+      { mnuDescending Menu
+        Text = ("Descending (Z - A)")
+        Radio = True
+      }
+      { mnuName Menu
+        Text = ("Name")
+        Radio = True
+      }
+      { mnuType Menu
+        Text = ("Type")
+        Radio = True
       }
     }
     { Menu6 Menu
@@ -142,6 +156,7 @@
     { mnuProperties Menu
       Text = ("Properties")
       Picture = Picture["icon:/small/properties"]
+      Visible = False
     }
     { Menu11 Menu
     }
@@ -207,19 +222,16 @@
   { img_Fondo PictureBox
     MoveScaled(0,0,16,16)
     Expand = True
-    Stretch = True
     AutoResize = True
+    Stretch = True
     Alignment = Align.Center
-  }
-  { TimerWallRand #Timer
-    #MoveScaled(129,47)
-    Delay = 0
   }
   { panView Panel
     MoveScaled(3,1,115,85.7143)
     Arrangement = Arrange.Fill
     { ivwDesktop IconView
       MoveScaled(24,13,44,40)
+      Tracking = True
       Mouse = Mouse.Pointing
       Drop = True
       Expand = True

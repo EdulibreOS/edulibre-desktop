@@ -72,35 +72,9 @@ Public Sub Init_03()
     If sResult = "Mini" Then
       f_launcher_mini.Visible = If(f_launcher_mini.Visible = 0, 1, 0)  
     Else If sResult = "CNB" Then
-      f_launcher_cnb_mini.Visible = If(f_launcher_cnb_mini.Visible = 0, 1, 0)  
+      f_launcher_cnb.Visible = If(f_launcher_cnb.Visible = 0, 1, 0)  
     Endif
     
-  Endif
-  
-End
-
-Public Sub Init_03001()
-  
-  Dim sResult As String 
-  'Dim iShow As Integer
-  'Application.Env["APPMENU_DISPLAY_BOTH"] = "1"
-  
-  'f_launcher.Show
-  
-  Try sResult = Settings_Core_Innova["Launcher/Style_Launcher"]
-  ' Try iShow = Settings_Core_Innova["Launcher/Show"]
-  
-  Wait 0.2
-  If sResult = "Mini" Then
-    f_launcher_mini.Show
-  Endif
-  
-  If sResult = "Tablet" Then
-    f_launcher.Show
-  Endif
-  
-  If sResult = "CNB" Then
-    f_launcher_cnb_mini.Show
   Endif
   
 End

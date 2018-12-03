@@ -53,7 +53,7 @@
       MoveScaled(1,0,3,3)
       Mouse = Mouse.Pointing
       ToolTip = ("Show Categories")
-      Picture = Picture["img/all_view.png"]
+      Picture = Picture["img/cnb/All.png"]
       Stretch = True
     }
     { Panel3 Panel
@@ -76,8 +76,10 @@
     }
     { picExpand PictureBox
       MoveScaled(79,0,3,3)
+      Visible = False
       Mouse = Mouse.Pointing
-      Picture = Picture["img/expand.png"]
+      ToolTip = ("Expand")
+      Picture = Picture["img/cnb/Expand.png"]
       Stretch = True
     }
   }
@@ -102,6 +104,7 @@
       }
       { IconViewCat ListView
         MoveScaled(3,17,16,6)
+        Mouse = Mouse.Pointing
         Expand = True
         Sorted = True
         Border = False
@@ -171,19 +174,22 @@
     { picLaunch PictureBox
       MoveScaled(32,0,4,4)
       Mouse = Mouse.Pointing
-      Picture = Picture["img/launch.png"]
+      ToolTip = ("Style Launcher")
+      Picture = Picture["img/cnb/Launch.png"]
       Stretch = True
     }
     { picSys PictureBox
       MoveScaled(38,0,4,4)
       Mouse = Mouse.Pointing
-      Picture = Picture["img/settings.png"]
+      ToolTip = ("Configure system")
+      Picture = Picture["img/cnb/Settings.png"]
       Stretch = True
     }
     { picBook PictureBox
       MoveScaled(44,0,4,4)
       Mouse = Mouse.Pointing
-      Picture = Picture["img/book.png"]
+      ToolTip = ("Bookmarks")
+      Picture = Picture["img/cnb/Book.png"]
       Stretch = True
     }
     { Panel11 Panel
@@ -195,7 +201,8 @@
     { picPower PictureBox
       MoveScaled(76,0,4,4)
       Mouse = Mouse.Pointing
-      Picture = Picture["img/shutdown/shutdown_logo.png"]
+      ToolTip = ("shut down the system")
+      Picture = Picture["img/cnb/Shutdown.png"]
       Stretch = True
     }
   }

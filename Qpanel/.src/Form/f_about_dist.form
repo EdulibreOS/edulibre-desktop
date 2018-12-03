@@ -26,7 +26,7 @@
     { lblFramework Label
       MoveScaled(13,6,41,4)
       Foreground = &H042C37&
-      Text = ("Version 9.0")
+      Text = ("Version 10.0")
     }
   }
   { picLogo3 PictureBox
@@ -73,7 +73,7 @@
     { lblVersion Label
       MoveScaled(1,4,14,4)
       Font = Font["Bold"]
-      Text = ("v 9.0")
+      Text = ("v 10.0")
       Alignment = Align.Left
     }
     { URLLabel1 URLLabel

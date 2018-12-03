@@ -28,6 +28,7 @@ Public rs As Result
 Public Settings_Core_Innova As New Settings(Desktop.ConfigDir &/ "Innova/Innova_Config.conf")
 Public Settings_Core_Innova_Usr As New Settings("/usr/share/Innova/Innova_Config.conf")
 Private iResult As Integer
+Public hTaskList As HSplit
 
 Public Sub Init_00()
   
@@ -41,8 +42,6 @@ Public Sub Init_00()
   Try sResult2 = Settings_Core_Innova_Usr["Innova/Version"]
   
   If (sResult1 = sResult2) Then
-    Print sResult1 
-    Print sResult2
     Init_01
   Else
     Shell "rm -r " & sSend &/ "Innova"
@@ -94,11 +93,14 @@ Public Sub Init_03()
   
   Dim sExec As String
   
+  hTaskList = New HTaskList(f_panel.pltask) As "PanelTaskList1"
+  hTaskList.Expand = 1
+  hTaskList.Spacing = 1
+  hTaskList.Background = Color.Blue  
   f_panel.Show
   
   Wait 0.2
   f_wallpaper.Show
-  X11.SetWindowProperty(f_wallpaper.Id, Atom["_NET_WM_STATE"], Atom["ATOM"], Atom[" _NET_WM_STATE_BELOW"])
   X11.SetWindowProperty(f_wallpaper.Id, Atom["_NET_WM_WINDOW_TYPE"], Atom["ATOM"], Atom["_NET_WM_WINDOW_TYPE_DESKTOP"])
   
   Wait 0.2

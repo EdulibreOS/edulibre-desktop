@@ -37,10 +37,8 @@ Public Sub Day_Name()
   dDateM = Format(Date(Now), "mmmm")
   dDateY = Format(Date(Now), "yyyy")
   
-  ''lbldate.Text = String.UCaseFirst(dDateM) & " " & dDateD & " " & dDateY
   lbldate.Text = String.UCaseFirst(dDateD) & " " & dDatem & ", " & dDateY
   lblday.Text = String.UCaseFirst(dDate) 
-  ''lblnumday.Text = ("Week ") & Format(Week(DateChooserTask.Value))
   
 End
 
@@ -53,22 +51,14 @@ Public Sub Form_Open()
   
   DateChooserTask.Background = Color.White
   DateChooserTask.Foreground = Color.red
-  'iShow = True
   M_Core.iShow = True
   
 End
 
 Public Sub DateChooserTask_Change()
   
-  'Dim sMsg As String
-  
-  'sMsg = ("Week ") & Format(Week(DateChooserTask.Value))
   lblweek.Text = ("Week ") & Format(Week(DateChooserTask.Value))
-  'iShow = True 
   M_Core.iShow = True
-  ''Balloon.Info(sMsg, DateChooserTask)
-  
-  'Balloon.Warning(sMsg, DateChooserTask, DateChooserTask.X + Min(32 + Desktop.Scale * 8, DateChooserTask.W) / 2, DateChooserTask.Y + DateChooserTask.H / 2)
   
 End
 
@@ -77,22 +67,8 @@ Public Sub Form_KeyPress()
   If (Key.Code = Key.Esc) Then 
     Me.Hide
   Endif
-  
-End
+  M_Core.iShow = False
 
-Public Sub Form_Leave()
-  
-  ' If m_core.iShow = True Then
-  '   f_date.show
-  ' Endif
-  
-  ' If m_core.iShow = False Then
-  '   f_date.Close
-  ' Endif
-  'm_core.iShow = False
-  
-  'Me.Close(False)
-  
 End
 
 Public Sub panDateChooser_MouseDown()
@@ -111,15 +87,5 @@ Public Sub Form_Deactivate()
     f_date.Close
   Endif
   M_Core.iShow = False
-  
-End
-
-Public Sub DateChooserTask_Activate()
-  
-  ' M_Core.iShow = True
-  
-End
-
-Public Sub panDate_MouseDown()
   
 End

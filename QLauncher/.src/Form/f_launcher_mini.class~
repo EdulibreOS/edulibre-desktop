@@ -127,6 +127,7 @@ End
 
 Public Sub picPower_MouseDown()
   
+  Me.Close
   f_power.ShowModal
   
 End
@@ -358,11 +359,6 @@ End
 
 Public Sub picSettings_MouseDown()
   
-  ' If PanelCat.Visible = True Then
-  '   PanelCat.Visible = False
-  ' Else
-  '   PanelCat.Visible = True
-  'Endif
   PanelCat.Visible = If(PanelCat.Visible = 0, 1, 0)  
   
 End
@@ -447,13 +443,13 @@ Public Sub IconViewApp_Menu()
   
   'sDel = Last.tag
   
-  M_Core.iShow = True
+  ' M_Core.iShow = True
   
-  If (InStr(IconViewApp.Item.Key, ".desktop")) Then
-    mnuDel_Bookmark.Popup()
-  Else
-    mnuApps.Popup
-  Endif
+  '  If (InStr(IconViewApp.Item.Key, ".desktop")) Then
+  '    mnuDel_Bookmark.Popup()
+  '  Else
+  '    mnuApps.Popup
+  '  Endif
   
 End
 
@@ -503,12 +499,41 @@ End
 
 Public Sub picSys_MouseDown()
   
-  Shell User.Home &/ "QSettings.gambas"
-  
 End
 
 Public Sub IconViewApp_Click()
   
   IconViewApp_DblClick
+  
+End
+
+Public Sub picLaunch_Enter()
+  
+  picLaunch.Border = Border.Plain
+  
+End
+
+Public Sub picSys_Leave()
+  
+  picSys.Border = Border.None
+  
+End
+
+Public Sub picLaunch_Leave()
+  
+  picLaunch.Border = Border.None
+  
+End
+
+Public Sub picSys_Enter()
+  
+  picSys.Border = Border.Plain
+  
+End
+
+Public Sub picSys_MouseDown()
+  
+  'Shell User.Home &/ "QSettings.gambas"
+  Shell "/usr/bin/qsettings"
   
 End

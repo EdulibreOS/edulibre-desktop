@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-10-29 00:17 UTC\n"
+"POT-Creation-Date: 2018-12-01 13:54 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -38,7 +38,23 @@ msgstr ""
 msgid "Add to Bookmark"
 msgstr ""
 
-#: f_launcher.form:355
+#: f_launcher.form:146
+msgid "Bookmarks"
+msgstr ""
+
+#: f_launcher.form:199
+msgid "shut down the system"
+msgstr ""
+
+#: f_launcher.form:255
+msgid "Style Launcher"
+msgstr ""
+
+#: f_launcher.form:269
+msgid "Configure the system"
+msgstr ""
+
+#: f_launcher.form:359
 msgid "test"
 msgstr ""
 

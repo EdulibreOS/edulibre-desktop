@@ -364,8 +364,8 @@ End
 
 Public Sub Form_Show()
   
-  txtnameapp.Foreground = Color.White
-  txtlabelInfo.Foreground = Color.White  
+  ' txtnameapp.Foreground = Color.White
+  'txtlabelInfo.Foreground = Color.White  
   
   Settings_Core_Innova.Write(f_launcher)
   Settings_Core_Innova["Launcher/iShow"] = "1"
@@ -476,7 +476,8 @@ End
 Public Sub picSettings_MouseDown()
   
   'Shell User.Home &/ "QSettings.gambas"
-  Shell "/usr/bin/QSettings.gambas"
+  'Shell "/usr/bin/QSettings.gambas"
+  Shell "/usr/bin/qsettings"
   
 End
 

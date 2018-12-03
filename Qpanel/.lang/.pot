@@ -3,205 +3,205 @@ msgid ""
 msgstr ""
 "#-#-#-#-#  #project.pot (Qpanel 3.11.4)  #-#-#-#-#\n"
 "Project-Id-Version: Qpanel 3.11.4\n"
-"POT-Creation-Date: 2018-10-30 23:16 UTC\n"
+"POT-Creation-Date: 2018-12-01 13:53 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  Atom.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-10-30 23:16 UTC\n"
+"POT-Creation-Date: 2018-12-01 13:52 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  CAbout.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-10-30 23:16 UTC\n"
+"POT-Creation-Date: 2018-12-01 13:52 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  CAnimation.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-10-30 23:16 UTC\n"
+"POT-Creation-Date: 2018-12-01 13:52 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  CButton.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-10-30 23:16 UTC\n"
+"POT-Creation-Date: 2018-12-01 13:52 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  CCat.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-10-30 23:16 UTC\n"
+"POT-Creation-Date: 2018-12-01 13:52 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  CWelcome.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-10-30 23:16 UTC\n"
+"POT-Creation-Date: 2018-12-01 13:52 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  Cls_Start.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-10-30 23:16 UTC\n"
+"POT-Creation-Date: 2018-12-01 13:52 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  DesktopApps.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-10-30 23:16 UTC\n"
+"POT-Creation-Date: 2018-12-01 13:52 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  DesktopAppsCat.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-10-30 23:16 UTC\n"
+"POT-Creation-Date: 2018-12-01 13:52 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  DesktopApps_Desk.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-10-30 23:16 UTC\n"
+"POT-Creation-Date: 2018-12-01 13:52 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  LC_MESSAGES.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-10-30 23:16 UTC\n"
+"POT-Creation-Date: 2018-12-01 13:52 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  M_Core.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-10-30 23:16 UTC\n"
+"POT-Creation-Date: 2018-12-01 13:52 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  M_DB.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-10-30 23:16 UTC\n"
+"POT-Creation-Date: 2018-12-01 13:52 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  M_DesktopEntry.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-10-30 23:16 UTC\n"
+"POT-Creation-Date: 2018-12-01 13:52 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  M_Init.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-10-30 23:16 UTC\n"
+"POT-Creation-Date: 2018-12-01 13:52 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  M_OBS_Global.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-10-30 23:16 UTC\n"
+"POT-Creation-Date: 2018-12-01 13:52 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  M_Theme.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-10-30 23:16 UTC\n"
+"POT-Creation-Date: 2018-12-01 13:52 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  M_Var_Global.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-10-30 23:16 UTC\n"
+"POT-Creation-Date: 2018-12-01 13:52 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  PushButton.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-10-30 23:16 UTC\n"
+"POT-Creation-Date: 2018-12-01 13:52 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  f_about.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-10-30 23:16 UTC\n"
+"POT-Creation-Date: 2018-12-01 13:52 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  f_about_dist.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-10-30 23:16 UTC\n"
+"POT-Creation-Date: 2018-12-01 13:52 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  f_compress.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-10-30 23:16 UTC\n"
+"POT-Creation-Date: 2018-12-01 13:52 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  f_conf_wallpaper.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-10-30 23:16 UTC\n"
+"POT-Creation-Date: 2018-12-01 13:52 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  f_date.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-10-30 23:16 UTC\n"
+"POT-Creation-Date: 2018-12-01 13:52 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  f_gallery_wallpaper.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-10-30 23:16 UTC\n"
+"POT-Creation-Date: 2018-12-01 13:52 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  f_panel.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-10-30 23:16 UTC\n"
+"POT-Creation-Date: 2018-12-01 13:52 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  f_popup.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-10-30 23:16 UTC\n"
+"POT-Creation-Date: 2018-12-01 13:52 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  f_progressbar.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-10-30 23:16 UTC\n"
+"POT-Creation-Date: 2018-12-01 13:52 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  f_properties.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-10-30 23:16 UTC\n"
+"POT-Creation-Date: 2018-12-01 13:52 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  f_properties_mixed.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-10-30 23:16 UTC\n"
+"POT-Creation-Date: 2018-12-01 13:52 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  f_screeshot.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-10-30 23:16 UTC\n"
+"POT-Creation-Date: 2018-12-01 13:52 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  f_splash.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-10-30 23:16 UTC\n"
+"POT-Creation-Date: 2018-12-01 13:52 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  f_wallpaper.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2018-10-30 23:16 UTC\n"
+"POT-Creation-Date: 2018-12-01 13:52 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -250,6 +250,10 @@ msgstr ""
 msgid "No item selected to remove"
 msgstr ""
 
+#: LC_MESSAGES.module:32
+msgid "It is not possible to copy file in the same directory"
+msgstr ""
+
 #: LC_MESSAGES.module:35
 msgid "Innova Desktop in execution..."
 msgstr ""
@@ -296,7 +300,7 @@ msgstr ""
 msgid "¿Want to delete the select splash?"
 msgstr ""
 
-#: LC_MESSAGES.module:47 f_wallpaper.class:361
+#: LC_MESSAGES.module:47 f_wallpaper.class:413
 msgid "Enter a Name..."
 msgstr ""
 
@@ -327,6 +331,11 @@ msgid ""
 "Mode random background screen, <br> you can not select new background..."
 msgstr ""
 
+#: M_DB.module:39 f_about.form:99 f_conf_wallpaper.class:67
+#: f_wallpaper.class:405
+msgid "Innova Desktop"
+msgstr ""
+
 #: f_about.class:25
 msgid "Stable"
 msgstr ""
@@ -344,17 +353,13 @@ msgid "Framework Version 3.10"
 msgstr ""
 
 #: f_about.form:84 f_about_dist.form:83 f_compress.form:66
-#: f_conf_wallpaper.form:77 f_gallery_wallpaper.form:55 f_panel.form:56
-#: f_properties.form:27 f_properties_mixed.form:129 f_wallpaper.form:175
+#: f_conf_wallpaper.form:77 f_gallery_wallpaper.form:55 f_panel.form:58
+#: f_properties.form:27 f_properties_mixed.form:129 f_wallpaper.form:179
 msgid "Close"
 msgstr ""
 
 #: f_about.form:94 f_about_dist.form:96
 msgid "About"
-msgstr ""
-
-#: f_about.form:99
-msgid "Innova Desktop"
 msgstr ""
 
 #: f_about.form:105
@@ -424,7 +429,7 @@ msgstr ""
 msgid "Thanks"
 msgstr ""
 
-#: f_about.form:208 f_wallpaper.class:103
+#: f_about.form:208 f_wallpaper.class:157
 msgid "System"
 msgstr ""
 
@@ -441,7 +446,7 @@ msgid "EdulibreOS"
 msgstr ""
 
 #: f_about_dist.form:59
-msgid "Version 9.0"
+msgid "Version 10.0"
 msgstr ""
 
 #: f_about_dist.form:107
@@ -449,7 +454,7 @@ msgid "Copyright (C) 2008-2018"
 msgstr ""
 
 #: f_about_dist.form:114
-msgid "v 9.0"
+msgid "v 10.0"
 msgstr ""
 
 #: f_about_dist.form:127
@@ -471,7 +476,7 @@ msgstr ""
 msgid "Donations"
 msgstr ""
 
-#: f_about_dist.class:77
+#: f_about_dist.class:77 f_wallpaper.form:235
 msgid "Name"
 msgstr ""
 
@@ -499,7 +504,7 @@ msgstr ""
 msgid "Change wallpaper"
 msgstr ""
 
-#: f_conf_wallpaper.form:71 f_gallery_wallpaper.form:48 f_wallpaper.class:361
+#: f_conf_wallpaper.form:71 f_gallery_wallpaper.form:48 f_wallpaper.class:413
 msgid "Ok"
 msgstr ""
 
@@ -511,27 +516,15 @@ msgstr ""
 msgid "Image Archive"
 msgstr ""
 
-#: f_conf_wallpaper.class:57
-msgid "Image PNG"
+#: f_conf_wallpaper.class:58
+msgid "Picture files"
 msgstr ""
 
-#: f_conf_wallpaper.class:57
-msgid "Image JPG"
+#: f_conf_wallpaper.class:58
+msgid "Drawing files"
 msgstr ""
 
-#: f_conf_wallpaper.class:57
-msgid "Image JPEG"
-msgstr ""
-
-#: f_conf_wallpaper.class:57
-msgid "Image SVG"
-msgstr ""
-
-#: f_conf_wallpaper.class:57
-msgid "Image BMP of Windows"
-msgstr ""
-
-#: f_date.class:51
+#: f_date.class:50
 msgid "Week "
 msgstr ""
 
@@ -555,31 +548,31 @@ msgstr ""
 msgid "Get New Wallpaper"
 msgstr ""
 
-#: f_panel.form:44
+#: f_panel.form:46
 msgid "Main"
 msgstr ""
 
-#: f_panel.form:48
+#: f_panel.form:50
 msgid "Maximized"
 msgstr ""
 
-#: f_panel.form:52
+#: f_panel.form:54
 msgid "Minimized"
 msgstr ""
 
-#: f_panel.form:62
+#: f_panel.form:64
 msgid "Menu1"
 msgstr ""
 
-#: f_panel.form:66
+#: f_panel.form:68
 msgid "Delete Apps"
 msgstr ""
 
-#: f_panel.form:86
+#: f_panel.form:88
 msgid "Launcher"
 msgstr ""
 
-#: f_panel.form:189
+#: f_panel.form:207
 msgid "Show Desktop"
 msgstr ""
 
@@ -615,178 +608,190 @@ msgstr ""
 msgid "Size:"
 msgstr ""
 
-#: f_wallpaper.form:76
+#: f_wallpaper.form:78
 msgid "mnuPopup"
 msgstr ""
 
-#: f_wallpaper.form:80
+#: f_wallpaper.form:82
 msgid "Open"
 msgstr ""
 
-#: f_wallpaper.form:85
-msgid "Open with"
+#: f_wallpaper.form:87
+msgid "Choose an application"
 msgstr ""
 
-#: f_wallpaper.form:88
+#: f_wallpaper.form:91
 msgid "Select aplication"
 msgstr ""
 
-#: f_wallpaper.form:96
+#: f_wallpaper.form:100
 msgid "Cut"
 msgstr ""
 
-#: f_wallpaper.form:103
+#: f_wallpaper.form:107
 msgid "Copy"
 msgstr ""
 
-#: f_wallpaper.form:112
+#: f_wallpaper.form:116
 msgid "Delete"
 msgstr ""
 
-#: f_wallpaper.form:118
+#: f_wallpaper.form:122
 msgid "Move to Trash"
 msgstr ""
 
-#: f_wallpaper.form:126
+#: f_wallpaper.form:130
 msgid "Rename"
 msgstr ""
 
-#: f_wallpaper.form:135
+#: f_wallpaper.form:139
 msgid "Create Link"
 msgstr ""
 
-#: f_wallpaper.form:144
+#: f_wallpaper.form:148
 msgid "Refresh"
 msgstr ""
 
-#: f_wallpaper.form:153
+#: f_wallpaper.form:157
 msgid "Compress"
 msgstr ""
 
-#: f_wallpaper.form:158
+#: f_wallpaper.form:162
 msgid "Uncompress"
 msgstr ""
 
-#: f_wallpaper.form:167
+#: f_wallpaper.form:171
 msgid "Properties"
 msgstr ""
 
-#: f_wallpaper.form:182
+#: f_wallpaper.form:186
 msgid "mnuPopup2"
 msgstr ""
 
-#: f_wallpaper.form:186
+#: f_wallpaper.form:190
 msgid "File"
 msgstr ""
 
-#: f_wallpaper.form:189
+#: f_wallpaper.form:193
 msgid "New Folder"
 msgstr ""
 
-#: f_wallpaper.form:194
+#: f_wallpaper.form:198
 msgid "New File"
 msgstr ""
 
-#: f_wallpaper.form:203
+#: f_wallpaper.form:207
 msgid "Paste"
 msgstr ""
 
-#: f_wallpaper.form:209
+#: f_wallpaper.form:213
 msgid "Select All"
 msgstr ""
 
-#: f_wallpaper.form:218
+#: f_wallpaper.form:222
 msgid "Sort by File"
 msgstr ""
 
-#: f_wallpaper.form:221
-msgid "Ascending"
+#: f_wallpaper.form:225
+msgid "Ascending (A - Z)"
 msgstr ""
 
-#: f_wallpaper.form:256
+#: f_wallpaper.form:230
+msgid "Descending (Z - A)"
+msgstr ""
+
+#: f_wallpaper.form:240
+msgid "Type"
+msgstr ""
+
+#: f_wallpaper.form:276
 msgid "About Innova Desktop"
 msgstr ""
 
-#: f_wallpaper.form:263
+#: f_wallpaper.form:283
 msgid "Menu_Principal"
 msgstr ""
 
-#: f_wallpaper.form:267
+#: f_wallpaper.form:287
 msgid "Open Home"
 msgstr ""
 
-#: f_wallpaper.form:277
+#: f_wallpaper.form:297
 msgid "Pc Info"
 msgstr ""
 
-#: f_wallpaper.form:282
+#: f_wallpaper.form:302
 msgid "Control Center"
 msgstr ""
 
-#: f_wallpaper.form:288
+#: f_wallpaper.form:308
 msgid "Innova Settings"
 msgstr ""
 
-#: f_wallpaper.form:293
+#: f_wallpaper.form:313
 msgid "Widgets"
 msgstr ""
 
-#: f_wallpaper.form:302
+#: f_wallpaper.form:322
 msgid "Change Wallpaper"
 msgstr ""
 
-#: f_wallpaper.form:310
+#: f_wallpaper.form:330
 msgid "About EdulibreOS"
 msgstr ""
 
-#: f_wallpaper.class:108
+#: f_wallpaper.class:162
 msgid "Trash"
 msgstr ""
 
-#: f_wallpaper.class:361
+#: f_wallpaper.class:413
 msgid "Cancelar"
 msgstr ""
 
-#: f_wallpaper.class:374
+#: f_wallpaper.class:426
 msgid "Cannot create directory."
 msgstr ""
 
-#: f_wallpaper.class:638
-msgid "trash:/"
-msgstr ""
-
-#: f_wallpaper.class:641
-msgid "trash:///"
-msgstr ""
-
-#: f_wallpaper.class:681
+#: f_wallpaper.class:461
 msgid "Multiple Files"
 msgstr ""
 
-#: f_wallpaper.class:682
+#: f_wallpaper.class:462
 msgid "Files of different types"
 msgstr ""
 
-#: f_wallpaper.class:847
+#: f_wallpaper.class:618
+msgid "trash:/"
+msgstr ""
+
+#: f_wallpaper.class:621
+msgid "trash:///"
+msgstr ""
+
+#: f_wallpaper.class:679
 msgid "&Yes"
 msgstr ""
 
-#: f_wallpaper.class:847
+#: f_wallpaper.class:679
 msgid "&No"
 msgstr ""
 
-#: f_wallpaper.class:1267
+#: f_wallpaper.class:1127
+msgid "Innova Desktop - Copy File"
+msgstr ""
+
+#: f_wallpaper.class:1145
 msgid "Copying "
 msgstr ""
 
-#: f_wallpaper.class:1267
+#: f_wallpaper.class:1145
 msgid " Items "
 msgstr ""
 
-#: f_wallpaper.class:1268
+#: f_wallpaper.class:1146
 msgid " To "
 msgstr ""
 
-#: f_wallpaper.class:1298
+#: f_wallpaper.class:1174
 msgid "An unknown error has occurred."
 msgstr ""

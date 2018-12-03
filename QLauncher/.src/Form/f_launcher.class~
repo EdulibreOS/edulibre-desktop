@@ -276,8 +276,8 @@ End
 Public Sub mnuOpen_Click()
   
   DesktopApps[M_Core.sAppsExec].Exec
- ' DesktopApps[Last.Tag].Exec_()
-
+  ' DesktopApps[Last.Tag].Exec_()
+  
 End
 
 Public Sub Form_Resize()
@@ -364,8 +364,8 @@ End
 
 Public Sub Form_Show()
   
-  txtnameapp.Foreground = Color.White
-  txtlabelInfo.Foreground = Color.White  
+  ' txtnameapp.Foreground = Color.White
+  'txtlabelInfo.Foreground = Color.White  
   
   Settings_Core_Innova.Write(f_launcher)
   Settings_Core_Innova["Launcher/iShow"] = "1"
@@ -461,7 +461,7 @@ End
 
 Public Sub picLaunch_MouseDown()
   
-  f_style_launcher.Show
+  f_style_launcher.ShowModal
   
 End
 

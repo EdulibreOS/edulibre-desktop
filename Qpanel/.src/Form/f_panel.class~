@@ -29,8 +29,10 @@ Private iSizePanel As Integer ' = 42
 Private sDir_Apps As String 
 Private sFile_Apps As String
 Private hToggleTask As ToolButton
-''Private hToggleTask As CButton
+Private hToggleTaskInit As ToolButton
 Private hToggleTaskW As Integer
+
+Private hTaskList As Panel
 
 Private hCButton_App_Default As CButton
 Private hCButton_App_Bookmarks As CButton
@@ -103,6 +105,16 @@ Public Sub _new()
   M_Theme.Show_Theme
   Me.TopOnly = True
   $hWatcher = New DesktopWatcher(True) As "MyDTWatcher"
+  
+  hTaskList = New Panel(pltask) As "hTaskList"
+  hTaskList.H = 28
+  hTaskList.w = 50
+  'hTaskList.Background = Color.Gray
+  hTaskList.Expand = True
+  hTaskList.Spacing = True
+  
+  hTaskList.Arrangement = Arrange.Horizontal
+  hTaskList.Visible = True
   
 End
 
@@ -205,7 +217,7 @@ Public Sub App_Default(Optional sFilter As String)
   hCButton_Home.w = iSize 
   hCButton_Home.h = iSize 
   hCButton_Home.Mouse = 13
-  hCButton_Home.Image = Picture["icon:/48/home"].Image
+  hCButton_Home.Image = Picture["icon:/48/directory"].Image
   
   For Each sFile_Apps In Dir(sDir_Apps, "*.desktop").Sort(gb.IgnoreCase)
     DesktopEntry = New DesktopFile(sDir_Apps &/ sFile_Apps)
@@ -305,6 +317,7 @@ End
 
 Public Sub CButtonStart_Click()
   
+  Dim i As Integer = 1
   Dim sResult As String 
   
   Settings_Core_Innova.Reload()
@@ -313,22 +326,28 @@ Public Sub CButtonStart_Click()
   
   If (sResult = "Mini") Then
     M_Core.iShow = False
-    Shell User.Home &/ "Launcher_Mini.gambas"
+    'Shell User.Home &/ "Launcher_Mini.gambas"
+    Shell "/usr/bin/qlauncher_mini"
     
   Endif
   
   If (sResult = "Tablet") Then
     M_Core.iShow = False
-    Shell User.Home &/ "Launcher_Tablet.gambas"
-    
+    'Shell User.Home &/ "Launcher_Tablet.gambas"
+    If i = 1 Then
+      Shell "/usr/bin/qlauncher_tablet"
+    Else
+      Print "cerra"
+    Endif
   Endif
   If (sResult = "CNB") Then
     M_Core.iShow = False
-    Shell User.Home &/ "Launcher_CNB.gambas"
+    'Shell User.Home &/ "Launcher_CNB.gambas"
+    Shell "/usr/bin/qlauncher_cnb"
   Endif
   
-  'Catch
-  '  Debug "ERROR [ " & DConv(Error.Text) & " ]"
+Catch
+  Debug "ERROR [ " & DConv(Error.Text) & " ]"
   
 End
 
@@ -377,24 +396,176 @@ Public Sub Desktop_Windows_Select()
   Dim hWind As DesktopWindow
   Dim Idx As Integer
   Dim hImage As Image
+  Dim iResult2 As Integer = 1
+  Dim iPlCount As Integer = 3
   
   Settings_Core_Innova.Reload()
   Try iResult = Settings_Core_Innova["Panel/OnlyIcon_Taskbar"]
+  WindList_List
+  iPlCount = PanelTaskList.Children.Count
+  
   If iResult = 1 Then
     PanelTaskIcon.Visible = True
-    PanelTaskList.Visible = False
+    panelTaskList.Visible = False
+    pltask.Visible = False
     WindList_Icons
-  Else
+  Else If (Int(iPlCount) >= 4) Then 
+    'If iResult2 = 1 Then
     PanelTaskList.Visible = True
+    pltask.Visible = False
     PanelTaskIcon.Visible = False
+    
     WindList_List
+  Else
+    pltask.Visible = True
+    PanelTaskList.Visible = False   
+    PanelTaskIcon.Visible = False
+    
+    WindList_List_Init
+    
+    'Endif
+    
   Endif
   
   ResultIconWindows
   
 End
 
+Private Sub WindList_List_Init()
+  
+  Dim aWindow As Integer[]
+  Dim iWindow As Integer
+  Dim aIcon As Integer[]
+  Dim hImage As Image
+  Dim iCurrentDesktop As Integer
+  Dim iDesktop As Integer
+  Dim hWindow As DesktopWindow
+  Dim sResult_Img_Icon As String 
+  Dim sResult_Font_Color As String
+  Dim i As Integer
+  Dim iPlSize As Integer
+  Dim iPlCount As Integer = 3
+  
+  Try iSize = Settings_Core_Innova["Panel/Size"]
+  Try sResult_Img_Icon = Settings_Core_Innova["Panel/Img_Icon_Task"]
+  Try sResult_Font_Color = Settings_Core_Innova["Style_Desktop/Font_Color"]
+  
+  iCurrentDesktop = X11.GetWindowProperty(X11.RootWindow, "_NET_CURRENT_DESKTOP")[0]
+  
+  For Each hToggleTask In hTaskList.Children
+    hToggleTask.Delete
+  Next
+  
+  _NET_CLIENT_LIST = X11.InternAtom("_NET_CLIENT_LIST")  
+  _NET_WM_ICON = X11.InternAtom("_NET_WM_ICON")  
+  aWindow = X11.GetWindowProperty(X11.RootWindow, _NET_CLIENT_LIST)
+  For Each iWindow In aWindow
+    
+    hWindow = New DesktopWindow(iWindow)
+    iDesktop = hWindow.Desktop
+    aIcon = X11.GetWindowProperty(iWindow, _NET_WM_ICON)
+    
+    If hWindow.SkipTaskbar Or hWindow.Desktop <> Desktop.Current Or hWindow.Id = Me.Id Then Continue
+    If hWindow.Name Then
+      Inc i
+      
+      hToggleTask = New ToolButton(hTaskList) As "ToggleTask"
+      
+      hToggleTask.Border = False
+      hToggleTask.H = 24
+      hToggleTask.W = 200
+      hToggleTask.Mouse = 13
+      hToggleTask.Tag = hWindow.Id
+      hToggleTask.Font.Size = 9
+      hImage = hWindow.Icon
+      hToggleTask.Tooltip = hWindow.Name
+      hToggleTask.Text = Left$(hWindow.Name, 25) 
+      hToggleTaskW = hToggleTask.w
+      If (sResult_Img_Icon = 1) Then  
+        hToggleTask.Text = Null
+      Endif
+      If hImage Then
+        hToggleTask.Picture = hImage.Picture.Image.Stretch(iSize, iSize).Picture
+      Endif
+      If (hToggleTask.Picture = Picture[Null]) Then
+        hToggleTask.Picture = Picture["icon:/" & iSize & "/exec"]
+      Endif
+    Endif
+    
+  Next
+  
+Catch
+  Debug "ERROR [ " & DConv(Error.Text) & " ]"
+  
+End 
+
 Private Sub WindList_List()
+  
+  Dim aWindow As Integer[]
+  Dim iWindow As Integer
+  Dim aIcon As Integer[]
+  Dim hImage As Image
+  Dim iCurrentDesktop As Integer
+  Dim iDesktop As Integer
+  Dim hWindow As DesktopWindow
+  Dim sResult_Img_Icon As String 
+  Dim sResult_Font_Color As String
+  Dim i As Integer
+  Dim iPlSize As Integer
+  Dim iPlCount As Integer = 3
+  
+  Try iSize = Settings_Core_Innova["Panel/Size"]
+  Try sResult_Img_Icon = Settings_Core_Innova["Panel/Img_Icon_Task"]
+  Try sResult_Font_Color = Settings_Core_Innova["Style_Desktop/Font_Color"]
+  
+  iCurrentDesktop = X11.GetWindowProperty(X11.RootWindow, "_NET_CURRENT_DESKTOP")[0]
+  
+  For Each hToggleTask In PanelTaskList.Children
+    hToggleTask.Delete
+  Next
+  
+  _NET_CLIENT_LIST = X11.InternAtom("_NET_CLIENT_LIST")  
+  _NET_WM_ICON = X11.InternAtom("_NET_WM_ICON")  
+  aWindow = X11.GetWindowProperty(X11.RootWindow, _NET_CLIENT_LIST)
+  For Each iWindow In aWindow
+    
+    hWindow = New DesktopWindow(iWindow)
+    iDesktop = hWindow.Desktop
+    aIcon = X11.GetWindowProperty(iWindow, _NET_WM_ICON)
+    
+    If hWindow.SkipTaskbar Or hWindow.Desktop <> Desktop.Current Or hWindow.Id = Me.Id Then Continue
+    If hWindow.Name Then
+      Inc i
+      
+      hToggleTask = New ToolButton(PanelTaskList) As "ToggleTask"
+      hToggleTask.Border = False
+      hToggleTask.Mouse = 13
+      hToggleTask.Tag = hWindow.Id
+      hToggleTask.Font.Size = 9
+      hImage = hWindow.Icon
+      hToggleTask.Tooltip = hWindow.Name
+      hToggleTask.Text = Left$(hWindow.Name, 25) 
+      hToggleTaskW = hToggleTask.w
+      If (sResult_Img_Icon = 1) Then  
+        hToggleTask.Text = Null
+      Endif
+      If hImage Then
+        hToggleTask.Picture = hImage.Picture.Image.Stretch(iSize, iSize).Picture
+      Endif
+      If (hToggleTask.Picture = Picture[Null]) Then
+        hToggleTask.Picture = Picture["icon:/" & iSize & "/exec"]
+      Endif
+    Endif
+    
+  Next
+  
+  hToggleTask.AutoResize = True  
+Catch
+  Debug "ERROR [ " & DConv(Error.Text) & " ]"
+  
+End 
+
+Private Sub WindList_List_Original()
   
   Dim aWindow As Integer[]
   Dim iWindow As Integer
@@ -530,7 +701,7 @@ Private Sub WindList_Icons()
   Next
   
 Catch
-  '  Debug "ERROR [ " & DConv(Error.Text) & " ]"
+  Debug "ERROR [ " & DConv(Error.Text) & " ]"
   
 End
 
@@ -570,29 +741,10 @@ Public Sub ToggleTask_Menu()
   
 End
 
-Public Sub ToggleTask_MouseDown()
-  
-  ' If Mouse.Left Then
-  '   Last.Background = BACKGROUND_COLOR
-  '   Last.Foreground = TEXT_COLOR
-  ' Endif
-  
-End
-
-Public Sub ToggleTask_MouseUp()
-  
-  'Last.Background = Color.Transparent
-  'Last.Foreground = Color.Black
-  
-End
-
 Public Sub ToggleTask_Click()
-  
-  'Dim iId As Integer
   
   iId = Last.tag 
   
-  'If iId = $iLast2 And If Not Desktop.Windows.FromHandle(iId).Minimized Then
   If iId = $iLast And If Not Desktop.Windows.FromHandle(iId).Minimized Then
     
     Desktop.Windows.FromHandle(iId).Minimized = True
@@ -608,11 +760,7 @@ Catch
   
 End
 
-
-
 Public Sub ToggleTask_Enter()
-  
-
   
   iValue = Last.Tag
   $iLast2 = Last.Tag
@@ -621,8 +769,7 @@ Public Sub ToggleTask_Enter()
   Try Last.Background = BACKGROUND_COLOR
   Try Last.Foreground = Color.Black
   
-
-  'Catch
+Catch
   
 End
 
@@ -630,7 +777,6 @@ Public Sub ToggleTask_Leave()
   
   Last.Background = Color.Transparent
   Last.Foreground = M_Var_Global.sResult_Inn_Font_Color 
-
   
 End
 
@@ -770,7 +916,7 @@ Public Sub Init_Applets()
     Shell sExec & " > /dev/null 2>/dev/null"
   Loop 
   
-Catch
+  'Catch
   
 End
 
@@ -823,8 +969,8 @@ Public Sub TextLabelDate_MouseDown()
   Endif
   
   TextLabelDate.Tooltip = Format$(Now, "dd/mm/yyyy")
-  'Catch
-  '  Debug "ERROR [ " & DConv(Error.Text) & " ]"
+Catch
+  Debug "ERROR [ " & DConv(Error.Text) & " ]"
   
 End
 
@@ -935,10 +1081,27 @@ Public Sub CButtonDesktop_Leave()
   
 End
 
-
-
 Public Sub Form_Leave()
   
   f_screeshot.Close
+  
+End
+
+Public Sub Form_Arrange()
+  
+  Me.H = iSizePanel
+  
+  Me.w = Screen.w  
+  Me.Top = (Screen.Height - Me.Height)
+  
+End
+
+Public Sub PanelTaskList_Resize()
+  
+End
+
+Public Sub TextLabelDate_Enter()
+  
+  TextLabelDate.Tooltip = Format$(Now, "dd/mm/yyyy")
   
 End
