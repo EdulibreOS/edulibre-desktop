@@ -4,6 +4,7 @@ Private $sLastName As String
 Private iResult As Integer
 
 Public sDir As String = Desktop.GetDirectory("DESKTOP") & "/" 
+'Public sDir As String = User.Home &/ "Desktop" ' Desktop.GetDirectory("DESKTOP") & "/" 
 Private sPath As String 
 Public sLanguage As String = ((Left(System.Language, 2)))
 Public Settings_Core_Innova As New Settings(Desktop.ConfigDir &/ "Innova/Innova_Config.conf")
@@ -52,7 +53,7 @@ Public Sub Form_Open()
     ivwDesktop.y = Desktop.y + f_panel.H 
     
   Endif
-  
+  Print sDir
   Try iResult_iSize_Icons = Settings_Core_Innova["Desktop/Icon_Size_Desktop"]
   
   If Not IsNull(iResult_iSize_Icons) Then
@@ -1206,5 +1207,22 @@ Public Sub mnuDescending_Click()
     ivwDesktop.Clear
     Show_Files_Desktop_Des
   Endif
+  
+End
+
+Public Sub mnuRename_Click()
+  
+  Dim sOld As String
+  Dim sLast As String
+  
+  sOld = sDir & ivwDesktop.Item.Text
+  ' sLast = sDir & ivwDesktop.Item.Text
+  
+  sLast = InputBox(("You are sure to change the name:"), ("Change name"), ivwDesktop.Item.Text)
+  
+  Try Move sOld To sDir & sLast
+  Wait 0.1
+  
+  Refresh
   
 End

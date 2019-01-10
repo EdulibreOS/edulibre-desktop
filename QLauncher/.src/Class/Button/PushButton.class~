@@ -93,6 +93,7 @@ Private Sub Position_Write(Value As Integer)
   $hView.Refresh
   
 End
+''gardenias 10
 
 Public Sub View_Draw()
   
@@ -174,14 +175,17 @@ Public Sub View_Draw()
       Paint.DrawRichTextShadow(Html($sText), iX, iY, Me.W, Me.H, Align.Center, 8)
       Paint.Background = Color.White
       '  Paint.DrawRichText(Html($sText), iX, iY, Me.W, Me.H, Align.Center)
-      Draw.RichText(Html($sText), iX, iY, Me.W, Me.H, Align.Center)
+      Draw.RichText(Html($sText), iX, iY, Me.W, Me.H, Align.Justify)
     Else
       
       Paint.Background = Color.Black
+      '  Paint.DrawRichTextShadow(Html($sText), iX, iY, Me.W, iDiv, Align.Center, 8)
       Paint.DrawRichTextShadow(Html($sText), iX, iY, Me.W, iDiv, Align.Center, 8)
       Paint.Background = Color.White
       ' Paint.DrawRichText(Html($sText), iX, iY, Me.W, iDiv, Align.Center)
+      '  Draw.RichText(Html($sText), iX, iY, Me.W, iDiv, Align.Center)
       Draw.RichText(Html($sText), iX, iY, Me.W, iDiv, Align.Center)
+      
     Endif
     
   Endif

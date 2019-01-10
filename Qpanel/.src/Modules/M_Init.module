@@ -99,7 +99,7 @@ Public Sub Init_03()
   X11.SetWindowProperty(f_wallpaper.Id, Atom["_NET_WM_WINDOW_TYPE"], Atom["ATOM"], Atom["_NET_WM_WINDOW_TYPE_DESKTOP"])
   
   Wait 0.2
-  
+  Init_04
 End
 
 Public Sub Init_04()

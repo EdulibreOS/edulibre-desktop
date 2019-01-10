@@ -41,13 +41,13 @@
     { Menu2 Menu
     }
     { mnuInfo Menu
-      Text = ("Information")
+      Text = ("Information App")
       Picture = Picture["icon:/small/info"]
       Visible = False
     }
     { mnuHelp Menu
-      Text = ("Help CNB")
-      Picture = Picture["icon:/small/help"]
+      Text = ("EduCAP Help Center")
+      Picture = Picture["img/cnb/malla_curricular/04.png"]
       Visible = False
     }
   }
@@ -85,6 +85,7 @@
     }
     { picLaunch2 PictureBox
       MoveScaled(77,0,6,6)
+      Visible = False
       Mouse = Mouse.Pointing
       ToolTip = ("Centro de Ayuda Pedagógica")
       Picture = Picture["img/cnb/cap.png"]
@@ -92,6 +93,7 @@
     }
     { picLaunch PictureBox
       MoveScaled(84,0,6,6)
+      Visible = False
       Mouse = Mouse.Pointing
       ToolTip = ("Style Launcher")
       Picture = Picture["img/cnb/Launch.png"]
@@ -169,6 +171,7 @@
         Arrangement = Arrange.Vertical
         Spacing = True
         Padding = 1
+        Border = False
         ScrollBar = Scroll.None
       }
       { IconViewCat ListView
@@ -209,7 +212,6 @@
           Padding = 4
           { lblinfogrado Label
             MoveScaled(25,0,14,4)
-            Font = Font["Bold"]
             Expand = True
             Text = ("Información")
             Alignment = Align.Center
@@ -217,7 +219,7 @@
         }
       }
       { PanelGrado Panel
-        MoveScaled(1,5,73,32.8571)
+        MoveScaled(1,5,73,18.5714)
         Arrangement = Arrange.Vertical
         Spacing = True
         Margin = True

@@ -34,6 +34,9 @@
       Picture = Picture["icon:/small/delete"]
     }
   }
+  { PictureBox1 PictureBox
+    MoveScaled(0,0,16,16)
+  }
   { HBoxMain HBox
     MoveScaled(0,0,165,13)
     Expand = True
@@ -132,7 +135,6 @@
       { TextLabelDate TextLabel
         MoveScaled(0,0,7,8)
         Font = Font["+2"]
-        Foreground = &HBBD2D2&
         Mouse = Mouse.Pointing
         Expand = True
         AutoResize = True

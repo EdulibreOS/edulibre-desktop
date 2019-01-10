@@ -55,8 +55,8 @@ Private iResult_Size As Integer
 Private AllCat As String[] = [("Development"), ("Other"), ("Office"), ("Network"), ("Game"), ("AudioVideo"), ("System"), ("Settings"), ("Utility"), ("Graphics"), ("Education")]
 
 'Private AllCatCNB As String[] = [("Primero"), ("Segundo"), ("Tercero"), ("Cuarto"), ("Quinto"), ("Sexto")]
-Private AllCatCNB As String[] = [("Preprimaria"), ("Primaria Basica"), ("Primaria Avanzada"), ("Apps")]
-Private cImgCatCNB As Collection = ["Preprimaria": "0", "Primaria Basica": "1", "Primaria Avanzada": "2", "Apps": "3"]
+Private AllCatCNB As String[] = [("Preprimaria"), ("Primaria Basica"), ("Primaria Avanzada"), ("Apps"), ("EduCAP")]
+Private cImgCatCNB As Collection = ["Preprimaria": "0", "Primaria Basica": "1", "Primaria Avanzada": "2", "Apps": "3", "EduCAP": "4"]
 
 Private cImgCat As Collection = ["Development": "development", "Other": "other", "Office": "office", "Network": "internet", "Game": "games", "AudioVideo": "multimedia", "System": "system", "Settings": "accessories", "Utility": "utilities", "Graphics": "graphics"]
 
@@ -213,9 +213,9 @@ Public Sub FillList_Cat_CNB_Mini(Optional sFilter As String)
   Dim i As Integer = -1
   
   iSizeCat = Settings_Core_Innova["Launcher/Icon_Size"]
-  iSizeCat = iSizeCat + 10 ' 20 '25
+  iSizeCat = iSizeCat '+ 10 ' 20 '25
   
-  f_launcher_cnb.PanelCat.w = iSizeCat
+  f_launcher_cnb.PanelCat.w = iSizeCat 
   
   f_launcher_cnb.Panel11.h = f_launcher_cnb.PanelCat.h / 4
   
@@ -239,7 +239,7 @@ Public Sub FillList_Cat_CNB_Mini(Optional sFilter As String)
     
     ImgBtnCatCNB.Mouse = 13
     
-    ImgBtnCatCNB.Picture = Picture["img/cnb/malla_curricular/" & LCase(cImgCatCNB[s] & ".svg")].Image.Stretch(iSizeCNB, iSizeCNB).Picture
+    ImgBtnCatCNB.Picture = Picture["img/cnb/malla_curricular/" & LCase(cImgCatCNB[s] & ".png")].Image.Stretch(iSizeCNB, iSizeCNB).Picture
     
     ImgBtnCatCNB.Foreground = (sFontColor)
     ImgBtnCatCNB.Background = Color.Transparent
@@ -247,7 +247,7 @@ Public Sub FillList_Cat_CNB_Mini(Optional sFilter As String)
     ImgBtnCatCNB.Font.Name = (sFontName)
     ImgBtnCatCNB.Tag = s
     
-    f_launcher_cnb.IconViewCat.Add(i, AllCatCNB[i], Picture["img/cnb/malla_curricular/" & LCase(cImgCatCNB[s] & ".svg")].Image.Stretch(iSizeCNB, iSizeCNB).Picture)
+    f_launcher_cnb.IconViewCat.Add(i, AllCatCNB[i], Picture["img/cnb/malla_curricular/" & LCase(cImgCatCNB[s] & ".png")].Image.Stretch(iSizeCNB, iSizeCNB).Picture)
     
   Next
 Catch
@@ -296,7 +296,7 @@ Public Sub IButtonCatCNB_Click()
   'sPanel.Expand = True
   sPanel.Margin = True
   'sPanel.W = f_launcher_cnb.PanelGrado.w / 8
-  f_launcher_cnb.PanelGrado.h = 230 '170
+  f_launcher_cnb.PanelGrado.h = 130 '230 '170
   sPanel.W = f_launcher_cnb.PanelGrado.w / 3.5
   
   If Last.tag = "Preprimaria" Then
@@ -373,22 +373,25 @@ Public Sub IButtonCatCNB_Click()
         Endif
         
         ImgBtnCatCNB = New PushButton(f_launcher_cnb.ScrollGrado) As "IButtonPrimaria"
-        ImgBtnCatCNB.w = iSizeCat / 1.1 ' 1.4
-        ImgBtnCatCNB.h = iSizeCat / 1.1 - 5 ' - 10
+        ImgBtnCatCNB.w = iSizeCat / 1.3 '1.1 ' 1.4
+        ImgBtnCatCNB.h = iSizeCat / 1.4 '1.1 - 5 ' - 10
         ImgBtnCatCNB.Mouse = 13
         ImgBtnCatCNB.Text = GetAppNameCat(sCat, sLang)
         ImgBtnCatCNB.Picture = DesktopAppsCat[sCat].GetIcon(iSizeCNB).Picture
         ImgBtnCatCNB.Foreground = (sFontColor)
         ImgBtnCatCNB.Background = Color.Transparent
-        Try ImgBtnCatCNB.Font.Size = (iFontSize) '-1
+        Try ImgBtnCatCNB.Font.Size = (iFontSize - 2) '-1
         ImgBtnCatCNB.Font.Name = (sFontName)
         ImgBtnCatCNB.Tag = sCat
         f_launcher_cnb.lblinfogrado.text = Null
-        
+      
       Endif 
     Next
   Endif
   
+   If Last.tag = "EduCAP" Then
+      Shell "/usr/bin/educap.sh"
+   Endif
   s1 = Last.tag
   f_launcher_cnb.lblinfogrado.text = s1
   
@@ -620,12 +623,7 @@ End
 
 Public Sub IButtonPB_Click()
   
-  ' Dim sTextNam As String = (Last.Text)
-  ' Dim sTextCom As String = (Last.Tooltip)
-  ' Dim sExec As String = Last.tag
-  
-  'f_launcher_cnb.lblinfogrado.text = ImgButtonApps.tag
-  
+ 
   Try s3 = Last.tag
   f_launcher_cnb.lblinfogrado.text = s1 & " - " & s2 & " - " & s3
   
@@ -634,19 +632,7 @@ Public Sub IButtonPB_Click()
   
   Try sLastMateria = Last.tag
   
-  '  sSendApps = Last.Tag
-  ' sAppsExec = Last.Tag
-  'Catch
-  ' f_launcher_cnb.txtmateria.Text = (Html(sLastMateria))
-  
-  ' sLastGrado = Last.Tag
-  
-  ' f_launcher_cnb.txtnameapp.Text = (Html(sTextNam)) 
-  'f_launcher_cnb.txtlabelInfo.Text = (Html(sTextCom))
-  'f_launcher_cnb.Pic_Logo_PreviewApp.Picture = Last.Picture
-  
-  ' f_launcher_cnb.txtgrado.Text = (Html(sLastGrado))
-  ' f_launcher_cnb.txtmateria.Text = (Html(sLastMateria))
+
   
 End
 
@@ -905,7 +891,7 @@ Public Sub FillList_Apps(Optional sFilter As String)
         Endif
         
         ImgButtonApps.Mouse = 13
-        Print iSizeApps
+        
         ''  ImgButtonApps.Picture = DesktopApps[s].GetIcon(iSizeApps).Stretch(iSizeApps, iSizeApps).Picture
         ImgButtonApps.Picture = DesktopApps[s].GetIcon(iSizeApps).Stretch(iSizeApps, iSizeApps).Picture 'DesktopApps[s].GetIcon(48).Stretch(iSizeApps, iSizeApps).Picture
         
@@ -914,6 +900,10 @@ Public Sub FillList_Apps(Optional sFilter As String)
         Try ImgButtonApps.Font.Size = (iFontSize)
         ImgButtonApps.Font.Name = (sFontName)
         ImgButtonApps.Tag = s
+        
+        Print s
+      '  Print DesktopApps[s].Name
+        
         
       Endif
       
@@ -1001,8 +991,9 @@ Public Sub FillList_Apps_CNB_Mini(Optional sFilter As String)
         
         ImgBtnAppsCNB.Mouse = 13
         ImgBtnAppsCNB.Picture = DesktopApps[s].GetIcon(iSizeApps).Stretch(iSizeApps, iSizeApps).Picture
-        ImgBtnAppsCNB.Foreground = (sFontColor)
+        Try ImgBtnAppsCNB.Foreground = (sFontColor)
         ImgBtnAppsCNB.Background = Color.Transparent
+
         Try ImgBtnAppsCNB.Font.Size = (iFontSize)
         ImgBtnAppsCNB.Font.Name = (sFontName)
         ImgBtnAppsCNB.Tag = s
@@ -1200,7 +1191,7 @@ Public Sub Ver_Existe()
   
   b = Split(f_launcher_cnb.txtnameapp.Text, " ") 
   For a = 0 To b.max
-    sConsulta = ("SELECT DISTINCT programa FROM tbl_clas_ped WHERE Programa LIKE '%" & b[a] & "%'") 
+       sConsulta = ("SELECT DISTINCT programa FROM tbl_cla_ped WHERE Programa LIKE '%" & b[a] & "%'") 
     rs = cx.Exec(sConsulta)
   Next
   
@@ -1213,7 +1204,7 @@ Public Sub Ver_Existe()
     f_launcher_cnb.mnuHelp.Visible = False
     f_launcher_cnb.mnuInfo.Visible = False
   Endif
-  
+  Catch
 End
 
 Public Sub IButtonApps_Menu()
@@ -1299,7 +1290,7 @@ Public Sub IButtonApps_Click()
   DesktopApps[Last.Tag].Exec_()
   f_launcher.Close
   f_launcher_cnb.Close
-  
+
 End
 
 Public Sub SendDesk()

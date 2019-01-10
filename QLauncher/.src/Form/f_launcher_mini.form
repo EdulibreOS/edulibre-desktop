@@ -2,6 +2,7 @@
 
 { Form Form
   MoveScaled(0,0,84,67)
+  Visible = False
   Persistent = True
   Border = False
   Stacking = Window.Above
@@ -173,6 +174,7 @@
     }
     { picLaunch PictureBox
       MoveScaled(32,0,4,4)
+      Visible = False
       Mouse = Mouse.Pointing
       ToolTip = ("Style Launcher")
       Picture = Picture["img/cnb/Launch.png"]

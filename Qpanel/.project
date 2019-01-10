@@ -1,8 +1,8 @@
 # Gambas Project File 3.0
-Title=Qpanel
+Title=qpanel
 Startup=Cls_Start
 Icon=img/desktop-environment-innova.png
-Version=0.1.129
+Version=0.1.137
 Component=gb.args
 Component=gb.image
 Component=gb.qt4
@@ -27,7 +27,7 @@ Vendor=HerberthGuzman
 VendorPrefix=HG
 Address=herbethguzman@gmail.com
 License=General Public License
-PackageName=qpanel-0.1.129
+PackageName=qpanel-0.1.137
 Packager=1
 Systems=ubuntu
 Menus=ubuntu:"Window Managers"

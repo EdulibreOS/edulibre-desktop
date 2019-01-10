@@ -42,8 +42,8 @@ End
 Public Sub MSG_Open()
   
   'Balloon(Application.Name & " ya se encuentra abierto!!", f_launcher_cnb.picUser)
-  Print ("yep")
-  Wait 0.1
-  Quit
+ ' Print ("yep")
+ ' Wait 0.1
+ ' Quit
   
 End

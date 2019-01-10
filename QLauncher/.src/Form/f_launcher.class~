@@ -25,8 +25,8 @@ Public sLang As String = ((Left(System.Language, 2)))
 Public sGroup_Cat As String = M_Var_Global.sGroup_Cat
 Private sText As String
 Private sTextCom As String
-Private sDir_AppsFav As String 
-Private sFile_AppsFav As String
+'Private sDir_AppsFav As String 
+'Private sFile_AppsFav As String
 'Private iSizeAppsFav As Integer = 96
 Private hToggle_AppS As CButton
 Private ImgButtonApps As PushButton
@@ -200,7 +200,7 @@ Public Sub App_Fav_Select(Optional sFilter As String)
     sDel = DesktopEntry.Path
     ImgButtonApps.Tag = DesktopEntry.Path
     ImgButtonApps.Tooltip = DesktopEntry.Comment
-    
+     
   Next
   
 Catch
@@ -371,6 +371,12 @@ Public Sub Form_Show()
   Settings_Core_Innova["Launcher/iShow"] = "1"
   Settings_Core_Innova.Save
   
+  
+  
+  txtnameapp.Foreground = Color.White
+  txtlabelInfo.Foreground = Color.White
+  
+    
 End
 
 Public Sub picBook_Enter()
@@ -476,7 +482,8 @@ End
 Public Sub picSettings_MouseDown()
   
   'Shell User.Home &/ "QSettings.gambas"
-  Shell "/usr/bin/QSettings.gambas"
+  'Shell "/usr/bin/QSettings.gambas"
+  Shell "/usr/bin/qsettings"
   
 End
 

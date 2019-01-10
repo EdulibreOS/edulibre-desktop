@@ -100,14 +100,17 @@ Public Sub FillsList()
   rs = cx.Exec("select * from tb_donations")
   
   For i = 0 To rs.Count - 1
-
+    
     Grid[i, 0].RichText = rs!Nombre 
     Grid[i, 1].RichText = rs!Pais 
     Grid[i, 2].Picture = Picture[sDir &/ rs!Pais & ".png"]
     
     rs.MoveNext
-
+    
   Next
   
 End
 
+Public Sub lblFramework_MouseDown()
+  
+End

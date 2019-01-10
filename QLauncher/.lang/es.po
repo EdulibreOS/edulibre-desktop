@@ -1,16 +1,16 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: QLauncher 3.11.4\n"
-"PO-Revision-Date: 2018-11-29 17:56 UTC\n"
-"Last-Translator: Herberth Guzman <herbethguzman@gmail.com>\n"
+"Project-Id-Version: qlauncher 3.11.4\n"
+"PO-Revision-Date: 2018-12-12 21:51 UTC\n"
+"Last-Translator: edulibreos <edulibreos@EdulibreOS>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: .project:1
-msgid "QLauncher"
+msgid "qlauncher"
 msgstr ""
 
 #: M_Core.module:55
@@ -59,6 +59,10 @@ msgstr ""
 
 #: M_Core.module:58
 msgid "Apps"
+msgstr ""
+
+#: M_Core.module:58
+msgid "EduCAP"
 msgstr ""
 
 #: M_Core.module:58
@@ -161,16 +165,16 @@ msgstr ""
 msgid "Productividad y Desarrollo"
 msgstr ""
 
-#: M_Core.module:1267 f_launcher_mini.class:230
+#: M_Core.module:1194
+msgid "SELECT * FROM tbl_programa"
+msgstr ""
+
+#: M_Core.module:1259 f_launcher_mini.class:230
 msgid "Category: "
 msgstr "Categoria: "
 
 #: M_DB.module:37
 msgid "Innova Desktop"
-msgstr ""
-
-#: M_Run.module:45
-msgid "yep"
 msgstr ""
 
 #: f_cnb_info.class:39
@@ -189,7 +193,7 @@ msgstr ""
 msgid "Materia"
 msgstr ""
 
-#: f_cnb_info.form:40 f_launcher_cnb.form:310
+#: f_cnb_info.form:40 f_launcher_cnb.form:311
 msgid "Información"
 msgstr ""
 
@@ -201,51 +205,51 @@ msgstr ""
 msgid "Cerrar Ventana"
 msgstr ""
 
-#: f_launcher.form:69 f_launcher_mini.form:51
+#: f_launcher.form:69 f_launcher_mini.form:52
 msgid "mnuBookmark"
 msgstr ""
 
-#: f_launcher.form:73 f_launcher_mini.form:55
+#: f_launcher.form:73 f_launcher_mini.form:56
 msgid "Delete Bookmark"
 msgstr "Eliminar Favoritos"
 
-#: f_launcher.form:79 f_launcher_cnb.form:79 f_launcher_mini.form:61
+#: f_launcher.form:79 f_launcher_cnb.form:79 f_launcher_mini.form:62
 msgid "mnuLauncher"
 msgstr ""
 
-#: f_launcher.form:83 f_launcher_cnb.form:83 f_launcher_mini.form:65
+#: f_launcher.form:83 f_launcher_cnb.form:83 f_launcher_mini.form:66
 msgid "Open"
 msgstr "Abrir"
 
-#: f_launcher.form:94 f_launcher_cnb.form:94 f_launcher_mini.form:73
+#: f_launcher.form:94 f_launcher_cnb.form:94 f_launcher_mini.form:74
 msgid "Add to Desktop"
 msgstr "Agregar a Escritorio"
 
-#: f_launcher.form:100 f_launcher_cnb.form:100 f_launcher_mini.form:78
+#: f_launcher.form:100 f_launcher_cnb.form:100 f_launcher_mini.form:79
 msgid "Add to Panel"
 msgstr "Agregar a Panel"
 
-#: f_launcher.form:106 f_launcher_cnb.form:107 f_launcher_mini.form:83
+#: f_launcher.form:106 f_launcher_cnb.form:107 f_launcher_mini.form:84
 msgid "Add to Bookmark"
 msgstr "Agregar a Favoritos"
 
-#: f_launcher.form:146 f_launcher_mini.form:256
+#: f_launcher.form:146 f_launcher_mini.form:258
 msgid "Bookmarks"
 msgstr "Favoritos"
 
-#: f_launcher.form:199 f_launcher_mini.form:271
+#: f_launcher.form:199 f_launcher_cnb.form:550 f_launcher_mini.form:273
 msgid "shut down the system"
 msgstr "Apagar el sistema"
 
-#: f_launcher.form:255 f_launcher_cnb.form:176 f_launcher_mini.form:240 f_style_launcher.form:37
+#: f_launcher.form:256 f_launcher_cnb.form:178 f_launcher_mini.form:242 f_style_launcher.form:37
 msgid "Style Launcher"
 msgstr "Estilo del Launcher"
 
-#: f_launcher.form:269
+#: f_launcher.form:270 f_launcher_mini.form:250
 msgid "Configure the system"
 msgstr "Configurar el sistema"
 
-#: f_launcher.form:359
+#: f_launcher.form:361
 msgid "test"
 msgstr ""
 
@@ -254,34 +258,34 @@ msgid "Productividad y Desarrollo "
 msgstr ""
 
 #: f_launcher_cnb.form:116
-msgid "Information"
-msgstr "Información"
+msgid "Information App"
+msgstr "Información de la aplicación"
 
 #: f_launcher_cnb.form:122
-msgid "Help CNB"
-msgstr "Ayuda CNB"
+msgid "EduCAP Help Center"
+msgstr "Centro de Ayuda EduCAP"
 
-#: f_launcher_cnb.form:168
+#: f_launcher_cnb.form:169
 msgid "Centro de Ayuda Pedagógica"
 msgstr ""
 
-#: f_launcher_cnb.form:244
+#: f_launcher_cnb.form:246
 msgid "Nivel"
 msgstr ""
 
-#: f_launcher_cnb.form:349
+#: f_launcher_cnb.form:350
 msgid "Area"
 msgstr ""
 
-#: f_launcher_cnb.form:385
+#: f_launcher_cnb.form:386
 msgid "Mostrar Información de la Aplicacion"
 msgstr ""
 
-#: f_launcher_cnb.form:479
+#: f_launcher_cnb.form:480
 msgid "Aplicaciones"
 msgstr ""
 
-#: f_launcher_cnb.form:534
+#: f_launcher_cnb.form:535
 msgid "User"
 msgstr "Usuario"
 
@@ -309,24 +313,20 @@ msgstr "Imagen PNG"
 msgid "Image SVG"
 msgstr "Imagen SVG"
 
-#: f_launcher_mini.form:100
+#: f_launcher_mini.form:101
 msgid "Show Categories"
 msgstr "Mostrar Categorias"
 
-#: f_launcher_mini.form:130
+#: f_launcher_mini.form:131
 msgid "Expand"
 msgstr "Expandir"
 
-#: f_launcher_mini.form:212
+#: f_launcher_mini.form:213
 msgid "Change Image"
 msgstr "Cambiar Imagen"
 
-#: f_launcher_mini.form:221
+#: f_launcher_mini.form:222
 msgid "usuario"
-msgstr ""
-
-#: f_launcher_mini.form:248
-msgid "configure the system"
 msgstr ""
 
 #: f_power.form:42 f_style_launcher.form:71

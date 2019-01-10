@@ -15,8 +15,8 @@
     Margin = True
     { picIcon PictureBox
       MoveScaled(1,1,10,8)
-      AutoResize = True
       Picture = Picture["icon:/64/file"]
+      AutoResize = True
     }
     { Panel1 Panel
       MoveScaled(13,0,50,14)

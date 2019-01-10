@@ -103,8 +103,8 @@ Public Function Show_Theme()
     'f_info_cnb.Picture = Picture[sPath_Theme &/ sResult_Img_Launcher].Image.Stretch(f_info_cnb.W, f_info_cnb.h).Picture
     
     ' f_power.Picture = Picture[sPath_Theme &/ sResult_Img_Look].Image.Stretch(Desktop.W, Desktop.h).Picture
-    f_style_launcher.Picture = Picture[sPath_Theme &/ sResult_Img_Launcher].Image.Stretch(f_launcher_mini.W, f_launcher_mini.h).Picture
-    f_cnb_info.Picture = Picture[sPath_Theme &/ sResult_Img_Launcher].Image.Stretch(f_cnb_info.W, f_cnb_info.h).Picture 
+    f_style_launcher.Picture = Picture[sPath_Theme &/ sResult_Img_Look].Image.Stretch(f_launcher_mini.W, f_launcher_mini.h).Picture
+    f_cnb_info.Picture = Picture[sPath_Theme &/ sResult_Img_Look].Image.Stretch(f_cnb_info.W, f_cnb_info.h).Picture 
     
     ''FONT COLOR
     
@@ -114,7 +114,7 @@ Public Function Show_Theme()
       
       ' f_cnb_info.txtnameapp.Foreground = Val(sResult_Inn_Font_Color) 
       ' f_cnb_info.txtlabelInfo.Foreground = Val(sResult_Inn_Font_Color) 
-      ' f_cnb_info.lblinfogrado.Foreground = Val(sResult_Inn_Font_Color) 
+      ' f_cnb_info.lblinfogrado.Foreground = Val(sResult_Inn_Font_Color + 2) 
       ' f_cnb_info.lblusuario.Foreground = Val(sResult_Inn_Font_Color) 
       
     Next
@@ -175,6 +175,7 @@ Public Function Show_Theme()
     For Each ctrl In f_cnb_info.Controls
       Try ctrl.Font.Size = (iResult_Inn_Font_Size) 
       M_Core.iFontSize = (iResult_Inn_Font_Size) 
+      f_cnb_info.lblinfogrado.Font.Size = Val(iResult_Inn_Font_Size + 3) 
     Next
     For Each ctrl In f_launcher_cnb.Controls
       Try ctrl.Font.Size = (iResult_Inn_Font_Size) 
@@ -193,6 +194,6 @@ Public Function Show_Theme()
     
   Endif 
   
-  'Catch
+Catch
   
 End

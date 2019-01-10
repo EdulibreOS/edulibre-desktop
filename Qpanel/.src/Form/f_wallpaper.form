@@ -55,7 +55,6 @@
     }
     { mnuRename Menu
       Text = ("Rename")
-      Visible = False
       Shortcut = "F2"
     }
     { Menu16 Menu
@@ -222,8 +221,8 @@
   { img_Fondo PictureBox
     MoveScaled(0,0,16,16)
     Expand = True
-    AutoResize = True
     Stretch = True
+    AutoResize = True
     Alignment = Align.Center
   }
   { panView Panel
@@ -231,6 +230,7 @@
     Arrangement = Arrange.Fill
     { ivwDesktop IconView
       MoveScaled(24,13,44,40)
+      Font = Font["Bold"]
       Tracking = True
       Mouse = Mouse.Pointing
       Drop = True

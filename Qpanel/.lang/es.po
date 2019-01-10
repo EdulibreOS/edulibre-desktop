@@ -1,9 +1,8 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Qpanel 3.11.90\n"
-"POT-Creation-Date: 2018-11-21 16:21 UTC\n"
-"PO-Revision-Date: 2018-11-15 18:20 UTC\n"
+"Project-Id-Version: qpanel 3.11.4\n"
+"PO-Revision-Date: 2018-12-04 18:21 UTC\n"
 "Last-Translator: Herberth Guzman <herbethguzman@gmail.com>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
@@ -11,7 +10,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: .project:1
-msgid "Qpanel"
+msgid "qpanel"
 msgstr ""
 
 #: CAbout.class:107
@@ -130,8 +129,7 @@ msgstr "El archivo destino ya existe. Desea sobrescribir"
 msgid "Mode random background screen, <br> you can not select new background..."
 msgstr "En modo fondo de pantalla aleatorio, <br> no es posible cambiar fondo de pantalla..."
 
-#: M_DB.module:39 f_about.form:99 f_conf_wallpaper.class:67
-#: f_wallpaper.class:405
+#: M_DB.module:39 f_about.form:99 f_conf_wallpaper.class:67 f_wallpaper.class:405
 msgid "Innova Desktop"
 msgstr "Escritorio Innova"
 
@@ -155,9 +153,7 @@ msgstr ""
 msgid "Framework Version 3.10"
 msgstr ""
 
-#: f_about.form:84 f_about_dist.form:83 f_compress.form:66
-#: f_conf_wallpaper.form:77 f_gallery_wallpaper.form:55 f_panel.form:58
-#: f_properties.form:27 f_properties_mixed.form:129 f_wallpaper.form:179
+#: f_about.form:84 f_about_dist.form:83 f_compress.form:66 f_conf_wallpaper.form:77 f_gallery_wallpaper.form:55 f_panel.form:58 f_properties.form:27 f_properties_mixed.form:129 f_wallpaper.form:178
 msgid "Close"
 msgstr "Cerrar"
 
@@ -170,16 +166,7 @@ msgid "Copyright (C) 2014-2018"
 msgstr ""
 
 #: f_about.form:123
-msgid ""
-"<p><br>Advanced, easy to use, and fast desktop environment developed on Gambas3.</p>\n"
-"\n"
-"<p>Innova Desktop would not have been possible without the help of:</p></br>\n"
-"\n"
-"<font color=\"#D8D8D8\">\n"
-"<h5><p><u><br>Benoît Minisini</h5></p></u>\n"
-"<h5><p><u> Fabien Bodard</h5></p> </u>\n"
-"<h5><p><u>Zainudin Ahmad</h5></p></u></br>\n"
-"</font>\n"
+msgid "<p><br>Advanced, easy to use, and fast desktop environment developed on Gambas3.</p>\n\n<p>Innova Desktop would not have been possible without the help of:</p></br>\n\n<font color=\"#D8D8D8\">\n<h5><p><u><br>Benoît Minisini</h5></p></u>\n<h5><p><u> Fabien Bodard</h5></p> </u>\n<h5><p><u>Zainudin Ahmad</h5></p></u></br>\n</font>\n"
 msgstr ""
 
 #: f_about.form:126
@@ -187,12 +174,7 @@ msgid "License"
 msgstr "Licencia"
 
 #: f_about.form:131
-msgid ""
-"    This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.\n"
-"\n"
-"    This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.\n"
-"\n"
-"    You should have received a copy of the GNU General Public License    along with this program.  If not, see <http://www.gnu.org/licenses/>."
+msgid "    This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.\n\n    This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.\n\n    You should have received a copy of the GNU General Public License    along with this program.  If not, see <http://www.gnu.org/licenses/>."
 msgstr ""
 
 #: f_about.form:137
@@ -227,7 +209,7 @@ msgstr "Gracias"
 msgid "System"
 msgstr "Sistema"
 
-#: f_about_dist.class:77 f_wallpaper.form:235
+#: f_about_dist.class:77 f_wallpaper.form:234
 msgid "Name"
 msgstr "Nombre"
 
@@ -244,9 +226,8 @@ msgid "EdulibreOS"
 msgstr ""
 
 #: f_about_dist.form:59
-#, fuzzy
 msgid "Version 10.0"
-msgstr "Versión"
+msgstr ""
 
 #: f_about_dist.form:107
 msgid "Copyright (C) 2008-2018"
@@ -432,26 +413,33 @@ msgstr "&No"
 msgid "&Yes"
 msgstr "&Si"
 
-#: f_wallpaper.class:1130
-#, fuzzy
+#: f_wallpaper.class:1127
 msgid "Innova Desktop - Copy File"
-msgstr "Escritorio Innova - Propiedades del Archivo"
+msgstr ""
 
-#: f_wallpaper.class:1148
+#: f_wallpaper.class:1145
 msgid " Items "
 msgstr ""
 
-#: f_wallpaper.class:1148
+#: f_wallpaper.class:1145
 msgid "Copying "
 msgstr "Copiando "
 
-#: f_wallpaper.class:1149
+#: f_wallpaper.class:1146
 msgid " To "
 msgstr " A "
 
-#: f_wallpaper.class:1177
+#: f_wallpaper.class:1174
 msgid "An unknown error has occurred."
 msgstr "Un error desconocido a ocurrido."
+
+#: f_wallpaper.class:1220
+msgid "Change name"
+msgstr "Cambiar nombre"
+
+#: f_wallpaper.class:1220
+msgid "You are sure to change the name:"
+msgstr "Está seguro de cambiar el nombre:"
 
 #: f_wallpaper.form:78
 msgid "mnuPopup"
@@ -489,98 +477,99 @@ msgstr "Mover a la Papelera"
 msgid "Rename"
 msgstr "Renombrar"
 
-#: f_wallpaper.form:139
+#: f_wallpaper.form:138
 msgid "Create Link"
 msgstr "Crear Enlzace"
 
-#: f_wallpaper.form:148
+#: f_wallpaper.form:147
 msgid "Refresh"
 msgstr "Actualizar"
 
-#: f_wallpaper.form:157
+#: f_wallpaper.form:156
 msgid "Compress"
 msgstr "Comprimir"
 
-#: f_wallpaper.form:162
+#: f_wallpaper.form:161
 msgid "Uncompress"
 msgstr "Descomprimir"
 
-#: f_wallpaper.form:171
+#: f_wallpaper.form:170
 msgid "Properties"
 msgstr "Propiedades"
 
-#: f_wallpaper.form:186
+#: f_wallpaper.form:185
 msgid "mnuPopup2"
 msgstr ""
 
-#: f_wallpaper.form:190
+#: f_wallpaper.form:189
 msgid "File"
 msgstr "Archivo"
 
-#: f_wallpaper.form:193
+#: f_wallpaper.form:192
 msgid "New Folder"
 msgstr "Nuevo Folder"
 
-#: f_wallpaper.form:198
+#: f_wallpaper.form:197
 msgid "New File"
 msgstr "Nuevo Archivo"
 
-#: f_wallpaper.form:207
+#: f_wallpaper.form:206
 msgid "Paste"
 msgstr "Pegar"
 
-#: f_wallpaper.form:213
+#: f_wallpaper.form:212
 msgid "Select All"
 msgstr "Seleccionar todo"
 
-#: f_wallpaper.form:222
+#: f_wallpaper.form:221
 msgid "Sort by File"
 msgstr "Ordenar Archivos"
 
-#: f_wallpaper.form:225
+#: f_wallpaper.form:224
 msgid "Ascending (A - Z)"
 msgstr ""
 
-#: f_wallpaper.form:230
+#: f_wallpaper.form:229
 msgid "Descending (Z - A)"
 msgstr ""
 
-#: f_wallpaper.form:240
+#: f_wallpaper.form:239
 msgid "Type"
 msgstr ""
 
-#: f_wallpaper.form:276
+#: f_wallpaper.form:275
 msgid "About Innova Desktop"
 msgstr "Acerca de Innova Desktop"
 
-#: f_wallpaper.form:283
+#: f_wallpaper.form:282
 msgid "Menu_Principal"
 msgstr "Menú Principal"
 
-#: f_wallpaper.form:287
+#: f_wallpaper.form:286
 msgid "Open Home"
 msgstr "Abrir Home"
 
-#: f_wallpaper.form:297
+#: f_wallpaper.form:296
 msgid "Pc Info"
 msgstr "Pc Info"
 
-#: f_wallpaper.form:302
+#: f_wallpaper.form:301
 msgid "Control Center"
 msgstr "Centro de Control"
 
-#: f_wallpaper.form:308
+#: f_wallpaper.form:307
 msgid "Innova Settings"
 msgstr "Configurar Innova"
 
-#: f_wallpaper.form:313
+#: f_wallpaper.form:312
 msgid "Widgets"
 msgstr ""
 
-#: f_wallpaper.form:322
+#: f_wallpaper.form:321
 msgid "Change Wallpaper"
 msgstr "Cambiar Fondo de Pantalla"
 
-#: f_wallpaper.form:330
+#: f_wallpaper.form:329
 msgid "About EdulibreOS"
 msgstr "Acerca de EdulibreOS"
+

@@ -28,7 +28,7 @@ Public Procedure Connect() As Connection
   $Con = New Connection
   $Con.Type = "sqlite3"
   ' conector.Host = (Application.Path &/ "DB/")
-  $Con.Host = (Desktop.ConfigDir &/ "Innova/")
+  $Con.Host = (Desktop.ConfigDir &/ "Innova/EduCAP/DB/")
   $Con.Name = "edulibcap.db"
   Try $Con.Open()
   Return $Con
@@ -42,13 +42,13 @@ Public Procedure Connect() As Connection
   
   Return False 
   
-  'Catch
+Catch
   '  Debug "ERROR [ " & DConv(Error.Text) & " ]" 
   
 End
 
 Public Sub Main()
-
+  
   M_Run.Main
   ' M_Init.Init_01
   
