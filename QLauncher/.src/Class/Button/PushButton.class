@@ -179,10 +179,13 @@ Public Sub View_Draw()
     Else
       
       Paint.Background = Color.Black
+      '  Paint.DrawRichTextShadow(Html($sText), iX, iY, Me.W, iDiv, Align.Center, 8)
       Paint.DrawRichTextShadow(Html($sText), iX, iY, Me.W, iDiv, Align.Center, 8)
       Paint.Background = Color.White
       ' Paint.DrawRichText(Html($sText), iX, iY, Me.W, iDiv, Align.Center)
+      '  Draw.RichText(Html($sText), iX, iY, Me.W, iDiv, Align.Center)
       Draw.RichText(Html($sText), iX, iY, Me.W, iDiv, Align.Center)
+      
     Endif
     
   Endif

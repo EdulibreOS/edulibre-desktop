@@ -4,7 +4,8 @@ btnCircle=[131]
 f_wallpaper=[291,920]
 
 [Breakpoints]
-Count=0
+Count=1
+Breakpoint[1]="f_panel.101"
 
 [DebugWindow]
 Count=0
@@ -41,10 +42,18 @@ StripSpace=False
 Ignore=0
 
 [OpenFile]
-Count=2
-File[1]=".src/Form/f_panel.class:32.541"
-Active=1
+Count=10
+File[1]=".src/Modules/M_Theme.module:7.206"
+Active=10
 File[2]=".src/Form/f_panel.form"
+File[3]=".src/Form/f_panel.class:148.102"
+File[4]=".src/Class/Cls_Start.class:13.25"
+File[5]=".src/Modules/M_Init.module:66.112"
+File[6]=".src/Form/f_wallpaper.form"
+File[7]=".src/Form/f_wallpaper.class:15.71"
+File[8]=".src/Modules/M_Core.module:23.120"
+File[9]=".src/Form/f_conf_wallpaper.class:77.57"
+File[10]=".src/Class/Atom.class:49.6"
 
 [Watches]
 Count=0

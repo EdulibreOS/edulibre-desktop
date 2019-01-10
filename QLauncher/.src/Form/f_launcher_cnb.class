@@ -141,6 +141,8 @@ Public Sub Form_Show()
   Settings_Core_Innova["Launcher/iShow"] = "1"
   Settings_Core_Innova.Save
   
+  lblinfogrado.Font.Size += 2
+  
 End
 
 Public Sub txtSearchApps_Change()
@@ -232,7 +234,7 @@ Public Sub mnuHelp_Click()
   Update_Name_App
   Wait 0.1
   ' Print "Ejecuta Educap"
-  Shell "/usr/bin/educap"
+   Shell "/usr/bin/educap.sh"
   
 End
 
@@ -253,7 +255,7 @@ Public Sub Show_Name_App()
   Try sResult = Settings_App_Educap["Educap/Name_App"]
   
   If Not IsNull(sResult) Then
-    Shell "/usr/bin/educap"
+     Shell "/usr/bin/educap.sh"
   Endif
   'Catch
   '  Debug "ERROR [ " & DConv(Error.Text) & " ]"
@@ -262,6 +264,6 @@ End
 
 Public Sub picLaunch2_MouseDown()
   
-  Shell "/usr/bin/educap"
+   Shell "/usr/bin/educap.sh"
   
 End

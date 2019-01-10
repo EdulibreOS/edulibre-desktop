@@ -24,8 +24,7 @@
 
 Public Settings_Core_Innova As New Settings(Desktop.ConfigDir &/ "Innova/Innova_Config.conf")
 Private DesktopEntry As DesktopFile
-Private sDir_AppsFav As String 
-Private sFile_AppsFav As String
+
 Public sLang As String = ((Left(System.Language, 2)))
 Private sDel As String
 
@@ -299,7 +298,9 @@ Public Sub App_Fav_Select(Optional sFilter As String)
   Dim pIcon As Picture
   Dim iSizeApps As Integer
   Dim i As Integer
-  
+  Dim sDir_AppsFav As String 
+Dim sFile_AppsFav As String
+
   sDir_AppsFav = Desktop.ConfigDir &/ "Innova/App_Bookmark"
   'sDir_AppsFav = Desktop.ConfigDir &/ "Innova/App_Favorites"
   

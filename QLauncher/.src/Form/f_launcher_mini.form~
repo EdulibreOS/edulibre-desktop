@@ -2,6 +2,7 @@
 
 { Form Form
   MoveScaled(0,0,84,67)
+  Visible = False
   Persistent = True
   Border = False
   Stacking = Window.Above
@@ -181,7 +182,7 @@
     { picSys PictureBox
       MoveScaled(38,0,4,4)
       Mouse = Mouse.Pointing
-      ToolTip = ("Configure system")
+      ToolTip = ("Configure the system")
       Picture = Picture["img/cnb/Settings.png"]
       Stretch = True
     }

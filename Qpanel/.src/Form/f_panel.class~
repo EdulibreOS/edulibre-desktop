@@ -30,6 +30,7 @@ Private sDir_Apps As String
 Private sFile_Apps As String
 Private hToggleTask As ToolButton
 Private hToggleTaskInit As ToolButton
+
 Private hToggleTaskW As Integer
 
 Private hTaskList As Panel
@@ -38,6 +39,9 @@ Private hCButton_App_Default As CButton
 Private hCButton_App_Bookmarks As CButton
 Private hCButton_Home As CButton
 Private hCButton_App_Desktop As ToolButton
+Private btnHO As PictureBox
+Private btnDef As PictureBox
+Private btnBook As PictureBox
 
 Static Private BACKGROUND_COLOR As Integer = &5060BA '&212121& '&H3398C3& '&HFFAF5F&
 Static Private TEXT_COLOR As Integer = &FFFFFF '&e0e0e0& '&HDF6B00& ' &z '&HFFAF5F&
@@ -213,25 +217,47 @@ Public Sub App_Default(Optional sFilter As String)
   AppsDefault.Children.Clear
   sDir_Apps = Desktop.ConfigDir &/ "Innova/Panel/AppsDefault"
   
-  hCButton_Home = New CButton(AppsDefault) As "btnHome"
-  hCButton_Home.w = iSize 
-  hCButton_Home.h = iSize 
-  hCButton_Home.Mouse = 13
-  hCButton_Home.Image = Picture["icon:/48/directory"].Image
+ ' hCButton_Home = New CButton(AppsDefault) As "btnHome"
+ ' hCButton_Home.w = iSize 
+ ' hCButton_Home.h = iSize 
+ ' hCButton_Home.Mouse = 13
+ ' hCButton_Home.Image = Picture["icon:/48/directory"].Image
+ 
+  btnHO = New PictureBox(AppsDefault) As "btnHome"
+  btnHO.w = iSize 
+  btnHO.h = iSize 
+  btnHO.Mouse = 13
+  btnHO.Picture = Picture["icon:/48/directory"].Image.Stretch(iSize - 2, iSize - 2).Picture
+  '  btnHO = New Picture(AppsDefault) As "btnHome"
+  '  btnHO.w = iSize 
+  '  btnHO.h = iSize 
+  '  btnHO.Mouse = 13
+  '  btnHO.Pict = Picture["icon:/48/directory"]
+  '  btnHO.Background = Color.Transparent
+ 
   
   For Each sFile_Apps In Dir(sDir_Apps, "*.desktop").Sort(gb.IgnoreCase)
     DesktopEntry = New DesktopFile(sDir_Apps &/ sFile_Apps)
-    pIcon = M_DesktopEntry[DesktopEntry.Path, 48].Image.Stretch(iSize, iSize).Picture
-    hCButton_App_Default = New CButton(AppsDefault) As "CButtonAppDefault"
-    hCButton_App_Default.w = iSize 
-    hCButton_App_Default.h = iSize 
-    hCButton_App_Default.Mouse = 13
-    hCButton_App_Default.Image = pIcon.Image
-    hCButton_App_Default.Tooltip = DesktopEntry.Name
-    hCButton_App_Default.Tag = DesktopEntry.Path
+    pIcon = M_DesktopEntry[DesktopEntry.Path, 48].Image.Stretch(iSize - 2, iSize - 2).Picture
+    btnDef = New PictureBox(AppsDefault) As "CButtonAppDefault"
+  '  hCButton_App_Default.w = iSize 
+  '  hCButton_App_Default.h = iSize 
+  '  hCButton_App_Default.Mouse = 13
+  '  hCButton_App_Default.Image = pIcon.Image
+  '  hCButton_App_Default.Tooltip = DesktopEntry.Name
+  '  hCButton_App_Default.Tag = DesktopEntry.Path
+     
+  
+  btnDef.w = iSize 
+  btnDef.h = iSize 
+  btnDef.Mouse = 13
+  btnDef.Picture = pIcon
+     btnDef.Tooltip = DesktopEntry.Name
+    btnDef.Tag = DesktopEntry.Path
+  
   Next
   
-Catch
+'Catch
   
 End
 
@@ -245,16 +271,28 @@ Public Sub App_Bookmarks(Optional sFilter As String)
   
   For Each sFile_Apps In Dir(sDir_Apps, "*.desktop").Sort(gb.IgnoreCase)
     DesktopEntry = New DesktopFile(sDir_Apps &/ sFile_Apps)
-    pIcon = M_DesktopEntry[DesktopEntry.Path, 48].Image.Stretch(iSize, iSize).Picture
-    hCButton_App_Bookmarks = New CButton(AppBookmarks) As "CButtonAppBookmarks"
-    hCButton_App_Bookmarks.w = iSize 
-    hCButton_App_Bookmarks.h = iSize 
-    hCButton_App_Bookmarks.Mouse = 13
-    hCButton_App_Bookmarks.Image = pIcon.Image
-    hCButton_App_Bookmarks.Tooltip = DesktopEntry.Name
-    hCButton_App_Bookmarks.Tag = DesktopEntry.Path
+    pIcon = M_DesktopEntry[DesktopEntry.Path, 48].Image.Stretch(iSize - 2, iSize - 2).Picture
+   ' hCButton_App_Bookmarks = New CButton(AppBookmarks) As "CButtonAppBookmarks"
+    'hCButton_App_Bookmarks.w = iSize 
+    'hCButton_App_Bookmarks.h = iSize 
+    'hCButton_App_Bookmarks.Mouse = 13
+    'hCButton_App_Bookmarks.Image = pIcon.Image
+    'hCButton_App_Bookmarks.Tooltip = DesktopEntry.Name
+    'hCButton_App_Bookmarks.Tag = DesktopEntry.Path
+    
+     btnBook = New PictureBox(AppBookmarks) As "CButtonAppBookmarks"
+  
+  
+  btnBook.w = iSize 
+  btnBook.h = iSize 
+  btnBook.Mouse = 13
+  btnBook.Picture = pIcon
+     btnBook.Tooltip = DesktopEntry.Name
+    btnBook.Tag = DesktopEntry.Path
+    
+    
   Next
-Catch
+'Catch
   
 End
 
@@ -277,33 +315,38 @@ Public Sub CButtonAppBookmarks_Click()
   
 End
 
+
 Public Sub CButtonAppBookmarks_MouseDown()
+   Dim sExec As String = Last.tag
   
-  CAnimation.Start(Last, "Opacity", 0.2, 1)
+  sExec = File.BaseName(sExec)
+  Try DesktopApps[sExec].Exec()
+  CAnimation.Start(Last, "Opacity", 70, 250)
+'  CAnimation.Start(Last, "Opacity", 0.2, 1)
   
 End
 
 Public Sub CButtonAppDefault_Enter()
   
-  Last.Background = BACKGROUND_COLOR
-  
+ ' Last.Background = BACKGROUND_COLOR
+    Last.Border = Border.Plain
 End
 
 Public Sub CButtonAppDefault_Leave()
   
-  Last.Background = Color.Transparent
-  
+ ' Last.Background = Color.Transparent
+    Last.Border = Border.None
 End
 
 Public Sub btnHome_Enter()
   
-  Last.Background = BACKGROUND_COLOR
-  
+ ' Last.Background = BACKGROUND_COLOR
+   Last.Border = Border.Plain
 End
 
 Public Sub btnHome_Leave()
-  
-  Last.Background = Color.Transparent
+   Last.Border = Border.None
+  'Last.Background = Color.Transparent
   
 End
 
@@ -314,7 +357,26 @@ Public Sub CButtonAppDefault_Click()
   runDesktopFile(sExec)
   
 End
+Public Sub CButtonAppDefault_MouseDown()
+  
+  Dim sExec As String = Last.tag
+  
+  runDesktopFile(sExec)
+  
+End
+Public Sub CButtonAppBookmarks_Enter()
+  
+  sExec_Delete = Last.tag 
+   Last.Border = Border.Plain
+  'Last.Background = BACKGROUND_COLOR
+  
+End
 
+Public Sub CButtonAppBookmarks_Leave()
+  
+  Last.Border = Border.None
+  
+End
 Public Sub CButtonStart_Click()
   
   Dim i As Integer = 1
@@ -980,18 +1042,6 @@ Public Sub CButtonAppBookmarks_Menu()
   
 End
 
-Public Sub CButtonAppBookmarks_Enter()
-  
-  sExec_Delete = Last.tag 
-  Last.Background = BACKGROUND_COLOR
-  
-End
-
-Public Sub CButtonAppBookmarks_Leave()
-  
-  Last.Background = Color.Transparent
-  
-End
 
 Public Sub mnuDelApp_Click()
   
@@ -1003,7 +1053,7 @@ Public Sub mnuDelApp_Click()
   
 End
 
-Public Sub btnHome_Click()
+Public Sub btnHome_MouseDown()
   
   m_core.Show_Home
   

@@ -28,7 +28,6 @@ Public rs As Result
 Public Settings_Core_Innova As New Settings(Desktop.ConfigDir &/ "Innova/Innova_Config.conf")
 Public Settings_Core_Innova_Usr As New Settings("/usr/share/Innova/Innova_Config.conf")
 Private iResult As Integer
-Public hTaskList As HSplit
 
 Public Sub Init_00()
   
@@ -93,10 +92,6 @@ Public Sub Init_03()
   
   Dim sExec As String
   
-  hTaskList = New HTaskList(f_panel.pltask) As "PanelTaskList1"
-  hTaskList.Expand = 1
-  hTaskList.Spacing = 1
-  hTaskList.Background = Color.Blue  
   f_panel.Show
   
   Wait 0.2

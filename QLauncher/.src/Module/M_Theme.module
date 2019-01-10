@@ -114,7 +114,7 @@ Public Function Show_Theme()
       
       ' f_cnb_info.txtnameapp.Foreground = Val(sResult_Inn_Font_Color) 
       ' f_cnb_info.txtlabelInfo.Foreground = Val(sResult_Inn_Font_Color) 
-      ' f_cnb_info.lblinfogrado.Foreground = Val(sResult_Inn_Font_Color) 
+      ' f_cnb_info.lblinfogrado.Foreground = Val(sResult_Inn_Font_Color + 2) 
       ' f_cnb_info.lblusuario.Foreground = Val(sResult_Inn_Font_Color) 
       
     Next
@@ -175,6 +175,7 @@ Public Function Show_Theme()
     For Each ctrl In f_cnb_info.Controls
       Try ctrl.Font.Size = (iResult_Inn_Font_Size) 
       M_Core.iFontSize = (iResult_Inn_Font_Size) 
+      f_cnb_info.lblinfogrado.Font.Size = Val(iResult_Inn_Font_Size) + 3
     Next
     For Each ctrl In f_launcher_cnb.Controls
       Try ctrl.Font.Size = (iResult_Inn_Font_Size) 
@@ -193,6 +194,6 @@ Public Function Show_Theme()
     
   Endif 
   
-  'Catch
+Catch
   
 End

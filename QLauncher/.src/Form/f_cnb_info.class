@@ -22,8 +22,8 @@ Public Sub Leer()
   
   b = Split(txtnameapp.Text, " ") 
   For a = 0 To b.max
-    sQry = ("SELECT DISTINCT programa,grado,materia FROM tbl_clas_ped WHERE Programa LIKE '%" & b[a] & "%' ORDER BY grado ASC, materia ASC") 
-    rs = cx.Exec(sQry)
+    sQry = ("SELECT DISTINCT Programa,Grado,Materia FROM tbl_cla_ped WHERE Programa LIKE '%" & b[a] & "%' ORDER BY Grado ASC, Materia ASC") 
+  rs = cx.Exec(sQry)
   Next
   
   GridCom = New GridView(ScrollCompetencia) As "GridCom"
@@ -73,7 +73,7 @@ Public Sub Leer()
     rs.MoveNext
     
   Next
-  
+  Catch
 End
 
 Public Sub Form_Open()

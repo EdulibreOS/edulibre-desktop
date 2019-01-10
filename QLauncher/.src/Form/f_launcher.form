@@ -169,6 +169,7 @@
         }
         { picLaunch PictureBox
           MoveScaled(56,0,4.5714,4.5714)
+          Visible = False
           Mouse = Mouse.Pointing
           ToolTip = ("Style Launcher")
           Picture = Picture["img/cnb/Launch.png"]
@@ -234,6 +235,7 @@
         MoveScaled(20,42,57,7)
         Visible = False
         Background = &H3F3F3F&
+        Foreground = Color.White
         Expand = True
         Arrangement = Arrange.Horizontal
         Padding = 4
