@@ -377,7 +377,20 @@ Public Sub CButtonAppBookmarks_Leave()
   Last.Border = Border.None
   
 End
+
 Public Sub CButtonStart_Click()
+  
+  Dim sResult As String 
+  
+  Settings_Core_Innova.Reload()
+  Wait 0.1
+  Try sResult = Settings_Core_Innova["Launcher/Style_Launcher"]
+   M_Core.iShow = False
+      Shell "/usr/bin/qlauncher"
+  
+End
+
+Public Sub CButtonStart_Click001()
   
   Dim i As Integer = 1
   Dim sResult As String 
@@ -389,7 +402,8 @@ Public Sub CButtonStart_Click()
   If (sResult = "Mini") Then
     M_Core.iShow = False
     'Shell User.Home &/ "Launcher_Mini.gambas"
-    Shell "/usr/bin/qlauncher_mini"
+   ' Shell "/usr/bin/qlauncher_mini"
+     Shell "/usr/bin/qlauncher"
     
   Endif
   
@@ -397,7 +411,7 @@ Public Sub CButtonStart_Click()
     M_Core.iShow = False
     'Shell User.Home &/ "Launcher_Tablet.gambas"
     If i = 1 Then
-      Shell "/usr/bin/qlauncher_tablet"
+      Shell "/usr/bin/qlauncher"
     Else
       Print "cerra"
     Endif
@@ -405,7 +419,7 @@ Public Sub CButtonStart_Click()
   If (sResult = "CNB") Then
     M_Core.iShow = False
     'Shell User.Home &/ "Launcher_CNB.gambas"
-    Shell "/usr/bin/qlauncher_cnb"
+    Shell "/usr/bin/qlauncher"
   Endif
   
 Catch

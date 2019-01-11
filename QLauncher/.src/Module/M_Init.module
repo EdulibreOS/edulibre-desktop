@@ -48,12 +48,13 @@ Public Sub Init_03()
   'Application.Env["APPMENU_DISPLAY_BOTH"] = "1"
   
   'f_launcher.Show
-  
+  Settings_Core_Innova.Reload()
+  Wait 0.1
   Try sResult = Settings_Core_Innova["Launcher/Style_Launcher"]
   Try iShow = Settings_Core_Innova["Launcher/iShow", f_launcher]
   ' Try iShow = Settings_Core_Innova["Launcher/Show"]
   
-  Wait 0.1
+  
   
   'If iShow = 1 Then
   '  f_launcher.Show

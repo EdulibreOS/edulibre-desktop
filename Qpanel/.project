@@ -2,7 +2,7 @@
 Title=qpanel
 Startup=Cls_Start
 Icon=img/desktop-environment-innova.png
-Version=0.1.137
+Version=0.1.140
 Component=gb.args
 Component=gb.image
 Component=gb.qt4
@@ -16,6 +16,7 @@ Component=gb.db.sqlite3
 Component=gb.desktop
 Component=gb.desktop.x11
 Component=gb.settings
+Description="Innova desktop panel"
 Environment="GB_GUI=gb.qt4"
 TabSize=2
 Translate=1
@@ -27,7 +28,7 @@ Vendor=HerberthGuzman
 VendorPrefix=HG
 Address=herbethguzman@gmail.com
 License=General Public License
-PackageName=qpanel-0.1.137
+PackageName=qpanel-0.1.140
 Packager=1
 Systems=ubuntu
 Menus=ubuntu:"Window Managers"
