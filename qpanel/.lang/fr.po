@@ -1,0 +1,575 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: qpanel 3.12.2\n"
+"PO-Revision-Date: 2019-01-23 15:49 UTC\n"
+"Last-Translator: edulibreos <edulibreos@EdulibreOS>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: .project:1
+msgid "qpanel"
+msgstr ""
+
+#: .project:2
+msgid "Innova desktop panel"
+msgstr ""
+
+#: CAbout.class:107
+msgid "The Gambas font is published under the SIL Open Font License."
+msgstr ""
+
+#: CAbout.class:107
+msgid "This program is published under the GNU General Public License."
+msgstr "Le program sont publiés sous la licence publique générale GNU"
+
+#: CWelcome.class:108
+msgid "Is published under the GNU General Public License."
+msgstr ""
+
+#: CWelcome.class:108
+msgid "This operating system EdulibreOS "
+msgstr ""
+
+#: LC_MESSAGES.module:26
+msgid "Theme Registration Error"
+msgstr "Thème Inscription erreur"
+
+#: LC_MESSAGES.module:27
+msgid "Failed to connect to the DB system"
+msgstr "Omis de la connexion au système DB "
+
+#: LC_MESSAGES.module:28
+msgid "Error processing the system information"
+msgstr "Erreur de traitement de l'information de système "
+
+#: LC_MESSAGES.module:29
+msgid "You must select valid windows manager"
+msgstr "Vous devez sélectionner gestionnaire de fenêtres valides"
+
+#: LC_MESSAGES.module:30
+msgid "Format not valid"
+msgstr "Format n'est pas valide "
+
+#: LC_MESSAGES.module:31
+msgid "No item selected to remove"
+msgstr "Aucun article sélectionné pour supprimer"
+
+#: LC_MESSAGES.module:32
+msgid "It is not possible to copy file in the same directory"
+msgstr "Il n'est pas possible de copier un fichier dans le même répertoire"
+
+#: LC_MESSAGES.module:35
+msgid "Innova Desktop in execution..."
+msgstr ""
+
+#: LC_MESSAGES.module:36
+msgid "Splash Screen exists"
+msgstr "Splash Screen existe"
+
+#: LC_MESSAGES.module:37
+msgid "Appearance Launcher Innova is NOT equal to the Launcher Type selected in the Theme Current. You want to change the Appearance of Launcher...?"
+msgstr "Apparence Launcher Innova est pas égal au type Launcher sélectionné dans le courant du thème. Vous voulez changer l'apparence de Launcher ...?"
+
+#: LC_MESSAGES.module:38
+msgid "Folder already exists"
+msgstr "Dossier existe déjà"
+
+#: LC_MESSAGES.module:39
+msgid "File already exists"
+msgstr "Fichier existe déjà"
+
+#: LC_MESSAGES.module:40
+msgid "Can not delete the files"
+msgstr "Ne peut pas supprimer les fichiers"
+
+#: LC_MESSAGES.module:41
+msgid "Theme selected already exists in the system."
+msgstr "Thème déjà sélectionné existe dans le système"
+
+#: LC_MESSAGES.module:42
+msgid "Current theme is active, can not be eliminated."
+msgstr "Thème actuel est actif, ne peut être éliminé."
+
+#: LC_MESSAGES.module:43
+msgid "You have not selected Innova Theme."
+msgstr "Vous ne l'avez pas choisi Innova Thème"
+
+#: LC_MESSAGES.module:44
+msgid "It has not established a reference Apps."
+msgstr "Il n'a pas établi un Apps de référence."
+
+#: LC_MESSAGES.module:46
+msgid "¿Want to delete the select splash?"
+msgstr "¿Voulez-vous supprimer le splash sélectionnez?"
+
+#: LC_MESSAGES.module:47 f_wallpaper.class:413
+msgid "Enter a Name..."
+msgstr "Entrez un nom ..."
+
+#: LC_MESSAGES.module:48
+msgid "The files can not be restored after deleted. Do you want continue? "
+msgstr "Les fichiers ne peuvent pas être restaurés après supprimé. Voulez-vous continuer? "
+
+#: LC_MESSAGES.module:49
+msgid "Sure you want to move the file to the trash ..? "
+msgstr "Bien sûr, vous voulez déplacer le fichier à la poubelle..?"
+
+#: LC_MESSAGES.module:50
+msgid "¿Are you sure we want to remove the theme - "
+msgstr "¿Etes-vous sûr que nous voulons supprimer le thème -"
+
+#: LC_MESSAGES.module:51
+msgid "The version of the configuration file Innova_Config.conf has CHANGED. Wants to update.? "
+msgstr "La version du fichier de configuration Innova_Config.conf a changé. Veut mettre à jour. ?"
+
+#: LC_MESSAGES.module:53
+msgid "Destination file exists. OverWrite"
+msgstr "Le fichier de destination existe. Écraser"
+
+#: M_Core.module:187
+msgid "Mode random background screen, <br> you can not select new background..."
+msgstr "Mode fond d'écran aléatoire, <br> vous ne pouvez pas sélectionner nouvel arrière-plan..."
+
+#: M_DB.module:39 f_about.form:98 f_conf_wallpaper.class:67 f_wallpaper.class:405
+msgid "Innova Desktop"
+msgstr "Innova Bureau"
+
+#: f_about.class:25
+msgid "Stable"
+msgstr ""
+
+#: f_about.class:30
+msgid "Version "
+msgstr "Version"
+
+#: f_about.form:34
+msgid "Acerca de Innova Desktop"
+msgstr ""
+
+#: f_about.form:47
+msgid "Innova Desktop Environment"
+msgstr ""
+
+#: f_about.form:83 f_about_dist.form:83 f_compress.form:66 f_conf_wallpaper.form:77 f_gallery_wallpaper.form:55 f_panel.form:58 f_properties.form:27 f_properties_mixed.form:129 f_wallpaper.form:178
+msgid "Close"
+msgstr "Proche"
+
+#: f_about.form:93 f_about_dist.form:96
+msgid "About"
+msgstr "Sur"
+
+#: f_about.form:104
+msgid "Copyright © 2014-2019 Innova"
+msgstr ""
+
+#: f_about.form:122
+msgid "<p><br>Advanced, easy to use, and fast desktop environment developed on Gambas3.</p>\n\n"
+msgstr "<p><br>Environnement de bureau avancé, facile à utiliser et rapide développé sur Gambas3.</p>\n\n"
+
+#: f_about.form:125
+msgid "License"
+msgstr "Licence"
+
+#: f_about.form:130
+msgid "    This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.\n\n    This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.\n\n    You should have received a copy of the GNU General Public License    along with this program.  If not, see <http://www.gnu.org/licenses/>."
+msgstr ""
+
+#: f_about.form:136
+msgid "Translators"
+msgstr "Traducteurs"
+
+#: f_about.form:141
+msgid "Spanish: Herberth Guzmán (herberthguzman@gmail.com)\nEnglish: Herberth Guzmán (herberthguzman@gmail.com)\nFrench: Herberth Guzmán (herberthguzman@gmail.com)"
+msgstr ""
+
+#: f_about.form:147
+msgid "Update"
+msgstr "Mettre à jour"
+
+#: f_about.form:159
+msgid "Home page"
+msgstr "Site Web"
+
+#: f_about.form:166
+msgid "Mail"
+msgstr "Mail"
+
+#: f_about.form:181
+msgid "Check Update"
+msgstr "Vérifier la mise à jour"
+
+#: f_about.form:186
+msgid "Thanks"
+msgstr "Merci"
+
+#: f_about.form:207 f_wallpaper.class:157
+msgid "System"
+msgstr "Système"
+
+#: f_about_dist.class:77 f_wallpaper.form:234
+msgid "Name"
+msgstr "Prénom"
+
+#: f_about_dist.class:79
+msgid "Country"
+msgstr "Pays "
+
+#: f_about_dist.form:33
+msgid "Acerca de EdulibreOS"
+msgstr ""
+
+#: f_about_dist.form:46
+msgid "EdulibreOS"
+msgstr ""
+
+#: f_about_dist.form:59
+msgid "Version 10.0"
+msgstr ""
+
+#: f_about_dist.form:107
+msgid "Copyright (C) 2008-2018"
+msgstr ""
+
+#: f_about_dist.form:114
+msgid "v 10.0"
+msgstr ""
+
+#: f_about_dist.form:127
+msgid "<p><br>EdulibreOS is a GNU / Linux operating system distribution for educational centers, home users and small businesses. It is shown as an alternative for the public and private education sector.</p>\n"
+msgstr "<p><br>EdulibreOS est une distribution de système d’exploitation GNU/Linux destinée aux centres d’enseignement, aux particuliers et aux petites entreprises. Il s’agit d’une alternative au secteur de l’enseignement public et privé.</p>\n"
+
+#: f_about_dist.form:130
+msgid "Alliances"
+msgstr ""
+
+#: f_about_dist.form:158
+msgid "Educational Centers"
+msgstr "Centres éducatifs"
+
+#: f_about_dist.form:193
+msgid "Donations"
+msgstr ""
+
+#: f_compress.form:32
+msgid "File Name:"
+msgstr "Nom de fichier: "
+
+#: f_compress.form:42
+msgid "Terminal"
+msgstr "Terminal"
+
+#: f_compress.form:60
+msgid "Create"
+msgstr "Créer"
+
+#: f_compress.form:79
+msgid "Path Home:"
+msgstr "Chemin d'accueil:"
+
+#: f_conf_wallpaper.class:47
+msgid "The theme has been changed successfully."
+msgstr "Le thème a été changé avec succès."
+
+#: f_conf_wallpaper.class:56
+msgid "Image Archive"
+msgstr "Archives d'images"
+
+#: f_conf_wallpaper.class:58
+msgid "Drawing files"
+msgstr "Fichiers de dessin "
+
+#: f_conf_wallpaper.class:58
+msgid "Picture files"
+msgstr "Fichiers image"
+
+#: f_conf_wallpaper.form:54
+msgid "Change wallpaper"
+msgstr "Changement le papier peint "
+
+#: f_conf_wallpaper.form:71 f_gallery_wallpaper.form:48 f_wallpaper.class:413
+msgid "Ok"
+msgstr "Ok"
+
+#: f_date.class:50
+msgid "Week "
+msgstr "Semaine"
+
+#: f_gallery_wallpaper.form:22
+msgid "Desktop Settings - Innova"
+msgstr "Paramètres de Bureau - Innova"
+
+#: f_gallery_wallpaper.form:68
+msgid "Select wallpaper"
+msgstr "Sélectionnez fond"
+
+#: f_gallery_wallpaper.form:80
+msgid "Folder"
+msgstr "Dossier"
+
+#: f_gallery_wallpaper.form:100
+msgid "Image"
+msgstr "Image"
+
+#: f_gallery_wallpaper.form:117
+msgid "Get New Wallpaper"
+msgstr "Obtenir de Nouveaux Fonds d'Écran"
+
+#: f_panel.form:46
+msgid "Main"
+msgstr ""
+
+#: f_panel.form:50
+msgid "Maximized"
+msgstr "Maximisé"
+
+#: f_panel.form:54
+msgid "Minimized"
+msgstr "Minimisée"
+
+#: f_panel.form:64
+msgid "Menu1"
+msgstr ""
+
+#: f_panel.form:68
+msgid "Delete Apps"
+msgstr "Supprimer des Applications"
+
+#: f_panel.form:88
+msgid "Launcher"
+msgstr "Lanceur"
+
+#: f_panel.form:207
+msgid "Show Desktop"
+msgstr "Montrer Bureau"
+
+#: f_progressbar.form:13
+msgid "Processing"
+msgstr "Traitement"
+
+#: f_properties.form:10 f_properties_mixed.form:24
+msgid "Innova Desktop - Properties of files"
+msgstr "Innova Bureau - Les Propriétés des Fichiers"
+
+#: f_properties_mixed.form:34
+msgid "General"
+msgstr ""
+
+#: f_properties_mixed.form:56
+msgid "Name:"
+msgstr "Nom:"
+
+#: f_properties_mixed.form:68
+msgid "Type:"
+msgstr "Type:"
+
+#: f_properties_mixed.form:80
+msgid "Directory:"
+msgstr "Annuaire"
+
+#: f_properties_mixed.form:92
+msgid "Owner:"
+msgstr "Propriétaire"
+
+#: f_properties_mixed.form:104
+msgid "Size:"
+msgstr "Taille:"
+
+#: f_wallpaper.class:162
+msgid "Trash"
+msgstr "Déchets"
+
+#: f_wallpaper.class:413
+msgid "Cancelar"
+msgstr "Annuler"
+
+#: f_wallpaper.class:426
+msgid "Cannot create directory."
+msgstr "Vous ne pouvez pas créer le répertoire."
+
+#: f_wallpaper.class:461
+msgid "Multiple Files"
+msgstr "Fichiers Multiples"
+
+#: f_wallpaper.class:462
+msgid "Files of different types"
+msgstr "Des fichiers de différents types"
+
+#: f_wallpaper.class:618
+msgid "trash:/"
+msgstr ""
+
+#: f_wallpaper.class:621
+msgid "trash:///"
+msgstr ""
+
+#: f_wallpaper.class:679
+msgid "&No"
+msgstr "&aucun"
+
+#: f_wallpaper.class:679
+msgid "&Yes"
+msgstr "&oui"
+
+#: f_wallpaper.class:1128
+msgid "Innova Desktop - Copy File"
+msgstr "Innova Bureau - Fichier de Copie"
+
+#: f_wallpaper.class:1146
+msgid " Items "
+msgstr ""
+
+#: f_wallpaper.class:1146
+msgid "Copying "
+msgstr "Copier"
+
+#: f_wallpaper.class:1147
+msgid " To "
+msgstr "à"
+
+#: f_wallpaper.class:1175
+msgid "An unknown error has occurred."
+msgstr "Une erreur inconnue s'est produite"
+
+#: f_wallpaper.class:1221
+msgid "Change name"
+msgstr "Changer de nom "
+
+#: f_wallpaper.class:1221
+msgid "You are sure to change the name:"
+msgstr "Vous êtes sûr de changer le nom: "
+
+#: f_wallpaper.form:78
+msgid "mnuPopup"
+msgstr ""
+
+#: f_wallpaper.form:82
+msgid "Open"
+msgstr "Ouvert"
+
+#: f_wallpaper.form:87
+msgid "Choose an application"
+msgstr "Choisissez une application "
+
+#: f_wallpaper.form:91
+msgid "Select aplication"
+msgstr "Sélectionner l'application"
+
+#: f_wallpaper.form:100
+msgid "Cut"
+msgstr "Coupe"
+
+#: f_wallpaper.form:107
+msgid "Copy"
+msgstr "Copie "
+
+#: f_wallpaper.form:116
+msgid "Delete"
+msgstr "Effacer"
+
+#: f_wallpaper.form:122
+msgid "Move to Trash"
+msgstr "Mettre à la Corbeille"
+
+#: f_wallpaper.form:130
+msgid "Rename"
+msgstr "Rebaptiser"
+
+#: f_wallpaper.form:138
+msgid "Create Link"
+msgstr "Créer un lien"
+
+#: f_wallpaper.form:147
+msgid "Refresh"
+msgstr "Rafraîchir"
+
+#: f_wallpaper.form:156
+msgid "Compress"
+msgstr "Comprimer"
+
+#: f_wallpaper.form:161
+msgid "Uncompress"
+msgstr "Uncompress"
+
+#: f_wallpaper.form:170
+msgid "Properties"
+msgstr "Propriétés"
+
+#: f_wallpaper.form:185
+msgid "mnuPopup2"
+msgstr ""
+
+#: f_wallpaper.form:189
+msgid "File"
+msgstr "Fichier"
+
+#: f_wallpaper.form:192
+msgid "New Folder"
+msgstr "Nouveau Dossier"
+
+#: f_wallpaper.form:197
+msgid "New File"
+msgstr "Nouveau Fichier"
+
+#: f_wallpaper.form:206
+msgid "Paste"
+msgstr "Pâte"
+
+#: f_wallpaper.form:212
+msgid "Select All"
+msgstr "Sélectionner Tout"
+
+#: f_wallpaper.form:221
+msgid "Sort by File"
+msgstr "Trier par fichier"
+
+#: f_wallpaper.form:224
+msgid "Ascending (A - Z)"
+msgstr ""
+
+#: f_wallpaper.form:229
+msgid "Descending (Z - A)"
+msgstr ""
+
+#: f_wallpaper.form:239
+msgid "Type"
+msgstr "Type "
+
+#: f_wallpaper.form:275
+msgid "About Innova Desktop"
+msgstr "Sur Innova Desktop"
+
+#: f_wallpaper.form:282
+msgid "Menu_Principal"
+msgstr ""
+
+#: f_wallpaper.form:286
+msgid "Open Home"
+msgstr "Ouvrir Accueil"
+
+#: f_wallpaper.form:296
+msgid "Pc Info"
+msgstr ""
+
+#: f_wallpaper.form:301
+msgid "Control Center"
+msgstr "Centre de Contrôle "
+
+#: f_wallpaper.form:307
+msgid "Innova Settings"
+msgstr "Paramètres Innova"
+
+#: f_wallpaper.form:312
+msgid "Widgets"
+msgstr ""
+
+#: f_wallpaper.form:321
+msgid "Change Wallpaper"
+msgstr "Changement le Papier Peint "
+
+#: f_wallpaper.form:330
+msgid "About EdulibreOS"
+msgstr "Sur EdulibreOS"
+

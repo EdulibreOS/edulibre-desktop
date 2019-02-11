@@ -1,0 +1,33 @@
+' Gambas class file
+
+Public Sub Form_Leave()
+  
+  f_popup.Close
+  
+End
+
+Public Sub Form_KeyPress()
+  
+  If Key.Code = Key.Esc Then
+    Me.Close
+  Endif
+  
+End
+
+Public Sub Form_Open()
+  
+  ' Wait 3
+  'f_popup.Close
+  M_Theme.show_theme
+  
+End
+
+Public Sub Form_Deactivate()
+  
+  f_popup.Close
+  
+End
+
+Public Sub Form_Close()
+  
+End

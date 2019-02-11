@@ -1,0 +1,49 @@
+' Gambas module file
+
+Private hLock As Stream
+Public Settings_Core_Innova As New Settings(Desktop.ConfigDir &/ "Innova/Innova_Config.conf")
+Private sResult As String 
+
+Public Sub Main()
+  
+  If VisorYaEstaAbierto() Then Quit
+  M_Init.Init_01
+Catch
+  
+End
+
+Private Sub VisorYaEstaAbierto() As Boolean 
+  
+  subLog.Activar() 
+  
+  Try hLock = Lock M_Var_Global.sDir &/ ".lock"
+  
+  If Error Then
+    subLog.Agregar(Now, subLog.ERROR_COMUN, Error.Text, Error.Where, Error.Code)
+    ' Message.Warning(Application.Name & " ya se encuentra abierto!!")
+    'Balloon((Application.Name & " ya se encuentra abierto!!"), f_launcher.picUser, Picture["icon:/small/computer"])
+    '  Balloon(("The theme has been changed successfully."), f_launcher_cnb.picUser, Picture["icon:/small/desktop"])
+    '  Balloon("Ceci n'est pas un ballon.\nMais une bulle !", Last)
+    ' f_launcher_cnb.Show()
+    
+    f_launcher_cnb.Show
+    
+    Wait 0.1
+    MSG_Open
+    
+    Return True
+  Endif
+  
+  Return False
+  'Catch
+  
+End
+
+Public Sub MSG_Open()
+  
+  'Balloon(Application.Name & " ya se encuentra abierto!!", f_launcher_cnb.picUser)
+ ' Print ("yep")
+ ' Wait 0.1
+ ' Quit
+  
+End

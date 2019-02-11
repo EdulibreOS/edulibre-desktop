@@ -1,0 +1,33 @@
+' Gambas class file
+
+Public Sub Form_Open()
+  
+  M_Theme.Show_Theme
+  
+  X11.SetWindowProperty(Me.Id, Atom["_NET_WM_WINDOW_TYPE"], Atom["ATOM"], Atom["_NET_WM_WINDOW_TYPE_DOCK"])
+  
+End
+
+Public Sub _new()
+  
+  Me.TopOnly = True
+  
+End
+
+Public Sub txtdscription_MouseDown()
+  
+End
+
+Public Sub Form_Leave()
+  
+  Me.Close
+  
+End
+
+Public Sub Form_Activate()
+  
+  Wait 5
+  Desktop.Screenshot(Me.ScreenX, Me.ScreenY, Me.W, Me.H).Save(User.Home &/ LCase(Object.Type(Me.Children[0])) & ".png")
+  Me.Close
+  
+End
